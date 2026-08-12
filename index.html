@@ -4,25 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gorakh Chand | Educator & Computer Science Teacher</title>
+<title>Gorakh Chand | Teaching Professional</title>
 
-<meta name="description" content="Official website of Gorakh Chand, Teaching Professional, Educator and Computer Science Teacher.">
+<meta name="description" content="Official personal website of Gorakh Chand, Teaching Professional and Secondary Level Government Teacher specializing in Computer Science.">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
-html{
     scroll-behavior:smooth;
 }
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#f7f9ff;
     color:#1f2937;
+    background:#f7f9ff;
     line-height:1.7;
 }
 
@@ -33,7 +30,7 @@ nav{
     top:0;
     left:0;
     width:100%;
-    z-index:1000;
+    z-index:999;
     background:rgba(255,255,255,.97);
     box-shadow:0 4px 20px rgba(0,0,0,.08);
 }
@@ -48,7 +45,7 @@ nav{
 }
 
 .logo{
-    font-size:24px;
+    font-size:25px;
     font-weight:800;
     background:linear-gradient(90deg,#6d28d9,#2563eb,#0891b2);
     -webkit-background-clip:text;
@@ -58,14 +55,13 @@ nav{
 nav ul{
     display:flex;
     list-style:none;
-    gap:18px;
+    gap:17px;
 }
 
 nav a{
     text-decoration:none;
     color:#374151;
     font-weight:600;
-    transition:.3s;
 }
 
 nav a:hover{
@@ -100,12 +96,12 @@ nav a:hover{
 }
 
 .profile{
-    width:180px;
-    height:180px;
+    width:175px;
+    height:175px;
     margin:0 auto 28px;
     border-radius:50%;
     overflow:hidden;
-    border:6px solid white;
+    border:6px solid rgba(255,255,255,.9);
     box-shadow:0 15px 45px rgba(0,0,0,.3);
     background:white;
 }
@@ -117,7 +113,7 @@ nav a:hover{
 }
 
 .hero h1{
-    font-size:60px;
+    font-size:58px;
     line-height:1.15;
     margin-bottom:12px;
 }
@@ -125,7 +121,7 @@ nav a:hover{
 .hero h2{
     font-size:24px;
     font-weight:400;
-    margin-bottom:18px;
+    margin-bottom:20px;
 }
 
 .hero p{
@@ -135,7 +131,7 @@ nav a:hover{
 }
 
 .buttons{
-    margin-top:30px;
+    margin-top:32px;
 }
 
 .btn{
@@ -155,10 +151,11 @@ nav a:hover{
     box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
-/* GENERAL */
+/* ABOUT PREVIEW */
 
-section{
-    padding:85px 20px;
+.about{
+    padding:90px 20px;
+    background:white;
 }
 
 .container{
@@ -166,148 +163,101 @@ section{
     margin:auto;
 }
 
-.title{
+.section-title{
     text-align:center;
     margin-bottom:45px;
 }
 
-.title h2{
+.section-title h2{
     font-size:40px;
-    background:linear-gradient(90deg,#6d28d9,#2563eb);
-    -webkit-background-clip:text;
-    color:transparent;
+    color:#5b21b6;
 }
 
-.title p{
+.section-title p{
     color:#6b7280;
 }
 
-/* INTRO */
-
-.intro{
-    background:white;
-    text-align:center;
+.about-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:25px;
 }
 
-.intro-text{
-    max-width:850px;
-    margin:auto;
-    font-size:18px;
+.box{
+    padding:35px;
+    border-radius:24px;
+    background:#f8f9ff;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.box h3{
+    color:#5b21b6;
+    margin-bottom:15px;
+    font-size:23px;
+}
+
+.quote{
+    margin-top:22px;
+    padding:18px 22px;
+    border-left:5px solid #7c3aed;
+    background:white;
+    border-radius:12px;
+    font-style:italic;
     color:#4b5563;
 }
 
-/* HIGHLIGHTS */
+/* INTERESTS */
 
-.highlights{
+.interests{
+    padding:90px 20px;
     background:#f1f5ff;
 }
 
-.cards{
+.interest-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
-.card{
+.interest{
     background:white;
-    padding:30px 25px;
-    border-radius:22px;
+    padding:30px 15px;
+    border-radius:20px;
     text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.07);
-    border-top:4px solid #6d28d9;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
     transition:.3s;
 }
 
-.card:hover{
-    transform:translateY(-7px);
+.interest:hover{
+    transform:translateY(-6px);
 }
 
-.icon{
-    font-size:45px;
-    margin-bottom:10px;
+.interest span{
+    display:block;
+    font-size:42px;
+    margin-bottom:8px;
 }
 
-.card h3{
-    color:#4c1d95;
-    margin-bottom:10px;
-}
-
-/* EDUCATIONAL CONTENT PREVIEW */
-
-.educational{
-    background:white;
-}
-
-.edu-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-.edu-card{
-    padding:28px;
-    border-radius:20px;
-    background:linear-gradient(135deg,#f5f3ff,#eff6ff);
-    text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,.06);
-}
-
-.edu-card h3{
+.interest strong{
     color:#4338ca;
-    margin:10px 0;
-}
-
-.edu-card a{
-    display:inline-block;
-    margin-top:15px;
-    text-decoration:none;
-    font-weight:bold;
-    color:#2563eb;
-}
-
-/* ACHIEVEMENT PREVIEW */
-
-.achievements{
-    background:#f8faff;
-}
-
-.achievement-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-}
-
-.achievement{
-    padding:32px;
-    border-radius:22px;
-    color:white;
-    text-align:center;
-    background:linear-gradient(135deg,#7c3aed,#2563eb);
-}
-
-.achievement:nth-child(2){
-    background:linear-gradient(135deg,#0891b2,#4f46e5);
-}
-
-.achievement .big{
-    font-size:50px;
 }
 
 /* CTA */
 
-.cta{
+.connect{
+    padding:90px 20px;
     text-align:center;
     color:white;
     background:linear-gradient(135deg,#4338ca,#7c3aed,#0891b2);
 }
 
-.cta h2{
+.connect h2{
     font-size:38px;
     margin-bottom:12px;
 }
 
-.cta p{
-    margin-bottom:25px;
+.connect .btn{
+    margin-top:25px;
 }
 
 /* FOOTER */
@@ -321,7 +271,7 @@ footer{
 
 /* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
     .menu{
         display:block;
@@ -344,25 +294,24 @@ footer{
         display:flex;
     }
 
-    .hero h1{
-        font-size:44px;
-    }
-
-    .cards,
-    .edu-grid,
-    .achievement-grid{
+    .about-grid{
         grid-template-columns:1fr;
     }
+
+    .interest-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
 }
 
-@media(max-width:500px){
+@media(max-width:600px){
 
     .hero h1{
-        font-size:36px;
+        font-size:38px;
     }
 
     .hero h2{
-        font-size:18px;
+        font-size:19px;
     }
 
     .profile{
@@ -370,9 +319,10 @@ footer{
         height:150px;
     }
 
-    .title h2{
-        font-size:32px;
+    .interest-grid{
+        grid-template-columns:1fr 1fr;
     }
+
 }
 </style>
 </head>
@@ -389,7 +339,9 @@ footer{
 Gorakh Chand
 </div>
 
-<div class="menu" onclick="toggleMenu()">☰</div>
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
 
 <ul id="navMenu">
 
@@ -418,7 +370,7 @@ Gorakh Chand
 
 <!-- HOME -->
 
-<section class="hero">
+<section class="hero" id="home">
 
 <div class="hero-content">
 
@@ -428,11 +380,13 @@ Gorakh Chand
 
 <h1>Gorakh Chand</h1>
 
-<h2>Teaching Professional • Educator • Computer Science Teacher</h2>
+<h2>
+Teaching Professional • Educator • Computer Science Teacher
+</h2>
 
 <p>
-Educating minds, exploring ideas, embracing learning,
-and growing through every experience.
+Secondary Level Government Teacher passionate about
+education, technology, learning and continuous growth.
 </p>
 
 <div class="buttons">
@@ -441,8 +395,8 @@ and growing through every experience.
 Discover My Journey
 </a>
 
-<a href="educational-content.html" class="btn">
-Explore Learning
+<a href="contact.html" class="btn">
+Let's Connect
 </a>
 
 </div>
@@ -452,67 +406,61 @@ Explore Learning
 </section>
 
 
-<!-- INTRO -->
+<!-- SHORT ABOUT -->
 
-<section class="intro">
+<section class="about">
 
 <div class="container">
 
-<div class="title">
+<div class="section-title">
+
 <h2>Welcome</h2>
-<p>A space for education, ideas and lifelong learning</p>
-</div>
 
-<p class="intro-text">
-Welcome to my personal and educational website. Here I share
-my professional journey, academic background, educational
-resources, ideas, articles, experiences and learning materials.
-</p>
+<p>A little about me</p>
 
 </div>
 
-</section>
+
+<div class="about-grid">
 
 
-<!-- PROFESSIONAL HIGHLIGHTS -->
+<div class="box">
 
-<section class="highlights">
+<h3>Hello, I'm Gorakh Chand 👋</h3>
 
-<div class="container">
-
-<div class="title">
-<h2>Professional Highlights</h2>
-<p>A glimpse of my professional journey</p>
-</div>
-
-<div class="cards">
-
-<div class="card">
-<div class="icon">👨‍🏫</div>
-<h3>Teaching Professional</h3>
 <p>
-Dedicated to teaching, learning and meaningful
-educational experiences.
+I am a <strong>Teaching Professional and Secondary Level Government Teacher</strong>
+specializing in <strong>Computer Science</strong>.
 </p>
+
+<p>
+My academic journey includes Computer Science,
+Special Needs Education and Economics.
+I am passionate about meaningful education,
+technology, inclusive learning and lifelong learning.
+</p>
+
+<div class="quote">
+“Learn. Explore. Inspire. Keep Growing.”
 </div>
 
-<div class="card">
-<div class="icon">💻</div>
-<h3>Computer Science</h3>
-<p>
-Interested in technology, ICT and digital approaches
-to education.
-</p>
 </div>
 
-<div class="card">
-<div class="icon">🌱</div>
-<h3>Lifelong Learner</h3>
-<p>
-Always learning, exploring new ideas and growing
-through experience.
-</p>
+
+<div class="box">
+
+<h3>Professional Profile</h3>
+
+<p>👨‍🏫 <strong>Profession:</strong> Teaching Professional</p>
+
+<p>🏫 <strong>Position:</strong> Secondary Level Government Teacher</p>
+
+<p>💻 <strong>Specialization:</strong> Computer Science</p>
+
+<p>🌱 <strong>Focus:</strong> Education & Lifelong Learning</p>
+
 </div>
+
 
 </div>
 
@@ -521,75 +469,41 @@ through experience.
 </section>
 
 
-<!-- EDUCATIONAL CONTENT PREVIEW -->
+<!-- INTERESTS -->
 
-<section class="educational">
+<section class="interests">
 
 <div class="container">
 
-<div class="title">
+<div class="section-title">
 
-<h2>Educational Content</h2>
+<h2>Beyond the Classroom</h2>
 
-<p>
-Learning resources for students and teachers
-</p>
-
-</div>
-
-<div class="edu-grid">
-
-<div class="edu-card">
-
-<div class="icon">💻</div>
-
-<h3>Computer Science</h3>
-
-<p>
-Programming, computer fundamentals,
-ICT and technology-related learning materials.
-</p>
-
-<a href="educational-content.html">
-Explore →
-</a>
+<p>Things I enjoy and explore</p>
 
 </div>
 
 
-<div class="edu-card">
+<div class="interest-grid">
 
-<div class="icon">🐍</div>
-
-<h3>Python Programming</h3>
-
-<p>
-Simple programs, examples, exercises and
-programming concepts for learners.
-</p>
-
-<a href="educational-content.html">
-Explore →
-</a>
-
+<div class="interest">
+<span>📚</span>
+<strong>Literature</strong>
 </div>
 
+<div class="interest">
+<span>✈️</span>
+<strong>Journey</strong>
+</div>
 
-<div class="edu-card">
+<div class="interest">
+<span>🏏</span>
+<strong>Cricket</strong>
+</div>
 
-<div class="icon">📚</div>
-
-<h3>Teaching Resources</h3>
-
-<p>
-Notes, educational materials and resources
-for effective teaching and learning.
-</p>
-
-<a href="educational-content.html">
-Explore →
-</a>
-
+<div class="interest">
+<span>📖</span>
+<strong>Reading</strong>
 </div>
 
 </div>
@@ -599,80 +513,19 @@ Explore →
 </section>
 
 
-<!-- ACHIEVEMENTS PREVIEW -->
+<!-- CONNECT -->
 
-<section class="achievements">
+<section class="connect">
 
-<div class="container">
-
-<div class="title">
-
-<h2>Achievements</h2>
+<h2>Let's Connect</h2>
 
 <p>
-Milestones of academic excellence
+For professional communication, collaboration or educational discussion.
 </p>
-
-</div>
-
-<div class="achievement-grid">
-
-<div class="achievement">
-
-<div class="big">🏅</div>
-
-<h3>Gold Medal</h3>
-
-<p>
-A distinguished recognition of academic excellence
-and dedication.
-</p>
-
-</div>
-
-
-<div class="achievement">
-
-<div class="big">🎓</div>
-
-<h3>Vice-Chancellor's Medal</h3>
-
-<p>
-A prestigious academic achievement reflecting
-commitment and excellence.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CALL TO ACTION -->
-
-<section class="cta">
-
-<div class="container">
-
-<h2>Explore My Website</h2>
-
-<p>
-Discover my professional journey, educational resources,
-articles and experiences.
-</p>
-
-<a href="educational-content.html" class="btn">
-Educational Content
-</a>
 
 <a href="contact.html" class="btn">
 Contact Me
 </a>
-
-</div>
 
 </section>
 
@@ -703,4 +556,4 @@ document.getElementById("navMenu").classList.toggle("show");
 </script>
 
 </body>
-    </html>
+                                          </html>
