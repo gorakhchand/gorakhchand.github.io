@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Educational Content | Gorakh Chand</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f9ff;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+nav{
+    background:white;
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    background:linear-gradient(90deg,#6d28d9,#2563eb,#0891b2);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:18px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#2563eb;
+}
+
+.hero{
+    padding:80px 20px;
+    text-align:center;
+    color:white;
+    background:
+    radial-gradient(circle at 20% 20%,#22d3ee55,transparent 30%),
+    radial-gradient(circle at 80% 80%,#f472b655,transparent 30%),
+    linear-gradient(135deg,#4338ca,#7c3aed,#0284c7);
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:19px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:65px 20px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:38px;
+    color:#5b21b6;
+}
+
+.title p{
+    color:#6b7280;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px 25px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    border-top:5px solid #6d28d9;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.icon{
+    font-size:48px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    color:#4338ca;
+    margin-bottom:10px;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:15px;
+    padding:9px 20px;
+    border-radius:25px;
+    background:#eef2ff;
+    color:#4338ca;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.note{
+    margin-top:45px;
+    padding:30px;
+    border-radius:22px;
+    background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+    text-align:center;
+}
+
+footer{
+    padding:28px 20px;
+    text-align:center;
+    color:#9ca3af;
+    background:#111827;
+}
+
+@media(max-width:900px){
+    nav ul{
+        gap:9px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .grid{
+        grid-template-columns:1fr 1fr;
+   
