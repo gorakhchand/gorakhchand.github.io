@@ -158,3 +158,348 @@ nav a.active{
     border-radius:25px;
     background:#eef2ff;
     color:#4338ca;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.card a:hover{
+    background:#e0e7ff;
+}
+
+/* NOTE */
+
+.note{
+    margin-top:50px;
+    padding:32px;
+    border-radius:22px;
+    background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+    text-align:center;
+}
+
+.note h2{
+    color:#5b21b6;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:28px 20px;
+    text-align:center;
+    color:#9ca3af;
+    background:#111827;
+}
+
+/* MOBILE MENU */
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+@media(max-width:950px){
+
+    .menu{
+        display:block;
+    }
+
+    .navbar{
+        position:relative;
+    }
+
+    nav ul{
+        display:none;
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        padding:20px;
+        background:white;
+        flex-direction:column;
+        text-align:center;
+        box-shadow:0 8px 20px rgba(0,0,0,.1);
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    nav a{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="navbar">
+
+<div class="logo">
+Gorakh Chand
+</div>
+
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
+
+<ul id="navMenu">
+
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+<a href="about.html">About</a>
+</li>
+
+<li>
+<a href="education.html">Education</a>
+</li>
+
+<li>
+<a href="achievements.html">Achievements</a>
+</li>
+
+<li>
+<a href="educational-content.html" class="active">
+Educational Content
+</a>
+</li>
+
+<li>
+<a href="articles.html">Articles</a>
+</li>
+
+<li>
+<a href="gallery.html">Gallery</a>
+</li>
+
+<li>
+<a href="contact.html">Contact</a>
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Educational Content</h1>
+
+<p>
+Learning • Teaching • Technology • Knowledge
+</p>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<div class="container">
+
+<div class="title">
+
+<h2>Explore Learning Resources</h2>
+
+<p>
+Useful educational materials for students and teachers
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<!-- COMPUTER SCIENCE -->
+
+<div class="card">
+
+<div class="icon">💻</div>
+
+<h3>Computer Science</h3>
+
+<p>
+Computer fundamentals, hardware, software,
+networking and Computer Science learning materials.
+</p>
+
+<a href="#">
+Explore →
+</a>
+
+</div>
+
+
+<!-- PYTHON -->
+
+<div class="card">
+
+<div class="icon">🐍</div>
+
+<h3>Python Programming</h3>
+
+<p>
+Python basics, variables, conditions, loops,
+functions and practical programming examples.
+</p>
+
+<a href="#">
+Explore →
+</a>
+
+</div>
+
+
+<!-- ICT -->
+
+<div class="card">
+
+<div class="icon">🌐</div>
+
+<h3>ICT</h3>
+
+<p>
+Information and Communication Technology,
+digital learning and technology resources.
+</p>
+
+<a href="#">
+Explore →
+</a>
+
+</div>
+
+
+<!-- SEE -->
+
+<div class="card">
+
+<div class="icon">📚</div>
+
+<h3>SEE Materials</h3>
+
+<p>
+Study materials, short questions, notes and
+exam-oriented learning resources.
+</p>
+
+<a href="#">
+Explore →
+</a>
+
+</div>
+
+
+<!-- IEP UDL -->
+
+<div class="card">
+
+<div class="icon">🧩</div>
+
+<h3>IEP & UDL</h3>
+
+<p>
+Resources related to inclusive education,
+IEP and Universal Design for Learning.
+</p>
+
+<a href="#">
+Explore →
+</a>
+
+</div>
+
+
+<!-- TEACHING -->
+
+<div class="card">
+
+<div class="icon">👨‍🏫</div>
+
+<h3>Teaching Resources</h3>
+
+<p>
+Useful teaching materials, classroom ideas
+and resources for teachers.
+</p>
+
+<a href="#">
+Explore →
+</a>
+
+</div>
+
+</div>
+
+
+<div class="note">
+
+<h2>📖 Learning Never Stops</h2>
+
+<p>
+This section will gradually grow with notes,
+programs, educational materials, PDFs and useful resources.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
+
+<p>
+Teaching Professional • Educator • Computer Science Teacher
+</p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+document.getElementById("navMenu").classList.toggle("show");
+
+}
+
+</script>
+
+</body>
+    </html>
