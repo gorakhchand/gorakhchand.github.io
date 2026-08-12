@@ -6,6 +6,8 @@
 
 <title>Educational Content | Gorakh Chand</title>
 
+<meta name="description" content="Educational resources, Computer Science, Python, ICT, SEE materials and teaching resources by Gorakh Chand.">
+
 <style>
 *{
     margin:0;
@@ -20,12 +22,14 @@ body{
     line-height:1.7;
 }
 
+/* NAVIGATION */
+
 nav{
-    background:white;
-    box-shadow:0 4px 18px rgba(0,0,0,.08);
     position:sticky;
     top:0;
     z-index:1000;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
 }
 
 .navbar{
@@ -33,8 +37,8 @@ nav{
     margin:auto;
     padding:15px 20px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
@@ -48,26 +52,36 @@ nav{
 nav ul{
     display:flex;
     list-style:none;
-    gap:18px;
+    gap:17px;
 }
 
 nav a{
     text-decoration:none;
     color:#374151;
     font-weight:600;
+    transition:.3s;
 }
 
 nav a:hover{
     color:#2563eb;
 }
 
+/* ACTIVE MENU */
+
+nav a.active{
+    color:#6d28d9;
+}
+
+/* HERO */
+
 .hero{
-    padding:80px 20px;
+    padding:85px 20px;
     text-align:center;
     color:white;
+
     background:
-    radial-gradient(circle at 20% 20%,#22d3ee55,transparent 30%),
-    radial-gradient(circle at 80% 80%,#f472b655,transparent 30%),
+    radial-gradient(circle at 15% 20%,#22d3ee55,transparent 30%),
+    radial-gradient(circle at 85% 80%,#f472b655,transparent 30%),
     linear-gradient(135deg,#4338ca,#7c3aed,#0284c7);
 }
 
@@ -80,6 +94,8 @@ nav a:hover{
     font-size:19px;
 }
 
+/* CONTENT */
+
 .container{
     max-width:1100px;
     margin:auto;
@@ -88,7 +104,7 @@ nav a:hover{
 
 .title{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:45px;
 }
 
 .title h2{
@@ -131,201 +147,14 @@ nav a:hover{
     margin-bottom:10px;
 }
 
+.card p{
+    color:#4b5563;
+}
+
 .card a{
     display:inline-block;
-    margin-top:15px;
+    margin-top:18px;
     padding:9px 20px;
     border-radius:25px;
     background:#eef2ff;
     color:#4338ca;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.note{
-    margin-top:45px;
-    padding:30px;
-    border-radius:22px;
-    background:linear-gradient(135deg,#eef2ff,#f5f3ff);
-    text-align:center;
-}
-
-footer{
-    padding:28px 20px;
-    text-align:center;
-    color:#9ca3af;
-    background:#111827;
-}
-
-@media(max-width:900px){
-    nav ul{
-        gap:9px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .grid{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:600px){
-    .navbar{
-        flex-direction:column;
-        gap:10px;
-    }
-
-    nav ul{
-        gap:7px;
-    }
-
-    nav a{
-        font-size:13px;
-    }
-
-    .hero h1{
-        font-size:36px;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-<div class="navbar">
-
-<div class="logo">Gorakh Chand</div>
-
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="education.html">Education</a></li>
-<li><a href="achievements.html">Achievements</a></li>
-<li><a href="educational-content.html">Educational Content</a></li>
-<li><a href="articles.html">Articles</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-
-</div>
-</nav>
-
-
-<section class="hero">
-
-<h1>Educational Content</h1>
-
-<p>
-Learning resources, notes, programming and teaching materials
-</p>
-
-</section>
-
-
-<div class="container">
-
-<div class="title">
-<h2>Explore Learning Resources</h2>
-<p>Useful educational materials for students and teachers</p>
-</div>
-
-
-<div class="grid">
-
-<div class="card">
-<div class="icon">💻</div>
-<h3>Computer Science</h3>
-<p>
-Computer fundamentals, hardware, software,
-networking and other Computer Science resources.
-</p>
-<a href="#">Explore →</a>
-</div>
-
-
-<div class="card">
-<div class="icon">🐍</div>
-<h3>Python Programming</h3>
-<p>
-Python basics, variables, loops, conditions,
-functions and practical programming examples.
-</p>
-<a href="#">Explore →</a>
-</div>
-
-
-<div class="card">
-<div class="icon">🌐</div>
-<h3>ICT</h3>
-<p>
-Information and Communication Technology,
-digital learning and technology resources.
-</p>
-<a href="#">Explore →</a>
-</div>
-
-
-<div class="card">
-<div class="icon">📚</div>
-<h3>SEE Materials</h3>
-<p>
-Study materials, short questions, notes and
-exam-oriented learning resources.
-</p>
-<a href="#">Explore →</a>
-</div>
-
-
-<div class="card">
-<div class="icon">🧩</div>
-<h3>IEP & UDL</h3>
-<p>
-Resources related to inclusive education,
-Individualized Education Plans and Universal Design for Learning.
-</p>
-<a href="#">Explore →</a>
-</div>
-
-
-<div class="card">
-<div class="icon">👨‍🏫</div>
-<h3>Teaching Resources</h3>
-<p>
-Useful materials, ideas and resources for
-teachers and classroom practice.
-</p>
-<a href="#">Explore →</a>
-</div>
-
-</div>
-
-
-<div class="note">
-
-<h2>📖 Learning Never Stops</h2>
-
-<p>
-This section will gradually grow with notes, programs,
-educational materials, PDFs and useful resources.
-</p>
-
-</div>
-
-</div>
-
-
-<footer>
-
-<p>© 2026 Gorakh Chand. All Rights Reserved.</p>
-
-<p>Teaching Professional • Educator • Computer Science Teacher</p>
-
-</footer>
-
-</body>
-</html>
