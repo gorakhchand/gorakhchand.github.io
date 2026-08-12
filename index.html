@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gorakh Chand | Teacher, Educator & Writer</title>
+
+<meta name="description" content="Official personal website of Gorakh Chand – Teacher, Educator & Writer.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#222;
+    background:#f7f9fc;
+    line-height:1.7;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(255,255,255,0.95);
+    box-shadow:0 2px 15px rgba(0,0,0,0.08);
+}
+
+.nav-container{
+    max-width:1150px;
+    margin:auto;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    background:linear-gradient(90deg,#6a11cb,#2575fc,#00c6ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#2575fc;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 70px;
+    background:
+    linear-gradient(135deg,#667eea,#764ba2,#00c6ff);
+    color:white;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.profile{
+    width:145px;
+    height:145px;
+    border-radius:50%;
+    margin:0 auto 25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:45px;
+    font-weight:bold;
+    background:white;
+    color:#6a11cb;
+    border:6px solid rgba(255,255,255,.6);
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:10px;
+}
+
+.hero h2{
+    font-size:25px;
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:700px;
+    margin:auto;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    margin:7px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    background:white;
+    color:#6a11cb;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:36px;
+    background:linear-gradient(90deg,#6a11cb,#2575fc);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.section-title p{
+    color:#777;
+}
+
+.about{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-box{
+    padding:30px;
+    border-radius:20px;
+    background:#f8f9ff;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px 25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#4b35a8;
+}
+
+.articles{
+    background:#f1f5ff;
+}
+
+.article{
+    text-align:left;
+}
+
+.article a{
+    color:#2575fc;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.gallery{
+    background:white;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.gallery-item{
+    height:200px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+}
+
+.gallery-item:nth-child(2){
+    background:linear-gradient(135deg,#43cea2,#185a9d);
+}
+
+.gallery-item:nth-child(3){
+    background:linear-gradient(135deg,#f7971e,#ffd200);
+}
+
+.contact{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    text-align:center;
+}
+
+.contact h2{
+    color:white;
+    background:none;
+}
+
+.social{
+    margin-top:25px;
+}
+
+.social a{
+    display:inline-block;
+    margin:7px;
+    padding:10px 20px;
+    border-radius:25px;
+    background:white;
+    color:#5b3cc4;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+footer{
+    background:#151525;
+    color:#aaa;
+    text-align:center;
+    padding:25px;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+@media(max-width:800px){
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero h2{
+        font-size:20px;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        padding:20px;
+        text-align:center;
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="nav-container">
+
+<div class="logo">Gorakh Chand</div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<ul id="menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About Me</a></li>
+<li><a href="#teaching">Teaching</a></li>
+<li><a href="#articles">Articles</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
+</nav>
+
+
+<section class="hero" id="home">
+<div class="hero-content">
+
+<div class="profile">GC</div>
+
+<h1>Gorakh Chand</h1>
+
+<h2>Teacher • Educator • Writer</h2>
+
+<p>
+Welcome to my personal website — a place for education,
+ideas, learning, creativity and meaningful thoughts.
+</p>
+
+<div class="buttons">
+<a href="#about" class="btn">Explore More</a>
+<a href="#contact" class="btn">Contact Me</a>
+</div>
+
+</div>
+</section>
+
+
+<section class="about" id="about">
+<div class="container">
+
+<div class="section-title">
+<h2>About Me</h2>
+<p>A little introduction</p>
+</div>
+
+<div class="about-grid">
+
+<div class="about-box">
+<h3>Hello, I'm Gorakh Chand 👋</h3>
+<br>
+<p>
+I am passionate about teaching, learning, education,
+technology and sharing useful ideas with others.
+</p>
+<br>
+<p>
+This website is my personal space where I can share
+my thoughts, educational resources, articles and experiences.
+</p>
+</div>
+
+<div class="about-box">
+<h3>My Interests</h3>
+<br>
+<p>🎓 Education & Teaching</p>
+<p>💻 Technology & Digital Learning</p>
+<p>✍️ Writing & Ideas</p>
+<p>📚 Learning Resources</p>
+<p>🌱 Personal Growth</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section id="teaching">
+<div class="container">
+
+<div class="section-title">
+<h2>Teaching & Education</h2>
+<p>Learning is a lifelong journey.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">🎓</div>
+<h3>Teaching</h3>
+<p>
+Teaching ideas, classroom experiences and useful
+educational approaches.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">💻</div>
+<h3>Technology</h3>
+<p>
+Digital tools, ICT and technology-based learning resources.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📚</div>
+<h3>Learning</h3>
+<p>
+Study materials, notes and useful resources for learners.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="articles" id="articles">
+<div class="container">
+
+<div class="section-title">
+<h2>My Articles</h2>
+<p>Thoughts, experiences and ideas</p>
+</div>
+
+<div class="cards">
+
+<div class="card article">
+<div class="icon">✍️</div>
+<h3>My Thoughts</h3>
+<p>
+Articles and personal reflections will appear here.
+</p>
+<br>
+<a href="#">Read More →</a>
+</div>
+
+<div class="card article">
+<div class="icon">💡</div>
+<h3>Ideas & Inspiration</h3>
+<p>
+Ideas about education, life, learning and society.
+</p>
+<br>
+<a href="#">Read More →</a>
+</div>
+
+<div class="card article">
+<div class="icon">🌱</div>
+<h3>Personal Growth</h3>
+<p>
+Learning, motivation and experiences for a better life.
+</p>
+<br>
+<a
