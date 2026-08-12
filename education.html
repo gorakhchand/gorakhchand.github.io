@@ -3,109 +3,410 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Education | Gorakh Chand</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-font-family:Arial,sans-serif;
-background:#f7f9ff;
-color:#1f2937;
-line-height:1.7
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f9ff;
+    color:#1f2937;
+    line-height:1.7;
 }
+
+/* NAVIGATION */
+
 nav{
-background:white;
-padding:16px;
-text-align:center;
-box-shadow:0 3px 15px rgba(0,0,0,.08)
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
 }
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    background:linear-gradient(90deg,#6d28d9,#2563eb,#0891b2);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:17px;
+}
+
 nav a{
-text-decoration:none;
-color:#374151;
-font-weight:bold;
-margin:6px 10px;
-display:inline-block
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
 }
-nav a:hover{color:#6d28d9}
+
+nav a:hover{
+    color:#2563eb;
+}
+
+nav a.active{
+    color:#6d28d9;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
 
 .hero{
-padding:75px 20px;
-text-align:center;
-color:white;
-background:linear-gradient(135deg,#4338ca,#7c3aed,#0891b2)
+    padding:85px 20px;
+    text-align:center;
+    color:white;
+
+    background:
+    radial-gradient(circle at 15% 20%,#22d3ee55,transparent 30%),
+    radial-gradient(circle at 85% 80%,#f472b655,transparent 30%),
+    linear-gradient(135deg,#4338ca,#7c3aed,#0284c7);
 }
-.hero h1{font-size:46px}
-.hero p{font-size:19px;margin-top:8px}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:19px;
+}
+
+/* CONTENT */
 
 .container{
-max-width:1000px;
-margin:auto;
-padding:65px 20px
+    max-width:1100px;
+    margin:auto;
+    padding:65px 20px;
 }
 
-.card{
-background:white;
-padding:30px;
-margin-bottom:22px;
-border-radius:22px;
-box-shadow:0 8px 25px rgba(0,0,0,.07);
-border-left:5px solid #6d28d9
+.title{
+    text-align:center;
+    margin-bottom:45px;
 }
 
-.card h2{
-color:#5b21b6;
-margin-bottom:8px
+.title h2{
+    font-size:38px;
+    color:#5b21b6;
+}
+
+.title p{
+    color:#6b7280;
+}
+
+/* EDUCATION CARDS */
+
+.education-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.education-card{
+    background:white;
+    padding:32px 25px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    border-top:5px solid #6d28d9;
+    transition:.3s;
+}
+
+.education-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.icon{
+    font-size:48px;
+    margin-bottom:12px;
+}
+
+.education-card h3{
+    color:#4338ca;
+    font-size:24px;
+    margin-bottom:8px;
 }
 
 .degree{
-font-size:22px;
-font-weight:bold;
-color:#4338ca
+    font-size:19px;
+    font-weight:bold;
+    color:#5b21b6;
+    margin-bottom:10px;
 }
 
-.badge{
-display:inline-block;
-margin-top:10px;
-padding:6px 14px;
-border-radius:20px;
-background:#eef2ff;
-color:#4338ca;
-font-weight:bold
+.education-card p{
+    color:#4b5563;
 }
 
-.note{
-text-align:center;
-margin-top:35px;
-padding:25px;
-border-radius:20px;
-background:linear-gradient(135deg,#eef2ff,#f5f3ff)
+/* PHILOSOPHY */
+
+.philosophy{
+    margin-top:50px;
+    padding:35px;
+    border-radius:24px;
+    background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+    text-align:center;
 }
+
+.philosophy h2{
+    color:#5b21b6;
+    margin-bottom:12px;
+}
+
+/* FOOTER */
 
 footer{
-text-align:center;
-padding:25px;
-background:#111827;
-color:#aaa
+    padding:28px 20px;
+    text-align:center;
+    color:#9ca3af;
+    background:#111827;
 }
 
-@media(max-width:650px){
-.hero h1{font-size:36px}
-nav a{margin:5px 6px;font-size:14px}
+/* MOBILE */
+
+@media(max-width:950px){
+
+    .menu{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        padding:20px;
+        background:white;
+        flex-direction:column;
+        text-align:center;
+        box-shadow:0 8px 20px rgba(0,0,0,.1);
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .education-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .education-grid{
+        grid-template-columns:1fr;
+    }
+
+    nav a{
+        font-size:15px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
+
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="education.html">Education</a>
-<a href="achievements.html">Achievements</a>
-<a href="articles.html">Articles</a>
-<a href="resources.html">Resources</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
+
+<div class="navbar">
+
+<div class="logo">
+Gorakh Chand
+</div>
+
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
+
+<ul id="navMenu">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="education.html" class="active">Education</a></li>
+
+<li><a href="achievements.html">Achievements</a></li>
+
+<li><a href="educational-content.html">Educational Content</a></li>
+
+<li><a href="articles.html">Articles</a></li>
+
+<li><a href="gallery.html">Gallery</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
 </nav>
 
-<section
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Academic Background</h1>
+
+<p>
+A multidisciplinary journey of knowledge and learning
+</p>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<div class="container">
+
+<div class="title">
+
+<h2>My Academic Journey</h2>
+
+<p>
+Education, knowledge and continuous learning
+</p>
+
+</div>
+
+
+<div class="education-grid">
+
+<!-- B.Ed -->
+
+<div class="education-card">
+
+<div class="icon">💻</div>
+
+<h3>B.Ed.</h3>
+
+<div class="degree">
+Computer Science
+</div>
+
+<p>
+Bachelor of Education with a focus on
+Computer Science and educational practice.
+</p>
+
+</div>
+
+
+<!-- M.Ed -->
+
+<div class="education-card">
+
+<div class="icon">🎓</div>
+
+<h3>M.Ed.</h3>
+
+<div class="degree">
+Special Needs Education
+</div>
+
+<p>
+Advanced study focused on inclusive education,
+diverse learners and educational support.
+</p>
+
+</div>
+
+
+<!-- MA -->
+
+<div class="education-card">
+
+<div class="icon">📊</div>
+
+<h3>M.A.</h3>
+
+<div class="degree">
+Economics
+</div>
+
+<p>
+Advanced academic study in Economics,
+broadening perspectives on society and development.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- PHILOSOPHY -->
+
+<div class="philosophy">
+
+<h2>🌱 Education is a Lifelong Journey</h2>
+
+<p>
+Academic degrees provide a foundation, but true education
+continues through teaching, experience, curiosity,
+reading and lifelong learning.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
+
+<p>
+Teaching Professional • Educator • Computer Science Teacher
+</p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+document.getElementById("navMenu").classList.toggle("show");
+
+}
+
+</script>
+
+</body>
+  </html>
