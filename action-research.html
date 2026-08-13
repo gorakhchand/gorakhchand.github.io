@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Action Research | Gorakh Chand</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    background:#f5f7ff;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+.hero{
+    background:linear-gradient(135deg,#4338ca,#7c3aed,#0284c7);
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+.hero h1{
+    margin:0 0 8px;
+    font-size:40px;
+}
+
+.container{
+    max-width:900px;
+    margin:35px auto;
+    padding:20px;
+}
+
+.box{
+    background:white;
+    padding:30px;
+    border-radius:22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+h2{
+    color:#4f46e5;
+}
+
+label{
+    display:block;
+    margin-top:18px;
+    font-weight:bold;
+}
+
+input,textarea{
+    width:100%;
+    padding:13px;
+    margin-top:7px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:15px;
+    font-family:inherit;
+}
+
+textarea{
+    min-height:110px;
+}
+
+button{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    border:0;
+    border-radius:12px;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#result{
+    display:none;
+    margin-top:30px;
+}
+
+.report{
+    background:white;
+    padding:35px;
+    border-radius:22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.report h1{
+    text-align:center;
+    color:#312e81;
+}
+
+.report h2{
+    margin-top:30px;
+    border-bottom:2px solid #e0e7ff;
+    padding-bottom:5px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0;
+}
+
+th,td{
+    border:1px solid #ccc;
+    padding:10px;
+}
+
+th{
+    background:#eef2ff;
+}
+
+.print{
+    background:#059669;
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .box,.report{
+        padding:20px;
+    }
+}
+
+@media print{
+
+    .hero,
+    .box,
+    .print{
+        display:none;
+    }
+
+    .report{
+        box-shadow:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1>📋 कार्यमूलक अनुसन्धान</h1>
+
+<p>शिक्षकहरूका लागि Action Research Generator</p>
+
+</section>
+
+
+<div class="container">
+
+<div class="box">
+
+<h2>अनुसन्धानको विवरण भर्नुहोस्</h2>
+
+<label>शिक्षकको नाम</label>
+<input id="teacher" placeholder="जस्तै: गोर्ख चन्द">
+
+<label>कक्षा</label>
+<input id="className" placeholder="जस्तै: कक्षा ८">
+
+<label>विषय</label>
+<input id="subject" placeholder="जस्तै: सामाजिक अध्ययन">
+
+<label>अनुसन्धानको शीर्षक</label>
+<input id="title" placeholder="अनुसन्धानको शीर्षक लेख्नुहोस्">
+
+<label>विद्यालयको नाम</label>
+<input id="school" placeholder="विद्यालयको नाम">
+
+<label>विद्यार्थी संख्या</label>
+<input id="students" placeholder="जस्तै: ३०">
+
+<label>अनुसन्धान अवधि</label>
+<input id="duration" placeholder="जस्तै: ४ हप्ता">
+
+<label>मुख्य समस्या</label>
+<textarea id="problem"
+placeholder="विद्यार्थीमा देखिएको मुख्य समस्या लेख्नुहोस्..."></textarea>
+
+<button onclick="generateResearch()">
+🚀 कार्यमूलक अनुसन्धान तयार गर्नुहोस्
+</button>
+
+</div>
+
+
+<div id="result">
+
+<div class="report" id="report"></div>
+
+<button class="print" onclick="window.print()">
+🖨️ Print / PDF
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+function generateResearch(){
+
+const teacher=document.getElementById("teacher").value.trim();
+const className=document.getElementById("className").value.trim();
+const subject=document.getElementById("subject").value.trim();
+const title=document.getElementById("title").value.trim();
+const school=document.getElementById("school").value.trim();
+const students=document.getElementById("students").value.trim();
+const duration=document.getElementById("duration").value.trim();
+const problem=document.getElementById("problem").value.trim();
+
+if(!teacher || !className || !subject || !title || !school || !problem){
+
+alert("कृपया आवश्यक सबै विवरण भर्नुहोस्।");
+return;
+
+}
+
+document.getElementById("report").innerHTML=`
+
+<h1>कार्यमूलक अनुसन्धान प्रतिवेदन</h1>
+
+<table>
+
+<tr>
+<th>शिक्षकको नाम</th>
+<td>${teacher}</td>
+</tr>
+
+<tr>
+<th>विद्यालय</th>
+<td>${school}</td>
+</tr>
+
+<tr>
+<th>कक्षा</th>
+<td>${className}</td>
+</tr>
+
+<tr>
+<th>विषय</th>
+<td>${subject}</td>
+</tr>
+
+<tr>
+<th>अनुसन्धान शीर्षक</th>
+<td><strong>${title}</strong></td>
+</tr>
+
+<tr>
+<th>विद्यार्थी संख्या</th>
+<td>${students || "उल्लेख गरिएको छैन"}</td>
+</tr>
+
+<tr>
+<th>अनुसन्धान अवधि</th>
+<td>${duration || "उल्लेख गरिएको छैन"}</td>
+</tr>
+
+</table>
+
+
+<h2>१. परिचय</h2>
+
+<p>
+विद्यालयको कक्षाकोठामा शिक्षण सिकाइ सञ्चालन गर्दा विभिन्न
+समस्या तथा चुनौतीहरू देखिन सक्छन्। यस्ता समस्याको पहिचान,
+समाधानका लागि योजना निर्माण, कार्यान्वयन तथा परिणामको
+अवलोकन गर्ने प्रक्रियालाई कार्यमूलक अनुसन्धान भनिन्छ।
+</p>
+
+<p>
+प्रस्तुत कार्यमूलक अनुसन्धान
+<strong>“${title}”</strong> शीर्षकमा
+${school} मा सञ्चालन गरिएको हो।
+</p>
+
+
+<h2>२. समस्याको पहिचान</h2>
+
+<p>
+यस अनुसन्धानमा पहिचान गरिएको मुख्य समस्या:
+</p>
+
+<p>
+<strong>${problem}</strong>
+</p>
+
+
+<h2>३. समस्याको कथन</h2>
+
+<p>
+${className} का विद्यार्थीलाई ${subject} विषय शिक्षण गर्ने
+क्रममा <strong>${problem}</strong> समस्या देखिएकोले
+विद्यार्थीको सिकाइ प्रक्रियामा अपेक्षित सुधार ल्याउन
+आवश्यक देखिएको छ।
+</p>
+
+
+<h2>४. अनुसन्धानका उद्देश्य</h2>
+
+<ol>
+<li>सम्बन्धित समस्याको वर्तमान अवस्था पहिचान गर्नु।</li>
+<li>समस्याका सम्भावित कारणहरू पत्ता लगाउनु।</li>
+<li>समस्या समाधानका लागि उपयुक्त शिक्षण रणनीति प्रयोग गर्नु।</li>
+<li>प्रयोग गरिएको रणनीतिको प्रभावकारिता अध्ययन गर्नु।</li>
+<li>विद्यार्थीको सिकाइ उपलब्धिमा सुधार ल्याउनु।</li>
+</ol>
+
+
+<h2>५. अनुसन्धान प्रश्न</h2>
+
+<ol>
+<li>सम्बन्धित समस्या विद्यार्थीमा किन देखिएको छ?</li>
+<li>सम
