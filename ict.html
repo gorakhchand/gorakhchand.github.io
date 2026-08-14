@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ICT Resources | Gorakh Chand</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f9ff;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    background:linear-gradient(90deg,#6d28d9,#2563eb,#0891b2);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.back{
+    text-decoration:none;
+    color:#4338ca;
+    font-weight:bold;
+}
+
+.back:hover{
+    color:#6d28d9;
+}
+
+/* HERO */
+
+.hero{
+    padding:80px 20px;
+    text-align:center;
+    color:white;
+
+    background:
+    radial-gradient(circle at 15% 20%,#22d3ee55,transparent 30%),
+    radial-gradient(circle at 85% 80%,#f472b655,transparent 30%),
+    linear-gradient(135deg,#4338ca,#7c3aed,#0284c7);
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:19px;
+}
+
+/* CONTENT */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:65px 20px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title h2{
+    font-size:36px;
+    color:#5b21b6;
+}
+
+.title p{
+    color:#6b7280;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+/* CARD */
+
+.card{
+    background:white;
+    padding:30px 25px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    border-top:5px solid #6d28d9;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.icon{
+    font-size:48px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    color:#4338ca;
+    font-size:21px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#4b5563;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:18px;
+    padding:10px 22px;
+    border-radius:25px;
+    background:#eef2ff;
+    color:#4338ca;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.card a:hover{
+    background:#e0e7ff;
+    transform:translateY(-2px);
+}
+
+/* NOTE */
+
+.note{
+    margin-top:50px;
+    padding:32px;
+    border-radius:22px;
+    background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+    text-align:center;
+}
+
+.note h2{
+    color:#5b21b6;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:20px;
+    padding:28px 20px;
+    text-align:center;
+    color:#9ca3af;
+    background:#111827;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+    .grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .navbar{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="navbar">
+
+<div class="logo">
+Gorakh Chand
+</div>
+
+<a href="educational-content.html" class="back">
+← Educational Content
+</a>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>🌐 ICT Resources</h1>
+
+<p>
+Information and Communication Technology
+</p>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<div class="container">
+
+<div class="title">
+
+<h2>ICT Learning Resources</h2>
+
+<p>
+Explore educational materials and resources for teachers and students
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<!-- ACTION RESEARCH -->
+
+<div class="card">
+
+<div class="icon">
+📋
+</div>
+
+<h3>
+Action Research
+</h3>
+
+<p>
+शिक्षकका लागि कार्यमूलक अनुसन्धान,
+research reports and resources.
+</p>
+
+<a href="action-research.html">
+Explore →
+</a>
+
+</div>
+
+
+<!-- SCHOOL LEVEL TEXTBOOK -->
+
+<div class="card">
+
+<div class="icon">
+📚
+</div>
+
+<h3>
+School Level Textbook
+</h3>
+
+<p>
+School level textbooks and
+Computer Science learning materials.
+</p>
+
+<a href="textbook.html">
+Explore →
+</a>
+
+</div>
+
+
+<!-- SCHOOL LEVEL NOTES -->
+
+<div class="card">
+
+<div class="icon">
+📝
+</div>
+
+<h3>
+School Level Notes
+</h3>
+
+<p>
+Useful notes, study materials and
+learning resources for students.
+</p>
+
+<a href="notes.html">
+Explore →
+</a>
+
+</div>
+
+
+<!-- TEACHER'S GUIDE -->
+
+<div class="card">
+
+<div class="icon">
+👨‍🏫
+</div>
+
+<h3>
+School Level Teacher's Guide
+</h3>
+
+<p>
+Teaching guides, lesson ideas and
+useful resources for teachers.
+</p>
+
+<a href="teacher-guide.html">
+Explore →
+</a>
+
+</div>
+
+
+<!-- SCHOOL LEVEL SYLLABUS -->
+
+<div class="card">
+
+<div class="icon">
+📖
+</div>
+
+<h3>
+School Level Syllabus
+</h3>
+
+<p>
+School level curriculum,
+syllabus and academic resources.
+</p>
+
+<a href="syllabus.html">
+Explore →
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- NOTE -->
+
+<div class="note">
+
+<h2>
+📚 More Resources Coming Soon
+</h2>
+
+<p>
+This ICT section will gradually include
+textbooks, notes, teacher guides, syllabus,
+research and other educational resources.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
+
+<p>
+Teaching Professional • Educator • Computer Science Teacher
+</p>
+
+</footer>
+
+</body>
+</html>
