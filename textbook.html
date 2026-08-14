@@ -1,1 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>School Level Textbook | Gorakh Chand</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f9ff;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    background:linear-gradient(90deg,#6d28d9,#2563eb,#0891b2);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.back{
+    text-decoration:none;
+    color:#4338ca;
+    font-weight:bold;
+}
+
+.back:hover{
+    color:#6d28d9;
+}
+
+/* HERO */
+
+.hero{
+    padding:75px 20px;
+    text-align:center;
+    color:white;
+
+    background:
+    radial-gradient(circle at 15% 20%,#22d3ee55,transparent 30%),
+    radial-gradient(circle at 85% 80%,#f472b655,transparent 30%),
+    linear-gradient(135deg,#4338ca,#7c3aed,#0284c7);
+}
+
+.hero h1{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+/* CONTENT */
+
+.container{
+    max-width:1050px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h2{
+    color:#5b21b6;
+    font-size:36px;
+}
+
+.title p{
+    color:#6b7280;
+}
+
+/* BOOK GRID */
+
+.book-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+/* BOOK CARD */
+
+.book-card{
+    background:white;
+    padding:30px 25px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    border-top:5px solid #6d28d9;
+    transition:.3s;
+}
+
+.book-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.book-icon{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.book-card h3{
+    color:#4338ca;
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.book-card p{
+    color:#6b7280;
+}
+
+/* BUTTONS */
+
+.buttons{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:9px 18px;
+    border-radius:22px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.view{
+    background:#eef2ff;
+    color:#4338ca;
+}
+
+.download{
+    background:#4338ca;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    opacity:.9;
+}
+
+/* NOTE */
+
+.note{
+    margin-top:45px;
+    padding:30px;
+    border-radius:22px;
+    text-align:center;
+    background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+}
+
+.note h2{
+    color:#5b21b6;
+    margin-bottom:8px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:20px;
+    padding:28px 20px;
+    text-align:center;
+    color:#9ca3af;
+    background:#111827;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .book-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .book-grid{
+        grid-template-columns:1fr;
+    }
+
+    .navbar{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="navbar">
+
+<div class="logo">
+Gorakh Chand
+</div>
+
+<a href="ict.html" class="back">
+← ICT Resources
+</a>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>📚 School Level Textbook</h1>
+
+<p>
+School Level Educational Books and Learning Materials
+</p>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<div class="container">
+
+<div class="title">
+
+<h2>Class-wise Textbooks</h2>
+
+<p>
+Select your class to view or download the textbook.
+</p>
+
+</div>
+
+
+<div class="book-grid">
+
+
+<!-- CLASS 6 -->
+
+<div class="book-card">
+
+<div class="book-icon">
+📕
+</div>
+
+<h3>Class 6</h3>
+
+<p>
+School Level Textbook
+</p>
+
+<div class="buttons">
+
+<a href="pdf/class6-textbook.pdf"
+target="_blank"
+class="btn view">
+View PDF
+</a>
+
+<a href="pdf/class6-textbook.pdf"
+download
+class="btn download">
+Download
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CLASS 7 -->
+
+<div class="book-card">
+
+<div class="book-icon">
+📕
+</div>
+
+<h3>Class 7</h3>
+
+<p>
+School Level Textbook
+</p>
+
+<div class="buttons">
+
+<a href="pdf/class7-textbook.pdf"
+target="_blank"
+class="btn view">
+View PDF
+</a>
+
+<a href="pdf/class7-textbook.pdf"
+download
+class="btn download">
+Download
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CLASS 8 -->
+
+<div class="book-card">
+
+<div class="book-icon">
+📕
+</div>
+
+<h3>Class 8</h3>
+
+<p>
+School Level Textbook
+</p>
+
+<div class="buttons">
+
+<a href="pdf/class8-textbook.pdf"
+target="_blank"
+class="btn view">
+View PDF
+</a>
+
+<a href="pdf/class8-textbook.pdf"
+download
+class="btn download">
+Download
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CLASS 9 -->
+
+<div class="book-card">
+
+<div class="book-icon">
+📕
+</div>
+
+<h3>Class 9</h3>
+
+<p>
+School Level Textbook
+</p>
+
+<div class="buttons">
+
+<a href="pdf/class9-textbook.pdf"
+target="_blank"
+class="btn view">
+View PDF
+</a>
+
+<a href="pdf/class9-textbook.pdf"
+download
+class="btn download">
+Download
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CLASS 10 -->
+
+<div class="book-card">
+
+<div class="book-icon">
+📕
+</div>
+
+<h3>Class 10</h3>
+
+<p>
+School Level Textbook
+</p>
+
+<div class="buttons">
+
+<a href="pdf/class10-textbook.pdf"
+target="_blank"
+class="btn view">
+View PDF
+</a>
+
+<a href="pdf/class10-textbook.pdf"
+download
+class="btn download">
+Download
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- NOTE -->
+
+<div class="note">
+
+<h2>📖 More Books Coming Soon</h2>
+
+<p>
+More school level textbooks and educational resources
+will be added gradually.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
+
+<p>
+Teaching Professional • Educator • Computer Science Teacher
+</p>
+
+</footer>
+
+
+</body>
+
+</html>
