@@ -9,6 +9,7 @@
 <meta name="description" content="Educational resources, Computer Science, Python, ICT, SEE materials and teaching resources by Gorakh Chand.">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -62,14 +63,17 @@ nav a{
     transition:.3s;
 }
 
-nav a:hover{
-    color:#2563eb;
-}
-
-/* ACTIVE MENU */
-
+nav a:hover,
 nav a.active{
     color:#6d28d9;
+}
+
+/* MOBILE MENU */
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
 }
 
 /* HERO */
@@ -122,6 +126,8 @@ nav a.active{
     gap:25px;
 }
 
+/* CARD */
+
 .card{
     background:white;
     padding:30px 25px;
@@ -160,10 +166,58 @@ nav a.active{
     color:#4338ca;
     text-decoration:none;
     font-weight:bold;
+    transition:.3s;
 }
 
 .card a:hover{
     background:#e0e7ff;
+}
+
+/* ACTION RESEARCH */
+
+#actionResearch{
+    display:none;
+    margin-top:25px;
+}
+
+.action-card{
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    color:white;
+    padding:30px 25px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.action-card .action-icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.action-card h3{
+    color:white;
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.action-card p{
+    color:white;
+    font-size:15px;
+}
+
+.action-card a{
+    display:inline-block;
+    margin-top:18px;
+    padding:10px 22px;
+    border-radius:25px;
+    background:white;
+    color:#4f46e5;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.action-card a:hover{
+    background:#eef2ff;
 }
 
 /* NOTE */
@@ -190,13 +244,7 @@ footer{
     background:#111827;
 }
 
-/* MOBILE MENU */
-
-.menu{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-}
+/* RESPONSIVE */
 
 @media(max-width:950px){
 
@@ -248,6 +296,7 @@ footer{
         font-size:15px;
     }
 }
+
 </style>
 </head>
 
@@ -340,6 +389,7 @@ Useful educational materials for students and teachers
 
 <div class="grid">
 
+
 <!-- COMPUTER SCIENCE -->
 
 <div class="card">
@@ -392,41 +442,8 @@ Explore →
 Information and Communication Technology,
 digital learning and technology resources.
 </p>
-    <div style="
-margin-top:20px;
-padding:15px;
-border-radius:16px;
-background:linear-gradient(135deg,#4f46e5,#7c3aed);
-color:white;
-">
 
-<div style="font-size:30px;">📋</div>
-
-<h3 style="color:white;">
-Action Research
-</h3>
-
-<p style="color:white;font-size:14px;">
-शिक्षकका लागि कार्यमूलक अनुसन्धान
-</p>
-
-<a href="action-research.html"
-style="
-display:inline-block;
-margin-top:8px;
-padding:8px 16px;
-border-radius:20px;
-background:white;
-color:#4f46e5;
-text-decoration:none;
-font-weight:bold;
-">
-Start →
-</a>
-
-    </div>
-
-<a href="#">
+<a href="javascript:void(0)" onclick="showActionResearch()">
 Explore →
 </a>
 
@@ -492,8 +509,38 @@ Explore →
 
 </div>
 
+
 </div>
 
+
+<!-- ACTION RESEARCH -->
+
+<div id="actionResearch">
+
+<div class="action-card">
+
+<div class="action-icon">
+📋
+</div>
+
+<h3>
+Action Research
+</h3>
+
+<p>
+शिक्षकका लागि कार्यमूलक अनुसन्धान
+</p>
+
+<a href="action-research.html">
+Start →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- NOTE -->
 
 <div class="note">
 
@@ -524,11 +571,28 @@ Teaching Professional • Educator • Computer Science Teacher
 </footer>
 
 
+<!-- JAVASCRIPT -->
+
 <script>
 
 function toggleMenu(){
 
-document.getElementById("navMenu").classList.toggle("show");
+    document.getElementById("navMenu").classList.toggle("show");
+
+}
+
+
+function showActionResearch(){
+
+    const actionResearch =
+    document.getElementById("actionResearch");
+
+    actionResearch.style.display = "block";
+
+    actionResearch.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
 
 }
 
