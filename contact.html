@@ -141,73 +141,86 @@ nav a.active{
     color:#4c1d95;
 }
 
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+
 .social{
-    margin-top:20px;
+    margin-top:22px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
 }
 
 .social a{
-    display:inline-block;
-    margin:5px;
-    padding:11px 20px;
-    border-radius:25px;
-    background:#eef2ff;
-    color:#4338ca;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.social a:hover{
-    background:#e0e7ff;
-    transform:translateY(-2px);
-}
-
-
-/* =========================
-   WHATSAPP BUTTON
-========================= */
-
-.whatsapp-button{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    gap:10px;
-    margin:18px 5px 5px;
-    padding:12px 20px;
-    border-radius:25px;
-    background:#25D366;
-    color:white;
+    gap:7px;
+    padding:10px 16px;
+    border-radius:30px;
     text-decoration:none;
     font-weight:bold;
+    font-size:14px;
     transition:.3s;
+    border:1px solid transparent;
 }
 
-.whatsapp-button:hover{
-    transform:translateY(-2px);
-    box-shadow:0 8px 20px rgba(37,211,102,.25);
+.social a span{
+    font-size:18px;
 }
 
 
-/* =========================
-   TEXT ONLY BUTTON
-========================= */
+/* Facebook */
 
-.text-only{
-    display:inline-block;
-    margin:18px 5px 5px;
-    padding:12px 20px;
-    border-radius:25px;
-    background:#fee2e2;
-    color:#dc2626;
-    text-decoration:none;
-    font-weight:bold;
-    border:1px solid #fecaca;
-    transition:.3s;
+.facebook-btn{
+    background:#eef4ff;
+    color:#1877f2 !important;
+    border-color:#dbeafe !important;
 }
 
-.text-only:hover{
-    background:#dc2626;
-    color:white;
-    transform:translateY(-2px);
+
+/* YouTube */
+
+.youtube-btn{
+    background:#fff1f2;
+    color:#dc2626 !important;
+    border-color:#fecdd3 !important;
+}
+
+
+/* Email */
+
+.email-btn{
+    background:#fff7ed;
+    color:#ea580c !important;
+    border-color:#fed7aa !important;
+}
+
+
+/* WhatsApp */
+
+.whatsapp-btn{
+    background:#ecfdf5;
+    color:#16a34a !important;
+    border-color:#bbf7d0 !important;
+}
+
+
+/* Hover */
+
+.social a:hover{
+    transform:translateY(-3px);
+    box-shadow:0 7px 18px rgba(0,0,0,.12);
+}
+
+
+/* WhatsApp TEXT ONLY small */
+
+.social .whatsapp-btn small{
+    font-size:11px;
+    letter-spacing:.5px;
 }
 
 
@@ -269,10 +282,21 @@ footer{
         font-size:15px;
     }
 
-    .whatsapp-button,
-    .text-only{
-        padding:11px 17px;
-        font-size:14px;
+    .social{
+        gap:8px;
+    }
+
+    .social a{
+        padding:9px 13px;
+        font-size:13px;
+    }
+
+    .social a span{
+        font-size:17px;
+    }
+
+    .social .whatsapp-btn small{
+        font-size:10px;
     }
 }
 </style>
@@ -368,39 +392,58 @@ You can connect with me through my social and professional platforms.
 
 <div class="social">
 
-<a href="https://www.facebook.com/gorakh.spandan92" target="_blank">
+
+<!-- Facebook -->
+
+<a href="https://www.facebook.com/gorakh.spandan92"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="facebook-btn">
+
+<span>📘</span>
 Facebook
+
 </a>
 
-<a href="https://www.youtube.com/@GORAKH_ICT" target="_blank">
+
+<!-- YouTube -->
+
+<a href="https://www.youtube.com/@GORAKH_ICT"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="youtube-btn">
+
+<span>▶️</span>
 YouTube
+
 </a>
 
-<a href="mailto:gorakh.ict2018@gmail.com">
+
+<!-- Email -->
+
+<a href="mailto:gorakh.ict2018@gmail.com"
+   class="email-btn">
+
+<span>✉️</span>
 Email
+
 </a>
+
+
+<!-- WhatsApp TEXT ONLY -->
+
+<a href="https://wa.me/9779868896640"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="whatsapp-btn">
+
+<span>💬</span>
+<small>TEXT ONLY</small>
+
+</a>
+
 
 </div>
-
-
-<!-- WhatsApp Direct Message -->
-
-<a href="https://wa.me/9779868896640"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="whatsapp-button">
-   💬 Message on WhatsApp
-</a>
-
-
-<!-- TEXT ONLY -->
-
-<a href="https://wa.me/9779868896640"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="text-only">
-   TEXT ONLY
-</a>
 
 </div>
 
