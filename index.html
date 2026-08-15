@@ -3,6 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Gorakh Chand | Teaching Professional</title>
@@ -25,6 +26,7 @@ body{
     line-height:1.7;
 }
 
+
 /* =========================
    NAVIGATION
 ========================= */
@@ -37,7 +39,6 @@ nav{
     z-index:999;
     background:rgba(255,255,255,.97);
     box-shadow:0 4px 20px rgba(0,0,0,.08);
-    backdrop-filter:blur(10px);
 }
 
 .navbar{
@@ -67,7 +68,6 @@ nav a{
     text-decoration:none;
     color:#374151;
     font-weight:600;
-    transition:.3s;
 }
 
 nav a:hover{
@@ -79,6 +79,7 @@ nav a:hover{
     font-size:28px;
     cursor:pointer;
 }
+
 
 /* =========================
    HERO
@@ -94,42 +95,16 @@ nav a:hover{
     color:white;
 
     background:
-    radial-gradient(circle at 15% 20%,#22d3ee66,transparent 30%),
-    radial-gradient(circle at 85% 80%,#f472b666,transparent 30%),
-    linear-gradient(135deg,#312e81,#6d28d9,#0284c7);
-
-    position:relative;
-    overflow:hidden;
-}
-
-.hero:before{
-    content:"";
-    position:absolute;
-    width:400px;
-    height:400px;
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:50%;
-    top:-180px;
-    right:-120px;
-}
-
-.hero:after{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:50%;
-    bottom:-150px;
-    left:-100px;
+    radial-gradient(circle at 15% 20%,#22d3ee55,transparent 30%),
+    radial-gradient(circle at 85% 80%,#f472b655,transparent 30%),
+    linear-gradient(135deg,#4338ca,#7c3aed,#0284c7);
 }
 
 .hero-content{
     width:100%;
     max-width:1100px;
-    position:relative;
-    z-index:2;
 }
+
 
 /* PROFILE PHOTO */
 
@@ -139,16 +114,9 @@ nav a:hover{
     margin:0 auto 28px;
     border-radius:50%;
     overflow:hidden;
-    border:6px solid rgba(255,255,255,.95);
-    box-shadow:
-        0 0 0 8px rgba(255,255,255,.12),
-        0 15px 45px rgba(0,0,0,.35);
+    border:6px solid rgba(255,255,255,.9);
+    box-shadow:0 15px 45px rgba(0,0,0,.3);
     background:white;
-    transition:.4s;
-}
-
-.profile:hover{
-    transform:scale(1.04);
 }
 
 .profile img{
@@ -157,13 +125,13 @@ nav a:hover{
     object-fit:cover;
 }
 
+
 /* HERO TEXT */
 
 .hero h1{
     font-size:58px;
     line-height:1.15;
     margin-bottom:12px;
-    text-shadow:0 5px 20px rgba(0,0,0,.18);
 }
 
 .hero h2{
@@ -177,6 +145,7 @@ nav a:hover{
     margin:auto;
     font-size:18px;
 }
+
 
 /* BUTTONS */
 
@@ -194,46 +163,59 @@ nav a:hover{
     background:white;
     color:#5b21b6;
     transition:.3s;
-    box-shadow:0 5px 15px rgba(0,0,0,.12);
 }
 
 .btn:hover{
     transform:translateY(-4px);
-    box-shadow:0 12px 28px rgba(0,0,0,.25);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
+
 
 /* =========================
    HOME THREE PHOTOS
 ========================= */
 
 .home-photos{
+
     width:100%;
+
     max-width:1050px;
+
     margin:45px auto 0;
+
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:18px;
 }
 
 .home-photos img{
+
     width:100%;
+
     height:260px;
+
     object-fit:cover;
+
     border-radius:18px;
+
     border:3px solid rgba(255,255,255,.8);
+
     box-shadow:0 10px 30px rgba(0,0,0,.25);
+
     display:block;
-    transition:.4s;
 }
 
-.home-photos img:hover{
-    transform:translateY(-7px) scale(1.02);
-    box-shadow:0 18px 35px rgba(0,0,0,.3);
-}
 
 /* =========================
-   COMMON SECTION
+   ABOUT PREVIEW
 ========================= */
+
+.about{
+    padding:90px 20px;
+    background:white;
+}
 
 .container{
     max-width:1100px;
@@ -254,208 +236,6 @@ nav a:hover{
     color:#6b7280;
 }
 
-/* =========================
-   EDUCATIONAL RESOURCES
-========================= */
-
-.resources{
-    padding:90px 20px;
-    background:#f8faff;
-}
-
-.resource-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.resource-card{
-    background:white;
-    padding:30px 20px;
-    border-radius:22px;
-    text-align:center;
-    text-decoration:none;
-    color:#1f2937;
-    box-shadow:0 10px 28px rgba(0,0,0,.07);
-    border:1px solid #e5e7eb;
-    transition:.35s;
-}
-
-.resource-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 18px 35px rgba(67,56,202,.16);
-    border-color:#c4b5fd;
-}
-
-.resource-icon{
-    width:65px;
-    height:65px;
-    margin:0 auto 15px;
-    border-radius:18px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:31px;
-    background:#eef2ff;
-}
-
-.resource-card h3{
-    color:#4338ca;
-    font-size:19px;
-    margin-bottom:5px;
-}
-
-.resource-card p{
-    font-size:13px;
-    color:#6b7280;
-}
-
-/* =========================
-   NOTICE PREVIEW
-========================= */
-
-.notice-section{
-    padding:90px 20px;
-    background:white;
-}
-
-.notice-box{
-    max-width:1000px;
-    margin:auto;
-    background:#f8f9ff;
-    border-radius:25px;
-    padding:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,.07);
-    border-left:6px solid #6d28d9;
-}
-
-.notice-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    margin-bottom:20px;
-}
-
-.notice-header h3{
-    color:#5b21b6;
-    font-size:24px;
-}
-
-.notice-header a{
-    text-decoration:none;
-    padding:8px 17px;
-    border-radius:20px;
-    background:#6d28d9;
-    color:white;
-    font-size:13px;
-    font-weight:bold;
-}
-
-.notice-item{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    background:white;
-    padding:15px 18px;
-    margin-top:10px;
-    border-radius:14px;
-    border:1px solid #e5e7eb;
-    transition:.3s;
-}
-
-.notice-item:hover{
-    transform:translateX(5px);
-    box-shadow:0 6px 18px rgba(0,0,0,.06);
-}
-
-.notice-icon{
-    width:42px;
-    height:42px;
-    min-width:42px;
-    border-radius:12px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#ede9fe;
-    font-size:20px;
-}
-
-.notice-text{
-    flex:1;
-}
-
-.notice-text strong{
-    display:block;
-    color:#374151;
-}
-
-.notice-text small{
-    color:#9ca3af;
-}
-
-.notice-empty{
-    text-align:center;
-    padding:15px;
-    color:#6b7280;
-}
-
-/* =========================
-   OFFICIAL LINKS
-========================= */
-
-.official-links{
-    padding:90px 20px;
-    background:#f1f5ff;
-}
-
-.official-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.official-card{
-    text-decoration:none;
-    color:#1f2937;
-    background:white;
-    padding:25px 15px;
-    text-align:center;
-    border-radius:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,.06);
-    transition:.35s;
-    border-bottom:4px solid #6366f1;
-}
-
-.official-card:hover{
-    transform:translateY(-7px);
-    box-shadow:0 15px 30px rgba(67,56,202,.15);
-}
-
-.official-card span{
-    display:block;
-    font-size:36px;
-    margin-bottom:8px;
-}
-
-.official-card strong{
-    display:block;
-    color:#4338ca;
-}
-
-.official-card small{
-    color:#6b7280;
-}
-
-/* =========================
-   ABOUT PREVIEW
-========================= */
-
-.about{
-    padding:90px 20px;
-    background:white;
-}
-
 .about-grid{
     display:grid;
     grid-template-columns:1.4fr 1fr;
@@ -467,17 +247,12 @@ nav a:hover{
     border-radius:24px;
     background:#f8f9ff;
     box-shadow:0 10px 30px rgba(0,0,0,.06);
-    border:1px solid #eef0f7;
 }
 
 .box h3{
     color:#5b21b6;
     margin-bottom:15px;
     font-size:23px;
-}
-
-.box p{
-    margin-bottom:10px;
 }
 
 .quote{
@@ -489,6 +264,7 @@ nav a:hover{
     font-style:italic;
     color:#4b5563;
 }
+
 
 /* =========================
    INTERESTS
@@ -528,46 +304,42 @@ nav a:hover{
     color:#4338ca;
 }
 
+
 /* =========================
-   CONNECT
+   CTA
 ========================= */
 
 .connect{
     padding:90px 20px;
     text-align:center;
     color:white;
-    background:
-    radial-gradient(circle at 15% 30%,#22d3ee55,transparent 28%),
-    radial-gradient(circle at 85% 70%,#f472b655,transparent 28%),
-    linear-gradient(135deg,#4338ca,#7c3aed,#0891b2);
+    background:linear-gradient(135deg,#4338ca,#7c3aed,#0891b2);
 }
 
 .connect h2{
-    font-size:40px;
+    font-size:38px;
     margin-bottom:12px;
-}
-
-.connect p{
-    max-width:650px;
-    margin:auto;
 }
 
 .connect .btn{
     margin-top:25px;
 }
 
+
 /* =========================
    USEFUL EDUCATIONAL LINKS
+   ADDED WITHOUT CHANGING
+   OLD DESIGN
 ========================= */
 
 .useful-links{
-    margin:42px auto 0;
+    margin:35px auto 0;
     max-width:900px;
 }
 
 .useful-links-title{
     font-size:18px;
-    margin-bottom:18px;
+    margin-bottom:15px;
     color:white;
     font-weight:600;
 }
@@ -575,15 +347,15 @@ nav a:hover{
 .useful-links-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:12px;
+    gap:10px;
 }
 
 .useful-link{
     display:block;
-    padding:14px 8px;
+    padding:12px 8px;
     background:rgba(255,255,255,.13);
     border:1px solid rgba(255,255,255,.25);
-    border-radius:14px;
+    border-radius:12px;
     color:white;
     text-decoration:none;
     font-size:13px;
@@ -595,30 +367,27 @@ nav a:hover{
 .useful-link:hover{
     background:white;
     color:#4338ca;
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 }
 
 .useful-link span{
     display:block;
-    font-size:21px;
+    font-size:20px;
     margin-bottom:3px;
 }
+
 
 /* =========================
    FOOTER
 ========================= */
 
 footer{
-    padding:30px 20px;
+    padding:28px 20px;
     text-align:center;
     color:#9ca3af;
     background:#111827;
 }
 
-footer p:first-child{
-    color:#d1d5db;
-    margin-bottom:5px;
-}
 
 /* =========================
    TABLET
@@ -655,15 +424,8 @@ footer p:first-child{
         grid-template-columns:1fr 1fr;
     }
 
-    .resource-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .official-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
 }
+
 
 /* =========================
    MOBILE
@@ -692,80 +454,38 @@ footer p:first-child{
         height:150px;
     }
 
+    /*
+       Three photos remain side-by-side
+       on mobile
+    */
+
     .home-photos{
+
         grid-template-columns:repeat(3,1fr);
+
         gap:7px;
+
         margin-top:35px;
     }
 
     .home-photos img{
+
         height:125px;
+
         border-radius:10px;
+
         border:2px solid rgba(255,255,255,.8);
     }
 
-    .section-title h2{
-        font-size:32px;
-    }
-
-    .resource-grid{
+    .interest-grid{
         grid-template-columns:1fr 1fr;
-        gap:12px;
     }
 
-    .resource-card{
-        padding:22px 10px;
-    }
 
-    .resource-icon{
-        width:55px;
-        height:55px;
-        font-size:26px;
-    }
-
-    .resource-card h3{
-        font-size:16px;
-    }
-
-    .official-grid{
-        grid-template-columns:1fr 1fr;
-        gap:12px;
-    }
-
-    .official-card{
-        padding:20px 10px;
-    }
-
-    .official-card span{
-        font-size:30px;
-    }
-
-    .official-card strong{
-        font-size:14px;
-    }
-
-    .notice-box{
-        padding:20px 15px;
-    }
-
-    .notice-header{
-        align-items:flex-start;
-    }
-
-    .notice-header h3{
-        font-size:20px;
-    }
-
-    .notice-item{
-        padding:12px;
-    }
-
-    .connect h2{
-        font-size:32px;
-    }
+    /* Useful Links on Mobile */
 
     .useful-links{
-        margin-top:32px;
+        margin-top:30px;
     }
 
     .useful-links-grid{
@@ -780,6 +500,7 @@ footer p:first-child{
 
 }
 
+
 /* =========================
    VERY SMALL MOBILE
 ========================= */
@@ -788,10 +509,6 @@ footer p:first-child{
 
     .home-photos img{
         height:105px;
-    }
-
-    .hero h1{
-        font-size:34px;
     }
 
 }
@@ -816,9 +533,11 @@ footer p:first-child{
 Gorakh Chand
 </div>
 
+
 <div class="menu" onclick="toggleMenu()">
 ☰
 </div>
+
 
 <ul id="navMenu">
 
@@ -861,6 +580,7 @@ Gorakh Chand
 </nav>
 
 
+
 <!-- =========================
      HOME / HERO
 ========================= -->
@@ -868,6 +588,9 @@ Gorakh Chand
 <section class="hero" id="home">
 
 <div class="hero-content">
+
+
+<!-- PROFILE PHOTO -->
 
 <div class="profile">
 
@@ -892,6 +615,8 @@ education, technology, learning and continuous growth.
 </p>
 
 
+<!-- BUTTONS -->
+
 <div class="buttons">
 
 <a href="about.html" class="btn">
@@ -905,7 +630,10 @@ Let's Connect
 </div>
 
 
-<!-- THREE CONSTANT PHOTOS -->
+
+<!-- =========================
+     THREE CONSTANT PHOTOS
+========================= -->
 
 <div class="home-photos">
 
@@ -917,291 +645,11 @@ Let's Connect
 
 </div>
 
-</div>
-
-</section>
-
-
-<!-- =========================
-     EDUCATIONAL RESOURCES
-========================= -->
-
-<section class="resources">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-📚 Educational Resources
-</h2>
-
-<p>
-Explore learning materials and educational resources
-</p>
-
-</div>
-
-
-<div class="resource-grid">
-
-
-<a href="educational-content.html" class="resource-card">
-
-<div class="resource-icon">
-💻
-</div>
-
-<h3>
-Computer Science
-</h3>
-
-<p>
-ICT, programming and computer learning
-</p>
-
-</a>
-
-
-<a href="educational-content.html" class="resource-card">
-
-<div class="resource-icon">
-📖
-</div>
-
-<h3>
-Study Materials
-</h3>
-
-<p>
-Notes, resources and learning materials
-</p>
-
-</a>
-
-
-<a href="articles.html" class="resource-card">
-
-<div class="resource-icon">
-📝
-</div>
-
-<h3>
-Articles
-</h3>
-
-<p>
-Educational ideas and useful articles
-</p>
-
-</a>
-
-
-<a href="achievements.html" class="resource-card">
-
-<div class="resource-icon">
-🏆
-</div>
-
-<h3>
-Achievements
-</h3>
-
-<p>
-Academic and professional achievements
-</p>
-
-</a>
-
-
-</div>
 
 </div>
 
 </section>
 
-
-<!-- =========================
-     NOTICE PREVIEW
-========================= -->
-
-<section class="notice-section">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-📢 Latest Notices
-</h2>
-
-<p>
-Important notices and announcements
-</p>
-
-</div>
-
-
-<div class="notice-box">
-
-<div class="notice-header">
-
-<h3>
-Recent Updates
-</h3>
-
-<a href="notice.html">
-View All Notices
-</a>
-
-</div>
-
-
-<!--
-     Future Supabase notices can be displayed here.
-     For now this is a simple placeholder.
--->
-
-<div class="notice-item">
-
-<div class="notice-icon">
-📌
-</div>
-
-<div class="notice-text">
-
-<strong>
-Welcome to Gorakh Chand's Official Website
-</strong>
-
-<small>
-Educational resources, notices and updates
-</small>
-
-</div>
-
-</div>
-
-
-<div class="notice-empty">
-
-More notices will be published here.
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     OFFICIAL EDUCATIONAL LINKS
-========================= -->
-
-<section class="official-links">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-🏛️ Official Educational Portals
-</h2>
-
-<p>
-Useful official websites for teachers and students
-</p>
-
-</div>
-
-
-<div class="official-grid">
-
-
-<a
-href="https://www.moest.gov.np/"
-target="_blank"
-rel="noopener noreferrer"
-class="official-card">
-
-<span>🏛️</span>
-
-<strong>
-शिक्षा मन्त्रालय
-</strong>
-
-<small>
-Ministry of Education
-</small>
-
-</a>
-
-
-<a
-href="https://cehrd.gov.np/"
-target="_blank"
-rel="noopener noreferrer"
-class="official-card">
-
-<span>🎓</span>
-
-<strong>
-मानव स्रोत विकास केन्द्र
-</strong>
-
-<small>
-CEHRD
-</small>
-
-</a>
-
-
-<a
-href="https://www.tsc.gov.np/"
-target="_blank"
-rel="noopener noreferrer"
-class="official-card">
-
-<span>👨‍🏫</span>
-
-<strong>
-शिक्षक सेवा आयोग
-</strong>
-
-<small>
-Teacher Service Commission
-</small>
-
-</a>
-
-
-<a
-href="https://www.moecdc.gov.np/"
-target="_blank"
-rel="noopener noreferrer"
-class="official-card">
-
-<span>📚</span>
-
-<strong>
-पाठ्यक्रम विकास केन्द्र
-</strong>
-
-<small>
-Curriculum Development Centre
-</small>
-
-</a>
-
-
-</div>
-
-</div>
-
-</section>
 
 
 <!-- =========================
@@ -1258,6 +706,7 @@ technology, inclusive learning and lifelong learning.
 </div>
 
 
+
 <div class="box">
 
 <h3>
@@ -1289,6 +738,7 @@ Professional Profile
 </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1374,6 +824,7 @@ Reading
 </section>
 
 
+
 <!-- =========================
      CONNECT
 ========================= -->
@@ -1395,7 +846,9 @@ Contact Me
 </a>
 
 
-<!-- USEFUL LINKS -->
+<!-- =========================
+     USEFUL EDUCATIONAL LINKS
+========================= -->
 
 <div class="useful-links">
 
@@ -1408,9 +861,9 @@ Contact Me
 
 
 <a class="useful-link"
-href="https://www.moest.gov.np/"
-target="_blank"
-rel="noopener noreferrer">
+   href="https://www.moest.gov.np/"
+   target="_blank"
+   rel="noopener noreferrer">
 
 <span>🏛️</span>
 शिक्षा मन्त्रालय
@@ -1419,9 +872,9 @@ rel="noopener noreferrer">
 
 
 <a class="useful-link"
-href="https://cehrd.gov.np/"
-target="_blank"
-rel="noopener noreferrer">
+   href="https://cehrd.gov.np/"
+   target="_blank"
+   rel="noopener noreferrer">
 
 <span>🎓</span>
 मानव स्रोत विकास केन्द्र
@@ -1430,9 +883,9 @@ rel="noopener noreferrer">
 
 
 <a class="useful-link"
-href="https://www.tsc.gov.np/"
-target="_blank"
-rel="noopener noreferrer">
+   href="https://www.tsc.gov.np/"
+   target="_blank"
+   rel="noopener noreferrer">
 
 <span>👨‍🏫</span>
 शिक्षक सेवा आयोग
@@ -1441,9 +894,9 @@ rel="noopener noreferrer">
 
 
 <a class="useful-link"
-href="https://www.moecdc.gov.np/"
-target="_blank"
-rel="noopener noreferrer">
+   href="https://www.moecdc.gov.np/"
+   target="_blank"
+   rel="noopener noreferrer">
 
 <span>📚</span>
 पाठ्यक्रम विकास केन्द्र
@@ -1456,6 +909,7 @@ rel="noopener noreferrer">
 </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1474,6 +928,7 @@ Teaching Professional • Educator • Computer Science Teacher
 </p>
 
 </footer>
+
 
 
 <!-- =========================
