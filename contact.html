@@ -161,6 +161,56 @@ nav a.active{
     transform:translateY(-2px);
 }
 
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.whatsapp-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:18px 5px 5px;
+    padding:12px 20px;
+    border-radius:25px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.whatsapp-button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(37,211,102,.25);
+}
+
+
+/* =========================
+   TEXT ONLY BUTTON
+========================= */
+
+.text-only{
+    display:inline-block;
+    margin:18px 5px 5px;
+    padding:12px 20px;
+    border-radius:25px;
+    background:#fee2e2;
+    color:#dc2626;
+    text-decoration:none;
+    font-weight:bold;
+    border:1px solid #fecaca;
+    transition:.3s;
+}
+
+.text-only:hover{
+    background:#dc2626;
+    color:white;
+    transform:translateY(-2px);
+}
+
+
 .message{
     margin-top:35px;
     padding:35px;
@@ -217,6 +267,12 @@ footer{
 
     nav a{
         font-size:15px;
+    }
+
+    .whatsapp-button,
+    .text-only{
+        padding:11px 17px;
+        font-size:14px;
     }
 }
 </style>
@@ -312,13 +368,39 @@ You can connect with me through my social and professional platforms.
 
 <div class="social">
 
-<a href="https://www.facebook.com/gorakh.spandan92" target="_blank">Facebook</a>
+<a href="https://www.facebook.com/gorakh.spandan92" target="_blank">
+Facebook
+</a>
 
-<a href="https://www.youtube.com/@GORAKH_ICT" target="_blank">YouTube</a>
+<a href="https://www.youtube.com/@GORAKH_ICT" target="_blank">
+YouTube
+</a>
 
-<a href="mailto:gorakh.ict2018@gmail.com">Email</a>
+<a href="mailto:gorakh.ict2018@gmail.com">
+Email
+</a>
 
 </div>
+
+
+<!-- WhatsApp Direct Message -->
+
+<a href="https://wa.me/9779868896640"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="whatsapp-button">
+   💬 Message on WhatsApp
+</a>
+
+
+<!-- TEXT ONLY -->
+
+<a href="https://wa.me/9779868896640"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-only">
+   TEXT ONLY
+</a>
 
 </div>
 
@@ -360,4 +442,4 @@ document.getElementById("navMenu").classList.toggle("show");
 </script>
 
 </body>
-      </html>
+    </html>
