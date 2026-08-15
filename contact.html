@@ -7,6 +7,7 @@
 <title>Contact | Gorakh Chand</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -19,6 +20,11 @@ body{
     color:#1f2937;
     line-height:1.7;
 }
+
+
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
     position:sticky;
@@ -68,10 +74,16 @@ nav a.active{
     cursor:pointer;
 }
 
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
     padding:85px 20px;
     text-align:center;
     color:white;
+
     background:
     radial-gradient(circle at 15% 20%,#22d3ee55,transparent 30%),
     radial-gradient(circle at 85% 80%,#f472b655,transparent 30%),
@@ -86,6 +98,11 @@ nav a.active{
 .hero p{
     font-size:19px;
 }
+
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
     max-width:1000px;
@@ -107,11 +124,21 @@ nav a.active{
     color:#6b7280;
 }
 
+
+/* =========================
+   CONTACT GRID
+========================= */
+
 .contact-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:25px;
 }
+
+
+/* =========================
+   CARD
+========================= */
 
 .card{
     background:white;
@@ -126,6 +153,11 @@ nav a.active{
     font-size:23px;
     margin-bottom:18px;
 }
+
+
+/* =========================
+   CONTACT ITEMS
+========================= */
 
 .contact-item{
     padding:15px 0;
@@ -143,106 +175,203 @@ nav a.active{
 
 
 /* =========================
-   SOCIAL LINKS
+   SOCIAL / CONTACT LINKS
 ========================= */
 
 .social{
-    margin-top:22px;
+    margin-top:20px;
+
     display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+    flex-direction:column;
+
+    gap:12px;
 }
+
+
+/* COMMON BUTTON */
 
 .social a{
-    display:inline-flex;
+    width:100%;
+
+    display:flex;
     align-items:center;
-    justify-content:center;
-    gap:7px;
-    padding:10px 16px;
-    border-radius:30px;
+
+    gap:13px;
+
+    padding:13px 18px;
+
+    border-radius:15px;
+
     text-decoration:none;
+
     font-weight:bold;
-    font-size:14px;
-    transition:.3s;
+
     border:1px solid transparent;
+
+    transition:.3s;
 }
+
+
+/* ICON */
 
 .social a span{
-    font-size:18px;
+    font-size:23px;
 }
 
 
-/* Facebook */
+/* HOVER */
+
+.social a:hover{
+    transform:translateX(5px);
+
+    box-shadow:
+    0 7px 18px rgba(0,0,0,.10);
+}
+
+
+/* =========================
+   FACEBOOK
+========================= */
 
 .facebook-btn{
+
     background:#eef4ff;
+
     color:#1877f2 !important;
+
     border-color:#dbeafe !important;
 }
 
 
-/* YouTube */
+/* =========================
+   YOUTUBE
+========================= */
 
 .youtube-btn{
+
     background:#fff1f2;
+
     color:#dc2626 !important;
+
     border-color:#fecdd3 !important;
 }
 
 
-/* Email */
+/* =========================
+   EMAIL
+========================= */
 
 .email-btn{
+
     background:#fff7ed;
+
     color:#ea580c !important;
+
     border-color:#fed7aa !important;
 }
 
 
-/* WhatsApp */
+/* =========================
+   WHATSAPP
+========================= */
 
 .whatsapp-btn{
+
     background:#ecfdf5;
+
     color:#16a34a !important;
+
     border-color:#bbf7d0 !important;
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    align-items:flex-start !important;
+
+    gap:2px !important;
 }
 
 
-/* Hover */
+/* WhatsApp main line */
 
-.social a:hover{
-    transform:translateY(-3px);
-    box-shadow:0 7px 18px rgba(0,0,0,.12);
+.whatsapp-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    font-size:16px;
 }
 
 
-/* WhatsApp TEXT ONLY small */
+/* TEXT ONLY */
 
-.social .whatsapp-btn small{
-    font-size:11px;
-    letter-spacing:.5px;
+.whatsapp-text{
+
+    margin-left:36px;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    color:#16a34a;
+
+    opacity:.85;
 }
 
+
+/* =========================
+   MESSAGE
+========================= */
 
 .message{
     margin-top:35px;
+
     padding:35px;
+
     border-radius:24px;
+
     text-align:center;
+
     color:white;
-    background:linear-gradient(135deg,#4338ca,#7c3aed,#0891b2);
+
+    background:
+    linear-gradient(
+        135deg,
+        #4338ca,
+        #7c3aed,
+        #0891b2
+    );
 }
 
 .message h2{
     margin-bottom:10px;
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
     padding:28px 20px;
+
     text-align:center;
+
     color:#9ca3af;
+
     background:#111827;
 }
+
+
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:950px){
 
@@ -251,16 +380,27 @@ footer{
     }
 
     nav ul{
+
         display:none;
+
         position:absolute;
+
         top:65px;
+
         left:0;
+
         width:100%;
+
         padding:20px;
+
         background:white;
+
         flex-direction:column;
+
         text-align:center;
-        box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+        box-shadow:
+        0 8px 20px rgba(0,0,0,.1);
     }
 
     nav ul.show{
@@ -270,7 +410,13 @@ footer{
     .contact-grid{
         grid-template-columns:1fr;
     }
+
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
@@ -278,50 +424,112 @@ footer{
         font-size:36px;
     }
 
+    .hero p{
+        font-size:16px;
+    }
+
     nav a{
         font-size:15px;
     }
 
-    .social{
-        gap:8px;
+    .card{
+        padding:30px 20px;
     }
 
     .social a{
-        padding:9px 13px;
-        font-size:13px;
+        padding:12px 16px;
     }
 
-    .social a span{
-        font-size:17px;
-    }
-
-    .social .whatsapp-btn small{
-        font-size:10px;
-    }
 }
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:32px;
+    }
+
+}
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
 <div class="navbar">
 
-<div class="logo">Gorakh Chand</div>
+<div class="logo">
+Gorakh Chand
+</div>
 
-<div class="menu" onclick="toggleMenu()">☰</div>
+
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
+
 
 <ul id="navMenu">
 
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="education.html">Education</a></li>
-<li><a href="achievements.html">Achievements</a></li>
-<li><a href="educational-content.html">Educational Content</a></li>
-<li><a href="articles.html">Articles</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html" class="active">Contact</a></li>
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="education.html">
+Education
+</a>
+</li>
+
+<li>
+<a href="achievements.html">
+Achievements
+</a>
+</li>
+
+<li>
+<a href="educational-content.html">
+Educational Content
+</a>
+</li>
+
+<li>
+<a href="articles.html">
+Articles
+</a>
+</li>
+
+<li>
+<a href="gallery.html">
+Gallery
+</a>
+</li>
+
+<li>
+<a href="contact.html" class="active">
+Contact
+</a>
+</li>
 
 </ul>
 
@@ -330,20 +538,37 @@ footer{
 </nav>
 
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-<h1>Let's Connect</h1>
+<h1>
+Let's Connect
+</h1>
 
-<p>Professional Communication • Education • Collaboration</p>
+<p>
+Professional Communication • Education • Collaboration
+</p>
 
 </section>
 
 
+
+<!-- =========================
+     MAIN CONTAINER
+========================= -->
+
 <div class="container">
+
 
 <div class="title">
 
-<h2>Get in Touch</h2>
+<h2>
+Get in Touch
+</h2>
 
 <p>
 For professional communication, collaboration or educational discussion
@@ -352,93 +577,174 @@ For professional communication, collaboration or educational discussion
 </div>
 
 
+
+<!-- =========================
+     CONTACT GRID
+========================= -->
+
 <div class="contact-grid">
 
 
+<!-- =========================
+     PROFESSIONAL PROFILE
+========================= -->
+
 <div class="card">
 
-<h3>👨‍🏫 Professional Profile</h3>
+<h3>
+👨‍🏫 Professional Profile
+</h3>
+
 
 <div class="contact-item">
-<strong>Name</strong>
+
+<strong>
+Name
+</strong>
+
 Gorakh Chand
+
 </div>
 
+
 <div class="contact-item">
-<strong>Profession</strong>
+
+<strong>
+Profession
+</strong>
+
 Teaching Professional
+
 </div>
 
+
 <div class="contact-item">
-<strong>Position</strong>
+
+<strong>
+Position
+</strong>
+
 Secondary Level Government Teacher
+
 </div>
+
 
 <div class="contact-item">
-<strong>Specialization</strong>
+
+<strong>
+Specialization
+</strong>
+
 Computer Science
-</div>
 
 </div>
 
+
+</div>
+
+
+
+<!-- =========================
+     CONNECT WITH ME
+========================= -->
 
 <div class="card">
 
-<h3>🌐 Connect With Me</h3>
+<h3>
+🌐 Connect With Me
+</h3>
+
 
 <p>
 You can connect with me through my social and professional platforms.
 </p>
 
+
 <div class="social">
 
 
-<!-- Facebook -->
+<!-- FACEBOOK -->
 
-<a href="https://www.facebook.com/gorakh.spandan92"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="facebook-btn">
+<a
+href="https://www.facebook.com/gorakh.spandan92"
+target="_blank"
+rel="noopener noreferrer"
+class="facebook-btn"
+>
 
-<span>📘</span>
+<span>
+📘
+</span>
+
 Facebook
 
 </a>
 
 
-<!-- YouTube -->
 
-<a href="https://www.youtube.com/@GORAKH_ICT"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="youtube-btn">
+<!-- YOUTUBE -->
 
-<span>▶️</span>
+<a
+href="https://www.youtube.com/@GORAKH_ICT"
+target="_blank"
+rel="noopener noreferrer"
+class="youtube-btn"
+>
+
+<span>
+▶️
+</span>
+
 YouTube
 
 </a>
 
 
-<!-- Email -->
 
-<a href="mailto:gorakh.ict2018@gmail.com"
-   class="email-btn">
+<!-- EMAIL -->
 
-<span>✉️</span>
+<a
+href="mailto:gorakh.ict2018@gmail.com"
+class="email-btn"
+>
+
+<span>
+✉️
+</span>
+
 Email
 
 </a>
 
 
-<!-- WhatsApp TEXT ONLY -->
 
-<a href="https://wa.me/9779868896640"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="whatsapp-btn">
+<!-- WHATSAPP -->
 
-<span>💬</span>
-<small>TEXT ONLY</small>
+<a
+href="https://wa.me/9779868896640"
+target="_blank"
+rel="noopener noreferrer"
+class="whatsapp-btn"
+>
+
+
+<div class="whatsapp-top">
+
+<span>
+🟢
+</span>
+
+WhatsApp
+
+</div>
+
+
+<div class="whatsapp-text">
+
+TEXT ONLY
+
+</div>
+
 
 </a>
 
@@ -451,9 +757,17 @@ Email
 </div>
 
 
+
+<!-- =========================
+     MESSAGE
+========================= -->
+
 <div class="message">
 
-<h2>💡 Let's Share Knowledge</h2>
+<h2>
+💡 Let's Share Knowledge
+</h2>
+
 
 <p>
 Education becomes more meaningful when ideas, experiences
@@ -462,27 +776,48 @@ and knowledge are shared.
 
 </div>
 
+
 </div>
 
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-<p>© 2026 Gorakh Chand. All Rights Reserved.</p>
+<p>
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
 
-<p>Teaching Professional • Educator • Computer Science Teacher</p>
+
+<p>
+Teaching Professional • Educator • Computer Science Teacher
+</p>
 
 </footer>
 
+
+
+<!-- =========================
+     MOBILE MENU SCRIPT
+========================= -->
 
 <script>
 
 function toggleMenu(){
 
-document.getElementById("navMenu").classList.toggle("show");
+    document
+    .getElementById("navMenu")
+    .classList
+    .toggle("show");
 
 }
 
 </script>
 
+
 </body>
+
     </html>
