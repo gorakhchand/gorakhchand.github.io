@@ -9,12 +9,18 @@
 
 <meta name="description" content="Official personal website of Gorakh Chand, Teaching Professional and Secondary Level Government Teacher specializing in Computer Science.">
 
+<!-- GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
+
 <style>
+
+/* =========================
+   GLOBAL
+========================= */
 
 *{
     margin:0;
@@ -98,19 +104,24 @@ nav ul{
 
 nav a{
     position:relative;
+
     text-decoration:none;
     color:#293248;
     font-weight:600;
     font-size:14px;
+
     padding:8px 2px;
+
     transition:.3s;
 }
 
 nav a::after{
     content:"";
+
     position:absolute;
     left:0;
     bottom:0;
+
     width:0;
     height:2px;
 
@@ -184,6 +195,9 @@ nav a:hover::after{
     );
 }
 
+
+/* DECORATION */
+
 .hero::before{
     content:"";
 
@@ -233,7 +247,7 @@ nav a:hover::after{
 
 
 /* =========================
-   PROFILE
+   PROFILE PHOTO
 ========================= */
 
 .profile{
@@ -340,97 +354,123 @@ nav a:hover::after{
 }
 
 
-/* =========================
-   DATE & TIME BOX
-========================= */
+/* =====================================================
+   NEPALI TIME + NEPALI DATE + NEPAL SAMBAT
+===================================================== */
 
-.date-box{
-    max-width:850px;
+.nepali-info{
+
+    max-width:900px;
 
     margin:35px auto 0;
 
-    padding:20px;
-
     display:grid;
 
-    grid-template-columns:
-    repeat(4,1fr);
+    grid-template-columns:repeat(3,1fr);
 
-    gap:12px;
-
-    border-radius:24px;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(255,255,255,.18),
-        rgba(255,255,255,.08)
-    );
-
-    border:1px solid rgba(255,255,255,.28);
-
-    backdrop-filter:blur(14px);
-
-    box-shadow:
-    0 15px 45px rgba(0,0,0,.18);
+    gap:15px;
 }
 
-.date-item{
-    padding:15px 10px;
 
-    border-radius:17px;
+/* COMMON BOX */
+
+.nepali-box{
+
+    position:relative;
+
+    padding:18px 12px;
+
+    border-radius:20px;
 
     background:
     linear-gradient(
         145deg,
-        rgba(255,255,255,.18),
-        rgba(255,255,255,.06)
+        rgba(255,255,255,.20),
+        rgba(255,255,255,.08)
     );
 
-    border:1px solid rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.30);
 
-    transition:.3s;
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.20);
+
+    backdrop-filter:blur(14px);
+
+    color:white;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    transition:.35s;
 }
 
-.date-item:hover{
-    transform:translateY(-4px);
+.nepali-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    right:-25px;
+    top:-25px;
+}
+
+.nepali-box:hover{
+
+    transform:translateY(-6px);
 
     background:
-    rgba(255,255,255,.24);
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.28),
+        rgba(255,255,255,.12)
+    );
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.28);
 }
 
-.date-icon{
-    font-size:26px;
-    margin-bottom:4px;
+.nepali-box .icon{
+
+    display:block;
+
+    font-size:27px;
+
+    margin-bottom:3px;
 }
 
-.date-label{
+.nepali-box small{
+
+    display:block;
+
     font-size:12px;
-    color:#ddd6fe;
 
-    font-weight:600;
+    color:#e0e7ff;
+
+    margin-bottom:4px;
+
+    font-weight:500;
 }
 
-.date-value{
-    margin-top:4px;
+.nepali-box strong{
 
-    font-size:16px;
+    display:block;
+
+    font-size:18px;
+
+    color:white;
 
     font-weight:700;
 
-    color:white;
-}
-
-.time-value{
-    font-size:21px;
-
-    color:#fef3c7;
-
-    letter-spacing:.5px;
-}
-
-.ns-value{
-    color:#fbcfe8;
+    position:relative;
+    z-index:2;
 }
 
 
@@ -439,6 +479,7 @@ nav a:hover::after{
 ========================= */
 
 .home-photos{
+
     width:100%;
     max-width:1050px;
 
@@ -452,6 +493,7 @@ nav a:hover::after{
 }
 
 .home-photos img{
+
     width:100%;
     height:260px;
 
@@ -470,6 +512,7 @@ nav a:hover::after{
 }
 
 .home-photos img:hover{
+
     transform:translateY(-8px) scale(1.02);
 
     box-shadow:
@@ -889,10 +932,6 @@ footer{
         grid-template-columns:1fr 1fr;
     }
 
-    .date-box{
-        grid-template-columns:repeat(2,1fr);
-    }
-
 }
 
 
@@ -923,41 +962,35 @@ footer{
         height:150px;
     }
 
-    .date-box{
-        grid-template-columns:1fr 1fr;
 
-        gap:8px;
+    /* NEPALI INFO */
 
-        padding:12px;
+    .nepali-info{
 
-        margin-top:28px;
+        grid-template-columns:1fr;
 
-        border-radius:20px;
+        max-width:300px;
+
+        gap:10px;
+
+        margin-top:25px;
     }
 
-    .date-item{
-        padding:12px 6px;
+    .nepali-box{
 
-        border-radius:14px;
+        padding:13px 10px;
     }
 
-    .date-icon{
-        font-size:22px;
-    }
+    .nepali-box strong{
 
-    .date-label{
-        font-size:10px;
-    }
-
-    .date-value{
-        font-size:13px;
-    }
-
-    .time-value{
         font-size:16px;
     }
 
+
+    /* PHOTOS */
+
     .home-photos{
+
         grid-template-columns:repeat(3,1fr);
 
         gap:7px;
@@ -966,6 +999,7 @@ footer{
     }
 
     .home-photos img{
+
         height:125px;
 
         border-radius:10px;
@@ -1079,6 +1113,7 @@ Gorakh Chand
 </nav>
 
 
+
 <!-- =========================
      HOME / HERO
 ========================= -->
@@ -1087,6 +1122,8 @@ Gorakh Chand
 
 <div class="hero-content">
 
+
+<!-- PROFILE PHOTO -->
 
 <div class="profile">
 
@@ -1126,72 +1163,67 @@ Let's Connect
 </div>
 
 
-<!-- =========================
-     DATE / TIME
-========================= -->
 
-<div class="date-box">
+<!-- ==================================================
+     NEPALI TIME / DATE / NEPAL SAMBAT
+================================================== -->
 
-<div class="date-item">
-
-<div class="date-icon">🕐</div>
-
-<div class="date-label">
-NEPAL TIME
-</div>
-
-<div class="date-value time-value" id="nepalTime">
-Loading...
-</div>
-
-</div>
+<div class="nepali-info">
 
 
-<div class="date-item">
+<div class="nepali-box">
 
-<div class="date-icon">🌍</div>
+<span class="icon">
+🕐
+</span>
 
-<div class="date-label">
-ENGLISH DATE
-</div>
+<small>
+नेपाली समय
+</small>
 
-<div class="date-value" id="englishDate">
-Loading...
-</div>
+<strong id="nepaliTime">
+लोड हुँदैछ...
+</strong>
 
 </div>
 
 
-<div class="date-item">
+<div class="nepali-box">
 
-<div class="date-icon">🇳🇵</div>
+<span class="icon">
+📅
+</span>
 
-<div class="date-label">
-वि.सं. DATE
-</div>
+<small>
+नेपाली मिति
+</small>
 
-<div class="date-value" id="bsDate">
-Loading...
-</div>
-
-</div>
-
-
-<div class="date-item">
-
-<div class="date-icon">🪷</div>
-
-<div class="date-label">
-NEPAL SAMBAT
-</div>
-
-<div class="date-value ns-value" id="nsDate">
-नेपाल संवत् ११४६
-</div>
+<strong id="nepaliDate">
+लोड हुँदैछ...
+</strong>
 
 </div>
 
+
+<div class="nepali-box">
+
+<span class="icon">
+🏛️
+</span>
+
+<small>
+नेपाल संवत्
+</small>
+
+<strong id="nepalSambat">
+लोड हुँदैछ...
+</strong>
+
 </div>
+
+
+</div>
+
 
 
 <!-- =========================
@@ -1212,6 +1244,7 @@ NEPAL SAMBAT
 </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1268,6 +1301,7 @@ technology, inclusive learning and lifelong learning.
 </div>
 
 
+
 <div class="box">
 
 <h3>
@@ -1299,6 +1333,7 @@ Professional Profile
 </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1384,6 +1419,7 @@ Reading
 </section>
 
 
+
 <!-- =========================
      CONNECT
 ========================= -->
@@ -1404,6 +1440,11 @@ For professional communication, collaboration or educational discussion.
 Contact Me
 </a>
 
+
+
+<!-- =========================
+     USEFUL EDUCATIONAL LINKS
+========================= -->
 
 <div class="useful-links">
 
@@ -1466,6 +1507,7 @@ Contact Me
 </section>
 
 
+
 <!-- =========================
      FOOTER
 ========================= -->
@@ -1484,9 +1526,13 @@ Teaching Professional • Educator • Computer Science Teacher
 </footer>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+
+<!-- ==================================================
+     NEPALI DATE CONVERTER LIBRARY
+================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/nepali-date-converter/dist/nepali-date-converter.umd.js"></script>
+
 
 <script>
 
@@ -1504,16 +1550,15 @@ function toggleMenu(){
 }
 
 
-/* =========================
-   NEPAL TIME
-========================= */
+/* ==================================================
+   NEPALI TIME
+================================================== */
 
-function updateNepalClock(){
+function updateNepaliTime(){
 
     const now = new Date();
 
-    const nepalTime =
-    new Intl.DateTimeFormat(
+    const time = new Intl.DateTimeFormat(
         "en-US",
         {
             timeZone:"Asia/Kathmandu",
@@ -1524,187 +1569,216 @@ function updateNepalClock(){
         }
     ).format(now);
 
-    document.getElementById("nepalTime").textContent =
-    nepalTime;
+    document.getElementById("nepaliTime").textContent = time;
 
 }
 
 
-/* =========================
-   ENGLISH DATE
-========================= */
+/* ==================================================
+   NEPALI NUMERAL CONVERTER
+================================================== */
 
-function updateEnglishDate(){
+function toNepaliNumber(number){
 
-    const now = new Date();
+    const nepaliDigits = [
+        "०","१","२","३","४",
+        "५","६","७","८","९"
+    ];
 
-    const date =
-    new Intl.DateTimeFormat(
-        "en-US",
-        {
-            timeZone:"Asia/Kathmandu",
-            weekday:"long",
-            year:"numeric",
-            month:"long",
-            day:"numeric"
-        }
-    ).format(now);
+    return String(number)
+        .replace(/[0-9]/g,function(digit){
 
-    document.getElementById("englishDate").textContent =
-    date;
+            return nepaliDigits[digit];
+
+        });
+}
+
+
+/* ==================================================
+   NEPALI MONTHS
+================================================== */
+
+const nepaliMonths = [
+
+    "बैशाख",
+    "जेठ",
+    "असार",
+    "श्रावण",
+    "भाद्र",
+    "आश्विन",
+    "कार्तिक",
+    "मंसिर",
+    "पौष",
+    "माघ",
+    "फाल्गुण",
+    "चैत्र"
+
+];
+
+
+/* ==================================================
+   NEPALI DAYS
+================================================== */
+
+const nepaliDays = {
+
+    Sunday:"आइतबार",
+    Monday:"सोमबार",
+    Tuesday:"मंगलबार",
+    Wednesday:"बुधबार",
+    Thursday:"बिहिबार",
+    Friday:"शुक्रबार",
+    Saturday:"शनिबार"
+
+};
+
+
+/* ==================================================
+   NEPAL SAMBAT
+================================================== */
+
+function calculateNepalSambat(bsYear,bsMonth){
+
+    /*
+       Nepal Sambat year generally changes around
+       Kartik during Tihar period.
+
+       BS year 2083 corresponds to NS 1146.
+    */
+
+    if(bsMonth >= 8){
+
+        return bsYear - 937;
+
+    }else{
+
+        return bsYear - 938;
+
+    }
 
 }
 
 
-/* =========================
-   BS DATE
-   Uses browser Intl Nepali
-   calendar support where available.
-========================= */
+/* ==================================================
+   UPDATE NEPALI DATE
+================================================== */
 
-function updateBSDate(){
-
-    const now = new Date();
+function updateNepaliDate(){
 
     try{
 
+        const now = new Date();
+
+        /*
+           Convert today's Gregorian date to BS
+        */
+
+        const adYear =
+            now.getFullYear();
+
+        const adMonth =
+            String(now.getMonth()+1).padStart(2,"0");
+
+        const adDay =
+            String(now.getDate()).padStart(2,"0");
+
+
+        const converter =
+            new NepaliDate(
+                `${adYear}-${adMonth}-${adDay}`
+            );
+
+
         const bs =
-        new Intl.DateTimeFormat(
-            "ne-NP-u-ca-nepali",
-            {
-                timeZone:"Asia/Kathmandu",
-                year:"numeric",
-                month:"long",
-                day:"numeric"
-            }
-        ).format(now);
+            converter.toBs();
 
-        document.getElementById("bsDate").textContent =
-        bs;
 
-    }catch(error){
+        const dayName =
+            nepaliDays[bs.day] || bs.day;
 
-        document.getElementById("bsDate").textContent =
-        "वि.सं. मिति उपलब्ध भएन";
+
+        const monthName =
+            nepaliMonths[bs.month - 1];
+
+
+        const fullDate =
+
+            `${toNepaliNumber(bs.year)} ` +
+
+            `${monthName} ` +
+
+            `${toNepaliNumber(bs.date)}, ` +
+
+            `${dayName}`;
+
+
+        document
+            .getElementById("nepaliDate")
+            .textContent = fullDate;
+
+
+        /*
+           Nepal Sambat
+        */
+
+        const ns =
+            calculateNepalSambat(
+                bs.year,
+                bs.month
+            );
+
+
+        document
+            .getElementById("nepalSambat")
+            .textContent =
+                toNepaliNumber(ns);
+
+
+    }
+
+    catch(error){
+
+        console.error(
+            "Nepali date error:",
+            error
+        );
+
+        document
+            .getElementById("nepaliDate")
+            .textContent =
+                "नेपाली मिति लोड हुँदैछ...";
+
+        document
+            .getElementById("nepalSambat")
+            .textContent =
+                "११४६";
 
     }
 
 }
 
 
-/* =========================
-   NEPAL SAMBAT YEAR
-========================= */
+/* ==================================================
+   START
+================================================== */
 
-function updateNepalSambat(){
+updateNepaliTime();
 
-    const now = new Date();
-
-    const year =
-    Number(
-        new Intl.DateTimeFormat(
-            "en-US",
-            {
-                timeZone:"Asia/Kathmandu",
-                year:"numeric"
-            }
-        ).format(now)
-    );
-
-    /*
-       Nepal Sambat year changes around
-       the Nepal Sambat New Year.
-       For the current 2026 cycle,
-       Nepal Sambat 1146 is in use.
-    */
-
-    let nsYear = year - 880;
-
-    /*
-       Before Nepal Sambat New Year,
-       remain in previous NS year.
-    */
-
-    const month =
-    Number(
-        new Intl.DateTimeFormat(
-            "en-US",
-            {
-                timeZone:"Asia/Kathmandu",
-                month:"numeric"
-            }
-        ).format(now)
-    );
-
-    const day =
-    Number(
-        new Intl.DateTimeFormat(
-            "en-US",
-            {
-                timeZone:"Asia/Kathmandu",
-                day:"numeric"
-            }
-        ).format(now)
-    );
-
-    /*
-       Approximate civil-year boundary.
-       This keeps the displayed NS year
-       correct around the current cycle.
-    */
-
-    if(month < 10 || (month === 10 && day < 20)){
-        nsYear = year - 880;
-    }else{
-        nsYear = year - 879;
-    }
-
-    const nepaliNumber =
-    String(nsYear).replace(
-        /\d/g,
-        d => "०१२३४५६७८९"[d]
-    );
-
-    document.getElementById("nsDate").textContent =
-    "नेपाल संवत् " + nepaliNumber;
-
-}
+updateNepaliDate();
 
 
-/* =========================
-   UPDATE ALL
-========================= */
-
-function updateDateTime(){
-
-    updateNepalClock();
-
-    updateEnglishDate();
-
-    updateBSDate();
-
-    updateNepalSambat();
-
-}
-
-
-/* START */
-
-updateDateTime();
-
-
-/* CLOCK UPDATE EVERY SECOND */
+/* LIVE CLOCK */
 
 setInterval(
-    updateNepalClock,
+    updateNepaliTime,
     1000
 );
 
 
-/* DATE UPDATE EVERY MINUTE */
+/* DATE CHECK EVERY MINUTE */
 
 setInterval(
-    updateDateTime,
+    updateNepaliDate,
     60000
 );
 
@@ -1712,5 +1786,4 @@ setInterval(
 
 
 </body>
-
-   </html>
+    </html>
