@@ -1,330 +1,1665 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Action Research | Gorakh Chand</title>
+<title>AI Action Research Generator</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.umd.js"></script>
 
 <style>
+
 *{
     box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-    margin:0;
-    font-family:Arial,"Noto Sans Devanagari",sans-serif;
-    background:#f5f7ff;
-    color:#1f2937;
-    line-height:1.7;
+    font-family:
+        Arial,
+        "Noto Sans Devanagari",
+        sans-serif;
+    background:#f1f5f9;
+    color:#1e293b;
+    line-height:1.6;
 }
 
-.hero{
-    background:linear-gradient(135deg,#4338ca,#7c3aed,#0284c7);
+.header{
+    background:#ffffff;
+    padding:16px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #e2e8f0;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     color:white;
-    text-align:center;
-    padding:55px 20px;
+    font-weight:800;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
 }
 
-.hero h1{
-    margin:0 0 8px;
-    font-size:40px;
+.brand h1{
+    font-size:20px;
+    color:#0f172a;
 }
 
-.container{
-    max-width:900px;
-    margin:35px auto;
-    padding:20px;
+.brand p{
+    font-size:12px;
+    color:#64748b;
 }
 
-.box{
+.languages{
+    display:flex;
+    gap:6px;
+}
+
+.language{
+    border:1px solid #cbd5e1;
     background:white;
-    padding:30px;
-    border-radius:22px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-}
-
-h2{
-    color:#4f46e5;
-}
-
-label{
-    display:block;
-    margin-top:18px;
-    font-weight:bold;
-}
-
-input,textarea{
-    width:100%;
-    padding:13px;
-    margin-top:7px;
-    border:1px solid #d1d5db;
-    border-radius:10px;
-    font-size:15px;
-    font-family:inherit;
-}
-
-textarea{
-    min-height:110px;
-}
-
-button{
-    width:100%;
-    margin-top:25px;
-    padding:15px;
-    border:0;
-    border-radius:12px;
-    background:linear-gradient(135deg,#4f46e5,#7c3aed);
-    color:white;
-    font-size:17px;
-    font-weight:bold;
+    padding:8px 12px;
+    border-radius:9px;
     cursor:pointer;
 }
 
-#result{
-    display:none;
-    margin-top:30px;
+.language.active{
+    background:#2563eb;
+    color:white;
+    border-color:#2563eb;
 }
 
-.report{
-    background:white;
-    padding:35px;
-    border-radius:22px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+.container{
+    width:min(1100px,94%);
+    margin:auto;
+    padding:45px 0 70px;
 }
 
-.report h1{
+.hero{
     text-align:center;
-    color:#312e81;
+    margin-bottom:30px;
 }
 
-.report h2{
-    margin-top:30px;
-    border-bottom:2px solid #e0e7ff;
-    padding-bottom:5px;
+.hero h2{
+    font-size:38px;
+    color:#0f172a;
+    margin-bottom:8px;
 }
 
-table{
+.hero p{
+    color:#64748b;
+}
+
+.card{
+    background:white;
+    border:1px solid #e2e8f0;
+    border-radius:20px;
+    padding:30px;
+    margin-bottom:25px;
+    box-shadow:0 12px 35px rgba(15,23,42,.07);
+}
+
+.section-heading{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.section-heading span{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:#2563eb;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+.section-heading h2{
+    color:#0f172a;
+    font-size:21px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+.field label{
+    font-size:14px;
+    font-weight:700;
+    color:#334155;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #cbd5e1;
+    border-radius:11px;
+    background:#f8fafc;
+    font:inherit;
+    outline:none;
+}
+
+input:focus,
+textarea:focus{
+    background:white;
+    border-color:#2563eb;
+    box-shadow:0 0 0 3px rgba(37,99,235,.1);
+}
+
+textarea{
+    resize:vertical;
+}
+
+.generate{
+    width:100%;
+    margin-top:25px;
+    border:0;
+    padding:16px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.generate:hover{
+    transform:translateY(-1px);
+}
+
+.generate:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+.loading{
+    margin-top:20px;
+    padding:16px;
+    border-radius:12px;
+    background:#eff6ff;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.loading p{
+    color:#64748b;
+    font-size:13px;
+}
+
+.spinner{
+    width:30px;
+    height:30px;
+    border:3px solid #bfdbfe;
+    border-top-color:#2563eb;
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.error{
+    margin-top:18px;
+    padding:14px;
+    border-radius:10px;
+    background:#fef2f2;
+    color:#b91c1c;
+    border:1px solid #fecaca;
+}
+
+.resultTop{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.resultTop .section-heading{
+    margin-bottom:0;
+}
+
+.actions{
+    display:flex;
+    gap:7px;
+}
+
+.actions button{
+    padding:9px 12px;
+    border:1px solid #cbd5e1;
+    background:white;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.actions button:hover{
+    background:#f1f5f9;
+}
+
+.research-output{
+    margin-top:25px;
+    padding-top:25px;
+    border-top:1px solid #e2e8f0;
+}
+
+.research-output h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#0f172a;
+}
+
+.research-output h2{
+    color:#1d4ed8;
+    margin-top:28px;
+    margin-bottom:10px;
+}
+
+.research-output h3{
+    color:#334155;
+    margin-top:18px;
+}
+
+.research-output p{
+    margin-bottom:12px;
+    text-align:justify;
+}
+
+.research-output ul,
+.research-output ol{
+    margin:10px 0 15px 25px;
+}
+
+.research-output li{
+    margin-bottom:6px;
+}
+
+.research-output table{
     width:100%;
     border-collapse:collapse;
-    margin:20px 0;
+    margin:18px 0;
 }
 
-th,td{
-    border:1px solid #ccc;
-    padding:10px;
+.research-output th,
+.research-output td{
+    border:1px solid #cbd5e1;
+    padding:9px;
+    vertical-align:top;
 }
 
-th{
-    background:#eef2ff;
+.research-output th{
+    background:#eff6ff;
 }
 
-.print{
-    background:#059669;
+footer{
+    text-align:center;
+    padding:30px;
+    background:#0f172a;
+    color:#cbd5e1;
+    font-size:13px;
 }
 
-@media(max-width:600px){
+.hidden{
+    display:none!important;
+}
 
-    .hero h1{
-        font-size:30px;
+@media(max-width:750px){
+
+    .header{
+        flex-direction:column;
+        gap:15px;
     }
 
-    .box,.report{
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .hero h2{
+        font-size:28px;
+    }
+
+    .card{
         padding:20px;
     }
+
+    .resultTop{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .actions button{
+        flex:1;
+    }
+
 }
 
 @media print{
 
+    .header,
     .hero,
-    .box,
-    .print{
-        display:none;
+    footer,
+    .actions,
+    #formCard{
+        display:none!important;
     }
 
-    .report{
-        box-shadow:none;
+    body{
+        background:white;
     }
+
+    .container{
+        width:100%;
+        padding:0;
+    }
+
+    .card{
+        border:0;
+        box-shadow:none;
+        padding:0;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<header class="header">
+
+    <div class="brand">
+
+        <div class="logo">
+            AI
+        </div>
+
+        <div>
+
+            <h1>
+                Action Research Generator
+            </h1>
+
+            <p>
+                Powered by Gemini AI
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="languages">
+
+        <button
+            id="enBtn"
+            class="language active">
+            🇬🇧 English
+        </button>
+
+        <button
+            id="neBtn"
+            class="language">
+            🇳🇵 नेपाली
+        </button>
+
+    </div>
+
+</header>
+
+<main class="container">
+
 <section class="hero">
 
-<h1>📋 कार्यमूलक अनुसन्धान</h1>
+    <h2 id="heroTitle">
+        AI Action Research Generator
+    </h2>
 
-<p>शिक्षकहरूका लागि Action Research Generator</p>
+    <p id="heroDescription">
+        Generate a complete classroom Action Research report using Gemini AI.
+    </p>
 
 </section>
 
+<section
+    id="formCard"
+    class="card">
 
-<div class="container">
+    <div class="section-heading">
 
-<div class="box">
+        <span>
+            1
+        </span>
 
-<h2>अनुसन्धानको विवरण भर्नुहोस्</h2>
+        <h2 id="formTitle">
+            Research Information
+        </h2>
 
-<label>शिक्षकको नाम</label>
-<input id="teacher" placeholder="जस्तै: गोर्ख चन्द">
+    </div>
 
-<label>कक्षा</label>
-<input id="className" placeholder="जस्तै: कक्षा ८">
+    <div class="grid">
 
-<label>विषय</label>
-<input id="subject" placeholder="जस्तै: सामाजिक अध्ययन">
+        <div class="field">
 
-<label>अनुसन्धानको शीर्षक</label>
-<input id="title" placeholder="अनुसन्धानको शीर्षक लेख्नुहोस्">
+            <label id="researcherLabel">
+                Researcher Name *
+            </label>
 
-<label>विद्यालयको नाम</label>
-<input id="school" placeholder="विद्यालयको नाम">
+            <input
+                id="researcherName"
+                type="text"
+                placeholder="Enter researcher name">
 
-<label>विद्यार्थी संख्या</label>
-<input id="students" placeholder="जस्तै: ३०">
+        </div>
 
-<label>अनुसन्धान अवधि</label>
-<input id="duration" placeholder="जस्तै: ४ हप्ता">
+        <div class="field">
 
-<label>मुख्य समस्या</label>
-<textarea id="problem"
-placeholder="विद्यार्थीमा देखिएको मुख्य समस्या लेख्नुहोस्..."></textarea>
+            <label id="schoolLabel">
+                School Name *
+            </label>
 
-<button onclick="generateResearch()">
-🚀 कार्यमूलक अनुसन्धान तयार गर्नुहोस्
-</button>
+            <input
+                id="schoolName"
+                type="text"
+                placeholder="Enter school name">
 
-</div>
+        </div>
 
+        <div class="field">
 
-<div id="result">
+            <label id="levelLabel">
+                Level / Grade *
+            </label>
 
-<div class="report" id="report"></div>
+            <input
+                id="level"
+                type="text"
+                placeholder="e.g. Grade 8">
 
-<button class="print" onclick="window.print()">
-🖨️ Print / PDF
-</button>
+        </div>
 
-</div>
+        <div class="field">
 
-</div>
+            <label id="subjectLabel">
+                Subject
+            </label>
 
+            <input
+                id="subject"
+                type="text"
+                placeholder="e.g. English">
+
+        </div>
+
+        <div class="field full">
+
+            <label id="topicLabel">
+                Research Topic *
+            </label>
+
+            <input
+                id="researchTopic"
+                type="text"
+                placeholder="e.g. Improving Reading Skills through Group Activities">
+
+        </div>
+
+        <div class="field full">
+
+            <label id="problemLabel">
+                Research Problem
+            </label>
+
+            <textarea
+                id="researchProblem"
+                rows="5"
+                placeholder="Describe the classroom problem..."></textarea>
+
+        </div>
+
+        <div class="field">
+
+            <label id="studentsLabel">
+                Number of Students
+            </label>
+
+            <input
+                id="students"
+                type="number"
+                placeholder="e.g. 25">
+
+        </div>
+
+        <div class="field">
+
+            <label id="durationLabel">
+                Research Duration
+            </label>
+
+            <input
+                id="duration"
+                type="text"
+                placeholder="e.g. 4 weeks">
+
+        </div>
+
+    </div>
+
+    <button
+        id="generateBtn"
+        class="generate">
+
+        🤖 Generate Action Research
+
+    </button>
+
+    <div
+        id="loading"
+        class="loading hidden">
+
+        <div class="spinner"></div>
+
+        <div>
+
+            <strong id="loadingTitle">
+                Gemini AI is generating your research...
+            </strong>
+
+            <p id="loadingText">
+                Please wait a moment.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div
+        id="errorBox"
+        class="error hidden"></div>
+
+</section>
+
+<section
+    id="resultSection"
+    class="card hidden">
+
+    <div class="resultTop">
+
+        <div class="section-heading">
+
+            <span>
+                2
+            </span>
+
+            <h2 id="resultTitle">
+                Generated Action Research
+            </h2>
+
+        </div>
+
+        <div class="actions">
+
+            <button id="pdfBtn">
+                📄 PDF
+            </button>
+
+            <button id="docxBtn">
+                📝 DOCX
+            </button>
+
+            <button id="printBtn">
+                🖨️ Print
+            </button>
+
+        </div>
+
+    </div>
+
+    <div
+        id="researchOutput"
+        class="research-output"></div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <p>
+        © 2026 AI Action Research Generator
+    </p>
+
+    <p>
+        Educational and research purposes
+    </p>
+
+</footer>
 
 <script>
 
-function generateResearch(){
+/* =====================================================
+   GOOGLE APPS SCRIPT WEB APP URL
+===================================================== */
 
-const teacher=document.getElementById("teacher").value.trim();
-const className=document.getElementById("className").value.trim();
-const subject=document.getElementById("subject").value.trim();
-const title=document.getElementById("title").value.trim();
-const school=document.getElementById("school").value.trim();
-const students=document.getElementById("students").value.trim();
-const duration=document.getElementById("duration").value.trim();
-const problem=document.getElementById("problem").value.trim();
+const API_URL =
+    "https://script.google.com/macros/s/AKfycbxrR5tuWK_banTQmdZffWqKM7mujTPqWizSxVOl7mcq2M4c7Kh4gEeoLvOxEiSm6Og1/exec";
 
-if(!teacher || !className || !subject || !title || !school || !problem){
 
-alert("कृपया आवश्यक सबै विवरण भर्नुहोस्।");
-return;
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+let currentLanguage = "en";
+
+const $ =
+    id =>
+    document.getElementById(id);
+
+const translations = {
+
+    en: {
+
+        heroTitle:
+            "AI Action Research Generator",
+
+        heroDescription:
+            "Generate a complete classroom Action Research report using Gemini AI.",
+
+        formTitle:
+            "Research Information",
+
+        researcher:
+            "Researcher Name *",
+
+        school:
+            "School Name *",
+
+        level:
+            "Level / Grade *",
+
+        subject:
+            "Subject",
+
+        topic:
+            "Research Topic *",
+
+        problem:
+            "Research Problem",
+
+        students:
+            "Number of Students",
+
+        duration:
+            "Research Duration",
+
+        generate:
+            "🤖 Generate Action Research",
+
+        loadingTitle:
+            "Gemini AI is generating your research...",
+
+        loadingText:
+            "Please wait a moment.",
+
+        resultTitle:
+            "Generated Action Research",
+
+        placeholders: {
+
+            researcher:
+                "Enter researcher name",
+
+            school:
+                "Enter school name",
+
+            level:
+                "e.g. Grade 8",
+
+            subject:
+                "e.g. English",
+
+            topic:
+                "e.g. Improving Reading Skills through Group Activities",
+
+            problem:
+                "Describe the classroom problem...",
+
+            students:
+                "e.g. 25",
+
+            duration:
+                "e.g. 4 weeks"
+
+        }
+
+    },
+
+    ne: {
+
+        heroTitle:
+            "एआई कार्यमूलक अनुसन्धान Generator",
+
+        heroDescription:
+            "Gemini AI प्रयोग गरेर पूर्ण कार्यमूलक अनुसन्धान प्रतिवेदन तयार गर्नुहोस्।",
+
+        formTitle:
+            "अनुसन्धानसम्बन्धी जानकारी",
+
+        researcher:
+            "अनुसन्धानकर्ताको नाम *",
+
+        school:
+            "विद्यालयको नाम *",
+
+        level:
+            "तह / कक्षा *",
+
+        subject:
+            "विषय",
+
+        topic:
+            "अनुसन्धानको शीर्षक *",
+
+        problem:
+            "अनुसन्धान समस्या",
+
+        students:
+            "विद्यार्थी संख्या",
+
+        duration:
+            "अनुसन्धान अवधि",
+
+        generate:
+            "🤖 कार्यमूलक अनुसन्धान तयार गर्नुहोस्",
+
+        loadingTitle:
+            "Gemini AI ले अनुसन्धान तयार गर्दैछ...",
+
+        loadingText:
+            "कृपया केही समय पर्खनुहोस्।",
+
+        resultTitle:
+            "तयार गरिएको कार्यमूलक अनुसन्धान",
+
+        placeholders: {
+
+            researcher:
+                "अनुसन्धानकर्ताको नाम लेख्नुहोस्",
+
+            school:
+                "विद्यालयको नाम लेख्नुहोस्",
+
+            level:
+                "जस्तै: कक्षा ८",
+
+            subject:
+                "जस्तै: अंग्रेजी",
+
+            topic:
+                "जस्तै: समूहगत क्रियाकलापबाट पढाइ सीप सुधार",
+
+            problem:
+                "कक्षाकोठाको समस्या लेख्नुहोस्...",
+
+            students:
+                "जस्तै: २५",
+
+            duration:
+                "जस्तै: ४ हप्ता"
+
+        }
+
+    }
+
+};
+
+
+/* =====================================================
+   LANGUAGE SWITCH
+===================================================== */
+
+$("enBtn").onclick = () => {
+
+    currentLanguage = "en";
+
+    updateLanguage();
+
+};
+
+$("neBtn").onclick = () => {
+
+    currentLanguage = "ne";
+
+    updateLanguage();
+
+};
+
+function updateLanguage(){
+
+    const t =
+        translations[currentLanguage];
+
+    $("heroTitle").textContent =
+        t.heroTitle;
+
+    $("heroDescription").textContent =
+        t.heroDescription;
+
+    $("formTitle").textContent =
+        t.formTitle;
+
+    $("researcherLabel").textContent =
+        t.researcher;
+
+    $("schoolLabel").textContent =
+        t.school;
+
+    $("levelLabel").textContent =
+        t.level;
+
+    $("subjectLabel").textContent =
+        t.subject;
+
+    $("topicLabel").textContent =
+        t.topic;
+
+    $("problemLabel").textContent =
+        t.problem;
+
+    $("studentsLabel").textContent =
+        t.students;
+
+    $("durationLabel").textContent =
+        t.duration;
+
+    $("generateBtn").textContent =
+        t.generate;
+
+    $("loadingTitle").textContent =
+        t.loadingTitle;
+
+    $("loadingText").textContent =
+        t.loadingText;
+
+    $("resultTitle").textContent =
+        t.resultTitle;
+
+    $("researcherName").placeholder =
+        t.placeholders.researcher;
+
+    $("schoolName").placeholder =
+        t.placeholders.school;
+
+    $("level").placeholder =
+        t.placeholders.level;
+
+    $("subject").placeholder =
+        t.placeholders.subject;
+
+    $("researchTopic").placeholder =
+        t.placeholders.topic;
+
+    $("researchProblem").placeholder =
+        t.placeholders.problem;
+
+    $("students").placeholder =
+        t.placeholders.students;
+
+    $("duration").placeholder =
+        t.placeholders.duration;
+
+    $("enBtn")
+        .classList
+        .toggle(
+            "active",
+            currentLanguage === "en"
+        );
+
+    $("neBtn")
+        .classList
+        .toggle(
+            "active",
+            currentLanguage === "ne"
+        );
 
 }
 
-document.getElementById("report").innerHTML=`
 
-<h1>कार्यमूलक अनुसन्धान प्रतिवेदन</h1>
+/* =====================================================
+   GET DATA
+===================================================== */
 
-<table>
+function getData(){
 
-<tr>
-<th>शिक्षकको नाम</th>
-<td>${teacher}</td>
-</tr>
+    return {
 
-<tr>
-<th>विद्यालय</th>
-<td>${school}</td>
-</tr>
+        researcherName:
+            $("researcherName")
+            .value
+            .trim(),
 
-<tr>
-<th>कक्षा</th>
-<td>${className}</td>
-</tr>
+        schoolName:
+            $("schoolName")
+            .value
+            .trim(),
 
-<tr>
-<th>विषय</th>
-<td>${subject}</td>
-</tr>
+        level:
+            $("level")
+            .value
+            .trim(),
 
-<tr>
-<th>अनुसन्धान शीर्षक</th>
-<td><strong>${title}</strong></td>
-</tr>
+        subject:
+            $("subject")
+            .value
+            .trim(),
 
-<tr>
-<th>विद्यार्थी संख्या</th>
-<td>${students || "उल्लेख गरिएको छैन"}</td>
-</tr>
+        researchTopic:
+            $("researchTopic")
+            .value
+            .trim(),
 
-<tr>
-<th>अनुसन्धान अवधि</th>
-<td>${duration || "उल्लेख गरिएको छैन"}</td>
-</tr>
+        researchProblem:
+            $("researchProblem")
+            .value
+            .trim(),
 
-</table>
+        students:
+            $("students")
+            .value
+            .trim(),
 
+        duration:
+            $("duration")
+            .value
+            .trim(),
 
-<h2>१. परिचय</h2>
+        language:
+            currentLanguage
 
-<p>
-विद्यालयको कक्षाकोठामा शिक्षण सिकाइ सञ्चालन गर्दा विभिन्न
-समस्या तथा चुनौतीहरू देखिन सक्छन्। यस्ता समस्याको पहिचान,
-समाधानका लागि योजना निर्माण, कार्यान्वयन तथा परिणामको
-अवलोकन गर्ने प्रक्रियालाई कार्यमूलक अनुसन्धान भनिन्छ।
-</p>
+    };
 
-<p>
-प्रस्तुत कार्यमूलक अनुसन्धान
-<strong>“${title}”</strong> शीर्षकमा
-${school} मा सञ्चालन गरिएको हो।
-</p>
+}
 
 
-<h2>२. समस्याको पहिचान</h2>
+/* =====================================================
+   ERROR
+===================================================== */
 
-<p>
-यस अनुसन्धानमा पहिचान गरिएको मुख्य समस्या:
-</p>
+function showError(message){
 
-<p>
-<strong>${problem}</strong>
-</p>
+    $("errorBox").textContent =
+        message;
 
+    $("errorBox")
+        .classList
+        .remove("hidden");
 
-<h2>३. समस्याको कथन</h2>
+}
 
-<p>
-${className} का विद्यार्थीलाई ${subject} विषय शिक्षण गर्ने
-क्रममा <strong>${problem}</strong> समस्या देखिएकोले
-विद्यार्थीको सिकाइ प्रक्रियामा अपेक्षित सुधार ल्याउन
-आवश्यक देखिएको छ।
-</p>
+function hideError(){
 
+    $("errorBox")
+        .classList
+        .add("hidden");
 
-<h2>४. अनुसन्धानका उद्देश्य</h2>
-
-<ol>
-<li>सम्बन्धित समस्याको वर्तमान अवस्था पहिचान गर्नु।</li>
-<li>समस्याका सम्भावित कारणहरू पत्ता लगाउनु।</li>
-<li>समस्या समाधानका लागि उपयुक्त शिक्षण रणनीति प्रयोग गर्नु।</li>
-<li>प्रयोग गरिएको रणनीतिको प्रभावकारिता अध्ययन गर्नु।</li>
-<li>विद्यार्थीको सिकाइ उपलब्धिमा सुधार ल्याउनु।</li>
-</ol>
+}
 
 
-<h2>५. अनुसन्धान प्रश्न</h2>
+/* =====================================================
+   VALIDATE
+===================================================== */
 
-<ol>
-<li>सम्बन्धित समस्या विद्यार्थीमा किन देखिएको छ?</li>
-<li>सम
+function validate(data){
+
+    if(!data.researcherName){
+
+        showError(
+            currentLanguage === "ne"
+            ? "अनुसन्धानकर्ताको नाम लेख्नुहोस्।"
+            : "Please enter researcher name."
+        );
+
+        return false;
+    }
+
+    if(!data.schoolName){
+
+        showError(
+            currentLanguage === "ne"
+            ? "विद्यालयको नाम लेख्नुहोस्।"
+            : "Please enter school name."
+        );
+
+        return false;
+    }
+
+    if(!data.level){
+
+        showError(
+            currentLanguage === "ne"
+            ? "तह / कक्षा लेख्नुहोस्।"
+            : "Please enter level / grade."
+        );
+
+        return false;
+    }
+
+    if(!data.researchTopic){
+
+        showError(
+            currentLanguage === "ne"
+            ? "अनुसन्धानको शीर्षक लेख्नुहोस्।"
+            : "Please enter research topic."
+        );
+
+        return false;
+    }
+
+    return true;
+
+}
+
+
+/* =====================================================
+   GENERATE
+===================================================== */
+
+$("generateBtn").onclick =
+    generateResearch;
+
+async function generateResearch(){
+
+    hideError();
+
+    const data =
+        getData();
+
+    if(!validate(data))
+        return;
+
+    if(
+        API_URL ===
+        "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"
+    ){
+
+        showError(
+            "पहिले API_URL मा Google Apps Script Web App URL राख्नुहोस्।"
+        );
+
+        return;
+    }
+
+    $("generateBtn").disabled =
+        true;
+
+    $("loading")
+        .classList
+        .remove("hidden");
+
+    $("resultSection")
+        .classList
+        .add("hidden");
+
+    try{
+
+        const response =
+            await fetch(
+
+                API_URL,
+
+                {
+
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+                    },
+
+                    body:
+                        JSON.stringify(data)
+
+                }
+
+            );
+
+        const result =
+            await response.json();
+
+        if(!result.success){
+
+            throw new Error(
+                result.error ||
+                "Gemini could not generate the research."
+            );
+
+        }
+
+        $("researchOutput")
+            .innerHTML =
+            markdownToHTML(
+                result.text
+            );
+
+        $("resultSection")
+            .classList
+            .remove("hidden");
+
+        $("resultSection")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        showError(
+            error.message ||
+            "Something went wrong."
+        );
+
+    }
+
+    finally{
+
+        $("generateBtn")
+            .disabled =
+            false;
+
+        $("loading")
+            .classList
+            .add("hidden");
+
+    }
+
+}
+
+
+/* =====================================================
+   MARKDOWN → HTML
+===================================================== */
+
+function escapeHTML(value){
+
+    return value
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        );
+
+}
+
+function markdownToHTML(markdown){
+
+    const lines =
+        escapeHTML(markdown)
+        .split("\n");
+
+    let html = "";
+
+    let inTable = false;
+
+    for(
+        let i=0;
+        i<lines.length;
+        i++
+    ){
+
+        const line =
+            lines[i].trim();
+
+        if(
+            line.startsWith("|") &&
+            line.endsWith("|")
+        ){
+
+            if(!inTable){
+
+                const headers =
+                    line
+                    .split("|")
+                    .slice(1,-1);
+
+                html +=
+                    "<table><thead><tr>";
+
+                headers.forEach(
+                    header => {
+
+                        html +=
+                            "<th>" +
+                            header.trim() +
+                            "</th>";
+
+                    }
+                );
+
+                html +=
+                    "</tr></thead><tbody>";
+
+                inTable = true;
+
+                i++;
+
+                continue;
+
+            }
+
+            const cells =
+                line
+                .split("|")
+                .slice(1,-1);
+
+            html +=
+                "<tr>";
+
+            cells.forEach(
+                cell => {
+
+                    html +=
+                        "<td>" +
+                        cell.trim() +
+                        "</td>";
+
+                }
+            );
+
+            html +=
+                "</tr>";
+
+            continue;
+
+        }
+
+        if(inTable){
+
+            html +=
+                "</tbody></table>";
+
+            inTable = false;
+
+        }
+
+        if(!line)
+            continue;
+
+        if(
+            line.startsWith("### ")
+        ){
+
+            html +=
+                "<h3>" +
+                line.substring(4) +
+                "</h3>";
+
+            continue;
+
+        }
+
+        if(
+            line.startsWith("## ")
+        ){
+
+            html +=
+                "<h2>" +
+                line.substring(3) +
+                "</h2>";
+
+            continue;
+
+        }
+
+        if(
+            line.startsWith("# ")
+        ){
+
+            html +=
+                "<h1>" +
+                line.substring(2) +
+                "</h1>";
+
+            continue;
+
+        }
+
+        if(
+            line.startsWith("- ")
+        ){
+
+            html +=
+                "<ul><li>" +
+                line.substring(2) +
+                "</li></ul>";
+
+            continue;
+
+        }
+
+        if(
+            /^\d+\.\s/.test(line)
+        ){
+
+            html +=
+                "<ol><li>" +
+                line.replace(
+                    /^\d+\.\s/,
+                    ""
+                ) +
+                "</li></ol>";
+
+            continue;
+
+        }
+
+        html +=
+            "<p>" +
+            line +
+            "</p>";
+
+    }
+
+    if(inTable){
+
+        html +=
+            "</tbody></table>";
+
+    }
+
+    html =
+        html.replace(
+            /\*\*(.*?)\*\*/g,
+            "<strong>$1</strong>"
+        );
+
+    return html;
+
+}
+
+
+/* =====================================================
+   PDF
+===================================================== */
+
+$("pdfBtn").onclick =
+    () => {
+
+        const element =
+            $("researchOutput");
+
+        html2pdf()
+
+            .set({
+
+                margin:10,
+
+                filename:
+                    "Action-Research.pdf",
+
+                image:{
+                    type:"jpeg",
+                    quality:.98
+                },
+
+                html2canvas:{
+                    scale:2,
+                    useCORS:true
+                },
+
+                jsPDF:{
+                    unit:"mm",
+                    format:"a4",
+                    orientation:"portrait"
+                }
+
+            })
+
+            .from(element)
+
+            .save();
+
+    };
+
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+$("printBtn").onclick =
+    () => {
+
+        const content =
+            $("researchOutput")
+            .innerHTML;
+
+        const win =
+            window.open(
+                "",
+                "_blank"
+            );
+
+        win.document.write(`
+
+            <!DOCTYPE html>
+
+            <html>
+
+            <head>
+
+                <meta charset="UTF-8">
+
+                <title>
+                    Action Research
+                </title>
+
+                <style>
+
+                    body{
+                        font-family:
+                            Arial,
+                            "Noto Sans Devanagari",
+                            sans-serif;
+
+                        line-height:1.8;
+
+                        padding:30px;
+                    }
+
+                    h1{
+                        text-align:center;
+                    }
+
+                    h2{
+                        margin-top:25px;
+                    }
+
+                    table{
+                        width:100%;
+                        border-collapse:collapse;
+                    }
+
+                    th,
+                    td{
+                        border:1px solid #555;
+                        padding:8px;
+                    }
+
+                </style>
+
+            </head>
+
+            <body>
+
+                ${content}
+
+            </body>
+
+            </html>
+
+        `);
+
+        win.document.close();
+
+        setTimeout(
+            () => {
+
+                win.print();
+
+            },
+            500
+        );
+
+    };
+
+
+/* =====================================================
+   DOCX
+===================================================== */
+
+$("docxBtn").onclick =
+    async () => {
+
+        const text =
+            $("researchOutput").innerText;
+
+        const lines =
+            text
+            .split("\n")
+            .filter(
+                line =>
+                    line.trim()
+            );
+
+        const children =
+            lines.map(
+                line => {
+
+                    return new docx.Paragraph({
+
+                        children:[
+
+                            new docx.TextRun({
+
+                                text:
+                                    line.trim(),
+
+                                size:24
+
+                            })
+
+                        ],
+
+                        spacing:{
+                            after:150
+                        }
+
+                    });
+
+                }
+            );
+
+        const documentFile =
+            new docx.Document({
+
+                sections:[
+
+                    {
+
+                        properties:{},
+
+                        children:
+                            children
+
+                    }
+
+                ]
+
+            });
+
+        const blob =
+            await docx.Packer.toBlob(
+                documentFile
+            );
+
+        const url =
+            URL.createObjectURL(blob);
+
+        const link =
+            document.createElement("a");
+
+        link.href =
+            url;
+
+        link.download =
+            "Action-Research.docx";
+
+        document.body.appendChild(
+            link
+        );
+
+        link.click();
+
+        link.remove();
+
+        URL.revokeObjectURL(
+            url
+        );
+
+    };
+
+</script>
+
+</body>
+    </html>
