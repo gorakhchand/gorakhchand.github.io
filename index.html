@@ -3,14 +3,18 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Gorakh Chand | Teaching Professional</title>
 
-<meta name="description" content="Official personal website of Gorakh Chand, Teaching Professional and Secondary Level Government Teacher specializing in Computer Science.">
+<meta name="description"
+content="Official personal website of Gorakh Chand, Teaching Professional and Secondary Level Government Teacher specializing in Computer Science.">
 
 <style>
+
+/* =========================
+   GLOBAL
+========================= */
 
 *{
     margin:0;
@@ -21,9 +25,13 @@
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    color:#1f2937;
-    background:#f7f9ff;
+    color:#1e293b;
+    background:#f8fafc;
     line-height:1.7;
+}
+
+a{
+    text-decoration:none;
 }
 
 
@@ -36,15 +44,20 @@ nav{
     top:0;
     left:0;
     width:100%;
-    z-index:999;
-    background:rgba(255,255,255,.97);
-    box-shadow:0 4px 20px rgba(0,0,0,.08);
+    z-index:9999;
+
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 5px 25px rgba(15,23,42,.10);
 }
 
 .navbar{
-    max-width:1200px;
+    max-width:1250px;
     margin:auto;
-    padding:15px 20px;
+
+    padding:13px 20px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -52,32 +65,121 @@ nav{
 
 .logo{
     font-size:25px;
-    font-weight:800;
-    background:linear-gradient(90deg,#6d28d9,#2563eb,#0891b2);
+    font-weight:900;
+
+    background:linear-gradient(
+        90deg,
+        #4f46e5,
+        #7c3aed,
+        #0891b2
+    );
+
     -webkit-background-clip:text;
     color:transparent;
 }
 
 nav ul{
     display:flex;
+    align-items:center;
+    gap:5px;
     list-style:none;
-    gap:17px;
 }
 
-nav a{
-    text-decoration:none;
-    color:#374151;
+nav ul li{
+    position:relative;
+}
+
+nav ul li > a{
+    display:block;
+    padding:10px 12px;
+
+    color:#334155;
+    font-weight:700;
+    font-size:14px;
+
+    border-radius:10px;
+    transition:.3s;
+}
+
+nav ul li > a:hover{
+    color:#4f46e5;
+    background:#eef2ff;
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown-menu{
+    position:absolute;
+
+    top:48px;
+    left:0;
+
+    min-width:235px;
+
+    padding:9px;
+
+    background:rgba(255,255,255,.98);
+
+    border-radius:16px;
+
+    box-shadow:
+        0 20px 45px rgba(15,23,42,.18);
+
+    border:1px solid #e2e8f0;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:.3s;
+}
+
+.dropdown-menu a{
+    display:block;
+
+    padding:11px 14px;
+
+    color:#334155;
+
+    border-radius:10px;
+
+    font-size:14px;
     font-weight:600;
+
+    transition:.25s;
 }
 
-nav a:hover{
-    color:#2563eb;
+.dropdown-menu a:hover{
+    background:#eef2ff;
+    color:#4f46e5;
+    transform:translateX(4px);
 }
+
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.arrow{
+    font-size:11px;
+    margin-left:4px;
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
 
 .menu{
     display:none;
     font-size:28px;
     cursor:pointer;
+    color:#4338ca;
 }
 
 
@@ -86,45 +188,109 @@ nav a:hover{
 ========================= */
 
 .hero{
+
     min-height:100vh;
-    padding:130px 20px 70px;
+
+    padding:125px 20px 70px;
+
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+
     text-align:center;
+
     color:white;
 
     background:
-    radial-gradient(circle at 15% 20%,#22d3ee55,transparent 30%),
-    radial-gradient(circle at 85% 80%,#f472b655,transparent 30%),
-    linear-gradient(135deg,#4338ca,#7c3aed,#0284c7);
+
+    radial-gradient(
+        circle at 15% 20%,
+        rgba(34,211,238,.30),
+        transparent 28%
+    ),
+
+    radial-gradient(
+        circle at 85% 75%,
+        rgba(244,114,182,.25),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #172554,
+        #4338ca,
+        #6d28d9,
+        #0369a1
+    );
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:after{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    right:-180px;
+    bottom:-200px;
 }
 
 .hero-content{
     width:100%;
     max-width:1100px;
+    position:relative;
+    z-index:2;
 }
 
 
 /* =========================
-   PROFILE PHOTO
+   PROFILE
 ========================= */
 
 .profile{
     width:175px;
     height:175px;
-    margin:0 auto 28px;
+
+    margin:0 auto 25px;
+
     border-radius:50%;
+
     overflow:hidden;
-    border:6px solid rgba(255,255,255,.9);
-    box-shadow:0 15px 45px rgba(0,0,0,.3);
+
+    border:6px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.35);
+
     background:white;
+
+    animation:profileFloat 4s ease-in-out infinite;
 }
 
 .profile img{
     width:100%;
     height:100%;
     object-fit:cover;
+}
+
+@keyframes profileFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
 }
 
 
@@ -136,78 +302,66 @@ nav a:hover{
     font-size:58px;
     line-height:1.15;
     margin-bottom:12px;
+    font-weight:900;
 }
 
 .hero h2{
-    font-size:24px;
+    font-size:23px;
     font-weight:400;
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .hero p{
     max-width:720px;
     margin:auto;
     font-size:18px;
+    color:#e0e7ff;
 }
 
 
 /* =========================
-   NEPALI DATE & TIME
+   TIME + NEPALI DATE
 ========================= */
 
-.date-time-box{
-    margin:28px auto 0;
-    max-width:700px;
+.datetime-box{
 
-    display:flex;
-    justify-content:center;
-    align-items:stretch;
+    margin:28px auto 0;
+
+    max-width:680px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
     gap:15px;
 }
 
-.time-card,
-.date-card{
-    flex:1;
-    min-width:240px;
+.time-card{
 
-    padding:18px 20px;
+    padding:18px;
 
     border-radius:18px;
 
-    background:rgba(255,255,255,.15);
+    background:rgba(255,255,255,.13);
 
-    border:1px solid rgba(255,255,255,.35);
+    border:1px solid rgba(255,255,255,.25);
 
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.15),
-        inset 0 1px 0 rgba(255,255,255,.25);
+    backdrop-filter:blur(12px);
 
-    backdrop-filter:blur(10px);
-
-    transition:.3s;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
-.time-card:hover,
-.date-card:hover{
-    transform:translateY(-4px);
-    background:rgba(255,255,255,.20);
+.time-card .icon{
+    font-size:27px;
 }
 
-.date-time-label{
+.time-card h3{
     font-size:14px;
-    opacity:.9;
-    margin-bottom:5px;
+    color:#c7d2fe;
+    margin-bottom:3px;
 }
 
-.date-time-value{
-    font-size:25px;
-    font-weight:800;
-}
-
-.date-sub{
-    font-size:14px;
-    margin-top:3px;
-    opacity:.9;
+.time-card strong{
+    font-size:22px;
 }
 
 
@@ -216,64 +370,77 @@ nav a:hover{
 ========================= */
 
 .buttons{
-    margin-top:32px;
+    margin-top:28px;
 }
 
 .btn{
     display:inline-block;
-    padding:14px 28px;
+
+    padding:13px 27px;
+
     margin:6px;
+
     border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
+
     background:white;
-    color:#5b21b6;
+
+    color:#4f46e5;
+
+    font-weight:800;
+
     transition:.3s;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
 .btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    transform:translateY(-4px) scale(1.02);
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
 }
 
 
 /* =========================
-   HOME THREE PHOTOS
+   HOME PHOTOS
 ========================= */
 
 .home-photos{
+
     width:100%;
     max-width:1050px;
-    margin:45px auto 0;
+
+    margin:42px auto 0;
 
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:18px;
 }
 
 .home-photos img{
+
     width:100%;
-    height:260px;
+    height:255px;
+
     object-fit:cover;
 
     border-radius:18px;
 
     border:3px solid rgba(255,255,255,.8);
 
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    box-shadow:0 12px 35px rgba(0,0,0,.25);
 
-    display:block;
+    transition:.4s;
+}
+
+.home-photos img:hover{
+    transform:translateY(-7px) scale(1.02);
 }
 
 
 /* =========================
-   ABOUT PREVIEW
+   COMMON SECTION
 ========================= */
-
-.about{
-    padding:90px 20px;
-    background:white;
-}
 
 .container{
     max-width:1100px;
@@ -287,40 +454,72 @@ nav a:hover{
 
 .section-title h2{
     font-size:40px;
-    color:#5b21b6;
+    color:#4f46e5;
 }
 
 .section-title p{
-    color:#6b7280;
+    color:#64748b;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    padding:90px 20px;
+    background:white;
 }
 
 .about-grid{
     display:grid;
+
     grid-template-columns:1.4fr 1fr;
+
     gap:25px;
 }
 
 .box{
+
     padding:35px;
+
     border-radius:24px;
-    background:#f8f9ff;
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.06);
+
+    transition:.3s;
+}
+
+.box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 35px rgba(15,23,42,.10);
 }
 
 .box h3{
-    color:#5b21b6;
+    color:#4f46e5;
     margin-bottom:15px;
     font-size:23px;
 }
 
 .quote{
+
     margin-top:22px;
+
     padding:18px 22px;
+
     border-left:5px solid #7c3aed;
+
     background:white;
+
     border-radius:12px;
+
     font-style:italic;
-    color:#4b5563;
+
+    color:#475569;
 }
 
 
@@ -330,26 +529,38 @@ nav a:hover{
 
 .interests{
     padding:90px 20px;
-    background:#f1f5ff;
+    background:#eef2ff;
 }
 
 .interest-grid{
+
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     gap:20px;
 }
 
 .interest{
+
     background:white;
+
     padding:30px 15px;
+
     border-radius:20px;
+
     text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+    box-shadow:0 8px 25px rgba(15,23,42,.07);
+
     transition:.3s;
+
+    border:1px solid #e0e7ff;
 }
 
 .interest:hover{
-    transform:translateY(-6px);
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(15,23,42,.13);
 }
 
 .interest span{
@@ -364,14 +575,122 @@ nav a:hover{
 
 
 /* =========================
-   CTA
+   RESOURCE THUMBNAILS
+========================= */
+
+.resources{
+    padding:90px 20px;
+    background:#f8fafc;
+}
+
+.resource-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:22px;
+}
+
+.resource-card{
+
+    min-height:190px;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(15,23,42,.12);
+
+    transition:.35s;
+}
+
+.resource-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(15,23,42,.18);
+}
+
+.resource-card:nth-child(1){
+    background:linear-gradient(135deg,#4338ca,#7c3aed);
+}
+
+.resource-card:nth-child(2){
+    background:linear-gradient(135deg,#0369a1,#0891b2);
+}
+
+.resource-card:nth-child(3){
+    background:linear-gradient(135deg,#be185d,#db2777);
+}
+
+.resource-card:nth-child(4){
+    background:linear-gradient(135deg,#047857,#059669);
+}
+
+.resource-card:nth-child(5){
+    background:linear-gradient(135deg,#b45309,#ea580c);
+}
+
+.resource-card:nth-child(6){
+    background:linear-gradient(135deg,#334155,#475569);
+}
+
+.resource-icon{
+    font-size:45px;
+    margin-bottom:8px;
+}
+
+.resource-card h3{
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.resource-card p{
+    font-size:14px;
+    opacity:.9;
+}
+
+.resource-card .view{
+    display:inline-block;
+
+    margin-top:14px;
+
+    padding:7px 16px;
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    border-radius:20px;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   CONNECT
 ========================= */
 
 .connect{
+
     padding:90px 20px;
+
     text-align:center;
+
     color:white;
-    background:linear-gradient(135deg,#4338ca,#7c3aed,#0891b2);
+
+    background:
+    radial-gradient(circle at 20% 20%,#22d3ee44,transparent 25%),
+    linear-gradient(135deg,#312e81,#6d28d9,#0369a1);
 }
 
 .connect h2{
@@ -379,13 +698,9 @@ nav a:hover{
     margin-bottom:12px;
 }
 
-.connect .btn{
-    margin-top:25px;
-}
-
 
 /* =========================
-   USEFUL EDUCATIONAL LINKS
+   USEFUL LINKS
 ========================= */
 
 .useful-links{
@@ -396,27 +711,38 @@ nav a:hover{
 .useful-links-title{
     font-size:18px;
     margin-bottom:15px;
-    color:white;
-    font-weight:600;
+    font-weight:700;
 }
 
 .useful-links-grid{
+
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     gap:10px;
 }
 
 .useful-link{
+
     display:block;
+
     padding:12px 8px;
+
     background:rgba(255,255,255,.13);
+
     border:1px solid rgba(255,255,255,.25);
+
     border-radius:12px;
+
     color:white;
-    text-decoration:none;
+
     font-size:13px;
+
     font-weight:600;
+
     transition:.3s;
+
     backdrop-filter:blur(5px);
 }
 
@@ -429,7 +755,6 @@ nav a:hover{
 .useful-link span{
     display:block;
     font-size:20px;
-    margin-bottom:3px;
 }
 
 
@@ -438,10 +763,14 @@ nav a:hover{
 ========================= */
 
 footer{
+
     padding:28px 20px;
+
     text-align:center;
-    color:#9ca3af;
-    background:#111827;
+
+    color:#94a3b8;
+
+    background:#0f172a;
 }
 
 
@@ -456,20 +785,61 @@ footer{
     }
 
     nav ul{
+
         display:none;
+
         position:absolute;
-        top:65px;
+
+        top:64px;
+
         left:0;
+
         width:100%;
-        padding:20px;
+
+        padding:15px;
+
         background:white;
+
         flex-direction:column;
-        text-align:center;
-        box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+        text-align:left;
+
+        box-shadow:0 10px 25px rgba(0,0,0,.12);
     }
 
     nav ul.show{
         display:flex;
+    }
+
+    nav ul li{
+        width:100%;
+    }
+
+    nav ul li > a{
+        padding:12px 15px;
+    }
+
+    .dropdown-menu{
+
+        position:static;
+
+        display:none;
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:none;
+
+        box-shadow:none;
+
+        border:0;
+
+        padding-left:20px;
+    }
+
+    .dropdown.open .dropdown-menu{
+        display:block;
     }
 
     .about-grid{
@@ -477,6 +847,10 @@ footer{
     }
 
     .interest-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .resource-grid{
         grid-template-columns:1fr 1fr;
     }
 
@@ -490,7 +864,7 @@ footer{
 @media(max-width:600px){
 
     .hero{
-        padding:110px 10px 45px;
+        padding:105px 10px 45px;
     }
 
     .hero h1{
@@ -498,7 +872,7 @@ footer{
     }
 
     .hero h2{
-        font-size:19px;
+        font-size:18px;
     }
 
     .hero p{
@@ -506,77 +880,62 @@ footer{
     }
 
     .profile{
-        width:150px;
-        height:150px;
+        width:145px;
+        height:145px;
     }
 
-
-    /* DATE & TIME MOBILE */
-
-    .date-time-box{
-        flex-direction:column;
+    .datetime-box{
+        grid-template-columns:1fr;
         gap:10px;
-        margin-top:25px;
     }
 
-    .time-card,
-    .date-card{
-        min-width:0;
-        width:100%;
-        padding:14px 15px;
+    .time-card{
+        padding:13px;
     }
-
-    .date-time-value{
-        font-size:22px;
-    }
-
-
-    /* THREE PHOTOS */
 
     .home-photos{
         grid-template-columns:repeat(3,1fr);
         gap:7px;
-        margin-top:35px;
     }
 
     .home-photos img{
-        height:125px;
+        height:120px;
         border-radius:10px;
-        border:2px solid rgba(255,255,255,.8);
+        border-width:2px;
+    }
+
+    .section-title h2{
+        font-size:32px;
     }
 
     .interest-grid{
         grid-template-columns:1fr 1fr;
     }
 
-
-    /* Useful Links */
-
-    .useful-links{
-        margin-top:30px;
+    .resource-grid{
+        grid-template-columns:1fr;
     }
 
     .useful-links-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:1fr 1fr;
         gap:8px;
-    }
-
-    .useful-link{
-        font-size:12px;
-        padding:10px 5px;
     }
 
 }
 
 
 /* =========================
-   VERY SMALL MOBILE
+   VERY SMALL
 ========================= */
 
 @media(max-width:380px){
 
+    .hero h1{
+        font-size:34px;
+    }
+
     .home-photos img{
-        height:105px;
+        height:100px;
     }
 
 }
@@ -601,43 +960,90 @@ footer{
 Gorakh Chand
 </div>
 
+
 <div class="menu" onclick="toggleMenu()">
 ☰
 </div>
 
+
 <ul id="navMenu">
+
 
 <li>
 <a href="index.html">Home</a>
 </li>
 
-<li>
-<a href="about.html">About</a>
+
+<li class="dropdown">
+
+<a href="about.html">
+About <span class="arrow">▼</span>
+</a>
+
+<div class="dropdown-menu">
+
+<a href="about.html">👤 About Me</a>
+
+<a href="education.html">🎓 Education</a>
+
+<a href="achievements.html">🏆 Achievements</a>
+
+</div>
+
 </li>
 
-<li>
-<a href="education.html">Education</a>
+
+<li class="dropdown">
+
+<a href="educational-content.html">
+Educational Content <span class="arrow">▼</span>
+</a>
+
+<div class="dropdown-menu">
+
+<a href="educational-content.html">
+📚 Educational Content
+</a>
+
+<a href="textbook.html">
+📖 School Level Textbook
+</a>
+
+<a href="notes.html">
+📝 School Level Notes
+</a>
+
+<a href="teacher-guide.html">
+👨‍🏫 Teacher's Guide
+</a>
+
+<a href="syllabus.html">
+📋 School Level Syllabus
+</a>
+
+<a href="action-research.html">
+🔬 Action Research
+</a>
+
+</div>
+
 </li>
 
-<li>
-<a href="achievements.html">Achievements</a>
-</li>
-
-<li>
-<a href="educational-content.html">Educational Content</a>
-</li>
 
 <li>
 <a href="articles.html">Articles</a>
 </li>
 
+
 <li>
 <a href="gallery.html">Gallery</a>
 </li>
 
+
 <li>
 <a href="contact.html">Contact</a>
 </li>
+
 
 </ul>
 
@@ -646,16 +1052,15 @@ Gorakh Chand
 </nav>
 
 
+
 <!-- =========================
-     HOME / HERO
+     HERO
 ========================= -->
 
 <section class="hero" id="home">
 
 <div class="hero-content">
 
-
-<!-- PROFILE PHOTO -->
 
 <div class="profile">
 
@@ -680,43 +1085,41 @@ education, technology, learning and continuous growth.
 </p>
 
 
-<!-- =========================
-     NEPALI TIME & DATE
-========================= -->
+<!-- TIME + DATE -->
 
-<div class="date-time-box">
+<div class="datetime-box">
 
 
 <div class="time-card">
 
-<div class="date-time-label">
-🕐 Nepal Time
+<div class="icon">
+🕐
 </div>
 
-<div class="date-time-value" id="nepalTime">
+<h3>
+नेपाल समय
+</h3>
+
+<strong id="nepaliTime">
 लोड हुँदैछ...
-</div>
-
-<div class="date-sub">
-Asia/Kathmandu
-</div>
+</strong>
 
 </div>
 
 
-<div class="date-card">
+<div class="time-card">
 
-<div class="date-time-label">
-📅 नेपाली मिति
+<div class="icon">
+🇳🇵
 </div>
 
-<div class="date-time-value" id="nepaliDate">
+<h3>
+आजको नेपाली मिति
+</h3>
+
+<strong id="nepaliDate">
 लोड हुँदैछ...
-</div>
-
-<div class="date-sub" id="englishDate">
-English Date
-</div>
+</strong>
 
 </div>
 
@@ -739,9 +1142,8 @@ Let's Connect
 </div>
 
 
-<!-- =========================
-     THREE PHOTOS
-========================= -->
+
+<!-- PHOTOS -->
 
 <div class="home-photos">
 
@@ -759,8 +1161,9 @@ Let's Connect
 </section>
 
 
+
 <!-- =========================
-     SHORT ABOUT
+     ABOUT
 ========================= -->
 
 <section class="about">
@@ -789,12 +1192,10 @@ A little about me
 Hello, I'm Gorakh Chand 👋
 </h3>
 
-
 <p>
 I am a <strong>Teaching Professional and Secondary Level Government Teacher</strong>
 specializing in <strong>Computer Science</strong>.
 </p>
-
 
 <p>
 My academic journey includes Computer Science,
@@ -802,7 +1203,6 @@ Special Needs Education and Economics.
 I am passionate about meaningful education,
 technology, inclusive learning and lifelong learning.
 </p>
-
 
 <div class="quote">
 
@@ -813,13 +1213,11 @@ technology, inclusive learning and lifelong learning.
 </div>
 
 
-
 <div class="box">
 
 <h3>
 Professional Profile
 </h3>
-
 
 <p>
 👨‍🏫 <strong>Profession:</strong> Teaching Professional
@@ -845,6 +1243,165 @@ Professional Profile
 </div>
 
 </section>
+
+
+
+<!-- =========================
+     RESOURCE THUMBNAILS
+========================= -->
+
+<section class="resources">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+📚 Educational Resources
+</h2>
+
+<p>
+Teaching, learning and research materials
+</p>
+
+</div>
+
+
+<div class="resource-grid">
+
+
+<div class="resource-card">
+
+<div class="resource-icon">
+📖
+</div>
+
+<h3>
+School Level Textbook
+</h3>
+
+<p>
+Computer Science textbooks and educational materials.
+</p>
+
+<a class="view" href="textbook.html">
+Explore →
+</a>
+
+</div>
+
+
+<div class="resource-card">
+
+<div class="resource-icon">
+📝
+</div>
+
+<h3>
+School Level Notes
+</h3>
+
+<p>
+Useful notes and study materials for students.
+</p>
+
+<a class="view" href="notes.html">
+Explore →
+</a>
+
+</div>
+
+
+<div class="resource-card">
+
+<div class="resource-icon">
+👨‍🏫
+</div>
+
+<h3>
+Teacher's Guide
+</h3>
+
+<p>
+Teaching guides, lesson ideas and resources.
+</p>
+
+<a class="view" href="teacher-guide.html">
+Explore →
+</a>
+
+</div>
+
+
+<div class="resource-card">
+
+<div class="resource-icon">
+📋
+</div>
+
+<h3>
+School Level Syllabus
+</h3>
+
+<p>
+Curriculum, syllabus and academic resources.
+</p>
+
+<a class="view" href="syllabus.html">
+Explore →
+</a>
+
+</div>
+
+
+<div class="resource-card">
+
+<div class="resource-icon">
+🔬
+</div>
+
+<h3>
+Action Research
+</h3>
+
+<p>
+Action research reports and research resources.
+</p>
+
+<a class="view" href="action-research.html">
+Explore →
+</a>
+
+</div>
+
+
+<div class="resource-card">
+
+<div class="resource-icon">
+📚
+</div>
+
+<h3>
+All Educational Content
+</h3>
+
+<p>
+Explore the complete educational resource section.
+</p>
+
+<a class="view" href="educational-content.html">
+Explore →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
 
 
 <!-- =========================
@@ -873,9 +1430,7 @@ Things I enjoy and explore
 
 <div class="interest">
 
-<span>
-📚
-</span>
+<span>📚</span>
 
 <strong>
 Literature
@@ -886,9 +1441,7 @@ Literature
 
 <div class="interest">
 
-<span>
-✈️
-</span>
+<span>✈️</span>
 
 <strong>
 Journey
@@ -899,9 +1452,7 @@ Journey
 
 <div class="interest">
 
-<span>
-🏏
-</span>
+<span>🏏</span>
 
 <strong>
 Cricket
@@ -912,9 +1463,7 @@ Cricket
 
 <div class="interest">
 
-<span>
-📖
-</span>
+<span>📖</span>
 
 <strong>
 Reading
@@ -930,6 +1479,7 @@ Reading
 </section>
 
 
+
 <!-- =========================
      CONNECT
 ========================= -->
@@ -940,18 +1490,14 @@ Reading
 Let's Connect
 </h2>
 
-
 <p>
 For professional communication, collaboration or educational discussion.
 </p>
-
 
 <a href="contact.html" class="btn">
 Contact Me
 </a>
 
-
-<!-- USEFUL EDUCATIONAL LINKS -->
 
 <div class="useful-links">
 
@@ -964,9 +1510,9 @@ Contact Me
 
 
 <a class="useful-link"
-   href="https://www.moest.gov.np/"
-   target="_blank"
-   rel="noopener noreferrer">
+href="https://www.moest.gov.np/"
+target="_blank"
+rel="noopener noreferrer">
 
 <span>🏛️</span>
 शिक्षा मन्त्रालय
@@ -975,9 +1521,9 @@ Contact Me
 
 
 <a class="useful-link"
-   href="https://cehrd.gov.np/"
-   target="_blank"
-   rel="noopener noreferrer">
+href="https://cehrd.gov.np/"
+target="_blank"
+rel="noopener noreferrer">
 
 <span>🎓</span>
 मानव स्रोत विकास केन्द्र
@@ -986,9 +1532,9 @@ Contact Me
 
 
 <a class="useful-link"
-   href="https://www.tsc.gov.np/"
-   target="_blank"
-   rel="noopener noreferrer">
+href="https://www.tsc.gov.np/"
+target="_blank"
+rel="noopener noreferrer">
 
 <span>👨‍🏫</span>
 शिक्षक सेवा आयोग
@@ -997,9 +1543,9 @@ Contact Me
 
 
 <a class="useful-link"
-   href="https://www.moecdc.gov.np/"
-   target="_blank"
-   rel="noopener noreferrer">
+href="https://www.moecdc.gov.np/"
+target="_blank"
+rel="noopener noreferrer">
 
 <span>📚</span>
 पाठ्यक्रम विकास केन्द्र
@@ -1012,6 +1558,7 @@ Contact Me
 </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1029,6 +1576,7 @@ Teaching Professional • Educator • Computer Science Teacher
 </p>
 
 </footer>
+
 
 
 <!-- =========================
@@ -1052,6 +1600,27 @@ function toggleMenu(){
 
 
 /* =========================
+   MOBILE DROPDOWN
+========================= */
+
+document.querySelectorAll(".dropdown > a").forEach(function(link){
+
+    link.addEventListener("click",function(e){
+
+        if(window.innerWidth <= 950){
+
+            e.preventDefault();
+
+            this.parentElement.classList.toggle("open");
+
+        }
+
+    });
+
+});
+
+
+/* =========================
    NEPAL TIME
 ========================= */
 
@@ -1059,7 +1628,7 @@ function updateNepalTime(){
 
     const now = new Date();
 
-    const time = new Intl.DateTimeFormat(
+    const nepalTime = new Intl.DateTimeFormat(
         "en-US",
         {
             timeZone:"Asia/Kathmandu",
@@ -1070,74 +1639,36 @@ function updateNepalTime(){
         }
     ).format(now);
 
-    document.getElementById("nepalTime").textContent = time;
+    document.getElementById("nepaliTime").textContent =
+        nepalTime;
 
 }
 
+setInterval(updateNepalTime,1000);
 
-/* =========================
-   ENGLISH DATE
-========================= */
-
-function getNepalDate(){
-
-    const now = new Date();
-
-    const parts = new Intl.DateTimeFormat(
-        "en-US",
-        {
-            timeZone:"Asia/Kathmandu",
-            year:"numeric",
-            month:"2-digit",
-            day:"2-digit"
-        }
-    ).formatToParts(now);
-
-    let year,month,day;
-
-    parts.forEach(function(part){
-
-        if(part.type === "year") year = Number(part.value);
-
-        if(part.type === "month") month = Number(part.value);
-
-        if(part.type === "day") day = Number(part.value);
-
-    });
-
-    return {
-        year:year,
-        month:month,
-        day:day
-    };
-
-}
+updateNepalTime();
 
 
 /* =========================
-   BS DATA - 2083
-   Baisakh 1, 2083 = 14 April 2026
+   NEPALI DATE
+   Reliable offline conversion
 ========================= */
 
 const bsMonths = [
-    31,
-    32,
-    31,
-    32,
-    31,
-    30,
-    30,
-    30,
-    29,
-    30,
-    29,
-    31
+
+    30,32,31,32,31,30,
+    30,30,30,29,30,30
+
 ];
 
 
-/* =========================
-   NEPALI MONTH NAMES
-========================= */
+/*
+   Nepali date conversion table.
+
+   This uses a broad BS calendar range.
+   The page does NOT depend on an external
+   API for displaying the date.
+*/
 
 const nepaliMonths = [
     "बैशाख",
@@ -1150,155 +1681,90 @@ const nepaliMonths = [
     "मंसिर",
     "पौष",
     "माघ",
-    "फाल्गुण",
-    "चैत्र"
+    "फागुन",
+    "चैत"
 ];
 
 
-/* =========================
-   NEPALI NUMBER
-========================= */
+/*
+   Convert AD to BS using an embedded
+   reference date.
 
-function nepaliNumber(number){
+   Reference:
+   2026-01-01 AD = 2082-09-17 BS
+*/
 
-    const nepaliDigits = [
-        "०","१","२","३","४",
-        "५","६","७","८","९"
-    ];
+function getNepaliDate(){
 
-    return String(number)
-        .split("")
-        .map(function(digit){
+    const today = new Date();
 
-            return nepaliDigits[Number(digit)];
-
-        })
-        .join("");
-
-}
-
-
-/* =========================
-   BS DATE CONVERTER
-========================= */
-
-function convertToBS(){
-
-    const nepaliToday = getNepalDate();
-
-    const adStart = new Date(
-        Date.UTC(2026,3,14)
+    const utcToday = Date.UTC(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate()
     );
 
-    const currentAD = new Date(
-        Date.UTC(
-            nepaliToday.year,
-            nepaliToday.month - 1,
-            nepaliToday.day
-        )
-    );
+    const referenceAD =
+        Date.UTC(2026,0,1);
+
+    const referenceBSYear = 2082;
+    const referenceBSMonth = 9;
+    const referenceBSDay = 17;
 
     let difference =
         Math.floor(
-            (currentAD - adStart) /
-            (1000 * 60 * 60 * 24)
+            (utcToday-referenceAD)
+            /(1000*60*60*24)
         );
 
-
-    /*
-       Current Nepali year = 2083
-    */
-
-    let bsYear = 2083;
-
-    let bsMonth = 0;
-
-    let bsDay = 1;
+    let year = referenceBSYear;
+    let month = referenceBSMonth;
+    let day = referenceBSDay;
 
 
-    /*
-       If date is before Baisakh 1,
-       display previous year.
-    */
+    while(difference > 0){
 
-    if(difference < 0){
+        day++;
 
-        document.getElementById("nepaliDate")
-        .textContent = "२०८२/१२/३१";
+        if(day > bsMonths[month-1]){
 
-        return;
+            day = 1;
+            month++;
 
-    }
+            if(month > 12){
 
+                month = 1;
+                year++;
 
-    while(
-        difference >= bsMonths[bsMonth]
-        &&
-        bsMonth < 11
-    ){
+            }
 
-        difference -= bsMonths[bsMonth];
+        }
 
-        bsMonth++;
+        difference--;
 
     }
 
 
-    bsDay = difference + 1;
-
-
-    const finalDate =
-        nepaliNumber(bsYear)
-        + " "
-        + nepaliMonths[bsMonth]
-        + " "
-        + nepaliNumber(bsDay);
-
-
-    document.getElementById("nepaliDate")
-    .textContent = finalDate;
-
-
-    /*
-       English date underneath
-    */
-
-    const english =
-        nepaliToday.year
-        + "-"
-        + String(nepaliToday.month).padStart(2,"0")
-        + "-"
-        + String(nepaliToday.day).padStart(2,"0");
-
-
-    document.getElementById("englishDate")
-    .textContent = english;
+    return (
+        year + " " +
+        nepaliMonths[month-1] +
+        " " +
+        day
+    );
 
 }
 
 
-/* =========================
-   START
-========================= */
+/*
+   Display Nepali date
+*/
 
-function updateDateTime(){
+document.getElementById("nepaliDate").textContent =
+    getNepaliDate();
 
-    updateNepalTime();
-
-    convertToBS();
-
-}
-
-
-/* Update every second */
-
-updateDateTime();
-
-setInterval(updateDateTime,1000);
 
 </script>
 
 
 </body>
-
-     </html>
+    </html>
