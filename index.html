@@ -10,6 +10,14 @@
 
 <meta name="description" content="Official personal website of Gorakh Chand, Teaching Professional and Secondary Level Government Teacher specializing in Computer Science.">
 
+
+<!-- =========================
+     NEPALI DATE CONVERTER
+========================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/nepali-date-converter/dist/nepali-date-converter.umd.js"></script>
+
+
 <style>
 
 *{
@@ -103,6 +111,79 @@ nav a:hover{
 .hero-content{
     width:100%;
     max-width:1100px;
+}
+
+
+/* =========================
+   NEPALI TIME & CALENDAR
+========================= */
+
+.datetime-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin:0 auto 28px;
+
+}
+
+.datetime-item{
+
+    min-width:210px;
+
+    padding:12px 20px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
+}
+
+.datetime-label{
+
+    display:block;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    opacity:.85;
+
+    margin-bottom:2px;
+
+}
+
+.datetime-value{
+
+    display:block;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+#nepaliDate{
+
+    font-size:18px;
+
 }
 
 
@@ -432,7 +513,7 @@ footer{
 @media(max-width:600px){
 
     .hero{
-        padding:110px 10px 45px;
+        padding:105px 10px 45px;
     }
 
     .hero h1{
@@ -447,10 +528,51 @@ footer{
         font-size:15px;
     }
 
+
+    /* TIME & DATE MOBILE */
+
+    .datetime-box{
+
+        gap:8px;
+
+        margin-bottom:22px;
+
+    }
+
+    .datetime-item{
+
+        min-width:160px;
+
+        padding:9px 12px;
+
+        border-radius:14px;
+
+    }
+
+    .datetime-label{
+
+        font-size:10px;
+
+    }
+
+    .datetime-value{
+
+        font-size:16px;
+
+    }
+
+    #nepaliDate{
+
+        font-size:15px;
+
+    }
+
+
     .profile{
         width:150px;
         height:150px;
     }
+
 
     /*
        Three photos remain side-by-side
@@ -507,6 +629,10 @@ footer{
 
     .home-photos img{
         height:105px;
+    }
+
+    .datetime-item{
+        min-width:145px;
     }
 
 }
@@ -586,6 +712,42 @@ Gorakh Chand
 <section class="hero" id="home">
 
 <div class="hero-content">
+
+
+<!-- =========================
+     NEPALI TIME & CALENDAR
+========================= -->
+
+<div class="datetime-box">
+
+
+<div class="datetime-item">
+
+<span class="datetime-label">
+🇳🇵 NEPALI TIME
+</span>
+
+<span class="datetime-value" id="nepaliTime">
+00:00:00
+</span>
+
+</div>
+
+
+<div class="datetime-item">
+
+<span class="datetime-label">
+📅 NEPALI DATE
+</span>
+
+<span class="datetime-value" id="nepaliDate">
+लोड हुँदैछ...
+</span>
+
+</div>
+
+
+</div>
 
 
 <!-- PROFILE PHOTO -->
@@ -930,10 +1092,15 @@ Teaching Professional • Educator • Computer Science Teacher
 
 
 <!-- =========================
-     MOBILE MENU SCRIPT
+     JAVASCRIPT
 ========================= -->
 
 <script>
+
+
+/* =========================
+   MOBILE MENU
+========================= */
 
 function toggleMenu(){
 
@@ -944,9 +1111,82 @@ function toggleMenu(){
 
 }
 
+
+
+/* =========================
+   NEPALI TIME
+========================= */
+
+function updateNepaliTime(){
+
+    const now = new Date();
+
+    const time = new Intl.DateTimeFormat(
+        "en-US",
+        {
+            timeZone:"Asia/Kathmandu",
+            hour:"2-digit",
+            minute:"2-digit",
+            second:"2-digit",
+            hour12:true
+        }
+    ).format(now);
+
+    document.getElementById("nepaliTime").textContent = time;
+
+}
+
+
+/* =========================
+   NEPALI DATE
+========================= */
+
+function updateNepaliDate(){
+
+    try{
+
+        const now = new Date();
+
+        const date = new NepaliDate(now);
+
+        const nepaliDate = date.format(
+            "ddd DD MMMM YYYY",
+            "np"
+        );
+
+        document.getElementById("nepaliDate").textContent =
+            nepaliDate;
+
+    }
+
+    catch(error){
+
+        document.getElementById("nepaliDate").textContent =
+            "नेपाली मिति उपलब्ध छैन";
+
+        console.error(error);
+
+    }
+
+}
+
+
+/* =========================
+   START CLOCK
+========================= */
+
+updateNepaliTime();
+
+updateNepaliDate();
+
+setInterval(updateNepaliTime,1000);
+
+setInterval(updateNepaliDate,60000);
+
+
 </script>
 
 
 </body>
 
-</html>
+    </html>
