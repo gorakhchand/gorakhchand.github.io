@@ -9,16 +9,12 @@
 
 <meta name="description" content="Official personal website of Gorakh Chand, Teaching Professional and Secondary Level Government Teacher specializing in Computer Science.">
 
-<!-- ATTRACTIVE GOOGLE FONT -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   GLOBAL
-========================= */
 
 *{
     margin:0;
@@ -102,24 +98,19 @@ nav ul{
 
 nav a{
     position:relative;
-
     text-decoration:none;
     color:#293248;
     font-weight:600;
     font-size:14px;
-
     padding:8px 2px;
-
     transition:.3s;
 }
 
 nav a::after{
     content:"";
-
     position:absolute;
     left:0;
     bottom:0;
-
     width:0;
     height:2px;
 
@@ -193,9 +184,6 @@ nav a:hover::after{
     );
 }
 
-
-/* decorative circles */
-
 .hero::before{
     content:"";
 
@@ -245,7 +233,7 @@ nav a:hover::after{
 
 
 /* =========================
-   PROFILE PHOTO
+   PROFILE
 ========================= */
 
 .profile{
@@ -353,11 +341,104 @@ nav a:hover::after{
 
 
 /* =========================
+   DATE & TIME BOX
+========================= */
+
+.date-box{
+    max-width:850px;
+
+    margin:35px auto 0;
+
+    padding:20px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:12px;
+
+    border-radius:24px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.18),
+        rgba(255,255,255,.08)
+    );
+
+    border:1px solid rgba(255,255,255,.28);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 15px 45px rgba(0,0,0,.18);
+}
+
+.date-item{
+    padding:15px 10px;
+
+    border-radius:17px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.18),
+        rgba(255,255,255,.06)
+    );
+
+    border:1px solid rgba(255,255,255,.16);
+
+    transition:.3s;
+}
+
+.date-item:hover{
+    transform:translateY(-4px);
+
+    background:
+    rgba(255,255,255,.24);
+}
+
+.date-icon{
+    font-size:26px;
+    margin-bottom:4px;
+}
+
+.date-label{
+    font-size:12px;
+    color:#ddd6fe;
+
+    font-weight:600;
+}
+
+.date-value{
+    margin-top:4px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:white;
+}
+
+.time-value{
+    font-size:21px;
+
+    color:#fef3c7;
+
+    letter-spacing:.5px;
+}
+
+.ns-value{
+    color:#fbcfe8;
+}
+
+
+/* =========================
    HOME THREE PHOTOS
 ========================= */
 
 .home-photos{
-
     width:100%;
     max-width:1050px;
 
@@ -371,7 +452,6 @@ nav a:hover::after{
 }
 
 .home-photos img{
-
     width:100%;
     height:260px;
 
@@ -398,7 +478,7 @@ nav a:hover::after{
 
 
 /* =========================
-   ABOUT PREVIEW
+   ABOUT
 ========================= */
 
 .about{
@@ -441,9 +521,6 @@ nav a:hover::after{
 .section-title p{
     color:#6b7280;
 }
-
-
-/* ABOUT BOXES */
 
 .about-grid{
     display:grid;
@@ -621,7 +698,7 @@ nav a:hover::after{
 
 
 /* =========================
-   CTA
+   CONNECT
 ========================= */
 
 .connect{
@@ -667,7 +744,7 @@ nav a:hover::after{
 
 
 /* =========================
-   USEFUL EDUCATIONAL LINKS
+   USEFUL LINKS
 ========================= */
 
 .useful-links{
@@ -812,6 +889,10 @@ footer{
         grid-template-columns:1fr 1fr;
     }
 
+    .date-box{
+        grid-template-columns:repeat(2,1fr);
+    }
+
 }
 
 
@@ -840,6 +921,40 @@ footer{
     .profile{
         width:150px;
         height:150px;
+    }
+
+    .date-box{
+        grid-template-columns:1fr 1fr;
+
+        gap:8px;
+
+        padding:12px;
+
+        margin-top:28px;
+
+        border-radius:20px;
+    }
+
+    .date-item{
+        padding:12px 6px;
+
+        border-radius:14px;
+    }
+
+    .date-icon{
+        font-size:22px;
+    }
+
+    .date-label{
+        font-size:10px;
+    }
+
+    .date-value{
+        font-size:13px;
+    }
+
+    .time-value{
+        font-size:16px;
     }
 
     .home-photos{
@@ -964,7 +1079,6 @@ Gorakh Chand
 </nav>
 
 
-
 <!-- =========================
      HOME / HERO
 ========================= -->
@@ -973,8 +1087,6 @@ Gorakh Chand
 
 <div class="hero-content">
 
-
-<!-- PROFILE PHOTO -->
 
 <div class="profile">
 
@@ -1014,9 +1126,76 @@ Let's Connect
 </div>
 
 
+<!-- =========================
+     DATE / TIME
+========================= -->
+
+<div class="date-box">
+
+<div class="date-item">
+
+<div class="date-icon">🕐</div>
+
+<div class="date-label">
+NEPAL TIME
+</div>
+
+<div class="date-value time-value" id="nepalTime">
+Loading...
+</div>
+
+</div>
+
+
+<div class="date-item">
+
+<div class="date-icon">🌍</div>
+
+<div class="date-label">
+ENGLISH DATE
+</div>
+
+<div class="date-value" id="englishDate">
+Loading...
+</div>
+
+</div>
+
+
+<div class="date-item">
+
+<div class="date-icon">🇳🇵</div>
+
+<div class="date-label">
+वि.सं. DATE
+</div>
+
+<div class="date-value" id="bsDate">
+Loading...
+</div>
+
+</div>
+
+
+<div class="date-item">
+
+<div class="date-icon">🪷</div>
+
+<div class="date-label">
+NEPAL SAMBAT
+</div>
+
+<div class="date-value ns-value" id="nsDate">
+नेपाल संवत् ११४६
+</div>
+
+</div>
+
+</div>
+
 
 <!-- =========================
-     THREE CONSTANT PHOTOS
+     THREE PHOTOS
 ========================= -->
 
 <div class="home-photos">
@@ -1033,7 +1212,6 @@ Let's Connect
 </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -1090,7 +1268,6 @@ technology, inclusive learning and lifelong learning.
 </div>
 
 
-
 <div class="box">
 
 <h3>
@@ -1122,7 +1299,6 @@ Professional Profile
 </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -1208,7 +1384,6 @@ Reading
 </section>
 
 
-
 <!-- =========================
      CONNECT
 ========================= -->
@@ -1229,10 +1404,6 @@ For professional communication, collaboration or educational discussion.
 Contact Me
 </a>
 
-
-<!-- =========================
-     USEFUL EDUCATIONAL LINKS
-========================= -->
 
 <div class="useful-links">
 
@@ -1295,7 +1466,6 @@ Contact Me
 </section>
 
 
-
 <!-- =========================
      FOOTER
 ========================= -->
@@ -1314,12 +1484,15 @@ Teaching Professional • Educator • Computer Science Teacher
 </footer>
 
 
-
 <!-- =========================
-     MOBILE MENU SCRIPT
+     JAVASCRIPT
 ========================= -->
 
 <script>
+
+/* =========================
+   MOBILE MENU
+========================= */
 
 function toggleMenu(){
 
@@ -1330,9 +1503,214 @@ function toggleMenu(){
 
 }
 
+
+/* =========================
+   NEPAL TIME
+========================= */
+
+function updateNepalClock(){
+
+    const now = new Date();
+
+    const nepalTime =
+    new Intl.DateTimeFormat(
+        "en-US",
+        {
+            timeZone:"Asia/Kathmandu",
+            hour:"2-digit",
+            minute:"2-digit",
+            second:"2-digit",
+            hour12:true
+        }
+    ).format(now);
+
+    document.getElementById("nepalTime").textContent =
+    nepalTime;
+
+}
+
+
+/* =========================
+   ENGLISH DATE
+========================= */
+
+function updateEnglishDate(){
+
+    const now = new Date();
+
+    const date =
+    new Intl.DateTimeFormat(
+        "en-US",
+        {
+            timeZone:"Asia/Kathmandu",
+            weekday:"long",
+            year:"numeric",
+            month:"long",
+            day:"numeric"
+        }
+    ).format(now);
+
+    document.getElementById("englishDate").textContent =
+    date;
+
+}
+
+
+/* =========================
+   BS DATE
+   Uses browser Intl Nepali
+   calendar support where available.
+========================= */
+
+function updateBSDate(){
+
+    const now = new Date();
+
+    try{
+
+        const bs =
+        new Intl.DateTimeFormat(
+            "ne-NP-u-ca-nepali",
+            {
+                timeZone:"Asia/Kathmandu",
+                year:"numeric",
+                month:"long",
+                day:"numeric"
+            }
+        ).format(now);
+
+        document.getElementById("bsDate").textContent =
+        bs;
+
+    }catch(error){
+
+        document.getElementById("bsDate").textContent =
+        "वि.सं. मिति उपलब्ध भएन";
+
+    }
+
+}
+
+
+/* =========================
+   NEPAL SAMBAT YEAR
+========================= */
+
+function updateNepalSambat(){
+
+    const now = new Date();
+
+    const year =
+    Number(
+        new Intl.DateTimeFormat(
+            "en-US",
+            {
+                timeZone:"Asia/Kathmandu",
+                year:"numeric"
+            }
+        ).format(now)
+    );
+
+    /*
+       Nepal Sambat year changes around
+       the Nepal Sambat New Year.
+       For the current 2026 cycle,
+       Nepal Sambat 1146 is in use.
+    */
+
+    let nsYear = year - 880;
+
+    /*
+       Before Nepal Sambat New Year,
+       remain in previous NS year.
+    */
+
+    const month =
+    Number(
+        new Intl.DateTimeFormat(
+            "en-US",
+            {
+                timeZone:"Asia/Kathmandu",
+                month:"numeric"
+            }
+        ).format(now)
+    );
+
+    const day =
+    Number(
+        new Intl.DateTimeFormat(
+            "en-US",
+            {
+                timeZone:"Asia/Kathmandu",
+                day:"numeric"
+            }
+        ).format(now)
+    );
+
+    /*
+       Approximate civil-year boundary.
+       This keeps the displayed NS year
+       correct around the current cycle.
+    */
+
+    if(month < 10 || (month === 10 && day < 20)){
+        nsYear = year - 880;
+    }else{
+        nsYear = year - 879;
+    }
+
+    const nepaliNumber =
+    String(nsYear).replace(
+        /\d/g,
+        d => "०१२३४५६७८९"[d]
+    );
+
+    document.getElementById("nsDate").textContent =
+    "नेपाल संवत् " + nepaliNumber;
+
+}
+
+
+/* =========================
+   UPDATE ALL
+========================= */
+
+function updateDateTime(){
+
+    updateNepalClock();
+
+    updateEnglishDate();
+
+    updateBSDate();
+
+    updateNepalSambat();
+
+}
+
+
+/* START */
+
+updateDateTime();
+
+
+/* CLOCK UPDATE EVERY SECOND */
+
+setInterval(
+    updateNepalClock,
+    1000
+);
+
+
+/* DATE UPDATE EVERY MINUTE */
+
+setInterval(
+    updateDateTime,
+    60000
+);
+
 </script>
 
 
 </body>
 
-     </html>
+   </html>
