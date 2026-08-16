@@ -115,7 +115,7 @@ nav a:hover{
 
 
 /* =========================
-   NEPALI TIME & CALENDAR
+   NEPALI DATE & TIME
 ========================= */
 
 .datetime-box{
@@ -124,7 +124,7 @@ nav a:hover{
 
     justify-content:center;
 
-    align-items:center;
+    align-items:stretch;
 
     gap:15px;
 
@@ -136,21 +136,31 @@ nav a:hover{
 
 .datetime-item{
 
-    min-width:210px;
+    min-width:235px;
 
-    padding:12px 20px;
+    padding:13px 22px;
 
-    border-radius:18px;
+    border-radius:20px;
 
-    background:rgba(255,255,255,.15);
+    background:rgba(255,255,255,.14);
 
-    border:1px solid rgba(255,255,255,.3);
+    border:1px solid rgba(255,255,255,.32);
 
-    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 
-    -webkit-backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(12px);
+
+    transition:.3s;
+
+}
+
+.datetime-item:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.20);
 
 }
 
@@ -164,9 +174,9 @@ nav a:hover{
 
     letter-spacing:1px;
 
-    opacity:.85;
+    opacity:.88;
 
-    margin-bottom:2px;
+    margin-bottom:3px;
 
 }
 
@@ -174,20 +184,24 @@ nav a:hover{
 
     display:block;
 
-    font-size:20px;
+    font-size:21px;
 
     font-weight:700;
+
+    letter-spacing:.3px;
 
 }
 
 #nepaliDate{
 
-    font-size:18px;
+    font-size:19px;
 
 }
 
 
-/* PROFILE PHOTO */
+/* =========================
+   PROFILE PHOTO
+========================= */
 
 .profile{
     width:175px;
@@ -207,7 +221,9 @@ nav a:hover{
 }
 
 
-/* HERO TEXT */
+/* =========================
+   HERO TEXT
+========================= */
 
 .hero h1{
     font-size:58px;
@@ -228,7 +244,9 @@ nav a:hover{
 }
 
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 .buttons{
     margin-top:32px;
@@ -529,7 +547,7 @@ footer{
     }
 
 
-    /* TIME & DATE MOBILE */
+    /* DATE & TIME MOBILE */
 
     .datetime-box{
 
@@ -543,15 +561,15 @@ footer{
 
         min-width:160px;
 
-        padding:9px 12px;
+        padding:10px 12px;
 
-        border-radius:14px;
+        border-radius:15px;
 
     }
 
     .datetime-label{
 
-        font-size:10px;
+        font-size:9px;
 
     }
 
@@ -715,7 +733,7 @@ Gorakh Chand
 
 
 <!-- =========================
-     NEPALI TIME & CALENDAR
+     NEPALI TIME & DATE
 ========================= -->
 
 <div class="datetime-box">
@@ -737,7 +755,7 @@ Gorakh Chand
 <div class="datetime-item">
 
 <span class="datetime-label">
-📅 NEPALI DATE
+📅 आजको नेपाली मिति
 </span>
 
 <span class="datetime-value" id="nepaliDate">
@@ -1112,7 +1130,6 @@ function toggleMenu(){
 }
 
 
-
 /* =========================
    NEPALI TIME
 ========================= */
@@ -1147,24 +1164,40 @@ function updateNepaliDate(){
 
         const now = new Date();
 
+        /*
+           NepaliDate library accepts
+           JavaScript Date directly.
+        */
+
         const date = new NepaliDate(now);
 
-        const nepaliDate = date.format(
-            "ddd DD MMMM YYYY",
+        /*
+           Nepali language format:
+           ddd = weekday
+           DD  = day
+           MMMM = month
+           YYYY = year
+        */
+
+        const formattedDate = date.format(
+            "ddd DD, MMMM YYYY",
             "np"
         );
 
         document.getElementById("nepaliDate").textContent =
-            nepaliDate;
+            formattedDate;
 
     }
 
     catch(error){
 
-        document.getElementById("nepaliDate").textContent =
-            "नेपाली मिति उपलब्ध छैन";
+        console.error(
+            "Nepali date error:",
+            error
+        );
 
-        console.error(error);
+        document.getElementById("nepaliDate").textContent =
+            "नेपाली मिति लोड भएन";
 
     }
 
@@ -1172,16 +1205,27 @@ function updateNepaliDate(){
 
 
 /* =========================
-   START CLOCK
+   INITIAL LOAD
 ========================= */
 
 updateNepaliTime();
 
 updateNepaliDate();
 
-setInterval(updateNepaliTime,1000);
 
-setInterval(updateNepaliDate,60000);
+/* =========================
+   LIVE UPDATE
+========================= */
+
+setInterval(
+    updateNepaliTime,
+    1000
+);
+
+setInterval(
+    updateNepaliDate,
+    60000
+);
 
 
 </script>
@@ -1189,4 +1233,4 @@ setInterval(updateNepaliDate,60000);
 
 </body>
 
-    </html>
+     </html>
