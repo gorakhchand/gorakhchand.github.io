@@ -10,14 +10,6 @@
 
 <meta name="description" content="Official personal website of Gorakh Chand, Teaching Professional and Secondary Level Government Teacher specializing in Computer Science.">
 
-
-<!-- =========================
-     NEPALI DATE CONVERTER
-========================= -->
-
-<script src="https://cdn.jsdelivr.net/npm/nepali-date-converter/dist/nepali-date-converter.umd.js"></script>
-
-
 <style>
 
 *{
@@ -115,91 +107,6 @@ nav a:hover{
 
 
 /* =========================
-   NEPALI DATE & TIME
-========================= */
-
-.datetime-box{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:stretch;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-
-    margin:0 auto 28px;
-
-}
-
-.datetime-item{
-
-    min-width:235px;
-
-    padding:13px 22px;
-
-    border-radius:20px;
-
-    background:rgba(255,255,255,.14);
-
-    border:1px solid rgba(255,255,255,.32);
-
-    box-shadow:0 10px 30px rgba(0,0,0,.18);
-
-    backdrop-filter:blur(12px);
-
-    -webkit-backdrop-filter:blur(12px);
-
-    transition:.3s;
-
-}
-
-.datetime-item:hover{
-
-    transform:translateY(-4px);
-
-    background:rgba(255,255,255,.20);
-
-}
-
-.datetime-label{
-
-    display:block;
-
-    font-size:12px;
-
-    font-weight:bold;
-
-    letter-spacing:1px;
-
-    opacity:.88;
-
-    margin-bottom:3px;
-
-}
-
-.datetime-value{
-
-    display:block;
-
-    font-size:21px;
-
-    font-weight:700;
-
-    letter-spacing:.3px;
-
-}
-
-#nepaliDate{
-
-    font-size:19px;
-
-}
-
-
-/* =========================
    PROFILE PHOTO
 ========================= */
 
@@ -245,6 +152,66 @@ nav a:hover{
 
 
 /* =========================
+   NEPALI DATE & TIME
+========================= */
+
+.date-time-box{
+    margin:28px auto 0;
+    max-width:700px;
+
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    gap:15px;
+}
+
+.time-card,
+.date-card{
+    flex:1;
+    min-width:240px;
+
+    padding:18px 20px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15),
+        inset 0 1px 0 rgba(255,255,255,.25);
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+}
+
+.time-card:hover,
+.date-card:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.20);
+}
+
+.date-time-label{
+    font-size:14px;
+    opacity:.9;
+    margin-bottom:5px;
+}
+
+.date-time-value{
+    font-size:25px;
+    font-weight:800;
+}
+
+.date-sub{
+    font-size:14px;
+    margin-top:3px;
+    opacity:.9;
+}
+
+
+/* =========================
    BUTTONS
 ========================= */
 
@@ -275,26 +242,18 @@ nav a:hover{
 ========================= */
 
 .home-photos{
-
     width:100%;
-
     max-width:1050px;
-
     margin:45px auto 0;
 
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:18px;
 }
 
 .home-photos img{
-
     width:100%;
-
     height:260px;
-
     object-fit:cover;
 
     border-radius:18px;
@@ -531,7 +490,7 @@ footer{
 @media(max-width:600px){
 
     .hero{
-        padding:105px 10px 45px;
+        padding:110px 10px 45px;
     }
 
     .hero h1{
@@ -546,72 +505,43 @@ footer{
         font-size:15px;
     }
 
-
-    /* DATE & TIME MOBILE */
-
-    .datetime-box{
-
-        gap:8px;
-
-        margin-bottom:22px;
-
-    }
-
-    .datetime-item{
-
-        min-width:160px;
-
-        padding:10px 12px;
-
-        border-radius:15px;
-
-    }
-
-    .datetime-label{
-
-        font-size:9px;
-
-    }
-
-    .datetime-value{
-
-        font-size:16px;
-
-    }
-
-    #nepaliDate{
-
-        font-size:15px;
-
-    }
-
-
     .profile{
         width:150px;
         height:150px;
     }
 
 
-    /*
-       Three photos remain side-by-side
-       on mobile
-    */
+    /* DATE & TIME MOBILE */
+
+    .date-time-box{
+        flex-direction:column;
+        gap:10px;
+        margin-top:25px;
+    }
+
+    .time-card,
+    .date-card{
+        min-width:0;
+        width:100%;
+        padding:14px 15px;
+    }
+
+    .date-time-value{
+        font-size:22px;
+    }
+
+
+    /* THREE PHOTOS */
 
     .home-photos{
-
         grid-template-columns:repeat(3,1fr);
-
         gap:7px;
-
         margin-top:35px;
     }
 
     .home-photos img{
-
         height:125px;
-
         border-radius:10px;
-
         border:2px solid rgba(255,255,255,.8);
     }
 
@@ -620,7 +550,7 @@ footer{
     }
 
 
-    /* Useful Links on Mobile */
+    /* Useful Links */
 
     .useful-links{
         margin-top:30px;
@@ -649,10 +579,6 @@ footer{
         height:105px;
     }
 
-    .datetime-item{
-        min-width:145px;
-    }
-
 }
 
 </style>
@@ -675,11 +601,9 @@ footer{
 Gorakh Chand
 </div>
 
-
 <div class="menu" onclick="toggleMenu()">
 ☰
 </div>
-
 
 <ul id="navMenu">
 
@@ -722,7 +646,6 @@ Gorakh Chand
 </nav>
 
 
-
 <!-- =========================
      HOME / HERO
 ========================= -->
@@ -730,42 +653,6 @@ Gorakh Chand
 <section class="hero" id="home">
 
 <div class="hero-content">
-
-
-<!-- =========================
-     NEPALI TIME & DATE
-========================= -->
-
-<div class="datetime-box">
-
-
-<div class="datetime-item">
-
-<span class="datetime-label">
-🇳🇵 NEPALI TIME
-</span>
-
-<span class="datetime-value" id="nepaliTime">
-00:00:00
-</span>
-
-</div>
-
-
-<div class="datetime-item">
-
-<span class="datetime-label">
-📅 आजको नेपाली मिति
-</span>
-
-<span class="datetime-value" id="nepaliDate">
-लोड हुँदैछ...
-</span>
-
-</div>
-
-
-</div>
 
 
 <!-- PROFILE PHOTO -->
@@ -793,6 +680,50 @@ education, technology, learning and continuous growth.
 </p>
 
 
+<!-- =========================
+     NEPALI TIME & DATE
+========================= -->
+
+<div class="date-time-box">
+
+
+<div class="time-card">
+
+<div class="date-time-label">
+🕐 Nepal Time
+</div>
+
+<div class="date-time-value" id="nepalTime">
+लोड हुँदैछ...
+</div>
+
+<div class="date-sub">
+Asia/Kathmandu
+</div>
+
+</div>
+
+
+<div class="date-card">
+
+<div class="date-time-label">
+📅 नेपाली मिति
+</div>
+
+<div class="date-time-value" id="nepaliDate">
+लोड हुँदैछ...
+</div>
+
+<div class="date-sub" id="englishDate">
+English Date
+</div>
+
+</div>
+
+
+</div>
+
+
 <!-- BUTTONS -->
 
 <div class="buttons">
@@ -808,9 +739,8 @@ Let's Connect
 </div>
 
 
-
 <!-- =========================
-     THREE CONSTANT PHOTOS
+     THREE PHOTOS
 ========================= -->
 
 <div class="home-photos">
@@ -827,7 +757,6 @@ Let's Connect
 </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -918,7 +847,6 @@ Professional Profile
 </section>
 
 
-
 <!-- =========================
      INTERESTS
 ========================= -->
@@ -1002,7 +930,6 @@ Reading
 </section>
 
 
-
 <!-- =========================
      CONNECT
 ========================= -->
@@ -1024,9 +951,7 @@ Contact Me
 </a>
 
 
-<!-- =========================
-     USEFUL EDUCATIONAL LINKS
-========================= -->
+<!-- USEFUL EDUCATIONAL LINKS -->
 
 <div class="useful-links">
 
@@ -1089,7 +1014,6 @@ Contact Me
 </section>
 
 
-
 <!-- =========================
      FOOTER
 ========================= -->
@@ -1100,7 +1024,6 @@ Contact Me
 © 2026 Gorakh Chand. All Rights Reserved.
 </p>
 
-
 <p>
 Teaching Professional • Educator • Computer Science Teacher
 </p>
@@ -1108,13 +1031,11 @@ Teaching Professional • Educator • Computer Science Teacher
 </footer>
 
 
-
 <!-- =========================
      JAVASCRIPT
 ========================= -->
 
 <script>
-
 
 /* =========================
    MOBILE MENU
@@ -1131,10 +1052,10 @@ function toggleMenu(){
 
 
 /* =========================
-   NEPALI TIME
+   NEPAL TIME
 ========================= */
 
-function updateNepaliTime(){
+function updateNepalTime(){
 
     const now = new Date();
 
@@ -1149,84 +1070,231 @@ function updateNepaliTime(){
         }
     ).format(now);
 
-    document.getElementById("nepaliTime").textContent = time;
+    document.getElementById("nepalTime").textContent = time;
 
 }
 
 
 /* =========================
-   NEPALI DATE
+   ENGLISH DATE
 ========================= */
 
-function updateNepaliDate(){
+function getNepalDate(){
 
-    try{
+    const now = new Date();
 
-        const now = new Date();
+    const parts = new Intl.DateTimeFormat(
+        "en-US",
+        {
+            timeZone:"Asia/Kathmandu",
+            year:"numeric",
+            month:"2-digit",
+            day:"2-digit"
+        }
+    ).formatToParts(now);
 
-        /*
-           NepaliDate library accepts
-           JavaScript Date directly.
-        */
+    let year,month,day;
 
-        const date = new NepaliDate(now);
+    parts.forEach(function(part){
 
-        /*
-           Nepali language format:
-           ddd = weekday
-           DD  = day
-           MMMM = month
-           YYYY = year
-        */
+        if(part.type === "year") year = Number(part.value);
 
-        const formattedDate = date.format(
-            "ddd DD, MMMM YYYY",
-            "np"
-        );
+        if(part.type === "month") month = Number(part.value);
 
-        document.getElementById("nepaliDate").textContent =
-            formattedDate;
+        if(part.type === "day") day = Number(part.value);
 
-    }
+    });
 
-    catch(error){
-
-        console.error(
-            "Nepali date error:",
-            error
-        );
-
-        document.getElementById("nepaliDate").textContent =
-            "नेपाली मिति लोड भएन";
-
-    }
+    return {
+        year:year,
+        month:month,
+        day:day
+    };
 
 }
 
 
 /* =========================
-   INITIAL LOAD
+   BS DATA - 2083
+   Baisakh 1, 2083 = 14 April 2026
 ========================= */
 
-updateNepaliTime();
-
-updateNepaliDate();
+const bsMonths = [
+    31,
+    32,
+    31,
+    32,
+    31,
+    30,
+    30,
+    30,
+    29,
+    30,
+    29,
+    31
+];
 
 
 /* =========================
-   LIVE UPDATE
+   NEPALI MONTH NAMES
 ========================= */
 
-setInterval(
-    updateNepaliTime,
-    1000
-);
+const nepaliMonths = [
+    "बैशाख",
+    "जेठ",
+    "असार",
+    "श्रावण",
+    "भाद्र",
+    "आश्विन",
+    "कार्तिक",
+    "मंसिर",
+    "पौष",
+    "माघ",
+    "फाल्गुण",
+    "चैत्र"
+];
 
-setInterval(
-    updateNepaliDate,
-    60000
-);
 
+/* =========================
+   NEPALI NUMBER
+========================= */
+
+function nepaliNumber(number){
+
+    const nepaliDigits = [
+        "०","१","२","३","४",
+        "५","६","७","८","९"
+    ];
+
+    return String(number)
+        .split("")
+        .map(function(digit){
+
+            return nepaliDigits[Number(digit)];
+
+        })
+        .join("");
+
+}
+
+
+/* =========================
+   BS DATE CONVERTER
+========================= */
+
+function convertToBS(){
+
+    const nepaliToday = getNepalDate();
+
+    const adStart = new Date(
+        Date.UTC(2026,3,14)
+    );
+
+    const currentAD = new Date(
+        Date.UTC(
+            nepaliToday.year,
+            nepaliToday.month - 1,
+            nepaliToday.day
+        )
+    );
+
+    let difference =
+        Math.floor(
+            (currentAD - adStart) /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    /*
+       Current Nepali year = 2083
+    */
+
+    let bsYear = 2083;
+
+    let bsMonth = 0;
+
+    let bsDay = 1;
+
+
+    /*
+       If date is before Baisakh 1,
+       display previous year.
+    */
+
+    if(difference < 0){
+
+        document.getElementById("nepaliDate")
+        .textContent = "२०८२/१२/३१";
+
+        return;
+
+    }
+
+
+    while(
+        difference >= bsMonths[bsMonth]
+        &&
+        bsMonth < 11
+    ){
+
+        difference -= bsMonths[bsMonth];
+
+        bsMonth++;
+
+    }
+
+
+    bsDay = difference + 1;
+
+
+    const finalDate =
+        nepaliNumber(bsYear)
+        + " "
+        + nepaliMonths[bsMonth]
+        + " "
+        + nepaliNumber(bsDay);
+
+
+    document.getElementById("nepaliDate")
+    .textContent = finalDate;
+
+
+    /*
+       English date underneath
+    */
+
+    const english =
+        nepaliToday.year
+        + "-"
+        + String(nepaliToday.month).padStart(2,"0")
+        + "-"
+        + String(nepaliToday.day).padStart(2,"0");
+
+
+    document.getElementById("englishDate")
+    .textContent = english;
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+function updateDateTime(){
+
+    updateNepalTime();
+
+    convertToBS();
+
+}
+
+
+/* Update every second */
+
+updateDateTime();
+
+setInterval(updateDateTime,1000);
 
 </script>
 
