@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="ne">
 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Gorakh Chand | Teaching Professional</title>
 
-<meta name="description" content="Official personal website of Gorakh Chand, Teaching Professional and Secondary Level Government Teacher specializing in Computer Science.">
+<meta name="description"
+content="Official personal website of Gorakh Chand, Teaching Professional and Secondary Level Government Teacher specializing in Computer Science.">
 
 <!-- GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+rel="stylesheet">
 
 
 <style>
@@ -143,6 +145,61 @@ nav a:hover::after{
     width:100%;
 }
 
+
+/* =========================
+   LANGUAGE SWITCHER
+========================= */
+
+.language-switcher{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    margin-left:15px;
+}
+
+.lang-btn{
+    border:none;
+    background:transparent;
+
+    color:#293248;
+
+    font-family:'Poppins',Arial,sans-serif;
+    font-size:13px;
+    font-weight:700;
+
+    padding:6px 9px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.lang-btn:hover{
+    background:#ede9fe;
+    color:#5b21b6;
+}
+
+.lang-btn.active{
+    background:
+    linear-gradient(
+        135deg,
+        #6d28d9,
+        #2563eb
+    );
+
+    color:white;
+
+    box-shadow:
+    0 4px 12px rgba(79,70,229,.25);
+}
+
+
+/* =========================
+   MENU
+========================= */
+
 .menu{
     display:none;
     font-size:28px;
@@ -165,6 +222,7 @@ nav a:hover::after{
     align-items:center;
 
     text-align:center;
+
     color:white;
 
     position:relative;
@@ -241,6 +299,7 @@ nav a:hover::after{
 .hero-content{
     width:100%;
     max-width:1100px;
+
     position:relative;
     z-index:2;
 }
@@ -257,6 +316,7 @@ nav a:hover::after{
     margin:0 auto 28px;
 
     border-radius:50%;
+
     overflow:hidden;
 
     border:6px solid rgba(255,255,255,.95);
@@ -271,6 +331,7 @@ nav a:hover::after{
 .profile img{
     width:100%;
     height:100%;
+
     object-fit:cover;
 }
 
@@ -283,6 +344,7 @@ nav a:hover::after{
     font-family:'Playfair Display',serif;
 
     font-size:58px;
+
     line-height:1.15;
 
     margin-bottom:12px;
@@ -293,7 +355,9 @@ nav a:hover::after{
 
 .hero h2{
     font-size:24px;
+
     font-weight:400;
+
     margin-bottom:20px;
 
     color:#f5f3ff;
@@ -301,9 +365,11 @@ nav a:hover::after{
 
 .hero p{
     max-width:720px;
+
     margin:auto;
 
     font-size:18px;
+
     color:#eef2ff;
 }
 
@@ -320,11 +386,13 @@ nav a:hover::after{
     display:inline-block;
 
     padding:14px 28px;
+
     margin:6px;
 
     border-radius:30px;
 
     text-decoration:none;
+
     font-weight:700;
 
     background:
@@ -345,7 +413,9 @@ nav a:hover::after{
 }
 
 .btn:hover{
-    transform:translateY(-5px) scale(1.02);
+    transform:
+    translateY(-5px)
+    scale(1.02);
 
     box-shadow:
     0 15px 35px rgba(0,0,0,.25);
@@ -359,7 +429,6 @@ nav a:hover::after{
 ===================================================== */
 
 .nepali-info{
-
     max-width:900px;
 
     margin:35px auto 0;
@@ -371,9 +440,7 @@ nav a:hover::after{
     gap:15px;
 }
 
-
 .nepali-box{
-
     position:relative;
 
     padding:18px 12px;
@@ -404,7 +471,6 @@ nav a:hover::after{
 }
 
 .nepali-box::before{
-
     content:"";
 
     position:absolute;
@@ -421,7 +487,6 @@ nav a:hover::after{
 }
 
 .nepali-box:hover{
-
     transform:translateY(-6px);
 
     background:
@@ -436,7 +501,6 @@ nav a:hover::after{
 }
 
 .nepali-box .icon{
-
     display:block;
 
     font-size:27px;
@@ -445,7 +509,6 @@ nav a:hover::after{
 }
 
 .nepali-box small{
-
     display:block;
 
     font-size:12px;
@@ -458,7 +521,6 @@ nav a:hover::after{
 }
 
 .nepali-box strong{
-
     display:block;
 
     font-size:18px;
@@ -478,8 +540,8 @@ nav a:hover::after{
 ========================= */
 
 .home-photos{
-
     width:100%;
+
     max-width:1050px;
 
     margin:45px auto 0;
@@ -492,8 +554,8 @@ nav a:hover::after{
 }
 
 .home-photos img{
-
     width:100%;
+
     height:260px;
 
     object-fit:cover;
@@ -511,8 +573,9 @@ nav a:hover::after{
 }
 
 .home-photos img:hover{
-
-    transform:translateY(-8px) scale(1.02);
+    transform:
+    translateY(-8px)
+    scale(1.02);
 
     box-shadow:
     0 20px 45px rgba(0,0,0,.32);
@@ -524,7 +587,6 @@ nav a:hover::after{
 ========================= */
 
 .about{
-
     padding:100px 20px;
 
     background:
@@ -542,21 +604,18 @@ nav a:hover::after{
 }
 
 .container{
-
     max-width:1100px;
 
     margin:auto;
 }
 
 .section-title{
-
     text-align:center;
 
     margin-bottom:50px;
 }
 
 .section-title h2{
-
     font-family:'Playfair Display',serif;
 
     font-size:42px;
@@ -567,12 +626,10 @@ nav a:hover::after{
 }
 
 .section-title p{
-
     color:#6b7280;
 }
 
 .about-grid{
-
     display:grid;
 
     grid-template-columns:1.4fr 1fr;
@@ -581,7 +638,6 @@ nav a:hover::after{
 }
 
 .box{
-
     padding:35px;
 
     border-radius:25px;
@@ -604,7 +660,6 @@ nav a:hover::after{
 }
 
 .box::before{
-
     content:"";
 
     position:absolute;
@@ -621,7 +676,6 @@ nav a:hover::after{
 }
 
 .box h3{
-
     color:#5b21b6;
 
     margin-bottom:15px;
@@ -632,12 +686,10 @@ nav a:hover::after{
 }
 
 .box p{
-
     margin-bottom:8px;
 }
 
 .quote{
-
     margin-top:22px;
 
     padding:18px 22px;
@@ -667,7 +719,6 @@ nav a:hover::after{
 ========================= */
 
 .interests{
-
     padding:100px 20px;
 
     background:
@@ -680,7 +731,6 @@ nav a:hover::after{
 }
 
 .interest-grid{
-
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
@@ -689,7 +739,6 @@ nav a:hover::after{
 }
 
 .interest{
-
     background:
     linear-gradient(
         145deg,
@@ -716,7 +765,6 @@ nav a:hover::after{
 }
 
 .interest::after{
-
     content:"";
 
     position:absolute;
@@ -733,7 +781,6 @@ nav a:hover::after{
 }
 
 .interest:hover{
-
     transform:translateY(-8px);
 
     box-shadow:
@@ -741,7 +788,6 @@ nav a:hover::after{
 }
 
 .interest span{
-
     display:block;
 
     font-size:45px;
@@ -754,7 +800,6 @@ nav a:hover::after{
 }
 
 .interest strong{
-
     color:#4338ca;
 
     position:relative;
@@ -768,7 +813,6 @@ nav a:hover::after{
 ========================= */
 
 .connect{
-
     padding:100px 20px;
 
     text-align:center;
@@ -799,7 +843,6 @@ nav a:hover::after{
 }
 
 .connect h2{
-
     font-family:'Playfair Display',serif;
 
     font-size:40px;
@@ -808,7 +851,6 @@ nav a:hover::after{
 }
 
 .connect p{
-
     color:#e0e7ff;
 }
 
@@ -818,7 +860,6 @@ nav a:hover::after{
 ========================= */
 
 .useful-links{
-
     margin:40px auto 0;
 
     max-width:900px;
@@ -829,7 +870,6 @@ nav a:hover::after{
 }
 
 .useful-links-title{
-
     font-size:18px;
 
     margin-bottom:15px;
@@ -840,7 +880,6 @@ nav a:hover::after{
 }
 
 .useful-links-grid{
-
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
@@ -849,7 +888,6 @@ nav a:hover::after{
 }
 
 .useful-link{
-
     display:block;
 
     padding:14px 8px;
@@ -879,7 +917,6 @@ nav a:hover::after{
 }
 
 .useful-link:hover{
-
     background:white;
 
     color:#4338ca;
@@ -891,7 +928,6 @@ nav a:hover::after{
 }
 
 .useful-link span{
-
     display:block;
 
     font-size:22px;
@@ -905,7 +941,6 @@ nav a:hover::after{
 ========================= */
 
 footer{
-
     padding:30px 20px;
 
     text-align:center;
@@ -930,12 +965,10 @@ footer{
 @media(max-width:950px){
 
     .menu{
-
         display:block;
     }
 
     nav ul{
-
         display:none;
 
         position:absolute;
@@ -958,17 +991,14 @@ footer{
     }
 
     nav ul.show{
-
         display:flex;
     }
 
     .about-grid{
-
         grid-template-columns:1fr;
     }
 
     .interest-grid{
-
         grid-template-columns:1fr 1fr;
     }
 
@@ -981,28 +1011,42 @@ footer{
 
 @media(max-width:600px){
 
-    .hero{
+    .navbar{
+        padding:12px 12px;
+    }
 
+    .logo{
+        font-size:21px;
+    }
+
+    .language-switcher{
+        margin-left:auto;
+        margin-right:8px;
+    }
+
+    .lang-btn{
+        font-size:11px;
+
+        padding:5px 7px;
+    }
+
+    .hero{
         padding:110px 10px 45px;
     }
 
     .hero h1{
-
         font-size:38px;
     }
 
     .hero h2{
-
         font-size:19px;
     }
 
     .hero p{
-
         font-size:15px;
     }
 
     .profile{
-
         width:150px;
         height:150px;
     }
@@ -1011,7 +1055,6 @@ footer{
     /* NEPALI INFO */
 
     .nepali-info{
-
         grid-template-columns:1fr;
 
         max-width:300px;
@@ -1022,12 +1065,10 @@ footer{
     }
 
     .nepali-box{
-
         padding:13px 10px;
     }
 
     .nepali-box strong{
-
         font-size:16px;
     }
 
@@ -1035,7 +1076,6 @@ footer{
     /* PHOTOS */
 
     .home-photos{
-
         grid-template-columns:repeat(3,1fr);
 
         gap:7px;
@@ -1044,7 +1084,6 @@ footer{
     }
 
     .home-photos img{
-
         height:125px;
 
         border-radius:10px;
@@ -1053,24 +1092,20 @@ footer{
     }
 
     .interest-grid{
-
         grid-template-columns:1fr 1fr;
     }
 
     .useful-links{
-
         margin-top:30px;
     }
 
     .useful-links-grid{
-
         grid-template-columns:repeat(2,1fr);
 
         gap:8px;
     }
 
     .useful-link{
-
         font-size:12px;
 
         padding:10px 5px;
@@ -1086,12 +1121,10 @@ footer{
 @media(max-width:380px){
 
     .home-photos img{
-
         height:105px;
     }
 
     .hero h1{
-
         font-size:34px;
     }
 
@@ -1118,7 +1151,28 @@ Gorakh Chand
 </div>
 
 
-<div class="menu" onclick="toggleMenu()">
+<div class="language-switcher">
+
+<button
+class="lang-btn active"
+id="neBtn"
+onclick="changeLanguage('ne')">
+NE
+</button>
+
+<button
+class="lang-btn"
+id="enBtn"
+onclick="changeLanguage('en')">
+EN
+</button>
+
+</div>
+
+
+<div
+class="menu"
+onclick="toggleMenu()">
 ☰
 </div>
 
@@ -1126,35 +1180,75 @@ Gorakh Chand
 <ul id="navMenu">
 
 <li>
-<a href="index.html">Home</a>
+<a
+href="index.html"
+data-ne="गृहपृष्ठ"
+data-en="Home">
+गृहपृष्ठ
+</a>
 </li>
 
 <li>
-<a href="about.html">About</a>
+<a
+href="about.html"
+data-ne="मेरो बारेमा"
+data-en="About">
+मेरो बारेमा
+</a>
 </li>
 
 <li>
-<a href="education.html">Education</a>
+<a
+href="education.html"
+data-ne="शिक्षा"
+data-en="Education">
+शिक्षा
+</a>
 </li>
 
 <li>
-<a href="achievements.html">Achievements</a>
+<a
+href="achievements.html"
+data-ne="उपलब्धिहरू"
+data-en="Achievements">
+उपलब्धिहरू
+</a>
 </li>
 
 <li>
-<a href="educational-content.html">Educational Content</a>
+<a
+href="educational-content.html"
+data-ne="शैक्षिक सामग्री"
+data-en="Educational Content">
+शैक्षिक सामग्री
+</a>
 </li>
 
 <li>
-<a href="articles.html">Articles</a>
+<a
+href="articles.html"
+data-ne="लेखहरू"
+data-en="Articles">
+लेखहरू
+</a>
 </li>
 
 <li>
-<a href="gallery.html">Gallery</a>
+<a
+href="gallery.html"
+data-ne="ग्यालरी"
+data-en="Gallery">
+ग्यालरी
+</a>
 </li>
 
 <li>
-<a href="contact.html">Contact</a>
+<a
+href="contact.html"
+data-ne="सम्पर्क"
+data-en="Contact">
+सम्पर्क
+</a>
 </li>
 
 </ul>
@@ -1164,12 +1258,13 @@ Gorakh Chand
 </nav>
 
 
-
 <!-- =========================
      HOME / HERO
 ========================= -->
 
-<section class="hero" id="home">
+<section
+class="hero"
+id="home">
 
 <div class="hero-content">
 
@@ -1178,24 +1273,25 @@ Gorakh Chand
 
 <div class="profile">
 
-<img src="profile.jpg" alt="Gorakh Chand">
+<img
+src="profile.jpg"
+alt="Gorakh Chand">
 
 </div>
 
 
-<h1>
-Gorakh Chand
+<h1 data-lang="hero-title">
+गोरख चन्द
 </h1>
 
 
-<h2>
-Teaching Professional • Educator • Computer Science Teacher
+<h2 data-lang="hero-subtitle">
+शिक्षण पेशाकर्मी • शिक्षक • कम्प्युटर विज्ञान शिक्षक
 </h2>
 
 
-<p>
-Secondary Level Government Teacher passionate about
-education, technology, learning and continuous growth.
+<p data-lang="hero-description">
+शिक्षा, प्रविधि, सिकाइ तथा निरन्तर विकासप्रति समर्पित माध्यमिक तहका सरकारी शिक्षक।
 </p>
 
 
@@ -1203,16 +1299,21 @@ education, technology, learning and continuous growth.
 
 <div class="buttons">
 
-<a href="about.html" class="btn">
-Discover My Journey
+<a
+href="about.html"
+class="btn"
+data-lang="discover">
+मेरो यात्रा हेर्नुहोस्
 </a>
 
-<a href="contact.html" class="btn">
-Let's Connect
+<a
+href="contact.html"
+class="btn"
+data-lang="connect">
+सम्पर्क गर्नुहोस्
 </a>
 
 </div>
-
 
 
 <!-- ==================================================
@@ -1228,7 +1329,8 @@ Let's Connect
 🕐
 </span>
 
-<small>
+<small
+data-lang="nepali-time-label">
 नेपाली समय
 </small>
 
@@ -1245,7 +1347,8 @@ Let's Connect
 📅
 </span>
 
-<small>
+<small
+data-lang="nepali-date-label">
 नेपाली मिति
 </small>
 
@@ -1262,7 +1365,8 @@ Let's Connect
 🏛️
 </span>
 
-<small>
+<small
+data-lang="nepal-sambat-label">
 नेपाल संवत्
 </small>
 
@@ -1276,18 +1380,23 @@ Let's Connect
 </div>
 
 
-
 <!-- =========================
      THREE PHOTOS
 ========================= -->
 
 <div class="home-photos">
 
-<img src="photo1.jpg" alt="Gorakh Chand Photo 1">
+<img
+src="photo1.jpg"
+alt="Gorakh Chand Photo 1">
 
-<img src="photo2.jpg" alt="Gorakh Chand Photo 2">
+<img
+src="photo2.jpg"
+alt="Gorakh Chand Photo 2">
 
-<img src="photo3.jpg" alt="Gorakh Chand Photo 3">
+<img
+src="photo3.jpg"
+alt="Gorakh Chand Photo 3">
 
 </div>
 
@@ -1295,7 +1404,6 @@ Let's Connect
 </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -1306,14 +1414,15 @@ Let's Connect
 
 <div class="container">
 
+
 <div class="section-title">
 
-<h2>
-Welcome
+<h2 data-lang="welcome">
+स्वागत छ
 </h2>
 
-<p>
-A little about me
+<p data-lang="little-about">
+मेरो बारेमा केही कुरा
 </p>
 
 </div>
@@ -1324,56 +1433,87 @@ A little about me
 
 <div class="box">
 
-<h3>
-Hello, I'm Gorakh Chand 👋
+<h3 data-lang="hello">
+नमस्कार, म गोरख चन्द हुँ 👋
 </h3>
 
+<p data-lang="about-text-1">
+म शिक्षण पेशाकर्मी तथा कम्प्युटर विज्ञान विषयमा विशेषज्ञता भएको माध्यमिक तहको सरकारी शिक्षक हुँ।
+</p>
 
-<p>
-I am a <strong>Teaching Professional and Secondary Level Government Teacher</strong>
-specializing in <strong>Computer Science</strong>.
+<p data-lang="about-text-2">
+मेरो शैक्षिक यात्रामा कम्प्युटर विज्ञान, विशेष आवश्यकता शिक्षा तथा अर्थशास्त्र समावेश छन्। म अर्थपूर्ण शिक्षा, प्रविधि, समावेशी सिकाइ तथा आजीवन सिकाइप्रति समर्पित छु।
 </p>
 
 
-<p>
-My academic journey includes Computer Science,
-Special Needs Education and Economics.
-I am passionate about meaningful education,
-technology, inclusive learning and lifelong learning.
-</p>
-
-
-<div class="quote">
-
-“Learn. Explore. Inspire. Keep Growing.”
-
+<div class="quote"
+data-lang="quote">
+“सिकौँ। खोजौँ। प्रेरणा दिऔँ। निरन्तर अगाडि बढौँ।”
 </div>
 
 </div>
-
 
 
 <div class="box">
 
-<h3>
-Professional Profile
+<h3 data-lang="profile">
+व्यावसायिक परिचय
 </h3>
 
 
 <p>
-👨‍🏫 <strong>Profession:</strong> Teaching Professional
+👨‍🏫
+
+<strong data-lang="profession-label">
+पेशा:
+</strong>
+
+<span data-lang="profession">
+शिक्षण पेशाकर्मी
+</span>
+
 </p>
 
-<p>
-🏫 <strong>Position:</strong> Secondary Level Government Teacher
-</p>
 
 <p>
-💻 <strong>Specialization:</strong> Computer Science
+🏫
+
+<strong data-lang="position-label">
+पद:
+</strong>
+
+<span data-lang="position">
+माध्यमिक तह सरकारी शिक्षक
+</span>
+
 </p>
 
+
 <p>
-🌱 <strong>Focus:</strong> Education & Lifelong Learning
+💻
+
+<strong data-lang="specialization-label">
+विशेषज्ञता:
+</strong>
+
+<span data-lang="specialization">
+कम्प्युटर विज्ञान
+</span>
+
+</p>
+
+
+<p>
+🌱
+
+<strong data-lang="focus-label">
+केन्द्र:
+</strong>
+
+<span data-lang="focus">
+शिक्षा तथा आजीवन सिकाइ
+</span>
+
 </p>
 
 </div>
@@ -1386,7 +1526,6 @@ Professional Profile
 </section>
 
 
-
 <!-- =========================
      INTERESTS
 ========================= -->
@@ -1395,14 +1534,15 @@ Professional Profile
 
 <div class="container">
 
+
 <div class="section-title">
 
-<h2>
-Beyond the Classroom
+<h2 data-lang="beyond">
+कक्षाकोठाभन्दा बाहिर
 </h2>
 
-<p>
-Things I enjoy and explore
+<p data-lang="things">
+मलाई मन पर्ने तथा खोजी गर्ने विषयहरू
 </p>
 
 </div>
@@ -1417,8 +1557,8 @@ Things I enjoy and explore
 📚
 </span>
 
-<strong>
-Literature
+<strong data-lang="literature">
+साहित्य
 </strong>
 
 </div>
@@ -1430,8 +1570,8 @@ Literature
 ✈️
 </span>
 
-<strong>
-Journey
+<strong data-lang="journey">
+यात्रा
 </strong>
 
 </div>
@@ -1443,8 +1583,8 @@ Journey
 🏏
 </span>
 
-<strong>
-Cricket
+<strong data-lang="cricket">
+क्रिकेट
 </strong>
 
 </div>
@@ -1456,8 +1596,8 @@ Cricket
 📖
 </span>
 
-<strong>
-Reading
+<strong data-lang="reading">
+पठन
 </strong>
 
 </div>
@@ -1470,27 +1610,29 @@ Reading
 </section>
 
 
-
 <!-- =========================
      CONNECT
 ========================= -->
 
 <section class="connect">
 
-<h2>
-Let's Connect
+
+<h2 data-lang="lets-connect">
+सम्पर्क गरौँ
 </h2>
 
 
-<p>
-For professional communication, collaboration or educational discussion.
+<p data-lang="professional">
+व्यावसायिक सञ्चार, सहकार्य वा शैक्षिक छलफलका लागि।
 </p>
 
 
-<a href="contact.html" class="btn">
-Contact Me
+<a
+href="contact.html"
+class="btn"
+data-lang="contact-me">
+सम्पर्क गर्नुहोस्
 </a>
-
 
 
 <!-- =========================
@@ -1499,54 +1641,85 @@ Contact Me
 
 <div class="useful-links">
 
-<div class="useful-links-title">
-🔗 Useful Educational Links
+
+<div
+class="useful-links-title"
+data-lang="useful-links">
+🔗 उपयोगी शैक्षिक लिङ्कहरू
 </div>
 
 
 <div class="useful-links-grid">
 
 
-<a class="useful-link"
-   href="https://www.moest.gov.np/"
-   target="_blank"
-   rel="noopener noreferrer">
+<a
+class="useful-link"
+href="https://www.moest.gov.np/"
+target="_blank"
+rel="noopener noreferrer">
 
-<span>🏛️</span>
+<span>
+🏛️
+</span>
+
+<span
+data-lang="ministry">
 शिक्षा मन्त्रालय
+</span>
 
 </a>
 
 
-<a class="useful-link"
-   href="https://cehrd.gov.np/"
-   target="_blank"
-   rel="noopener noreferrer">
+<a
+class="useful-link"
+href="https://cehrd.gov.np/"
+target="_blank"
+rel="noopener noreferrer">
 
-<span>🎓</span>
+<span>
+🎓
+</span>
+
+<span
+data-lang="cehrd">
 मानव स्रोत विकास केन्द्र
+</span>
 
 </a>
 
 
-<a class="useful-link"
-   href="https://www.tsc.gov.np/"
-   target="_blank"
-   rel="noopener noreferrer">
+<a
+class="useful-link"
+href="https://www.tsc.gov.np/"
+target="_blank"
+rel="noopener noreferrer">
 
-<span>👨‍🏫</span>
+<span>
+👨‍🏫
+</span>
+
+<span
+data-lang="tsc">
 शिक्षक सेवा आयोग
+</span>
 
 </a>
 
 
-<a class="useful-link"
-   href="https://www.moecdc.gov.np/"
-   target="_blank"
-   rel="noopener noreferrer">
+<a
+class="useful-link"
+href="https://www.moecdc.gov.np/"
+target="_blank"
+rel="noopener noreferrer">
 
-<span>📚</span>
+<span>
+📚
+</span>
+
+<span
+data-lang="cdc">
 पाठ्यक्रम विकास केन्द्र
+</span>
 
 </a>
 
@@ -1558,24 +1731,21 @@ Contact Me
 </section>
 
 
-
 <!-- =========================
      FOOTER
 ========================= -->
 
 <footer>
 
-<p>
-© 2026 Gorakh Chand. All Rights Reserved.
+<p data-lang="rights">
+© 2026 गोरख चन्द। सर्वाधिकार सुरक्षित।
 </p>
 
-
-<p>
-Teaching Professional • Educator • Computer Science Teacher
+<p data-lang="footer-title">
+शिक्षण पेशाकर्मी • शिक्षक • कम्प्युटर विज्ञान शिक्षक
 </p>
 
 </footer>
-
 
 
 <!-- ==================================================
@@ -1610,11 +1780,12 @@ function toNepaliNumber(value){
         "५","६","७","८","९"
     ];
 
-    return String(value).replace(/[0-9]/g,function(d){
-
-        return digits[Number(d)];
-
-    });
+    return String(value).replace(
+        /[0-9]/g,
+        function(d){
+            return digits[Number(d)];
+        }
+    );
 
 }
 
@@ -1627,7 +1798,8 @@ function updateNepaliTime(){
 
     const now = new Date();
 
-    const time = new Intl.DateTimeFormat(
+    const time =
+    new Intl.DateTimeFormat(
         "ne-NP",
         {
             timeZone:"Asia/Kathmandu",
@@ -1637,6 +1809,7 @@ function updateNepaliTime(){
             hour12:true
         }
     ).format(now);
+
 
     document
     .getElementById("nepaliTime")
@@ -1649,129 +1822,215 @@ function updateNepaliTime(){
    NEPALI DATE
 ================================================== */
 
-/*
-   This converter uses the official fixed BS
-   calendar data for years 2000–2090.
-
-   Current website date is within this range.
-*/
-
 const BS_DATA = [
 
-/* 2000 */ [30,32,31,32,31,30,30,30,29,30,29,31],
-/* 2001 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2002 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2003 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2004 */ [30,32,31,32,31,30,30,30,29,30,29,31],
-/* 2005 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2006 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2007 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2008 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2009 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2010 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2011 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2012 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2013 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2014 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2015 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2016 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2017 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2018 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2019 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2020 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2021 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2022 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2023 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2024 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2025 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2026 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2027 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2028 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2029 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2030 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2031 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2032 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2033 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2034 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2035 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2036 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2037 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2038 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2039 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2040 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2041 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2042 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2043 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2044 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2045 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2046 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2047 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2048 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2049 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2050 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2051 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2052 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2053 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2054 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2055 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2056 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2057 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2058 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2059 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2060 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2061 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2062 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2063 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2064 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2065 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2066 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2067 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2068 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2069 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2070 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2071 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2072 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2073 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2074 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2075 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2076 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2077 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2078 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2079 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2080 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2081 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2082 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2083 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2084 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2085 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2086 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2087 */ [31,31,32,32,31,30,30,29,30,29,30,30],
-/* 2088 */ [31,32,31,32,31,30,30,30,29,29,30,31],
-/* 2089 */ [31,31,32,31,31,31,30,29,30,29,30,30],
-/* 2090 */ [31,31,32,32,31,30,30,29,30,29,30,30]
+[30,32,31,32,31,30,30,30,29,30,29,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[30,32,31,32,31,30,30,30,29,30,29,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,30,29,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30],
+
+[31,32,31,32,31,30,30,29,30,29,30,31],
+
+[31,31,32,31,31,31,30,29,30,29,30,30],
+
+[31,31,32,32,31,30,30,29,30,29,30,30]
 
 ];
 
 
-/*
-   Base date:
-   2000-01-01 BS
-   = 1943-04-14 AD
-*/
-
 const BS_BASE_YEAR = 2000;
 
 const BS_BASE_AD =
-    new Date(Date.UTC(1943,3,14));
+new Date(Date.UTC(1943,3,14));
+
+
+function totalDays(months){
+
+    return months.reduce(
+        (sum,value) => sum + value,
+        0
+    );
+
+}
 
 
 function getBSFromAD(adDate){
 
     let diff =
-        Math.floor(
-            (adDate.getTime() - BS_BASE_AD.getTime())
-            / 86400000
-        );
+    Math.floor(
+        (
+            adDate.getTime()
+            -
+            BS_BASE_AD.getTime()
+        )
+        /
+        86400000
+    );
 
 
     let year = BS_BASE_YEAR;
@@ -1779,11 +2038,17 @@ function getBSFromAD(adDate){
 
     while(
         year <= 2090 &&
-        diff >= totalDays(BS_DATA[year-BS_BASE_YEAR])
+        diff >= totalDays(
+            BS_DATA[
+                year-BS_BASE_YEAR
+            ]
+        )
     ){
 
         diff -= totalDays(
-            BS_DATA[year-BS_BASE_YEAR]
+            BS_DATA[
+                year-BS_BASE_YEAR
+            ]
         );
 
         year++;
@@ -1791,15 +2056,18 @@ function getBSFromAD(adDate){
     }
 
 
-    if(year < 2000 || year > 2090){
-
+    if(
+        year < 2000 ||
+        year > 2090
+    ){
         return null;
-
     }
 
 
     const months =
-        BS_DATA[year-BS_BASE_YEAR];
+    BS_DATA[
+        year-BS_BASE_YEAR
+    ];
 
 
     let month = 1;
@@ -1826,16 +2094,6 @@ function getBSFromAD(adDate){
         date:diff + 1
 
     };
-
-}
-
-
-function totalDays(months){
-
-    return months.reduce(
-        (sum,value) => sum + value,
-        0
-    );
 
 }
 
@@ -1888,16 +2146,18 @@ function updateNepaliDate(){
     try{
 
         const parts =
-            new Intl.DateTimeFormat(
-                "en-US",
-                {
-                    timeZone:"Asia/Kathmandu",
+        new Intl.DateTimeFormat(
+            "en-US",
+            {
+                timeZone:"Asia/Kathmandu",
 
-                    year:"numeric",
-                    month:"numeric",
-                    day:"numeric"
-                }
-            ).formatToParts(new Date());
+                year:"numeric",
+
+                month:"numeric",
+
+                day:"numeric"
+            }
+        ).formatToParts(new Date());
 
 
         let year;
@@ -1905,35 +2165,40 @@ function updateNepaliDate(){
         let day;
 
 
-        parts.forEach(function(part){
+        parts.forEach(
+            function(part){
 
-            if(part.type === "year"){
-                year = Number(part.value);
+                if(part.type === "year"){
+                    year =
+                    Number(part.value);
+                }
+
+                if(part.type === "month"){
+                    month =
+                    Number(part.value);
+                }
+
+                if(part.type === "day"){
+                    day =
+                    Number(part.value);
+                }
+
             }
-
-            if(part.type === "month"){
-                month = Number(part.value);
-            }
-
-            if(part.type === "day"){
-                day = Number(part.value);
-            }
-
-        });
+        );
 
 
         const nepalAD =
-            new Date(
-                Date.UTC(
-                    year,
-                    month - 1,
-                    day
-                )
-            );
+        new Date(
+            Date.UTC(
+                year,
+                month - 1,
+                day
+            )
+        );
 
 
         const bs =
-            getBSFromAD(nepalAD);
+        getBSFromAD(nepalAD);
 
 
         if(!bs){
@@ -1946,29 +2211,38 @@ function updateNepaliDate(){
 
 
         const dayIndex =
-            new Date(
-                Date.UTC(
-                    year,
-                    month - 1,
-                    day
-                )
-            ).getUTCDay();
+        new Date(
+            Date.UTC(
+                year,
+                month - 1,
+                day
+            )
+        ).getUTCDay();
 
 
         const fullDate =
 
-            toNepaliNumber(bs.year)
-            + " "
-            + nepaliMonths[bs.month - 1]
-            + " "
-            + toNepaliNumber(bs.date)
-            + ", "
-            + nepaliDays[dayIndex];
+        toNepaliNumber(bs.year)
+        +
+        " "
+        +
+        nepaliMonths[
+            bs.month - 1
+        ]
+        +
+        " "
+        +
+        toNepaliNumber(bs.date)
+        +
+        ", "
+        +
+        nepaliDays[dayIndex];
 
 
         document
         .getElementById("nepaliDate")
-        .textContent = fullDate;
+        .textContent =
+        fullDate;
 
 
         /* =========================
@@ -1978,17 +2252,15 @@ function updateNepaliDate(){
         let ns;
 
 
-        /*
-           Nepal Sambat changes around Kartik.
-        */
-
         if(bs.month >= 7){
 
-            ns = bs.year - 937;
+            ns =
+            bs.year - 937;
 
         }else{
 
-            ns = bs.year - 938;
+            ns =
+            bs.year - 938;
 
         }
 
@@ -1996,11 +2268,12 @@ function updateNepaliDate(){
         document
         .getElementById("nepalSambat")
         .textContent =
-            "नेपाल संवत् "
-            + toNepaliNumber(ns);
+
+        "नेपाल संवत् "
+        +
+        toNepaliNumber(ns);
 
     }
-
 
     catch(error){
 
@@ -2013,15 +2286,361 @@ function updateNepaliDate(){
         document
         .getElementById("nepaliDate")
         .textContent =
-            "नेपाली मिति उपलब्ध भएन";
+        "नेपाली मिति उपलब्ध भएन";
 
 
         document
         .getElementById("nepalSambat")
         .textContent =
-            "नेपाल संवत् उपलब्ध भएन";
+        "नेपाल संवत् उपलब्ध भएन";
 
     }
+
+}
+
+
+/* ==================================================
+   LANGUAGE TRANSLATIONS
+================================================== */
+
+const translations = {
+
+
+ne:{
+
+    "hero-title":
+    "गोरख चन्द",
+
+    "hero-subtitle":
+    "शिक्षण पेशाकर्मी • शिक्षक • कम्प्युटर विज्ञान शिक्षक",
+
+    "hero-description":
+    "शिक्षा, प्रविधि, सिकाइ तथा निरन्तर विकासप्रति समर्पित माध्यमिक तहका सरकारी शिक्षक।",
+
+    "discover":
+    "मेरो यात्रा हेर्नुहोस्",
+
+    "connect":
+    "सम्पर्क गर्नुहोस्",
+
+    "nepali-time-label":
+    "नेपाली समय",
+
+    "nepali-date-label":
+    "नेपाली मिति",
+
+    "nepal-sambat-label":
+    "नेपाल संवत्",
+
+    "welcome":
+    "स्वागत छ",
+
+    "little-about":
+    "मेरो बारेमा केही कुरा",
+
+    "hello":
+    "नमस्कार, म गोरख चन्द हुँ 👋",
+
+    "about-text-1":
+    "म शिक्षण पेशाकर्मी तथा कम्प्युटर विज्ञान विषयमा विशेषज्ञता भएको माध्यमिक तहको सरकारी शिक्षक हुँ।",
+
+    "about-text-2":
+    "मेरो शैक्षिक यात्रामा कम्प्युटर विज्ञान, विशेष आवश्यकता शिक्षा तथा अर्थशास्त्र समावेश छन्। म अर्थपूर्ण शिक्षा, प्रविधि, समावेशी सिकाइ तथा आजीवन सिकाइप्रति समर्पित छु।",
+
+    "quote":
+    "“सिकौँ। खोजौँ। प्रेरणा दिऔँ। निरन्तर अगाडि बढौँ।”",
+
+    "profile":
+    "व्यावसायिक परिचय",
+
+    "profession-label":
+    "पेशा:",
+
+    "profession":
+    "शिक्षण पेशाकर्मी",
+
+    "position-label":
+    "पद:",
+
+    "position":
+    "माध्यमिक तह सरकारी शिक्षक",
+
+    "specialization-label":
+    "विशेषज्ञता:",
+
+    "specialization":
+    "कम्प्युटर विज्ञान",
+
+    "focus-label":
+    "केन्द्र:",
+
+    "focus":
+    "शिक्षा तथा आजीवन सिकाइ",
+
+    "beyond":
+    "कक्षाकोठाभन्दा बाहिर",
+
+    "things":
+    "मलाई मन पर्ने तथा खोजी गर्ने विषयहरू",
+
+    "literature":
+    "साहित्य",
+
+    "journey":
+    "यात्रा",
+
+    "cricket":
+    "क्रिकेट",
+
+    "reading":
+    "पठन",
+
+    "lets-connect":
+    "सम्पर्क गरौँ",
+
+    "professional":
+    "व्यावसायिक सञ्चार, सहकार्य वा शैक्षिक छलफलका लागि।",
+
+    "contact-me":
+    "सम्पर्क गर्नुहोस्",
+
+    "useful-links":
+    "🔗 उपयोगी शैक्षिक लिङ्कहरू",
+
+    "ministry":
+    "शिक्षा मन्त्रालय",
+
+    "cehrd":
+    "मानव स्रोत विकास केन्द्र",
+
+    "tsc":
+    "शिक्षक सेवा आयोग",
+
+    "cdc":
+    "पाठ्यक्रम विकास केन्द्र",
+
+    "rights":
+    "© 2026 गोरख चन्द। सर्वाधिकार सुरक्षित।",
+
+    "footer-title":
+    "शिक्षण पेशाकर्मी • शिक्षक • कम्प्युटर विज्ञान शिक्षक"
+
+},
+
+
+en:{
+
+    "hero-title":
+    "Gorakh Chand",
+
+    "hero-subtitle":
+    "Teaching Professional • Educator • Computer Science Teacher",
+
+    "hero-description":
+    "Secondary Level Government Teacher passionate about education, technology, learning and continuous growth.",
+
+    "discover":
+    "Discover My Journey",
+
+    "connect":
+    "Let's Connect",
+
+    "nepali-time-label":
+    "Nepali Time",
+
+    "nepali-date-label":
+    "Nepali Date",
+
+    "nepal-sambat-label":
+    "Nepal Sambat",
+
+    "welcome":
+    "Welcome",
+
+    "little-about":
+    "A little about me",
+
+    "hello":
+    "Hello, I'm Gorakh Chand 👋",
+
+    "about-text-1":
+    "I am a Teaching Professional and Secondary Level Government Teacher specializing in Computer Science.",
+
+    "about-text-2":
+    "My academic journey includes Computer Science, Special Needs Education and Economics. I am passionate about meaningful education, technology, inclusive learning and lifelong learning.",
+
+    "quote":
+    "“Learn. Explore. Inspire. Keep Growing.”",
+
+    "profile":
+    "Professional Profile",
+
+    "profession-label":
+    "Profession:",
+
+    "profession":
+    "Teaching Professional",
+
+    "position-label":
+    "Position:",
+
+    "position":
+    "Secondary Level Government Teacher",
+
+    "specialization-label":
+    "Specialization:",
+
+    "specialization":
+    "Computer Science",
+
+    "focus-label":
+    "Focus:",
+
+    "focus":
+    "Education & Lifelong Learning",
+
+    "beyond":
+    "Beyond the Classroom",
+
+    "things":
+    "Things I enjoy and explore",
+
+    "literature":
+    "Literature",
+
+    "journey":
+    "Journey",
+
+    "cricket":
+    "Cricket",
+
+    "reading":
+    "Reading",
+
+    "lets-connect":
+    "Let's Connect",
+
+    "professional":
+    "For professional communication, collaboration or educational discussion.",
+
+    "contact-me":
+    "Contact Me",
+
+    "useful-links":
+    "🔗 Useful Educational Links",
+
+    "ministry":
+    "Ministry of Education",
+
+    "cehrd":
+    "Center for Education and Human Resource Development",
+
+    "tsc":
+    "Teacher Service Commission",
+
+    "cdc":
+    "Curriculum Development Centre",
+
+    "rights":
+    "© 2026 Gorakh Chand. All Rights Reserved.",
+
+    "footer-title":
+    "Teaching Professional • Educator • Computer Science Teacher"
+
+}
+
+};
+
+
+/* ==================================================
+   CHANGE LANGUAGE
+================================================== */
+
+function changeLanguage(lang){
+
+    localStorage.setItem(
+        "websiteLanguage",
+        lang
+    );
+
+
+    document.documentElement.lang =
+    lang === "ne"
+    ? "ne"
+    : "en";
+
+
+    /* =========================
+       NORMAL TEXT
+    ========================= */
+
+    document
+    .querySelectorAll("[data-lang]")
+    .forEach(
+        function(element){
+
+            const key =
+            element.getAttribute(
+                "data-lang"
+            );
+
+
+            if(
+                translations[lang] &&
+                translations[lang][key]
+            ){
+
+                element.textContent =
+                translations[lang][key];
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    document
+    .querySelectorAll(
+        "[data-ne][data-en]"
+    )
+    .forEach(
+        function(element){
+
+            element.textContent =
+            element.getAttribute(
+                lang === "ne"
+                ? "data-ne"
+                : "data-en"
+            );
+
+        }
+    );
+
+
+    /* =========================
+       BUTTON ACTIVE STATE
+    ========================= */
+
+    document
+    .getElementById("neBtn")
+    .classList
+    .toggle(
+        "active",
+        lang === "ne"
+    );
+
+
+    document
+    .getElementById("enBtn")
+    .classList
+    .toggle(
+        "active",
+        lang === "en"
+    );
 
 }
 
@@ -2040,11 +2659,8 @@ updateNepaliDate();
 ================================================== */
 
 setInterval(
-
     updateNepaliTime,
-
     1000
-
 );
 
 
@@ -2053,15 +2669,30 @@ setInterval(
 ================================================== */
 
 setInterval(
-
     updateNepaliDate,
-
     60000
+);
 
+
+/* ==================================================
+   LOAD SAVED LANGUAGE
+================================================== */
+
+const savedLanguage =
+localStorage.getItem(
+    "websiteLanguage"
+)
+||
+"ne";
+
+
+changeLanguage(
+    savedLanguage
 );
 
 </script>
 
 
 </body>
-</html>
+
+   </html>
