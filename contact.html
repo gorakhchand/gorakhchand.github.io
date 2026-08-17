@@ -21,11 +21,6 @@ body{
     line-height:1.7;
 }
 
-
-/* =========================
-   NAVIGATION
-========================= */
-
 nav{
     position:sticky;
     top:0;
@@ -80,6 +75,7 @@ nav a.active{
 ========================= */
 
 .hero{
+    position:relative;
     padding:85px 20px;
     text-align:center;
     color:white;
@@ -97,6 +93,52 @@ nav a.active{
 
 .hero p{
     font-size:19px;
+}
+
+
+/* =========================
+   LANGUAGE SWITCH
+========================= */
+
+.language-switch{
+    position:absolute;
+    top:18px;
+    right:20px;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    padding:7px 13px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(8px);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    font-size:13px;
+    font-weight:bold;
+}
+
+.language-switch button{
+    border:none;
+    background:none;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:13px;
+    padding:3px 5px;
+}
+
+.language-switch button:hover{
+    opacity:.75;
+}
+
+.language-switch .active-lang{
+    text-decoration:underline;
 }
 
 
@@ -180,147 +222,87 @@ nav a.active{
 
 .social{
     margin-top:20px;
-
     display:flex;
     flex-direction:column;
-
     gap:12px;
 }
 
-
-/* COMMON BUTTON */
-
 .social a{
     width:100%;
-
     display:flex;
     align-items:center;
-
     gap:13px;
-
     padding:13px 18px;
-
     border-radius:15px;
-
     text-decoration:none;
-
     font-weight:bold;
-
     border:1px solid transparent;
-
     transition:.3s;
 }
-
-
-/* ICON */
 
 .social a span{
     font-size:23px;
 }
 
-
-/* HOVER */
-
 .social a:hover{
     transform:translateX(5px);
-
-    box-shadow:
-    0 7px 18px rgba(0,0,0,.10);
+    box-shadow:0 7px 18px rgba(0,0,0,.10);
 }
 
 
-/* =========================
-   FACEBOOK
-========================= */
+/* FACEBOOK */
 
 .facebook-btn{
-
     background:#eef4ff;
-
     color:#1877f2 !important;
-
     border-color:#dbeafe !important;
 }
 
 
-/* =========================
-   YOUTUBE
-========================= */
+/* YOUTUBE */
 
 .youtube-btn{
-
     background:#fff1f2;
-
     color:#dc2626 !important;
-
     border-color:#fecdd3 !important;
 }
 
 
-/* =========================
-   EMAIL
-========================= */
+/* EMAIL */
 
 .email-btn{
-
     background:#fff7ed;
-
     color:#ea580c !important;
-
     border-color:#fed7aa !important;
 }
 
 
-/* =========================
-   WHATSAPP
-========================= */
+/* WHATSAPP */
 
 .whatsapp-btn{
-
     background:#ecfdf5;
-
     color:#16a34a !important;
-
     border-color:#bbf7d0 !important;
 
     display:flex !important;
-
     flex-direction:column !important;
-
     align-items:flex-start !important;
-
     gap:2px !important;
 }
 
-
-/* WhatsApp main line */
-
 .whatsapp-top{
-
     display:flex;
-
     align-items:center;
-
     gap:13px;
-
     font-size:16px;
 }
 
-
-/* TEXT ONLY */
-
 .whatsapp-text{
-
     margin-left:36px;
-
     font-size:10px;
-
     font-weight:600;
-
     letter-spacing:1px;
-
     color:#16a34a;
-
     opacity:.85;
 }
 
@@ -331,13 +313,9 @@ nav a.active{
 
 .message{
     margin-top:35px;
-
     padding:35px;
-
     border-radius:24px;
-
     text-align:center;
-
     color:white;
 
     background:
@@ -360,11 +338,8 @@ nav a.active{
 
 footer{
     padding:28px 20px;
-
     text-align:center;
-
     color:#9ca3af;
-
     background:#111827;
 }
 
@@ -380,27 +355,16 @@ footer{
     }
 
     nav ul{
-
         display:none;
-
         position:absolute;
-
         top:65px;
-
         left:0;
-
         width:100%;
-
         padding:20px;
-
         background:white;
-
         flex-direction:column;
-
         text-align:center;
-
-        box-shadow:
-        0 8px 20px rgba(0,0,0,.1);
+        box-shadow:0 8px 20px rgba(0,0,0,.1);
     }
 
     nav ul.show{
@@ -440,6 +404,13 @@ footer{
         padding:12px 16px;
     }
 
+    .language-switch{
+        top:12px;
+        right:12px;
+        font-size:12px;
+        padding:6px 10px;
+    }
+
 }
 
 
@@ -475,11 +446,9 @@ footer{
 Gorakh Chand
 </div>
 
-
 <div class="menu" onclick="toggleMenu()">
 ☰
 </div>
-
 
 <ul id="navMenu">
 
@@ -538,18 +507,40 @@ Contact
 </nav>
 
 
-
 <!-- =========================
      HERO
 ========================= -->
 
 <section class="hero">
 
-<h1>
+
+<!-- LANGUAGE SWITCH -->
+
+<div class="language-switch">
+
+<button
+id="englishBtn"
+class="active-lang"
+onclick="setLanguage('en')">
+English
+</button>
+
+<span>|</span>
+
+<button
+id="nepaliBtn"
+onclick="setLanguage('ne')">
+नेपाली
+</button>
+
+</div>
+
+
+<h1 id="heroTitle">
 Let's Connect
 </h1>
 
-<p>
+<p id="heroSubtitle">
 Professional Communication • Education • Collaboration
 </p>
 
@@ -566,11 +557,11 @@ Professional Communication • Education • Collaboration
 
 <div class="title">
 
-<h2>
+<h2 id="contactTitle">
 Get in Touch
 </h2>
 
-<p>
+<p id="contactSubtitle">
 For professional communication, collaboration or educational discussion
 </p>
 
@@ -585,20 +576,18 @@ For professional communication, collaboration or educational discussion
 <div class="contact-grid">
 
 
-<!-- =========================
-     PROFESSIONAL PROFILE
-========================= -->
+<!-- PROFESSIONAL PROFILE -->
 
 <div class="card">
 
-<h3>
+<h3 id="profileTitle">
 👨‍🏫 Professional Profile
 </h3>
 
 
 <div class="contact-item">
 
-<strong>
+<strong id="nameLabel">
 Name
 </strong>
 
@@ -609,7 +598,7 @@ Gorakh Chand
 
 <div class="contact-item">
 
-<strong>
+<strong id="professionLabel">
 Profession
 </strong>
 
@@ -620,7 +609,7 @@ Teaching Professional
 
 <div class="contact-item">
 
-<strong>
+<strong id="positionLabel">
 Position
 </strong>
 
@@ -631,7 +620,7 @@ Secondary Level Government Teacher
 
 <div class="contact-item">
 
-<strong>
+<strong id="specializationLabel">
 Specialization
 </strong>
 
@@ -639,23 +628,20 @@ Computer Science
 
 </div>
 
-
 </div>
 
 
 
-<!-- =========================
-     CONNECT WITH ME
-========================= -->
+<!-- CONNECT -->
 
 <div class="card">
 
-<h3>
+<h3 id="connectTitle">
 🌐 Connect With Me
 </h3>
 
 
-<p>
+<p id="connectText">
 You can connect with me through my social and professional platforms.
 </p>
 
@@ -663,81 +649,56 @@ You can connect with me through my social and professional platforms.
 <div class="social">
 
 
-<!-- FACEBOOK -->
-
 <a
 href="https://www.facebook.com/gorakh.spandan92"
 target="_blank"
 rel="noopener noreferrer"
-class="facebook-btn"
->
+class="facebook-btn">
 
-<span>
-📘
-</span>
+<span>📘</span>
 
 Facebook
 
 </a>
 
 
-
-<!-- YOUTUBE -->
-
 <a
 href="https://www.youtube.com/@GORAKH_ICT"
 target="_blank"
 rel="noopener noreferrer"
-class="youtube-btn"
->
+class="youtube-btn">
 
-<span>
-▶️
-</span>
+<span>▶️</span>
 
 YouTube
 
 </a>
 
 
-
-<!-- EMAIL -->
-
 <a
 href="mailto:gorakh.ict2018@gmail.com"
-class="email-btn"
->
+class="email-btn">
 
-<span>
-✉️
-</span>
+<span>✉️</span>
 
 Gmail
 
 </a>
 
 
-
-<!-- WHATSAPP -->
-
 <a
 href="https://wa.me/9779868896640"
 target="_blank"
 rel="noopener noreferrer"
-class="whatsapp-btn"
->
-
+class="whatsapp-btn">
 
 <div class="whatsapp-top">
 
-<span>
-🟢
-</span>
+<span>🟢</span>
 
 WhatsApp
 
 </div>
-
 
 <div class="whatsapp-text">
 
@@ -745,7 +706,6 @@ TEXT ONLY
 
 </div>
 
-
 </a>
 
 
@@ -758,18 +718,15 @@ TEXT ONLY
 
 
 
-<!-- =========================
-     MESSAGE
-========================= -->
+<!-- MESSAGE -->
 
 <div class="message">
 
-<h2>
+<h2 id="messageTitle">
 💡 Let's Share Knowledge
 </h2>
 
-
-<p>
+<p id="messageText">
 Education becomes more meaningful when ideas, experiences
 and knowledge are shared.
 </p>
@@ -781,16 +738,13 @@ and knowledge are shared.
 
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
 <p>
 © 2026 Gorakh Chand. All Rights Reserved.
 </p>
-
 
 <p>
 Teaching Professional • Educator • Computer Science Teacher
@@ -799,10 +753,6 @@ Teaching Professional • Educator • Computer Science Teacher
 </footer>
 
 
-
-<!-- =========================
-     MOBILE MENU SCRIPT
-========================= -->
 
 <script>
 
@@ -815,9 +765,134 @@ function toggleMenu(){
 
 }
 
+
+/* =========================
+   LANGUAGE
+========================= */
+
+function setLanguage(lang){
+
+    const englishBtn =
+        document.getElementById("englishBtn");
+
+    const nepaliBtn =
+        document.getElementById("nepaliBtn");
+
+
+    if(lang === "ne"){
+
+        document.documentElement.lang = "ne";
+
+
+        document.getElementById("heroTitle").innerText =
+            "सम्पर्क गरौँ";
+
+        document.getElementById("heroSubtitle").innerText =
+            "व्यावसायिक सम्पर्क • शिक्षा • सहकार्य";
+
+
+        document.getElementById("contactTitle").innerText =
+            "सम्पर्क गर्नुहोस्";
+
+        document.getElementById("contactSubtitle").innerText =
+            "व्यावसायिक सम्पर्क, सहकार्य वा शैक्षिक छलफलका लागि";
+
+
+        document.getElementById("profileTitle").innerText =
+            "👨‍🏫 व्यावसायिक परिचय";
+
+        document.getElementById("nameLabel").innerText =
+            "नाम";
+
+        document.getElementById("professionLabel").innerText =
+            "पेशा";
+
+        document.getElementById("positionLabel").innerText =
+            "पद";
+
+        document.getElementById("specializationLabel").innerText =
+            "विशेषज्ञता";
+
+
+        document.getElementById("connectTitle").innerText =
+            "🌐 मसँग जोडिनुहोस्";
+
+        document.getElementById("connectText").innerText =
+            "तपाईं सामाजिक तथा व्यावसायिक माध्यमबाट मसँग जोडिन सक्नुहुन्छ।";
+
+
+        document.getElementById("messageTitle").innerText =
+            "💡 ज्ञान साझा गरौँ";
+
+        document.getElementById("messageText").innerText =
+            "विचार, अनुभव र ज्ञान साझा गर्दा शिक्षा अझ अर्थपूर्ण हुन्छ।";
+
+
+        englishBtn.classList.remove("active-lang");
+
+        nepaliBtn.classList.add("active-lang");
+
+    }
+
+    else{
+
+        document.documentElement.lang = "en";
+
+
+        document.getElementById("heroTitle").innerText =
+            "Let's Connect";
+
+        document.getElementById("heroSubtitle").innerText =
+            "Professional Communication • Education • Collaboration";
+
+
+        document.getElementById("contactTitle").innerText =
+            "Get in Touch";
+
+        document.getElementById("contactSubtitle").innerText =
+            "For professional communication, collaboration or educational discussion";
+
+
+        document.getElementById("profileTitle").innerText =
+            "👨‍🏫 Professional Profile";
+
+        document.getElementById("nameLabel").innerText =
+            "Name";
+
+        document.getElementById("professionLabel").innerText =
+            "Profession";
+
+        document.getElementById("positionLabel").innerText =
+            "Position";
+
+        document.getElementById("specializationLabel").innerText =
+            "Specialization";
+
+
+        document.getElementById("connectTitle").innerText =
+            "🌐 Connect With Me";
+
+        document.getElementById("connectText").innerText =
+            "You can connect with me through my social and professional platforms.";
+
+
+        document.getElementById("messageTitle").innerText =
+            "💡 Let's Share Knowledge";
+
+        document.getElementById("messageText").innerText =
+            "Education becomes more meaningful when ideas, experiences and knowledge are shared.";
+
+
+        nepaliBtn.classList.remove("active-lang");
+
+        englishBtn.classList.add("active-lang");
+
+    }
+
+}
+
 </script>
 
 
 </body>
-
     </html>
