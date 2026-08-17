@@ -68,10 +68,14 @@ nav a.active{
     cursor:pointer;
 }
 
+/* HERO */
+
 .hero{
     padding:85px 20px;
     text-align:center;
     color:white;
+    position:relative;
+
     background:
     radial-gradient(circle at 15% 20%,#22d3ee55,transparent 30%),
     radial-gradient(circle at 85% 80%,#f472b655,transparent 30%),
@@ -86,6 +90,46 @@ nav a.active{
 .hero p{
     font-size:19px;
 }
+
+/* LANGUAGE SWITCH */
+
+.language-switch{
+    position:absolute;
+    right:25px;
+    top:25px;
+    display:flex;
+    align-items:center;
+    gap:0;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:25px;
+    padding:3px;
+    backdrop-filter:blur(8px);
+}
+
+.language-switch button{
+    border:none;
+    background:transparent;
+    color:white;
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.language-switch button.active{
+    background:white;
+    color:#4338ca;
+}
+
+.language-switch button:hover{
+    background:rgba(255,255,255,.9);
+    color:#4338ca;
+}
+
+/* CONTENT */
 
 .container{
     max-width:1100px;
@@ -202,12 +246,26 @@ footer{
         font-size:36px;
     }
 
+    .hero p{
+        font-size:17px;
+    }
+
     .gallery{
         grid-template-columns:1fr;
     }
 
     .photo{
         height:230px;
+    }
+
+    .language-switch{
+        right:12px;
+        top:15px;
+    }
+
+    .language-switch button{
+        padding:6px 10px;
+        font-size:12px;
     }
 }
 </style>
@@ -250,9 +308,26 @@ footer{
 
 <section class="hero">
 
-<h1>Gallery</h1>
+<!-- LANGUAGE SWITCH -->
 
-<p>Moments • Memories • Experiences</p>
+<div class="language-switch">
+
+<button id="enBtn" class="active" onclick="setLanguage('en')">
+🇬🇧 English
+</button>
+
+<button id="neBtn" onclick="setLanguage('ne')">
+🇳🇵 नेपाली
+</button>
+
+</div>
+
+
+<h1 id="heroTitle">Gallery</h1>
+
+<p id="heroSubtitle">
+Moments • Memories • Experiences
+</p>
 
 </section>
 
@@ -261,9 +336,11 @@ footer{
 
 <div class="title">
 
-<h2>My Gallery</h2>
+<h2 id="galleryTitle">
+My Gallery
+</h2>
 
-<p>
+<p id="gallerySubtitle">
 A collection of moments, memories and experiences
 </p>
 
@@ -279,24 +356,9 @@ A collection of moments, memories and experiences
 
 <div class="icon">📷</div>
 
-<strong>Photo 01</strong>
+<strong id="photo1Title">Photo 01</strong>
 
-<p>Your photo will appear here</p>
-
-</div>
-
-</div>
-
-
-<div class="photo">
-
-<div class="placeholder">
-
-<div class="icon">📷</div>
-
-<strong>Photo 02</strong>
-
-<p>Your photo will appear here</p>
+<p id="photo1Text">Your photo will appear here</p>
 
 </div>
 
@@ -309,24 +371,9 @@ A collection of moments, memories and experiences
 
 <div class="icon">📷</div>
 
-<strong>Photo 03</strong>
+<strong id="photo2Title">Photo 02</strong>
 
-<p>Your photo will appear here</p>
-
-</div>
-
-</div>
-
-
-<div class="photo">
-
-<div class="placeholder">
-
-<div class="icon">📷</div>
-
-<strong>Photo 04</strong>
-
-<p>Your photo will appear here</p>
+<p id="photo2Text">Your photo will appear here</p>
 
 </div>
 
@@ -339,9 +386,9 @@ A collection of moments, memories and experiences
 
 <div class="icon">📷</div>
 
-<strong>Photo 05</strong>
+<strong id="photo3Title">Photo 03</strong>
 
-<p>Your photo will appear here</p>
+<p id="photo3Text">Your photo will appear here</p>
 
 </div>
 
@@ -354,9 +401,39 @@ A collection of moments, memories and experiences
 
 <div class="icon">📷</div>
 
-<strong>Photo 06</strong>
+<strong id="photo4Title">Photo 04</strong>
 
-<p>Your photo will appear here</p>
+<p id="photo4Text">Your photo will appear here</p>
+
+</div>
+
+</div>
+
+
+<div class="photo">
+
+<div class="placeholder">
+
+<div class="icon">📷</div>
+
+<strong id="photo5Title">Photo 05</strong>
+
+<p id="photo5Text">Your photo will appear here</p>
+
+</div>
+
+</div>
+
+
+<div class="photo">
+
+<div class="placeholder">
+
+<div class="icon">📷</div>
+
+<strong id="photo6Title">Photo 06</strong>
+
+<p id="photo6Text">Your photo will appear here</p>
 
 </div>
 
@@ -367,9 +444,11 @@ A collection of moments, memories and experiences
 
 <div class="note">
 
-<h2>📸 Moments Worth Remembering</h2>
+<h2 id="noteTitle">
+📸 Moments Worth Remembering
+</h2>
 
-<p>
+<p id="noteText">
 This gallery will gradually grow with photographs
 from teaching, journeys, events, achievements and life experiences.
 </p>
@@ -392,11 +471,153 @@ from teaching, journeys, events, achievements and life experiences.
 
 function toggleMenu(){
 
-document.getElementById("navMenu").classList.toggle("show");
+    document.getElementById("navMenu").classList.toggle("show");
+
+}
+
+
+/* LANGUAGE */
+
+function setLanguage(language){
+
+    const enBtn =
+        document.getElementById("enBtn");
+
+    const neBtn =
+        document.getElementById("neBtn");
+
+
+    if(language === "ne"){
+
+        document.documentElement.lang = "ne";
+
+        document.getElementById("heroTitle").textContent =
+            "फोटो ग्यालरी";
+
+        document.getElementById("heroSubtitle").textContent =
+            "क्षणहरू • सम्झनाहरू • अनुभवहरू";
+
+        document.getElementById("galleryTitle").textContent =
+            "मेरो ग्यालरी";
+
+        document.getElementById("gallerySubtitle").textContent =
+            "क्षणहरू, सम्झनाहरू र अनुभवहरूको संग्रह";
+
+
+        document.getElementById("photo1Title").textContent =
+            "फोटो ०१";
+
+        document.getElementById("photo1Text").textContent =
+            "तपाईंको फोटो यहाँ देखिनेछ";
+
+        document.getElementById("photo2Title").textContent =
+            "फोटो ०२";
+
+        document.getElementById("photo2Text").textContent =
+            "तपाईंको फोटो यहाँ देखिनेछ";
+
+        document.getElementById("photo3Title").textContent =
+            "फोटो ०३";
+
+        document.getElementById("photo3Text").textContent =
+            "तपाईंको फोटो यहाँ देखिनेछ";
+
+        document.getElementById("photo4Title").textContent =
+            "फोटो ०४";
+
+        document.getElementById("photo4Text").textContent =
+            "तपाईंको फोटो यहाँ देखिनेछ";
+
+        document.getElementById("photo5Title").textContent =
+            "फोटो ०५";
+
+        document.getElementById("photo5Text").textContent =
+            "तपाईंको फोटो यहाँ देखिनेछ";
+
+        document.getElementById("photo6Title").textContent =
+            "फोटो ०६";
+
+        document.getElementById("photo6Text").textContent =
+            "तपाईंको फोटो यहाँ देखिनेछ";
+
+        document.getElementById("noteTitle").textContent =
+            "📸 सम्झनलायक क्षणहरू";
+
+        document.getElementById("noteText").textContent =
+            "यस ग्यालरीमा शिक्षण, यात्रा, कार्यक्रम, उपलब्धि र जीवनका अनुभवहरूका तस्बिरहरू क्रमशः थपिँदै जानेछन्।";
+
+
+        enBtn.classList.remove("active");
+        neBtn.classList.add("active");
+
+    }else{
+
+        document.documentElement.lang = "en";
+
+        document.getElementById("heroTitle").textContent =
+            "Gallery";
+
+        document.getElementById("heroSubtitle").textContent =
+            "Moments • Memories • Experiences";
+
+        document.getElementById("galleryTitle").textContent =
+            "My Gallery";
+
+        document.getElementById("gallerySubtitle").textContent =
+            "A collection of moments, memories and experiences";
+
+
+        document.getElementById("photo1Title").textContent =
+            "Photo 01";
+
+        document.getElementById("photo1Text").textContent =
+            "Your photo will appear here";
+
+        document.getElementById("photo2Title").textContent =
+            "Photo 02";
+
+        document.getElementById("photo2Text").textContent =
+            "Your photo will appear here";
+
+        document.getElementById("photo3Title").textContent =
+            "Photo 03";
+
+        document.getElementById("photo3Text").textContent =
+            "Your photo will appear here";
+
+        document.getElementById("photo4Title").textContent =
+            "Photo 04";
+
+        document.getElementById("photo4Text").textContent =
+            "Your photo will appear here";
+
+        document.getElementById("photo5Title").textContent =
+            "Photo 05";
+
+        document.getElementById("photo5Text").textContent =
+            "Your photo will appear here";
+
+        document.getElementById("photo6Title").textContent =
+            "Photo 06";
+
+        document.getElementById("photo6Text").textContent =
+            "Your photo will appear here";
+
+        document.getElementById("noteTitle").textContent =
+            "📸 Moments Worth Remembering";
+
+        document.getElementById("noteText").textContent =
+            "This gallery will gradually grow with photographs from teaching, journeys, events, achievements and life experiences.";
+
+
+        neBtn.classList.remove("active");
+        enBtn.classList.add("active");
+
+    }
 
 }
 
 </script>
 
 </body>
-  </html>
+    </html>
