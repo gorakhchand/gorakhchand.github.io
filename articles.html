@@ -414,4 +414,261 @@ Read More →
 <h3 id="cardTitle4">Education & Society</h3>
 
 <p id="cardText4">
-Thoughts on schools,
+Thoughts on schools, society, students,
+teachers and the wider purpose of education.
+</p>
+
+<a href="#" class="read" id="read4">
+Read More →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">✍️</div>
+
+<h3 id="cardTitle5">Personal Reflections</h3>
+
+<p id="cardText5">
+A collection of personal thoughts,
+observations and reflections from everyday life.
+</p>
+
+<a href="#" class="read" id="read5">
+Read More →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌍</div>
+
+<h3 id="cardTitle6">Journey & Experiences</h3>
+
+<p id="cardText6">
+Memories, journeys, encounters and the
+lessons learned along the way.
+</p>
+
+<a href="#" class="read" id="read6">
+Read More →
+</a>
+
+</div>
+
+</div>
+
+
+<div class="quote">
+
+<h2 id="quoteTitle">
+💡 A Thought to Remember
+</h2>
+
+<p id="quoteText">
+“Education is not simply the preparation for life;
+education is a lifelong journey of learning and growth.”
+</p>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<p>© 2026 Gorakh Chand. All Rights Reserved.</p>
+
+<p>Teaching Professional • Educator • Computer Science Teacher</p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    document.getElementById("navMenu")
+    .classList
+    .toggle("show");
+
+}
+
+
+function setLanguage(language){
+
+    const enBtn =
+        document.getElementById("enBtn");
+
+    const neBtn =
+        document.getElementById("neBtn");
+
+
+    if(language === "ne"){
+
+        enBtn.classList.remove("active");
+        neBtn.classList.add("active");
+
+
+        document.getElementById("heroTitle").textContent =
+            "लेख तथा विचारहरू";
+
+        document.getElementById("heroSubtitle").textContent =
+            "विचार • प्रतिबिम्ब • शिक्षा • अनुभव";
+
+
+        document.getElementById("mainTitle").textContent =
+            "मेरा लेख तथा विचारहरू";
+
+        document.getElementById("mainSubtitle").textContent =
+            "विचार, प्रतिबिम्ब, शैक्षिक दृष्टिकोण तथा अनुभवहरू प्रस्तुत गर्ने ठाउँ";
+
+
+        document.getElementById("cardTitle1").textContent =
+            "शिक्षा तथा शिक्षण";
+
+        document.getElementById("cardText1").textContent =
+            "शिक्षण, सिकाइ, विद्यार्थी, शिक्षा तथा शिक्षकको बदलिँदो भूमिकासम्बन्धी विचार र प्रतिबिम्ब।";
+
+
+        document.getElementById("cardTitle2").textContent =
+            "प्रविधि तथा ICT";
+
+        document.getElementById("cardText2").textContent =
+            "कम्प्युटर विज्ञान, ICT, डिजिटल शिक्षा तथा शिक्षण–सिकाइमा प्रविधिको प्रयोगसम्बन्धी विचारहरू।";
+
+
+        document.getElementById("cardTitle3").textContent =
+            "जीवन तथा प्रेरणा";
+
+        document.getElementById("cardText3").textContent =
+            "जीवनका अनुभव, प्रेरणा, विकास तथा हाम्रो यात्रालाई आकार दिने सिकाइहरू।";
+
+
+        document.getElementById("cardTitle4").textContent =
+            "शिक्षा तथा समाज";
+
+        document.getElementById("cardText4").textContent =
+            "विद्यालय, समाज, विद्यार्थी, शिक्षक तथा शिक्षाको व्यापक उद्देश्यसम्बन्धी विचारहरू।";
+
+
+        document.getElementById("cardTitle5").textContent =
+            "व्यक्तिगत प्रतिबिम्ब";
+
+        document.getElementById("cardText5").textContent =
+            "दैनिक जीवनबाट प्राप्त व्यक्तिगत विचार, अवलोकन तथा अनुभवहरूको संग्रह।";
+
+
+        document.getElementById("cardTitle6").textContent =
+            "यात्रा तथा अनुभव";
+
+        document.getElementById("cardText6").textContent =
+            "सम्झना, यात्रा, भेटघाट तथा जीवनयात्राका क्रममा प्राप्त सिकाइहरू।";
+
+
+        for(let i=1;i<=6;i++){
+
+            document.getElementById("read"+i)
+            .textContent =
+            "पढ्नुहोस् →";
+
+        }
+
+
+        document.getElementById("quoteTitle").textContent =
+            "💡 सम्झनुपर्ने एउटा विचार";
+
+        document.getElementById("quoteText").textContent =
+            "“शिक्षा केवल जीवनको तयारी होइन; शिक्षा सिकाइ र विकासको आजीवन यात्रा हो।”";
+
+    }
+
+    else{
+
+        enBtn.classList.add("active");
+        neBtn.classList.remove("active");
+
+
+        document.getElementById("heroTitle").textContent =
+            "Articles & Thoughts";
+
+        document.getElementById("heroSubtitle").textContent =
+            "Ideas • Reflections • Education • Experiences";
+
+
+        document.getElementById("mainTitle").textContent =
+            "My Articles & Thoughts";
+
+        document.getElementById("mainSubtitle").textContent =
+            "A space for ideas, reflections, educational perspectives and experiences";
+
+
+        document.getElementById("cardTitle1").textContent =
+            "Education & Teaching";
+
+        document.getElementById("cardText1").textContent =
+            "Thoughts and reflections about teaching, learning, students, education and the changing role of teachers.";
+
+
+        document.getElementById("cardTitle2").textContent =
+            "Technology & ICT";
+
+        document.getElementById("cardText2").textContent =
+            "Ideas about Computer Science, ICT, digital education and the use of technology in teaching and learning.";
+
+
+        document.getElementById("cardTitle3").textContent =
+            "Life & Inspiration";
+
+        document.getElementById("cardText3").textContent =
+            "Personal reflections, lessons from life, motivation, growth and experiences that shape our journey.";
+
+
+        document.getElementById("cardTitle4").textContent =
+            "Education & Society";
+
+        document.getElementById("cardText4").textContent =
+            "Thoughts on schools, society, students, teachers and the wider purpose of education.";
+
+
+        document.getElementById("cardTitle5").textContent =
+            "Personal Reflections";
+
+        document.getElementById("cardText5").textContent =
+            "A collection of personal thoughts, observations and reflections from everyday life.";
+
+
+        document.getElementById("cardTitle6").textContent =
+            "Journey & Experiences";
+
+        document.getElementById("cardText6").textContent =
+            "Memories, journeys, encounters and the lessons learned along the way.";
+
+
+        for(let i=1;i<=6;i++){
+
+            document.getElementById("read"+i)
+            .textContent =
+            "Read More →";
+
+        }
+
+
+        document.getElementById("quoteTitle").textContent =
+            "💡 A Thought to Remember";
+
+        document.getElementById("quoteText").textContent =
+            "“Education is not simply the preparation for life; education is a lifelong journey of learning and growth.”";
+
+    }
+
+}
+
+</script>
+
+</body>
+    </html>
