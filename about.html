@@ -20,6 +20,8 @@ body{
     line-height:1.7;
 }
 
+/* ================= NAVBAR ================= */
+
 nav{
     background:white;
     box-shadow:0 4px 18px rgba(0,0,0,.08);
@@ -35,7 +37,6 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:15px;
 }
 
 .logo{
@@ -44,64 +45,32 @@ nav{
     background:linear-gradient(90deg,#6d28d9,#2563eb,#0891b2);
     -webkit-background-clip:text;
     color:transparent;
-    white-space:nowrap;
 }
 
 nav ul{
     display:flex;
     list-style:none;
     gap:18px;
-    align-items:center;
 }
 
 nav a{
     text-decoration:none;
     color:#374151;
     font-weight:600;
-    white-space:nowrap;
 }
 
 nav a:hover{
     color:#2563eb;
 }
 
-/* LANGUAGE BUTTONS */
-
-.language-switcher{
-    display:flex;
-    gap:6px;
-    margin-left:8px;
-}
-
-.lang-btn{
-    border:1px solid #d1d5db;
-    background:white;
-    color:#374151;
-    padding:7px 10px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:13px;
-    font-weight:600;
-    transition:.2s;
-}
-
-.lang-btn:hover{
-    background:#f3f4f6;
-}
-
-.lang-btn.active{
-    background:#2563eb;
-    color:white;
-    border-color:#2563eb;
-}
-
-
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
+    position:relative;
     padding:80px 20px;
     text-align:center;
     color:white;
+
     background:
     radial-gradient(circle at 20% 20%,#22d3ee55,transparent 30%),
     radial-gradient(circle at 80% 80%,#f472b655,transparent 30%),
@@ -117,8 +86,49 @@ nav a:hover{
     margin-top:8px;
 }
 
+/* ================= LANGUAGE SWITCH ================= */
 
-/* CONTAINER */
+.language-switch{
+    position:absolute;
+    top:18px;
+    right:25px;
+
+    display:flex;
+    flex-direction:row;
+
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:30px;
+    padding:4px;
+
+    backdrop-filter:blur(8px);
+}
+
+.language-switch button{
+    border:none;
+    background:transparent;
+    color:white;
+
+    padding:7px 13px;
+    border-radius:22px;
+
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.language-switch button:hover{
+    background:rgba(255,255,255,.2);
+}
+
+.language-switch button.active{
+    background:white;
+    color:#4338ca;
+}
+
+/* ================= CONTENT ================= */
 
 .container{
     max-width:1050px;
@@ -126,14 +136,12 @@ nav a:hover{
     padding:65px 20px;
 }
 
-
-/* PROFILE */
-
 .profile-box{
     background:white;
     padding:40px;
     border-radius:25px;
     box-shadow:0 10px 30px rgba(0,0,0,.07);
+
     display:grid;
     grid-template-columns:1fr 1.5fr;
     gap:40px;
@@ -177,9 +185,6 @@ nav a:hover{
     color:#4b5563;
 }
 
-
-/* PROFILE GRID */
-
 .profile-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -202,9 +207,6 @@ nav a:hover{
 .info p{
     margin:6px 0;
 }
-
-
-/* INTERESTS */
 
 .interests{
     margin-top:35px;
@@ -239,8 +241,7 @@ nav a:hover{
     margin-bottom:8px;
 }
 
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     padding:28px 20px;
@@ -249,27 +250,19 @@ footer{
     background:#111827;
 }
 
+/* ================= NEPALI ================= */
 
-/* RESPONSIVE */
-
-@media(max-width:1050px){
-
-    .navbar{
-        flex-wrap:wrap;
-    }
-
-    nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
+.ne{
+    display:none;
 }
+
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:850px){
 
     .navbar{
         flex-direction:column;
-        gap:12px;
+        gap:10px;
     }
 
     nav ul{
@@ -290,7 +283,6 @@ footer{
     .interest-grid{
         grid-template-columns:1fr 1fr;
     }
-
 }
 
 @media(max-width:500px){
@@ -299,16 +291,12 @@ footer{
         font-size:13px;
     }
 
+    .hero{
+        padding-top:75px;
+    }
+
     .hero h1{
         font-size:36px;
-    }
-
-    .hero{
-        padding:60px 15px;
-    }
-
-    .profile-box{
-        padding:25px 20px;
     }
 
     .profile img{
@@ -316,18 +304,22 @@ footer{
         height:170px;
     }
 
-    .language-switcher{
-        margin-left:0;
+    .language-switch{
+        right:15px;
+        top:12px;
     }
 
+    .language-switch button{
+        padding:6px 10px;
+        font-size:12px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-
-<!-- NAVIGATION -->
+<!-- ================= NAVBAR ================= -->
 
 <nav>
 
@@ -338,83 +330,14 @@ Gorakh Chand
 </div>
 
 <ul>
-
-<li>
-<a href="index.html" data-en="Home" data-ne="गृहपृष्ठ">
-Home
-</a>
-</li>
-
-<li>
-<a href="about.html" data-en="About" data-ne="मेरो बारेमा">
-About
-</a>
-</li>
-
-<li>
-<a href="education.html" data-en="Education" data-ne="शिक्षा">
-Education
-</a>
-</li>
-
-<li>
-<a href="achievements.html" data-en="Achievements" data-ne="उपलब्धिहरू">
-Achievements
-</a>
-</li>
-
-<li>
-<a href="educational-content.html"
-data-en="Educational Content"
-data-ne="शैक्षिक सामग्री">
-Educational Content
-</a>
-</li>
-
-<li>
-<a href="articles.html"
-data-en="Articles"
-data-ne="लेखहरू">
-Articles
-</a>
-</li>
-
-<li>
-<a href="gallery.html"
-data-en="Gallery"
-data-ne="ग्यालरी">
-Gallery
-</a>
-</li>
-
-<li>
-<a href="contact.html"
-data-en="Contact"
-data-ne="सम्पर्क">
-Contact
-</a>
-</li>
-
-<li>
-
-<div class="language-switcher">
-
-<button
-class="lang-btn active"
-id="enBtn">
-🇬🇧 English
-</button>
-
-<button
-class="lang-btn"
-id="neBtn">
-🇳🇵 नेपाली
-</button>
-
-</div>
-
-</li>
-
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a href="achievements.html">Achievements</a></li>
+<li><a href="educational-content.html">Educational Content</a></li>
+<li><a href="articles.html">Articles</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
 </ul>
 
 </div>
@@ -422,26 +345,55 @@ id="neBtn">
 </nav>
 
 
-
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-<h1
-data-en="About Me"
-data-ne="मेरो बारेमा">
-About Me
-</h1>
+<!-- Language switch: RIGHT TOP CORNER -->
 
-<p
-data-en="Teaching • Learning • Technology • Life"
-data-ne="शिक्षण • सिकाइ • प्रविधि • जीवन">
-Teaching • Learning • Technology • Life
-</p>
+<div class="language-switch">
+
+<button
+id="englishBtn"
+class="active"
+onclick="changeLanguage('en')">
+English
+</button>
+
+<button
+id="nepaliBtn"
+onclick="changeLanguage('ne')">
+नेपाली
+</button>
+
+</div>
+
+
+<!-- ENGLISH HERO -->
+
+<div id="heroEnglish">
+
+<h1>About Me</h1>
+
+<p>Teaching • Learning • Technology • Life</p>
+
+</div>
+
+
+<!-- NEPALI HERO -->
+
+<div id="heroNepali" class="ne">
+
+<h1>मेरो बारेमा</h1>
+
+<p>शिक्षण • सिकाइ • प्रविधि • जीवन</p>
+
+</div>
 
 </section>
 
 
+<!-- ================= MAIN CONTENT ================= -->
 
 <div class="container">
 
@@ -457,297 +409,264 @@ src="profile.jpg"
 alt="Gorakh Chand">
 
 <h2>
-Gorakh Chand
+<span class="en">Gorakh Chand</span>
+<span class="ne">गोरख चन्द</span>
 </h2>
 
-<p
-data-en="Teaching Professional"
-data-ne="शिक्षण पेशाकर्मी">
+<p>
+<span class="en">
 Teaching Professional
+</span>
+
+<span class="ne">
+शिक्षण पेशाकर्मी
+</span>
 </p>
 
 </div>
-
 
 
 <div class="content">
 
-<h2
-data-en="Hello, I'm Gorakh Chand 👋"
-data-ne="नमस्कार, म गोरख चन्द हुँ 👋">
-Hello, I'm Gorakh Chand 👋
-</h2>
+<!-- ENGLISH -->
 
+<div id="contentEnglish">
 
-<p
-data-en="I am a Teaching Professional and Secondary Level Government Teacher with a multidisciplinary academic background in Computer Science, Special Needs Education and Economics."
-data-ne="म कम्प्युटर विज्ञान, विशेष शिक्षा तथा अर्थशास्त्रमा बहुविषयगत शैक्षिक पृष्ठभूमि भएको एक शिक्षण पेशाकर्मी तथा माध्यमिक तहको सरकारी शिक्षक हुँ।">
+<h2>Hello, I'm Gorakh Chand 👋</h2>
 
+<p>
 I am a <strong>Teaching Professional and Secondary Level Government Teacher</strong>
 with a multidisciplinary academic background in Computer Science,
 Special Needs Education and Economics.
-
 </p>
 
-
-<p
-data-en="My professional journey is guided by a passion for meaningful education, technology, inclusive learning and continuous personal development."
-data-ne="मेरो व्यावसायिक यात्रा अर्थपूर्ण शिक्षा, प्रविधि, समावेशी सिकाइ तथा निरन्तर व्यक्तिगत विकासप्रतिको रुचिबाट निर्देशित छ।">
-
+<p>
 My professional journey is guided by a passion for meaningful education,
 technology, inclusive learning and continuous personal development.
-
 </p>
 
-
-<p
-data-en="I believe that education is not limited to textbooks and classrooms. It is a lifelong journey of curiosity, experience, reflection and growth."
-data-ne="म विश्वास गर्छु कि शिक्षा पाठ्यपुस्तक र कक्षाकोठामा मात्र सीमित हुँदैन। यो जिज्ञासा, अनुभव, चिन्तन र विकासको जीवनभर चलिरहने यात्रा हो।">
-
+<p>
 I believe that education is not limited to textbooks and classrooms.
 It is a lifelong journey of curiosity, experience, reflection and growth.
-
 </p>
 
-
-<div class="quote"
-data-en="“Learn. Explore. Inspire. Keep Growing.”"
-data-ne="“सिकौँ। खोजौँ। प्रेरणा दिऔँ। निरन्तर अघि बढौँ।”">
-
+<div class="quote">
 “Learn. Explore. Inspire. Keep Growing.”
+</div>
 
+</div>
+
+
+<!-- NEPALI -->
+
+<div id="contentNepali" class="ne">
+
+<h2>नमस्कार, म गोरख चन्द हुँ 👋</h2>
+
+<p>
+म <strong>शिक्षण पेशाकर्मी तथा माध्यमिक तहका सरकारी शिक्षक</strong> हुँ।
+मेरो शैक्षिक पृष्ठभूमि कम्प्युटर विज्ञान, विशेष शिक्षा तथा अर्थशास्त्रसँग
+सम्बन्धित छ।
+</p>
+
+<p>
+मेरो व्यावसायिक यात्राको मुख्य उद्देश्य अर्थपूर्ण शिक्षा, प्रविधि,
+समावेशी सिकाइ तथा निरन्तर व्यक्तिगत विकासमा केन्द्रित रहेको छ।
+</p>
+
+<p>
+म शिक्षा पाठ्यपुस्तक र कक्षाकोठामा मात्र सीमित हुँदैन भन्ने विश्वास गर्छु।
+यो जिज्ञासा, अनुभव, चिन्तन र निरन्तर विकासको जीवनभर चल्ने यात्रा हो।
+</p>
+
+<div class="quote">
+“सिकौँ। खोजौँ। प्रेरणा दिऔँ। निरन्तर अघि बढौँ।”
 </div>
 
 </div>
 
 </div>
 
+</div>
 
 
-<!-- PROFILE INFORMATION -->
+<!-- ================= PROFILE GRID ================= -->
 
 <div class="profile-grid">
 
 
+<!-- PROFESSIONAL -->
+
 <div class="info">
 
-<h3
-data-en="👨‍🏫 Professional Profile"
-data-ne="👨‍🏫 व्यावसायिक परिचय">
-👨‍🏫 Professional Profile
-</h3>
+<div id="professionalEnglish">
+
+<h3>👨‍🏫 Professional Profile</h3>
 
 <p>
-<strong
-data-en="Profession:"
-data-ne="पेशा:">
-Profession:
-</strong>
-
-<span
-data-en="Teaching Professional"
-data-ne="शिक्षण पेशाकर्मी">
+<strong>Profession:</strong>
 Teaching Professional
-</span>
 </p>
 
-
 <p>
-<strong
-data-en="Level:"
-data-ne="तह:">
-Level:
-</strong>
-
-<span
-data-en="Secondary Level Government Teacher"
-data-ne="माध्यमिक तह सरकारी शिक्षक">
+<strong>Level:</strong>
 Secondary Level Government Teacher
-</span>
 </p>
 
-
 <p>
-<strong
-data-en="Specialization:"
-data-ne="विशेषज्ञता:">
-Specialization:
-</strong>
-
-<span
-data-en="Computer Science"
-data-ne="कम्प्युटर विज्ञान">
+<strong>Specialization:</strong>
 Computer Science
-</span>
 </p>
 
-
 <p>
-<strong
-data-en="Focus:"
-data-ne="मुख्य रुचि:">
-Focus:
-</strong>
-
-<span
-data-en="Education & Lifelong Learning"
-data-ne="शिक्षा तथा जीवनपर्यन्त सिकाइ">
+<strong>Focus:</strong>
 Education & Lifelong Learning
-</span>
 </p>
 
 </div>
 
 
+<div id="professionalNepali" class="ne">
+
+<h3>👨‍🏫 व्यावसायिक परिचय</h3>
+
+<p>
+<strong>पेशा:</strong>
+शिक्षण पेशाकर्मी
+</p>
+
+<p>
+<strong>तह:</strong>
+माध्यमिक तह सरकारी शिक्षक
+</p>
+
+<p>
+<strong>विशेषज्ञता:</strong>
+कम्प्युटर विज्ञान
+</p>
+
+<p>
+<strong>केन्द्र:</strong>
+शिक्षा तथा जीवनपर्यन्त सिकाइ
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ACADEMIC -->
 
 <div class="info">
 
-<h3
-data-en="🎓 Academic Background"
-data-ne="🎓 शैक्षिक पृष्ठभूमि">
-🎓 Academic Background
-</h3>
+<div id="academicEnglish">
 
+<h3>🎓 Academic Background</h3>
 
 <p>
-
-<strong
-data-en="B.Ed.CSIT:"
-data-ne="बी.एड. सीएसआईटी:">
-B.Ed.CSIT:
-</strong>
-
-<span
-data-en="Computer Science and Information Technology"
-data-ne="कम्प्युटर विज्ञान तथा सूचना प्रविधि">
+<strong>B.Ed.CSIT:</strong>
 Computer Science and Information Technology
-</span>
-
 </p>
 
-
 <p>
-
-<strong
-data-en="M.Ed.:"
-data-ne="एम.एड.:">
-M.Ed.:
-</strong>
-
-<span
-data-en="Special Needs Education"
-data-ne="विशेष आवश्यकता शिक्षा">
+<strong>M.Ed.:</strong>
 Special Needs Education
-</span>
-
 </p>
 
-
 <p>
-
-<strong
-data-en="M.A.:"
-data-ne="एम.ए.:">
-M.A.:
-</strong>
-
-<span
-data-en="Economics"
-data-ne="अर्थशास्त्र">
+<strong>M.A.:</strong>
 Economics
-</span>
-
 </p>
-
 
 <p>
-
-<strong
-data-en="Academic Recognition:"
-data-ne="शैक्षिक सम्मान:">
-Academic Recognition:
-</strong>
-
-<span
-data-en="Gold Medal & Vice-Chancellor's Medal"
-data-ne="स्वर्ण पदक तथा उपकुलपति पदक">
+<strong>Academic Recognition:</strong>
 Gold Medal & Vice-Chancellor's Medal
-</span>
+</p>
 
+</div>
+
+
+<div id="academicNepali" class="ne">
+
+<h3>🎓 शैक्षिक पृष्ठभूमि</h3>
+
+<p>
+<strong>B.Ed.CSIT:</strong>
+कम्प्युटर विज्ञान तथा सूचना प्रविधि
+</p>
+
+<p>
+<strong>M.Ed.:</strong>
+विशेष शिक्षा
+</p>
+
+<p>
+<strong>M.A.:</strong>
+अर्थशास्त्र
+</p>
+
+<p>
+<strong>शैक्षिक सम्मान:</strong>
+स्वर्ण पदक तथा उपकुलपति पदक
 </p>
 
 </div>
 
 </div>
 
+</div>
 
 
-<!-- INTERESTS -->
+<!-- ================= INTERESTS ================= -->
 
 <div class="interests">
 
-<h2
-data-en="Beyond the Classroom"
-data-ne="कक्षाकोठाभन्दा बाहिर">
+<h2 id="interestsTitle">
 Beyond the Classroom
 </h2>
 
-
 <div class="interest-grid">
-
 
 <div class="interest">
 
 <span>📚</span>
 
-<strong
-data-en="Literature"
-data-ne="साहित्य">
+<strong id="interest1">
 Literature
 </strong>
 
 </div>
 
-
 <div class="interest">
 
 <span>✈️</span>
 
-<strong
-data-en="Journey"
-data-ne="यात्रा">
+<strong id="interest2">
 Journey
 </strong>
 
 </div>
 
-
 <div class="interest">
 
 <span>🏏</span>
 
-<strong
-data-en="Cricket"
-data-ne="क्रिकेट">
+<strong id="interest3">
 Cricket
 </strong>
 
 </div>
 
-
 <div class="interest">
 
 <span>📖</span>
 
-<strong
-data-en="Reading"
-data-ne="पठन">
+<strong id="interest4">
 Reading
 </strong>
 
 </div>
 
-
 </div>
 
 </div>
@@ -755,141 +674,193 @@ Reading
 </div>
 
 
-
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<p
-data-en="© 2026 Gorakh Chand. All Rights Reserved."
-data-ne="© २०२६ गोरख चन्द। सर्वाधिकार सुरक्षित।">
+<p id="footer1">
 © 2026 Gorakh Chand. All Rights Reserved.
 </p>
 
-
-<p
-data-en="Teaching Professional • Educator • Computer Science Teacher"
-data-ne="शिक्षण पेशाकर्मी • शिक्षक • कम्प्युटर विज्ञान शिक्षक">
+<p id="footer2">
 Teaching Professional • Educator • Computer Science Teacher
 </p>
 
 </footer>
 
 
+<!-- ================= LANGUAGE SCRIPT ================= -->
 
 <script>
 
-/* =========================================
-   LANGUAGE SWITCH
-========================================= */
+function changeLanguage(language){
 
-const enBtn =
-document.getElementById("enBtn");
+    const englishElements = [
+        "heroEnglish",
+        "contentEnglish",
+        "professionalEnglish",
+        "academicEnglish"
+    ];
 
-const neBtn =
-document.getElementById("neBtn");
-
-const elements =
-document.querySelectorAll("[data-en]");
-
-
-function setLanguage(language){
-
-    elements.forEach(element => {
-
-        element.textContent =
-            element.getAttribute(
-                "data-" + language
-            );
-
-    });
-
-
-    document.documentElement.lang =
-        language === "ne"
-        ? "ne"
-        : "en";
+    const nepaliElements = [
+        "heroNepali",
+        "contentNepali",
+        "professionalNepali",
+        "academicNepali"
+    ];
 
 
     if(language === "ne"){
 
-        neBtn.classList.add("active");
+        englishElements.forEach(id => {
 
-        enBtn.classList.remove("active");
+            document
+            .getElementById(id)
+            .style.display = "none";
 
-        document.title =
-            "मेरो बारेमा | गोरख चन्द";
+        });
+
+        nepaliElements.forEach(id => {
+
+            document
+            .getElementById(id)
+            .style.display = "block";
+
+        });
+
+
+        document
+        .getElementById("interestsTitle")
+        .textContent =
+        "कक्षाकोठाभन्दा बाहिर";
+
+
+        document
+        .getElementById("interest1")
+        .textContent =
+        "साहित्य";
+
+
+        document
+        .getElementById("interest2")
+        .textContent =
+        "यात्रा";
+
+
+        document
+        .getElementById("interest3")
+        .textContent =
+        "क्रिकेट";
+
+
+        document
+        .getElementById("interest4")
+        .textContent =
+        "पठन";
+
+
+        document
+        .getElementById("footer1")
+        .textContent =
+        "© २०२६ गोरख चन्द। सर्वाधिकार सुरक्षित।";
+
+
+        document
+        .getElementById("footer2")
+        .textContent =
+        "शिक्षण पेशाकर्मी • शिक्षक • कम्प्युटर विज्ञान शिक्षक";
+
+
+        document
+        .getElementById("englishBtn")
+        .classList
+        .remove("active");
+
+
+        document
+        .getElementById("nepaliBtn")
+        .classList
+        .add("active");
 
     }
 
     else{
 
-        enBtn.classList.add("active");
+        englishElements.forEach(id => {
 
-        neBtn.classList.remove("active");
+            document
+            .getElementById(id)
+            .style.display = "block";
 
-        document.title =
-            "About | Gorakh Chand";
+        });
+
+        nepaliElements.forEach(id => {
+
+            document
+            .getElementById(id)
+            .style.display = "none";
+
+        });
+
+
+        document
+        .getElementById("interestsTitle")
+        .textContent =
+        "Beyond the Classroom";
+
+
+        document
+        .getElementById("interest1")
+        .textContent =
+        "Literature";
+
+
+        document
+        .getElementById("interest2")
+        .textContent =
+        "Journey";
+
+
+        document
+        .getElementById("interest3")
+        .textContent =
+        "Cricket";
+
+
+        document
+        .getElementById("interest4")
+        .textContent =
+        "Reading";
+
+
+        document
+        .getElementById("footer1")
+        .textContent =
+        "© 2026 Gorakh Chand. All Rights Reserved.";
+
+
+        document
+        .getElementById("footer2")
+        .textContent =
+        "Teaching Professional • Educator • Computer Science Teacher";
+
+
+        document
+        .getElementById("englishBtn")
+        .classList
+        .add("active");
+
+
+        document
+        .getElementById("nepaliBtn")
+        .classList
+        .remove("active");
 
     }
-
-
-    /* Remember selected language */
-
-    localStorage.setItem(
-        "preferredLanguage",
-        language
-    );
-
-}
-
-
-/* English */
-
-enBtn.addEventListener(
-    "click",
-    function(){
-
-        setLanguage("en");
-
-    }
-);
-
-
-/* Nepali */
-
-neBtn.addEventListener(
-    "click",
-    function(){
-
-        setLanguage("ne");
-
-    }
-);
-
-
-/* Load saved language */
-
-const savedLanguage =
-localStorage.getItem(
-    "preferredLanguage"
-);
-
-
-if(savedLanguage === "ne"){
-
-    setLanguage("ne");
-
-}
-
-else{
-
-    setLanguage("en");
 
 }
 
 </script>
 
-
 </body>
-    </html>
+        </html>
