@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SEE Materials | Gorakh Chand</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f9ff;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        90deg,
+        #6d28d9,
+        #2563eb,
+        #0891b2
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:17px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+}
+
+nav a:hover,
+nav a.active{
+    color:#6d28d9;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    padding:80px 20px;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+
+    radial-gradient(
+        circle at 15% 20%,
+        #22d3ee55,
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 85% 80%,
+        #f472b655,
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #4338ca,
+        #7c3aed,
+        #0284c7
+    );
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:19px;
+}
+
+
+/* ================= LANGUAGE ================= */
+
+.language-switch{
+    margin:20px auto 0;
+
+    display:flex;
+    justify-content:center;
+    gap:5px;
+
+    width:max-content;
+
+    padding:5px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.35);
+}
+
+.language-switch button{
+    border:none;
+    background:transparent;
+
+    color:white;
+
+    padding:7px 14px;
+
+    border-radius:22px;
+
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.language-switch button.active{
+    background:white;
+    color:#4338ca;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:38px;
+    color:#5b21b6;
+}
+
+.title p{
+    color:#6b7280;
+}
+
+
+/* ================= SUBJECT GRID ================= */
+
+.subject-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+
+/* ================= SUBJECT CARD ================= */
+
+.subject-card{
+
+    background:white;
+
+    padding:30px 25px;
+
+    border-radius:23px;
+
+    box-shadow:
+    0 9px 28px rgba(0,0,0,.07);
+
+    border-top:5px solid #6d28d9;
+
+    transition:.3s;
+}
+
+.subject-card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 16px 35px rgba(0,0,0,.12);
+}
+
+.subject-icon{
+
+    font-size:48px;
+
+    margin-bottom:10px;
+}
+
+.subject-card h3{
+
+    color:#4338ca;
+
+    font-size:22px;
+
+    margin-bottom:8px;
+}
+
+.subject-card p{
+
+    color:#6b7280;
+
+    min-height:55px;
+}
+
+
+/* ================= EXPLORE BUTTON ================= */
+
+.explore{
+
+    display:inline-block;
+
+    margin-top:18px;
+
+    padding:10px 20px;
+
+    border-radius:25px;
+
+    background:#eef2ff;
+
+    color:#4338ca;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.explore:hover{
+
+    background:#4338ca;
+
+    color:white;
+
+    transform:translateX(4px);
+}
+
+
+/* ================= INFO BOX ================= */
+
+.info-box{
+
+    margin-top:50px;
+
+    padding:32px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef2ff,
+        #f5f3ff
+    );
+}
+
+.info-box h2{
+
+    color:#5b21b6;
+
+    margin-bottom:10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    padding:28px 20px;
+
+    text-align:center;
+
+    color:#9ca3af;
+
+    background:#111827;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:950px){
+
+    .menu{
+        display:block;
+    }
+
+    nav ul{
+
+        display:none;
+
+        position:absolute;
+
+        top:65px;
+        left:0;
+
+        width:100%;
+
+        padding:20px;
+
+        background:white;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+
+        box-shadow:
+        0 8px 20px rgba(0,0,0,.1);
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .subject-grid{
+
+        grid-template-columns:
+        1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .subject-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .subject-card{
+
+        padding:28px 22px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="navbar">
+
+<div class="logo">
+Gorakh Chand
+</div>
+
+
+<div
+class="menu"
+onclick="toggleMenu()">
+
+☰
+
+</div>
+
+
+<ul id="navMenu">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="education.html">
+Education
+</a>
+</li>
+
+<li>
+<a href="achievements.html">
+Achievements
+</a>
+</li>
+
+<li>
+<a
+href="educational-content.html"
+class="active">
+Educational Content
+</a>
+</li>
+
+<li>
+<a href="articles.html">
+Articles
+</a>
+</li>
+
+<li>
+<a href="gallery.html">
+Gallery
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<h1 id="heroTitle">
+SEE Materials
+</h1>
+
+<p id="heroSubtitle">
+Class 10 • Subjects • Lessons • Learning Resources
+</p>
+
+
+<div class="language-switch">
+
+<button
+id="englishBtn"
+class="active"
+onclick="setLanguage('en')">
+
+English
+
+</button>
+
+<button
+id="nepaliBtn"
+onclick="setLanguage('ne')">
+
+नेपाली
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+
+<div class="title">
+
+<h2 id="pageTitle">
+SEE Study Materials
+</h2>
+
+<p id="pageSubtitle">
+Select a subject to explore lesson-wise learning materials.
+</p>
+
+</div>
+
+
+<!-- ================= SUBJECTS ================= -->
+
+<div class="subject-grid">
+
+
+<!-- ENGLISH -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+📖
+</div>
+
+<h3>
+English
+</h3>
+
+<p>
+English language, literature, grammar and lesson resources.
+</p>
+
+<a
+href="see-english.html"
+class="explore">
+
+Explore →
+
+</a>
+
+</div>
+
+
+<!-- NEPALI -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+🇳🇵
+</div>
+
+<h3>
+Nepali
+</h3>
+
+<p>
+Nepali language, literature, grammar and lesson resources.
+</p>
+
+<a
+href="see-nepali.html"
+class="explore">
+
+Explore →
+
+</a>
+
+</div>
+
+
+<!-- MATHEMATICS -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+🔢
+</div>
+
+<h3>
+Mathematics
+</h3>
+
+<p>
+Mathematics concepts, formulas, examples and exercises.
+</p>
+
+<a
+href="see-mathematics.html"
+class="explore">
+
+Explore →
+
+</a>
+
+</div>
+
+
+<!-- SCIENCE -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+🔬
+</div>
+
+<h3>
+Science
+</h3>
+
+<p>
+Science lessons, concepts, experiments and learning resources.
+</p>
+
+<a
+href="see-science.html"
+class="explore">
+
+Explore →
+
+</a>
+
+</div>
+
+
+<!-- SOCIAL STUDIES -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+🌍
+</div>
+
+<h3>
+Social Studies
+</h3>
+
+<p>
+Society, geography, history, civics and social studies resources.
+</p>
+
+<a
+href="see-social.html"
+class="explore">
+
+Explore →
+
+</a>
+
+</div>
+
+
+<!-- OPTIONAL MATHEMATICS -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+📐
+</div>
+
+<h3>
+Optional Mathematics
+</h3>
+
+<p>
+Advanced mathematics, problems, formulas and exercises.
+</p>
+
+<a
+href="see-opt-maths.html"
+class="explore">
+
+Explore →
+
+</a>
+
+</div>
+
+
+<!-- ECONOMICS -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+📊
+</div>
+
+<h3>
+Economics
+</h3>
+
+<p>
+Economic concepts, theories, diagrams and exercises.
+</p>
+
+<a
+href="see-economics.html"
+class="explore">
+
+Explore →
+
+</a>
+
+</div>
+
+
+<!-- COMPUTER SCIENCE -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+💻
+</div>
+
+<h3>
+Computer Science
+</h3>
+
+<p>
+Computer Science, programming, practicals and ICT resources.
+</p>
+
+<a
+href="see-computer.html"
+class="explore">
+
+Explore →
+
+</a>
+
+</div>
+
+
+<!-- EDUCATION -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+👨‍🏫
+</div>
+
+<h3>
+Education
+</h3>
+
+<p>
+Education, pedagogy, learning theories and teaching resources.
+</p>
+
+<a
+href="see-education.html"
+class="explore">
+
+Explore →
+
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= INFO ================= -->
+
+<div class="info-box">
+
+<h2 id="infoTitle">
+📚 Learn Lesson by Lesson
+</h2>
+
+<p id="infoText">
+
+Each subject will contain lesson-wise notes,
+PDFs, videos, exercises, practical activities
+and SEE examination resources.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
+
+<p>
+Teaching Professional • Educator • Computer Science Teacher
+</p>
+
+</footer>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+document
+.getElementById("navMenu")
+.classList
+.toggle("show");
+
+}
+
+
+/* LANGUAGE */
+
+function setLanguage(lang){
+
+const englishBtn =
+document.getElementById("englishBtn");
+
+const nepaliBtn =
+document.getElementById("nepaliBtn");
+
+
+if(lang === "ne"){
+
+document.getElementById("heroTitle").innerText =
+"SEE अध्ययन सामग्री";
+
+document.getElementById("heroSubtitle").innerText =
+"कक्षा १० • विषय • पाठ • सिकाइ सामग्री";
+
+document.getElementById("pageTitle").innerText =
+"SEE अध्ययन सामग्री";
+
+document.getElementById("pageSubtitle").innerText =
+"पाठअनुसार अध्ययन सामग्री हेर्न विषय छान्नुहोस्।";
+
+document.getElementById("infoTitle").innerText =
+"📚 पाठअनुसार सिकौँ";
+
+document.getElementById("infoText").innerText =
+"प्रत्येक विषयभित्र पाठअनुसार नोट, PDF, भिडियो, अभ्यास, प्रयोगात्मक गतिविधि तथा SEE परीक्षासम्बन्धी सामग्री राख्न सकिनेछ।";
+
+englishBtn.classList.remove("active");
+
+nepaliBtn.classList.add("active");
+
+}
+else{
+
+document.getElementById("heroTitle").innerText =
+"SEE Materials";
+
+document.getElementById("heroSubtitle").innerText =
+"Class 10 • Subjects • Lessons • Learning Resources";
+
+document.getElementById("pageTitle").innerText =
+"SEE Study Materials";
+
+document.getElementById("pageSubtitle").innerText =
+"Select a subject to explore lesson-wise learning materials.";
+
+document.getElementById("infoTitle").innerText =
+"📚 Learn Lesson by Lesson";
+
+document.getElementById("infoText").innerText =
+"Each subject will contain lesson-wise notes, PDFs, videos, exercises, practical activities and SEE examination resources.";
+
+nepaliBtn.classList.remove("active");
+
+englishBtn.classList.add("active");
+
+}
+
+}
+
+</script>
+
+
+</body>
+
+</html>
