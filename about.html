@@ -35,6 +35,7 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    gap:15px;
 }
 
 .logo{
@@ -43,23 +44,59 @@ nav{
     background:linear-gradient(90deg,#6d28d9,#2563eb,#0891b2);
     -webkit-background-clip:text;
     color:transparent;
+    white-space:nowrap;
 }
 
 nav ul{
     display:flex;
     list-style:none;
     gap:18px;
+    align-items:center;
 }
 
 nav a{
     text-decoration:none;
     color:#374151;
     font-weight:600;
+    white-space:nowrap;
 }
 
 nav a:hover{
     color:#2563eb;
 }
+
+/* LANGUAGE BUTTONS */
+
+.language-switcher{
+    display:flex;
+    gap:6px;
+    margin-left:8px;
+}
+
+.lang-btn{
+    border:1px solid #d1d5db;
+    background:white;
+    color:#374151;
+    padding:7px 10px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:600;
+    transition:.2s;
+}
+
+.lang-btn:hover{
+    background:#f3f4f6;
+}
+
+.lang-btn.active{
+    background:#2563eb;
+    color:white;
+    border-color:#2563eb;
+}
+
+
+/* HERO */
 
 .hero{
     padding:80px 20px;
@@ -80,11 +117,17 @@ nav a:hover{
     margin-top:8px;
 }
 
+
+/* CONTAINER */
+
 .container{
     max-width:1050px;
     margin:auto;
     padding:65px 20px;
 }
+
+
+/* PROFILE */
 
 .profile-box{
     background:white;
@@ -134,6 +177,9 @@ nav a:hover{
     color:#4b5563;
 }
 
+
+/* PROFILE GRID */
+
 .profile-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -156,6 +202,9 @@ nav a:hover{
 .info p{
     margin:6px 0;
 }
+
+
+/* INTERESTS */
 
 .interests{
     margin-top:35px;
@@ -190,6 +239,9 @@ nav a:hover{
     margin-bottom:8px;
 }
 
+
+/* FOOTER */
+
 footer{
     padding:28px 20px;
     text-align:center;
@@ -197,11 +249,27 @@ footer{
     background:#111827;
 }
 
+
+/* RESPONSIVE */
+
+@media(max-width:1050px){
+
+    .navbar{
+        flex-wrap:wrap;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}
+
 @media(max-width:850px){
 
     .navbar{
         flex-direction:column;
-        gap:10px;
+        gap:12px;
     }
 
     nav ul{
@@ -222,6 +290,7 @@ footer{
     .interest-grid{
         grid-template-columns:1fr 1fr;
     }
+
 }
 
 @media(max-width:500px){
@@ -234,31 +303,118 @@ footer{
         font-size:36px;
     }
 
+    .hero{
+        padding:60px 15px;
+    }
+
+    .profile-box{
+        padding:25px 20px;
+    }
+
     .profile img{
         width:170px;
         height:170px;
     }
+
+    .language-switcher{
+        margin-left:0;
+    }
+
 }
 </style>
 </head>
 
 <body>
 
+
+<!-- NAVIGATION -->
+
 <nav>
 
 <div class="navbar">
 
-<div class="logo">Gorakh Chand</div>
+<div class="logo">
+Gorakh Chand
+</div>
 
 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="education.html">Education</a></li>
-<li><a href="achievements.html">Achievements</a></li>
-<li><a href="educational-content.html">Educational Content</a></li>
-<li><a href="articles.html">Articles</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
+
+<li>
+<a href="index.html" data-en="Home" data-ne="गृहपृष्ठ">
+Home
+</a>
+</li>
+
+<li>
+<a href="about.html" data-en="About" data-ne="मेरो बारेमा">
+About
+</a>
+</li>
+
+<li>
+<a href="education.html" data-en="Education" data-ne="शिक्षा">
+Education
+</a>
+</li>
+
+<li>
+<a href="achievements.html" data-en="Achievements" data-ne="उपलब्धिहरू">
+Achievements
+</a>
+</li>
+
+<li>
+<a href="educational-content.html"
+data-en="Educational Content"
+data-ne="शैक्षिक सामग्री">
+Educational Content
+</a>
+</li>
+
+<li>
+<a href="articles.html"
+data-en="Articles"
+data-ne="लेखहरू">
+Articles
+</a>
+</li>
+
+<li>
+<a href="gallery.html"
+data-en="Gallery"
+data-ne="ग्यालरी">
+Gallery
+</a>
+</li>
+
+<li>
+<a href="contact.html"
+data-en="Contact"
+data-ne="सम्पर्क">
+Contact
+</a>
+</li>
+
+<li>
+
+<div class="language-switcher">
+
+<button
+class="lang-btn active"
+id="enBtn">
+🇬🇧 English
+</button>
+
+<button
+class="lang-btn"
+id="neBtn">
+🇳🇵 नेपाली
+</button>
+
+</div>
+
+</li>
+
 </ul>
 
 </div>
@@ -266,119 +422,331 @@ footer{
 </nav>
 
 
+
+<!-- HERO -->
+
 <section class="hero">
 
-<h1>About Me</h1>
+<h1
+data-en="About Me"
+data-ne="मेरो बारेमा">
+About Me
+</h1>
 
-<p>Teaching • Learning • Technology • Life</p>
+<p
+data-en="Teaching • Learning • Technology • Life"
+data-ne="शिक्षण • सिकाइ • प्रविधि • जीवन">
+Teaching • Learning • Technology • Life
+</p>
 
 </section>
+
 
 
 <div class="container">
 
 
+<!-- PROFILE -->
+
 <div class="profile-box">
 
 <div class="profile">
 
-<img src="profile.jpg" alt="Gorakh Chand">
+<img
+src="profile.jpg"
+alt="Gorakh Chand">
 
-<h2>Gorakh Chand</h2>
+<h2>
+Gorakh Chand
+</h2>
 
-<p>Teaching Professional</p>
+<p
+data-en="Teaching Professional"
+data-ne="शिक्षण पेशाकर्मी">
+Teaching Professional
+</p>
 
 </div>
+
 
 
 <div class="content">
 
-<h2>Hello, I'm Gorakh Chand 👋</h2>
+<h2
+data-en="Hello, I'm Gorakh Chand 👋"
+data-ne="नमस्कार, म गोरख चन्द हुँ 👋">
+Hello, I'm Gorakh Chand 👋
+</h2>
 
-<p>
+
+<p
+data-en="I am a Teaching Professional and Secondary Level Government Teacher with a multidisciplinary academic background in Computer Science, Special Needs Education and Economics."
+data-ne="म कम्प्युटर विज्ञान, विशेष शिक्षा तथा अर्थशास्त्रमा बहुविषयगत शैक्षिक पृष्ठभूमि भएको एक शिक्षण पेशाकर्मी तथा माध्यमिक तहको सरकारी शिक्षक हुँ।">
+
 I am a <strong>Teaching Professional and Secondary Level Government Teacher</strong>
 with a multidisciplinary academic background in Computer Science,
 Special Needs Education and Economics.
+
 </p>
 
-<p>
+
+<p
+data-en="My professional journey is guided by a passion for meaningful education, technology, inclusive learning and continuous personal development."
+data-ne="मेरो व्यावसायिक यात्रा अर्थपूर्ण शिक्षा, प्रविधि, समावेशी सिकाइ तथा निरन्तर व्यक्तिगत विकासप्रतिको रुचिबाट निर्देशित छ।">
+
 My professional journey is guided by a passion for meaningful education,
 technology, inclusive learning and continuous personal development.
+
 </p>
 
-<p>
+
+<p
+data-en="I believe that education is not limited to textbooks and classrooms. It is a lifelong journey of curiosity, experience, reflection and growth."
+data-ne="म विश्वास गर्छु कि शिक्षा पाठ्यपुस्तक र कक्षाकोठामा मात्र सीमित हुँदैन। यो जिज्ञासा, अनुभव, चिन्तन र विकासको जीवनभर चलिरहने यात्रा हो।">
+
 I believe that education is not limited to textbooks and classrooms.
 It is a lifelong journey of curiosity, experience, reflection and growth.
+
 </p>
 
-<div class="quote">
+
+<div class="quote"
+data-en="“Learn. Explore. Inspire. Keep Growing.”"
+data-ne="“सिकौँ। खोजौँ। प्रेरणा दिऔँ। निरन्तर अघि बढौँ।”">
+
 “Learn. Explore. Inspire. Keep Growing.”
-</div>
 
 </div>
 
 </div>
 
+</div>
+
+
+
+<!-- PROFILE INFORMATION -->
 
 <div class="profile-grid">
 
-<div class="info">
-
-<h3>👨‍🏫 Professional Profile</h3>
-
-<p><strong>Profession:</strong> Teaching Professional</p>
-
-<p><strong>Level:</strong> Secondary Level Government Teacher</p>
-
-<p><strong>Specialization:</strong> Computer Science</p>
-
-<p><strong>Focus:</strong> Education & Lifelong Learning</p>
-
-</div>
-
 
 <div class="info">
 
-<h3>🎓 Academic Background</h3>
+<h3
+data-en="👨‍🏫 Professional Profile"
+data-ne="👨‍🏫 व्यावसायिक परिचय">
+👨‍🏫 Professional Profile
+</h3>
 
-<p><strong>B.Ed.CSIT:</strong> Computer Science and InformationTechnology</p>
+<p>
+<strong
+data-en="Profession:"
+data-ne="पेशा:">
+Profession:
+</strong>
 
-<p><strong>M.Ed.:</strong> Special Needs Education</p>
+<span
+data-en="Teaching Professional"
+data-ne="शिक्षण पेशाकर्मी">
+Teaching Professional
+</span>
+</p>
 
-<p><strong>M.A.:</strong> Economics</p>
 
-<p><strong>Academic Recognition:</strong> Gold Medal & Vice-Chancellor's Medal</p>
+<p>
+<strong
+data-en="Level:"
+data-ne="तह:">
+Level:
+</strong>
+
+<span
+data-en="Secondary Level Government Teacher"
+data-ne="माध्यमिक तह सरकारी शिक्षक">
+Secondary Level Government Teacher
+</span>
+</p>
+
+
+<p>
+<strong
+data-en="Specialization:"
+data-ne="विशेषज्ञता:">
+Specialization:
+</strong>
+
+<span
+data-en="Computer Science"
+data-ne="कम्प्युटर विज्ञान">
+Computer Science
+</span>
+</p>
+
+
+<p>
+<strong
+data-en="Focus:"
+data-ne="मुख्य रुचि:">
+Focus:
+</strong>
+
+<span
+data-en="Education & Lifelong Learning"
+data-ne="शिक्षा तथा जीवनपर्यन्त सिकाइ">
+Education & Lifelong Learning
+</span>
+</p>
+
+</div>
+
+
+
+<div class="info">
+
+<h3
+data-en="🎓 Academic Background"
+data-ne="🎓 शैक्षिक पृष्ठभूमि">
+🎓 Academic Background
+</h3>
+
+
+<p>
+
+<strong
+data-en="B.Ed.CSIT:"
+data-ne="बी.एड. सीएसआईटी:">
+B.Ed.CSIT:
+</strong>
+
+<span
+data-en="Computer Science and Information Technology"
+data-ne="कम्प्युटर विज्ञान तथा सूचना प्रविधि">
+Computer Science and Information Technology
+</span>
+
+</p>
+
+
+<p>
+
+<strong
+data-en="M.Ed.:"
+data-ne="एम.एड.:">
+M.Ed.:
+</strong>
+
+<span
+data-en="Special Needs Education"
+data-ne="विशेष आवश्यकता शिक्षा">
+Special Needs Education
+</span>
+
+</p>
+
+
+<p>
+
+<strong
+data-en="M.A.:"
+data-ne="एम.ए.:">
+M.A.:
+</strong>
+
+<span
+data-en="Economics"
+data-ne="अर्थशास्त्र">
+Economics
+</span>
+
+</p>
+
+
+<p>
+
+<strong
+data-en="Academic Recognition:"
+data-ne="शैक्षिक सम्मान:">
+Academic Recognition:
+</strong>
+
+<span
+data-en="Gold Medal & Vice-Chancellor's Medal"
+data-ne="स्वर्ण पदक तथा उपकुलपति पदक">
+Gold Medal & Vice-Chancellor's Medal
+</span>
+
+</p>
 
 </div>
 
 </div>
 
+
+
+<!-- INTERESTS -->
 
 <div class="interests">
 
-<h2>Beyond the Classroom</h2>
+<h2
+data-en="Beyond the Classroom"
+data-ne="कक्षाकोठाभन्दा बाहिर">
+Beyond the Classroom
+</h2>
+
 
 <div class="interest-grid">
 
+
 <div class="interest">
+
 <span>📚</span>
-<strong>Literature</strong>
+
+<strong
+data-en="Literature"
+data-ne="साहित्य">
+Literature
+</strong>
+
 </div>
 
+
 <div class="interest">
+
 <span>✈️</span>
-<strong>Journey</strong>
+
+<strong
+data-en="Journey"
+data-ne="यात्रा">
+Journey
+</strong>
+
 </div>
 
+
 <div class="interest">
+
 <span>🏏</span>
-<strong>Cricket</strong>
+
+<strong
+data-en="Cricket"
+data-ne="क्रिकेट">
+Cricket
+</strong>
+
 </div>
+
 
 <div class="interest">
+
 <span>📖</span>
-<strong>Reading</strong>
+
+<strong
+data-en="Reading"
+data-ne="पठन">
+Reading
+</strong>
+
 </div>
+
 
 </div>
 
@@ -386,14 +754,142 @@ It is a lifelong journey of curiosity, experience, reflection and growth.
 
 </div>
 
+
+
+<!-- FOOTER -->
 
 <footer>
 
-<p>© 2026 Gorakh Chand. All Rights Reserved.</p>
+<p
+data-en="© 2026 Gorakh Chand. All Rights Reserved."
+data-ne="© २०२६ गोरख चन्द। सर्वाधिकार सुरक्षित।">
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
 
-<p>Teaching Professional • Educator • Computer Science Teacher</p>
+
+<p
+data-en="Teaching Professional • Educator • Computer Science Teacher"
+data-ne="शिक्षण पेशाकर्मी • शिक्षक • कम्प्युटर विज्ञान शिक्षक">
+Teaching Professional • Educator • Computer Science Teacher
+</p>
 
 </footer>
+
+
+
+<script>
+
+/* =========================================
+   LANGUAGE SWITCH
+========================================= */
+
+const enBtn =
+document.getElementById("enBtn");
+
+const neBtn =
+document.getElementById("neBtn");
+
+const elements =
+document.querySelectorAll("[data-en]");
+
+
+function setLanguage(language){
+
+    elements.forEach(element => {
+
+        element.textContent =
+            element.getAttribute(
+                "data-" + language
+            );
+
+    });
+
+
+    document.documentElement.lang =
+        language === "ne"
+        ? "ne"
+        : "en";
+
+
+    if(language === "ne"){
+
+        neBtn.classList.add("active");
+
+        enBtn.classList.remove("active");
+
+        document.title =
+            "मेरो बारेमा | गोरख चन्द";
+
+    }
+
+    else{
+
+        enBtn.classList.add("active");
+
+        neBtn.classList.remove("active");
+
+        document.title =
+            "About | Gorakh Chand";
+
+    }
+
+
+    /* Remember selected language */
+
+    localStorage.setItem(
+        "preferredLanguage",
+        language
+    );
+
+}
+
+
+/* English */
+
+enBtn.addEventListener(
+    "click",
+    function(){
+
+        setLanguage("en");
+
+    }
+);
+
+
+/* Nepali */
+
+neBtn.addEventListener(
+    "click",
+    function(){
+
+        setLanguage("ne");
+
+    }
+);
+
+
+/* Load saved language */
+
+const savedLanguage =
+localStorage.getItem(
+    "preferredLanguage"
+);
+
+
+if(savedLanguage === "ne"){
+
+    setLanguage("ne");
+
+}
+
+else{
+
+    setLanguage("en");
+
+}
+
+</script>
+
 
 </body>
     </html>
