@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SEE Education Notes | Gorakh Chand</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f9ff;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        90deg,
+        #6d28d9,
+        #2563eb,
+        #0891b2
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:17px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+}
+
+nav a:hover,
+nav a.active{
+    color:#6d28d9;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    padding:70px 20px;
+    text-align:center;
+    color:white;
+
+    background:
+
+    radial-gradient(
+        circle at 15% 20%,
+        #22d3ee55,
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 85% 80%,
+        #f472b655,
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #4338ca,
+        #7c3aed,
+        #0284c7
+    );
+}
+
+.hero h1{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:800px;
+    margin:auto;
+}
+
+/* ================= LANGUAGE ================= */
+
+.language-switch{
+    margin:20px auto 0;
+
+    display:flex;
+    justify-content:center;
+    gap:5px;
+
+    width:max-content;
+
+    padding:5px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.35);
+}
+
+.language-switch button{
+    border:none;
+    background:transparent;
+
+    color:white;
+
+    padding:7px 14px;
+
+    border-radius:22px;
+
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.language-switch button.active{
+    background:white;
+    color:#4338ca;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    max-width:1150px;
+    margin:auto;
+    padding:55px 20px;
+}
+
+/* ================= INTRO ================= */
+
+.intro-box{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 8px 28px rgba(0,0,0,.07);
+
+    border-left:6px solid #6d28d9;
+
+    margin-bottom:45px;
+}
+
+.intro-box p{
+    color:#4b5563;
+    font-size:16px;
+}
+
+/* ================= NOTES SECTION ================= */
+
+.notes-section{
+    margin-top:10px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    color:#5b21b6;
+    font-size:32px;
+}
+
+.section-title p{
+    color:#6b7280;
+}
+
+.notes-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:22px;
+}
+
+/* ================= NOTE CARD ================= */
+
+.note-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.07);
+
+    border-top:4px solid #0891b2;
+
+    transition:.3s;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.note-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 15px 32px rgba(0,0,0,.12);
+}
+
+.note-icon{
+
+    font-size:38px;
+
+    margin-bottom:8px;
+}
+
+.note-card h3{
+
+    color:#0e7490;
+
+    font-size:20px;
+}
+
+.note-card p{
+
+    color:#6b7280;
+
+    font-size:14px;
+
+    margin-top:5px;
+
+    flex:1;
+}
+
+/* ================= NOTE BUTTON ================= */
+
+.note-btn{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:10px 18px;
+
+    border-radius:25px;
+
+    background:#ecfeff;
+
+    color:#0e7490;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.note-btn:hover{
+
+    background:#0e7490;
+
+    color:white;
+
+    transform:translateX(4px);
+}
+
+/* ================= SHARE BOX ================= */
+
+.share-box{
+
+    margin-top:55px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef2ff,
+        #ecfeff
+    );
+
+    border:1px solid #ddd6fe;
+}
+
+.share-box h2{
+
+    color:#5b21b6;
+
+    margin-bottom:10px;
+}
+
+.share-box p{
+
+    color:#6b7280;
+
+    margin-bottom:15px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    color:#9ca3af;
+
+    background:#111827;
+}
+
+footer p{
+    margin:4px 0;
+}
+
+footer a{
+    color:#a5b4fc;
+    text-decoration:none;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:950px){
+
+    .menu{
+        display:block;
+    }
+
+    nav ul{
+
+        display:none;
+
+        position:absolute;
+
+        top:65px;
+        left:0;
+
+        width:100%;
+
+        padding:20px;
+
+        background:white;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+
+        box-shadow:
+        0 8px 20px rgba(0,0,0,.1);
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .notes-grid{
+
+        grid-template-columns:
+        1fr 1fr;
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .hero{
+        padding:55px 15px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .container{
+        padding:45px 15px;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .notes-grid{
+        grid-template-columns:1fr;
+    }
+
+    .intro-box{
+        padding:23px;
+    }
+
+    .note-card{
+        padding:23px;
+    }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .language-switch button{
+        padding:6px 11px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="navbar">
+
+<div class="logo">
+Gorakh Chand
+</div>
+
+<div
+class="menu"
+onclick="toggleMenu()">
+
+☰
+
+</div>
+
+<ul id="navMenu">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="education.html">
+Education
+</a>
+</li>
+
+<li>
+<a href="achievements.html">
+Achievements
+</a>
+</li>
+
+<li>
+<a
+href="educational-content.html"
+class="active">
+
+Educational Content
+
+</a>
+</li>
+
+<li>
+<a href="articles.html">
+Articles
+</a>
+</li>
+
+<li>
+<a href="gallery.html">
+Gallery
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<h1 id="heroTitle">
+👨‍🏫 Education Notes
+</h1>
+
+<p id="heroSubtitle">
+SEE Class 10 • Education • Important Notes • Exam Preparation
+</p>
+
+
+<div class="language-switch">
+
+<button
+id="englishBtn"
+onclick="setLanguage('en')">
+
+English
+
+</button>
+
+<button
+id="nepaliBtn"
+class="active"
+onclick="setLanguage('ne')">
+
+नेपाली
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+
+<!-- ================= INTRO ================= -->
+
+<div class="intro-box">
+
+<p id="introText">
+
+SEE परीक्षा तयारीका लागि कक्षा १० शिक्षा विषयका
+महत्वपूर्ण अध्ययन नोटहरू यहाँ उपलब्ध छन्।
+
+<br><br>
+
+शिक्षाको परिचय, नेपालमा शिक्षा विकासका प्रयासहरू,
+बाल विकास तथा बाल मनोविज्ञान, पाठ्यक्रम, शिक्षण विधि,
+विद्यार्थी मूल्याङ्कन, असल शिक्षकका गुणहरू लगायतका
+विभिन्न विषयगत सामग्रीहरू अध्ययन गर्न सकिन्छ।
+
+</p>
+
+</div>
+
+
+<!-- ================= NOTES ================= -->
+
+<div class="notes-section">
+
+<div class="section-title">
+
+<h2 id="notesTitle">
+📝 SEE परीक्षा तयारीका लागि शिक्षा विषयका नोटहरू
+</h2>
+
+<p id="notesSubtitle">
+कक्षा १० शिक्षा विषयका महत्वपूर्ण अध्ययन सामग्री
+</p>
+
+</div>
+
+
+<div class="notes-grid">
+
+
+<!-- EDUCATION NOTES -->
+
+<div class="note-card">
+
+<div class="note-icon">
+👨‍🏫
+</div>
+
+<h3>
+Education Notes
+</h3>
+
+<p>
+कक्षा १० शिक्षा विषयका सम्पूर्ण महत्वपूर्ण नोटहरू,
+अध्ययन सामग्री तथा SEE परीक्षा तयारीका सामग्रीहरू।
+</p>
+
+<a
+href="https://importantedunotes.com/class-10-education-notes/"
+target="_blank"
+rel="noopener noreferrer"
+class="note-btn">
+
+📖 नोट हेर्नुहोस् →
+
+</a>
+
+</div>
+
+
+<!-- CHAPTER 1 -->
+
+<div class="note-card">
+
+<div class="note-icon">
+📚
+</div>
+
+<h3>
+एकाइ १ — शिक्षाको परिचय
+</h3>
+
+<p>
+शिक्षाको अर्थ, प्रकृति, वैकल्पिक पद्धति तथा आधुनिक
+शैक्षिक चिन्तनसम्बन्धी महत्वपूर्ण नोटहरू।
+</p>
+
+<a
+href="https://importantedunotes.com/shikshako-parichay/"
+target="_blank"
+rel="noopener noreferrer"
+class="note-btn">
+
+📖 एकाइ हेर्नुहोस् →
+
+</a>
+
+</div>
+
+
+<!-- CHAPTER 2 -->
+
+<div class="note-card">
+
+<div class="note-icon">
+🏫
+</div>
+
+<h3>
+एकाइ २ — नेपालमा शिक्षा विकास
+</h3>
+
+<p>
+नेपालमा शिक्षा विकासका लागि भएका ऐतिहासिक प्रयासहरू
+तथा महत्वपूर्ण प्रश्न–उत्तरहरू।
+</p>
+
+<a
+href="https://importantedunotes.com/nepalma-shiksha-bikaska-lagi-bhayeka-prayash/"
+target="_blank"
+rel="noopener noreferrer"
+class="note-btn">
+
+📖 एकाइ हेर्नुहोस् →
+
+</a>
+
+</div>
+
+
+<!-- SYLLABUS -->
+
+<div class="note-card">
+
+<div class="note-icon">
+📋
+</div>
+
+<h3>
+Class 10 Education Syllabus
+</h3>
+
+<p>
+कक्षा १० शिक्षा विषयको विस्तृत पाठ्यक्रम तथा
+एकाइगत विषयवस्तु अध्ययन गर्नुहोस्।
+</p>
+
+<a
+href="https://importantedunotes.com/class-10-education-notes/"
+target="_blank"
+rel="noopener noreferrer"
+class="note-btn">
+
+📋 Syllabus हेर्नुहोस् →
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ================= SHARE ================= -->
+
+<div class="share-box">
+
+<h2 id="shareTitle">
+📢 Share & Help Others
+</h2>
+
+<p id="shareText">
+
+यो शिक्षा विषयका महत्वपूर्ण नोटहरू आफ्ना साथीहरू
+तथा विभिन्न शैक्षिक समूहहरूमा सेयर गरेर सबैलाई
+सहयोग गर्नुहोस्।
+
+</p>
+
+<p>
+🖋 <strong>By: Important Notes</strong>
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
+
+<p>
+Teaching Professional • Educator • Computer Science Teacher
+</p>
+
+<p>
+🌐
+<a
+href="https://importantedunotes.com"
+target="_blank"
+rel="noopener noreferrer">
+
+importantedunotes.com
+
+</a>
+</p>
+
+</footer>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+
+document
+.getElementById("navMenu")
+.classList
+.toggle("show");
+
+}
+
+
+/* ================= LANGUAGE ================= */
+
+function setLanguage(lang){
+
+const englishBtn =
+document.getElementById("englishBtn");
+
+const nepaliBtn =
+document.getElementById("nepaliBtn");
+
+
+if(lang === "en"){
+
+document.getElementById("heroTitle").innerText =
+"👨‍🏫 Education Notes";
+
+document.getElementById("heroSubtitle").innerText =
+"SEE Class 10 • Education • Important Notes • Exam Preparation";
+
+document.getElementById("introText").innerHTML =
+"Important study notes for Class 10 Education are available here for SEE examination preparation.<br><br>Study materials related to Introduction to Education, Educational Development in Nepal, Child Development and Psychology, Curriculum, Teaching Methods, Student Evaluation and Qualities of Good Teachers are available.";
+
+document.getElementById("notesTitle").innerText =
+"📝 Important Education Notes for SEE";
+
+document.getElementById("notesSubtitle").innerText =
+"Important study materials for Class 10 Education";
+
+document.getElementById("shareTitle").innerText =
+"📢 Share & Help Others";
+
+document.getElementById("shareText").innerText =
+"Share these important Education notes with your friends and educational groups to help others.";
+
+englishBtn.classList.add("active");
+
+nepaliBtn.classList.remove("active");
+
+}
+
+else{
+
+document.getElementById("heroTitle").innerText =
+"👨‍🏫 शिक्षा विषयका नोटहरू";
+
+document.getElementById("heroSubtitle").innerText =
+"कक्षा १० • शिक्षा • महत्वपूर्ण नोटहरू • परीक्षा तयारी";
+
+document.getElementById("introText").innerHTML =
+"SEE परीक्षा तयारीका लागि कक्षा १० शिक्षा विषयका महत्वपूर्ण अध्ययन नोटहरू यहाँ उपलब्ध छन्।<br><br>शिक्षाको परिचय, नेपालमा शिक्षा विकासका प्रयासहरू, बाल विकास तथा बाल मनोविज्ञान, पाठ्यक्रम, शिक्षण विधि, विद्यार्थी मूल्याङ्कन, असल शिक्षकका गुणहरू लगायतका विभिन्न विषयगत सामग्रीहरू अध्ययन गर्न सकिन्छ।";
+
+document.getElementById("notesTitle").innerText =
+"📝 SEE परीक्षा तयारीका लागि शिक्षा विषयका नोटहरू";
+
+document.getElementById("notesSubtitle").innerText =
+"कक्षा १० शिक्षा विषयका महत्वपूर्ण अध्ययन सामग्री";
+
+document.getElementById("shareTitle").innerText =
+"📢 सेयर गर्नुहोस् र सहयोग गर्नुहोस्";
+
+document.getElementById("shareText").innerText =
+"यो शिक्षा विषयका महत्वपूर्ण नोटहरू आफ्ना साथीहरू तथा विभिन्न शैक्षिक समूहहरूमा सेयर गरेर सबैलाई सहयोग गर्नुहोस्।";
+
+nepaliBtn.classList.add("active");
+
+englishBtn.classList.remove("active");
+
+}
+
+}
+
+</script>
+
+
+</body>
+  </html>
