@@ -413,8 +413,6 @@ Educational Content
 
 <section class="hero">
 
-<!-- LANGUAGE SWITCH -->
-
 <div class="language-switch">
 
 <button
@@ -523,7 +521,10 @@ Information and Communication Technology,
 digital learning and technology resources.
 </p>
 
-<a href="javascript:void(0)" onclick="showActionResearch()" id="ictExplore">
+<a
+href="javascript:void(0)"
+onclick="showActionResearch()"
+id="ictExplore">
 Explore →
 </a>
 
@@ -545,7 +546,9 @@ Study materials, short questions, notes and
 exam-oriented learning resources.
 </p>
 
-<a href="#" id="seeExplore">
+<!-- ONLY THIS LINK IS CONNECTED -->
+
+<a href="see-materials.html" id="seeExplore">
 Explore →
 </a>
 
@@ -665,7 +668,10 @@ Teaching Professional • Educator • Computer Science Teacher
 
 function toggleMenu(){
 
-    document.getElementById("navMenu").classList.toggle("show");
+    document
+    .getElementById("navMenu")
+    .classList
+    .toggle("show");
 
 }
 
