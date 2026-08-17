@@ -69,6 +69,7 @@ nav a.active{
 }
 
 .hero{
+    position:relative;
     padding:85px 20px;
     text-align:center;
     color:white;
@@ -85,6 +86,45 @@ nav a.active{
 
 .hero p{
     font-size:19px;
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch{
+    position:absolute;
+    right:25px;
+    top:25px;
+    display:flex;
+    align-items:center;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:10px;
+    overflow:hidden;
+    backdrop-filter:blur(8px);
+}
+
+.language-switch button{
+    border:0;
+    background:transparent;
+    color:white;
+    padding:8px 13px;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.language-switch button.active{
+    background:white;
+    color:#4338ca;
+}
+
+.language-switch button:hover{
+    background:rgba(255,255,255,.3);
+}
+
+.language-switch span{
+    color:rgba(255,255,255,.7);
+    font-weight:bold;
 }
 
 .container{
@@ -207,6 +247,16 @@ footer{
     .grid{
         grid-template-columns:1fr;
     }
+
+    .language-switch{
+        right:12px;
+        top:15px;
+    }
+
+    .language-switch button{
+        padding:7px 10px;
+        font-size:12px;
+    }
 }
 </style>
 </head>
@@ -241,9 +291,32 @@ footer{
 
 <section class="hero">
 
-<h1>Achievements</h1>
+<!-- LANGUAGE SWITCH -->
 
-<p>Academic Excellence • Professional Journey • Dedication</p>
+<div class="language-switch">
+
+<button
+id="enBtn"
+class="active"
+onclick="setLanguage('en')">
+🇬🇧 English
+</button>
+
+<span>|</span>
+
+<button
+id="neBtn"
+onclick="setLanguage('ne')">
+🇳🇵 नेपाली
+</button>
+
+</div>
+
+<h1 id="heroTitle">Achievements</h1>
+
+<p id="heroSubtitle">
+Academic Excellence • Professional Journey • Dedication
+</p>
 
 </section>
 
@@ -252,9 +325,13 @@ footer{
 
 <div class="title">
 
-<h2>Milestones & Recognition</h2>
+<h2 id="milestoneTitle">
+Milestones & Recognition
+</h2>
 
-<p>A glimpse of my academic and professional journey</p>
+<p id="milestoneSubtitle">
+A glimpse of my academic and professional journey
+</p>
 
 </div>
 
@@ -266,11 +343,13 @@ footer{
 
 <div class="icon">🏅</div>
 
-<h3>Gold Medal</h3>
+<h3 id="goldTitle">Gold Medal</h3>
 
-<div class="subtitle">Academic Excellence</div>
+<div class="subtitle" id="goldSubtitle">
+Academic Excellence
+</div>
 
-<p>
+<p id="goldText">
 A distinguished recognition of academic excellence,
 dedication and outstanding achievement.
 </p>
@@ -282,11 +361,15 @@ dedication and outstanding achievement.
 
 <div class="icon">🎓</div>
 
-<h3>Vice-Chancellor's Medal</h3>
+<h3 id="vcTitle">
+Vice-Chancellor's Medal
+</h3>
 
-<div class="subtitle">Academic Recognition</div>
+<div class="subtitle" id="vcSubtitle">
+Academic Recognition
+</div>
 
-<p>
+<p id="vcText">
 A prestigious academic recognition reflecting
 commitment, achievement and excellence.
 </p>
@@ -298,11 +381,15 @@ commitment, achievement and excellence.
 
 <div class="icon">💻</div>
 
-<h3>Computer Science Teacher</h3>
+<h3 id="teacherTitle">
+Computer Science Teacher
+</h3>
 
-<div class="subtitle">Secondary Level Government Teacher</div>
+<div class="subtitle" id="teacherSubtitle">
+Secondary Level Government Teacher
+</div>
 
-<p>
+<p id="teacherText">
 Dedicated to teaching Computer Science and supporting
 technology-integrated learning at the secondary level.
 </p>
@@ -314,11 +401,15 @@ technology-integrated learning at the secondary level.
 
 <div class="icon">👨‍🏫</div>
 
-<h3>Teaching Professional</h3>
+<h3 id="professionalTitle">
+Teaching Professional
+</h3>
 
-<div class="subtitle">Education & Lifelong Learning</div>
+<div class="subtitle" id="professionalSubtitle">
+Education & Lifelong Learning
+</div>
 
-<p>
+<p id="professionalText">
 Committed to meaningful education, inclusive learning,
 technology and continuous professional growth.
 </p>
@@ -333,7 +424,7 @@ technology and continuous professional growth.
 
 <h2>Gorakh Chand</h2>
 
-<p>
+<p id="profileText">
 Teaching Professional • Computer Science •
 Secondary Level Government Teacher
 </p>
@@ -356,11 +447,148 @@ Secondary Level Government Teacher
 
 function toggleMenu(){
 
-document.getElementById("navMenu").classList.toggle("show");
+document
+.getElementById("navMenu")
+.classList
+.toggle("show");
+
+}
+
+
+/* LANGUAGE SWITCH */
+
+function setLanguage(language){
+
+const enBtn =
+document.getElementById("enBtn");
+
+const neBtn =
+document.getElementById("neBtn");
+
+
+if(language === "ne"){
+
+document.documentElement.lang = "ne";
+
+document.getElementById("heroTitle").textContent =
+"उपलब्धिहरू";
+
+document.getElementById("heroSubtitle").textContent =
+"शैक्षिक उत्कृष्टता • व्यावसायिक यात्रा • समर्पण";
+
+document.getElementById("milestoneTitle").textContent =
+"उपलब्धि तथा सम्मान";
+
+document.getElementById("milestoneSubtitle").textContent =
+"मेरो शैक्षिक तथा व्यावसायिक यात्राको एक झलक";
+
+document.getElementById("goldTitle").textContent =
+"स्वर्ण पदक";
+
+document.getElementById("goldSubtitle").textContent =
+"शैक्षिक उत्कृष्टता";
+
+document.getElementById("goldText").textContent =
+"शैक्षिक उत्कृष्टता, समर्पण तथा उल्लेखनीय उपलब्धिको सम्मानस्वरूप प्राप्त विशिष्ट उपलब्धि।";
+
+document.getElementById("vcTitle").textContent =
+"उपकुलपति पदक";
+
+document.getElementById("vcSubtitle").textContent =
+"शैक्षिक सम्मान";
+
+document.getElementById("vcText").textContent =
+"प्रतिबद्धता, उपलब्धि तथा उत्कृष्टतालाई प्रतिबिम्बित गर्ने प्रतिष्ठित शैक्षिक सम्मान।";
+
+document.getElementById("teacherTitle").textContent =
+"कम्प्युटर विज्ञान शिक्षक";
+
+document.getElementById("teacherSubtitle").textContent =
+"माध्यमिक तहका सरकारी शिक्षक";
+
+document.getElementById("teacherText").textContent =
+"माध्यमिक तहमा कम्प्युटर विज्ञान शिक्षण तथा प्रविधिमैत्री सिकाइलाई सहयोग गर्न समर्पित।";
+
+document.getElementById("professionalTitle").textContent =
+"शिक्षण पेशाकर्मी";
+
+document.getElementById("professionalSubtitle").textContent =
+"शिक्षा तथा जीवनपर्यन्त सिकाइ";
+
+document.getElementById("professionalText").textContent =
+"अर्थपूर्ण शिक्षा, समावेशी सिकाइ, प्रविधि तथा निरन्तर व्यावसायिक विकासप्रति प्रतिबद्ध।";
+
+document.getElementById("profileText").textContent =
+"शिक्षण पेशाकर्मी • कम्प्युटर विज्ञान • माध्यमिक तहका सरकारी शिक्षक";
+
+enBtn.classList.remove("active");
+neBtn.classList.add("active");
+
+}
+
+else{
+
+document.documentElement.lang = "en";
+
+document.getElementById("heroTitle").textContent =
+"Achievements";
+
+document.getElementById("heroSubtitle").textContent =
+"Academic Excellence • Professional Journey • Dedication";
+
+document.getElementById("milestoneTitle").textContent =
+"Milestones & Recognition";
+
+document.getElementById("milestoneSubtitle").textContent =
+"A glimpse of my academic and professional journey";
+
+document.getElementById("goldTitle").textContent =
+"Gold Medal";
+
+document.getElementById("goldSubtitle").textContent =
+"Academic Excellence";
+
+document.getElementById("goldText").textContent =
+"A distinguished recognition of academic excellence, dedication and outstanding achievement.";
+
+document.getElementById("vcTitle").textContent =
+"Vice-Chancellor's Medal";
+
+document.getElementById("vcSubtitle").textContent =
+"Academic Recognition";
+
+document.getElementById("vcText").textContent =
+"A prestigious academic recognition reflecting commitment, achievement and excellence.";
+
+document.getElementById("teacherTitle").textContent =
+"Computer Science Teacher";
+
+document.getElementById("teacherSubtitle").textContent =
+"Secondary Level Government Teacher";
+
+document.getElementById("teacherText").textContent =
+"Dedicated to teaching Computer Science and supporting technology-integrated learning at the secondary level.";
+
+document.getElementById("professionalTitle").textContent =
+"Teaching Professional";
+
+document.getElementById("professionalSubtitle").textContent =
+"Education & Lifelong Learning";
+
+document.getElementById("professionalText").textContent =
+"Committed to meaningful education, inclusive learning, technology and continuous professional growth.";
+
+document.getElementById("profileText").textContent =
+"Teaching Professional • Computer Science • Secondary Level Government Teacher";
+
+neBtn.classList.remove("active");
+enBtn.classList.add("active");
+
+}
 
 }
 
 </script>
 
 </body>
-    </html>
+                                  </html>
