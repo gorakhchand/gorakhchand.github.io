@@ -64,7 +64,7 @@ nav a:hover{
 }
 
 nav a.active{
-    color:#6d28d9;
+    color:#6d28b6;
 }
 
 .menu{
@@ -76,6 +76,7 @@ nav a.active{
 /* HERO */
 
 .hero{
+    position:relative;
     padding:85px 20px;
     text-align:center;
     color:white;
@@ -93,6 +94,45 @@ nav a.active{
 
 .hero p{
     font-size:19px;
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch{
+    position:absolute;
+    right:25px;
+    top:25px;
+    display:flex;
+    align-items:center;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:10px;
+    overflow:hidden;
+    backdrop-filter:blur(8px);
+}
+
+.language-switch button{
+    border:0;
+    background:transparent;
+    color:white;
+    padding:8px 13px;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.language-switch button.active{
+    background:white;
+    color:#4338ca;
+}
+
+.language-switch button:hover{
+    background:rgba(255,255,255,.3);
+}
+
+.language-switch span{
+    color:rgba(255,255,255,.7);
+    font-weight:bold;
 }
 
 /* CONTENT */
@@ -229,6 +269,16 @@ footer{
     nav a{
         font-size:15px;
     }
+
+    .language-switch{
+        right:12px;
+        top:15px;
+    }
+
+    .language-switch button{
+        padding:7px 10px;
+        font-size:12px;
+    }
 }
 </style>
 </head>
@@ -278,9 +328,33 @@ Gorakh Chand
 
 <section class="hero">
 
-<h1>Academic Background</h1>
+<!-- LANGUAGE SWITCH -->
 
-<p>
+<div class="language-switch">
+
+<button
+id="enBtn"
+class="active"
+onclick="setLanguage('en')">
+🇬🇧 English
+</button>
+
+<span>|</span>
+
+<button
+id="neBtn"
+onclick="setLanguage('ne')">
+🇳🇵 नेपाली
+</button>
+
+</div>
+
+
+<h1 id="heroTitle">
+Academic Background
+</h1>
+
+<p id="heroSubtitle">
 A multidisciplinary journey of knowledge and learning
 </p>
 
@@ -293,9 +367,11 @@ A multidisciplinary journey of knowledge and learning
 
 <div class="title">
 
-<h2>My Academic Journey</h2>
+<h2 id="journeyTitle">
+My Academic Journey
+</h2>
 
-<p>
+<p id="journeySubtitle">
 Education, knowledge and continuous learning
 </p>
 
@@ -312,11 +388,11 @@ Education, knowledge and continuous learning
 
 <h3>B.Ed.</h3>
 
-<div class="degree">
+<div class="degree" id="bedDegree">
 Computer Science
 </div>
 
-<p>
+<p id="bedText">
 Bachelor of Education with a focus on
 Computer Science and educational practice.
 </p>
@@ -332,11 +408,11 @@ Computer Science and educational practice.
 
 <h3>M.Ed.</h3>
 
-<div class="degree">
+<div class="degree" id="medDegree">
 Special Needs Education
 </div>
 
-<p>
+<p id="medText">
 Advanced study focused on inclusive education,
 diverse learners and educational support.
 </p>
@@ -352,11 +428,11 @@ diverse learners and educational support.
 
 <h3>M.A.</h3>
 
-<div class="degree">
+<div class="degree" id="maDegree">
 Economics
 </div>
 
-<p>
+<p id="maText">
 Advanced academic study in Economics,
 broadening perspectives on society and development.
 </p>
@@ -370,9 +446,11 @@ broadening perspectives on society and development.
 
 <div class="philosophy">
 
-<h2>🌱 Education is a Lifelong Journey</h2>
+<h2 id="philosophyTitle">
+🌱 Education is a Lifelong Journey
+</h2>
 
-<p>
+<p id="philosophyText">
 Academic degrees provide a foundation, but true education
 continues through teaching, experience, curiosity,
 reading and lifelong learning.
@@ -402,7 +480,114 @@ Teaching Professional • Educator • Computer Science Teacher
 
 function toggleMenu(){
 
-document.getElementById("navMenu").classList.toggle("show");
+document
+.getElementById("navMenu")
+.classList
+.toggle("show");
+
+}
+
+
+/* LANGUAGE */
+
+function setLanguage(language){
+
+const enBtn =
+document.getElementById("enBtn");
+
+const neBtn =
+document.getElementById("neBtn");
+
+
+if(language === "ne"){
+
+document.documentElement.lang = "ne";
+
+document.getElementById("heroTitle").textContent =
+"शैक्षिक पृष्ठभूमि";
+
+document.getElementById("heroSubtitle").textContent =
+"ज्ञान र सिकाइको बहुआयामिक यात्रा";
+
+document.getElementById("journeyTitle").textContent =
+"मेरो शैक्षिक यात्रा";
+
+document.getElementById("journeySubtitle").textContent =
+"शिक्षा, ज्ञान र निरन्तर सिकाइ";
+
+document.getElementById("bedDegree").textContent =
+"कम्प्युटर विज्ञान";
+
+document.getElementById("bedText").textContent =
+"कम्प्युटर विज्ञान तथा शैक्षिक अभ्यासमा केन्द्रित शिक्षा शास्त्रमा स्नातक तहको अध्ययन।";
+
+document.getElementById("medDegree").textContent =
+"विशेष आवश्यकता शिक्षा";
+
+document.getElementById("medText").textContent =
+"समावेशी शिक्षा, विविध प्रकारका विद्यार्थी तथा शैक्षिक सहयोगमा केन्द्रित उच्च शिक्षा।";
+
+document.getElementById("maDegree").textContent =
+"अर्थशास्त्र";
+
+document.getElementById("maText").textContent =
+"अर्थशास्त्रको उच्च अध्ययन, जसले समाज र विकाससम्बन्धी दृष्टिकोणलाई थप फराकिलो बनाएको छ।";
+
+document.getElementById("philosophyTitle").textContent =
+"🌱 शिक्षा जीवनभर चलिरहने यात्रा हो";
+
+document.getElementById("philosophyText").textContent =
+"शैक्षिक उपाधिले आधार प्रदान गर्छन्, तर वास्तविक शिक्षा शिक्षण, अनुभव, जिज्ञासा, अध्ययन र निरन्तर सिकाइमार्फत जीवनभर चलिरहन्छ।";
+
+enBtn.classList.remove("active");
+neBtn.classList.add("active");
+
+}
+
+else{
+
+document.documentElement.lang = "en";
+
+document.getElementById("heroTitle").textContent =
+"Academic Background";
+
+document.getElementById("heroSubtitle").textContent =
+"A multidisciplinary journey of knowledge and learning";
+
+document.getElementById("journeyTitle").textContent =
+"My Academic Journey";
+
+document.getElementById("journeySubtitle").textContent =
+"Education, knowledge and continuous learning";
+
+document.getElementById("bedDegree").textContent =
+"Computer Science";
+
+document.getElementById("bedText").textContent =
+" Bachelor of Education with a focus on Computer Science and educational practice.";
+
+document.getElementById("medDegree").textContent =
+"Special Needs Education";
+
+document.getElementById("medText").textContent =
+"Advanced study focused on inclusive education, diverse learners and educational support.";
+
+document.getElementById("maDegree").textContent =
+"Economics";
+
+document.getElementById("maText").textContent =
+"Advanced academic study in Economics, broadening perspectives on society and development.";
+
+document.getElementById("philosophyTitle").textContent =
+"🌱 Education is a Lifelong Journey";
+
+document.getElementById("philosophyText").textContent =
+"Academic degrees provide a foundation, but true education continues through teaching, experience, curiosity, reading and lifelong learning.";
+
+neBtn.classList.remove("active");
+enBtn.classList.add("active");
+
+}
 
 }
 
