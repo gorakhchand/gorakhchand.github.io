@@ -79,6 +79,7 @@ nav a.active{
 /* HERO */
 
 .hero{
+    position:relative;
     padding:85px 20px;
     text-align:center;
     color:white;
@@ -96,6 +97,44 @@ nav a.active{
 
 .hero p{
     font-size:19px;
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch{
+    position:absolute;
+    top:18px;
+    right:22px;
+    display:flex;
+    align-items:center;
+    gap:0;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:25px;
+    padding:3px;
+    backdrop-filter:blur(8px);
+}
+
+.language-switch button{
+    border:none;
+    background:transparent;
+    color:white;
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.language-switch button.active{
+    background:white;
+    color:#4338ca;
+}
+
+.language-switch button:hover{
+    background:rgba(255,255,255,.9);
+    color:#4338ca;
 }
 
 /* CONTENT */
@@ -295,6 +334,17 @@ footer{
     nav a{
         font-size:15px;
     }
+
+    .language-switch{
+        top:12px;
+        right:12px;
+    }
+
+    .language-switch button{
+        padding:6px 10px;
+        font-size:12px;
+    }
+
 }
 
 </style>
@@ -363,9 +413,31 @@ Educational Content
 
 <section class="hero">
 
-<h1>Educational Content</h1>
+<!-- LANGUAGE SWITCH -->
 
-<p>
+<div class="language-switch">
+
+<button
+id="enBtn"
+class="active"
+onclick="setLanguage('en')">
+English
+</button>
+
+<button
+id="neBtn"
+onclick="setLanguage('ne')">
+नेपाली
+</button>
+
+</div>
+
+
+<h1 id="heroTitle">
+Educational Content
+</h1>
+
+<p id="heroSubtitle">
 Learning • Teaching • Technology • Knowledge
 </p>
 
@@ -378,9 +450,11 @@ Learning • Teaching • Technology • Knowledge
 
 <div class="title">
 
-<h2>Explore Learning Resources</h2>
+<h2 id="contentTitle">
+Explore Learning Resources
+</h2>
 
-<p>
+<p id="contentSubtitle">
 Useful educational materials for students and teachers
 </p>
 
@@ -396,14 +470,16 @@ Useful educational materials for students and teachers
 
 <div class="icon">💻</div>
 
-<h3>Computer Science</h3>
+<h3 id="csTitle">
+Computer Science
+</h3>
 
-<p>
+<p id="csText">
 Computer fundamentals, hardware, software,
 networking and Computer Science learning materials.
 </p>
 
-<a href="#">
+<a href="#" id="csExplore">
 Explore →
 </a>
 
@@ -416,14 +492,16 @@ Explore →
 
 <div class="icon">🐍</div>
 
-<h3>Python Programming</h3>
+<h3 id="pythonTitle">
+Python Programming
+</h3>
 
-<p>
+<p id="pythonText">
 Python basics, variables, conditions, loops,
 functions and practical programming examples.
 </p>
 
-<a href="#">
+<a href="#" id="pythonExplore">
 Explore →
 </a>
 
@@ -436,14 +514,16 @@ Explore →
 
 <div class="icon">🌐</div>
 
-<h3>ICT</h3>
+<h3 id="ictTitle">
+ICT
+</h3>
 
-<p>
+<p id="ictText">
 Information and Communication Technology,
 digital learning and technology resources.
 </p>
 
-<a href="javascript:void(0)" onclick="showActionResearch()">
+<a href="javascript:void(0)" onclick="showActionResearch()" id="ictExplore">
 Explore →
 </a>
 
@@ -456,14 +536,16 @@ Explore →
 
 <div class="icon">📚</div>
 
-<h3>SEE Materials</h3>
+<h3 id="seeTitle">
+SEE Materials
+</h3>
 
-<p>
+<p id="seeText">
 Study materials, short questions, notes and
 exam-oriented learning resources.
 </p>
 
-<a href="#">
+<a href="#" id="seeExplore">
 Explore →
 </a>
 
@@ -476,14 +558,16 @@ Explore →
 
 <div class="icon">🧩</div>
 
-<h3>IEP & UDL</h3>
+<h3 id="iepTitle">
+IEP & UDL
+</h3>
 
-<p>
+<p id="iepText">
 Resources related to inclusive education,
 IEP and Universal Design for Learning.
 </p>
 
-<a href="#">
+<a href="#" id="iepExplore">
 Explore →
 </a>
 
@@ -496,14 +580,16 @@ Explore →
 
 <div class="icon">👨‍🏫</div>
 
-<h3>Teaching Resources</h3>
+<h3 id="teachingTitle">
+Teaching Resources
+</h3>
 
-<p>
+<p id="teachingText">
 Useful teaching materials, classroom ideas
 and resources for teachers.
 </p>
 
-<a href="ict.html">
+<a href="ict.html" id="teachingExplore">
 Explore →
 </a>
 
@@ -523,15 +609,15 @@ Explore →
 📋
 </div>
 
-<h3>
+<h3 id="actionTitle">
 Action Research
 </h3>
 
-<p>
+<p id="actionText">
 शिक्षकका लागि कार्यमूलक अनुसन्धान
 </p>
 
-<a href="action-research.html">
+<a href="action-research.html" id="actionStart">
 Start →
 </a>
 
@@ -544,9 +630,11 @@ Start →
 
 <div class="note">
 
-<h2>📖 Learning Never Stops</h2>
+<h2 id="noteTitle">
+📖 Learning Never Stops
+</h2>
 
-<p>
+<p id="noteText">
 This section will gradually grow with notes,
 programs, educational materials, PDFs and useful resources.
 </p>
@@ -578,6 +666,216 @@ Teaching Professional • Educator • Computer Science Teacher
 function toggleMenu(){
 
     document.getElementById("navMenu").classList.toggle("show");
+
+}
+
+
+/* LANGUAGE */
+
+function setLanguage(language){
+
+    const enBtn =
+        document.getElementById("enBtn");
+
+    const neBtn =
+        document.getElementById("neBtn");
+
+
+    if(language === "ne"){
+
+        enBtn.classList.remove("active");
+        neBtn.classList.add("active");
+
+
+        document.getElementById("heroTitle").textContent =
+            "शैक्षिक सामग्री";
+
+        document.getElementById("heroSubtitle").textContent =
+            "सिकाइ • शिक्षण • प्रविधि • ज्ञान";
+
+        document.getElementById("contentTitle").textContent =
+            "शैक्षिक स्रोतहरू खोज्नुहोस्";
+
+        document.getElementById("contentSubtitle").textContent =
+            "विद्यार्थी तथा शिक्षकका लागि उपयोगी शैक्षिक सामग्री";
+
+
+        document.getElementById("csTitle").textContent =
+            "कम्प्युटर विज्ञान";
+
+        document.getElementById("csText").textContent =
+            "कम्प्युटरका आधारभूत कुरा, हार्डवेयर, सफ्टवेयर, नेटवर्किङ तथा कम्प्युटर विज्ञानसम्बन्धी सामग्री।";
+
+
+        document.getElementById("pythonTitle").textContent =
+            "पाइथन प्रोग्रामिङ";
+
+        document.getElementById("pythonText").textContent =
+            "Python का आधारभूत कुरा, variables, conditions, loops, functions तथा practical programming examples।";
+
+
+        document.getElementById("ictTitle").textContent =
+            "सूचना तथा सञ्चार प्रविधि";
+
+        document.getElementById("ictText").textContent =
+            "सूचना तथा सञ्चार प्रविधि, डिजिटल सिकाइ तथा प्रविधिसम्बन्धी शैक्षिक स्रोतहरू।";
+
+
+        document.getElementById("seeTitle").textContent =
+            "SEE सामग्री";
+
+        document.getElementById("seeText").textContent =
+            "अध्ययन सामग्री, छोटो प्रश्न, नोट तथा परीक्षामुखी शैक्षिक स्रोतहरू।";
+
+
+        document.getElementById("iepTitle").textContent =
+            "IEP तथा UDL";
+
+        document.getElementById("iepText").textContent =
+            "समावेशी शिक्षा, IEP तथा Universal Design for Learning सम्बन्धी स्रोतहरू।";
+
+
+        document.getElementById("teachingTitle").textContent =
+            "शिक्षण स्रोतहरू";
+
+        document.getElementById("teachingText").textContent =
+            "शिक्षकका लागि उपयोगी शिक्षण सामग्री, कक्षाकोठाका गतिविधि तथा शैक्षिक स्रोतहरू।";
+
+
+        document.getElementById("actionTitle").textContent =
+            "कार्य अनुसन्धान";
+
+        document.getElementById("actionText").textContent =
+            "शिक्षकका लागि कार्यमूलक अनुसन्धान";
+
+        document.getElementById("actionStart").textContent =
+            "सुरु गर्नुहोस् →";
+
+
+        document.getElementById("noteTitle").textContent =
+            "📖 सिकाइ कहिल्यै रोकिन्न";
+
+        document.getElementById("noteText").textContent =
+            "यस खण्डमा क्रमशः नोटहरू, कार्यक्रमहरू, शैक्षिक सामग्री, PDF तथा उपयोगी स्रोतहरू थपिँदै जानेछन्।";
+
+
+        document.getElementById("csExplore").textContent =
+            "हेर्नुहोस् →";
+
+        document.getElementById("pythonExplore").textContent =
+            "हेर्नुहोस् →";
+
+        document.getElementById("ictExplore").textContent =
+            "हेर्नुहोस् →";
+
+        document.getElementById("seeExplore").textContent =
+            "हेर्नुहोस् →";
+
+        document.getElementById("iepExplore").textContent =
+            "हेर्नुहोस् →";
+
+        document.getElementById("teachingExplore").textContent =
+            "हेर्नुहोस् →";
+
+    }
+
+    else{
+
+        enBtn.classList.add("active");
+        neBtn.classList.remove("active");
+
+
+        document.getElementById("heroTitle").textContent =
+            "Educational Content";
+
+        document.getElementById("heroSubtitle").textContent =
+            "Learning • Teaching • Technology • Knowledge";
+
+        document.getElementById("contentTitle").textContent =
+            "Explore Learning Resources";
+
+        document.getElementById("contentSubtitle").textContent =
+            "Useful educational materials for students and teachers";
+
+
+        document.getElementById("csTitle").textContent =
+            "Computer Science";
+
+        document.getElementById("csText").textContent =
+            "Computer fundamentals, hardware, software, networking and Computer Science learning materials.";
+
+
+        document.getElementById("pythonTitle").textContent =
+            "Python Programming";
+
+        document.getElementById("pythonText").textContent =
+            "Python basics, variables, conditions, loops, functions and practical programming examples.";
+
+
+        document.getElementById("ictTitle").textContent =
+            "ICT";
+
+        document.getElementById("ictText").textContent =
+            "Information and Communication Technology, digital learning and technology resources.";
+
+
+        document.getElementById("seeTitle").textContent =
+            "SEE Materials";
+
+        document.getElementById("seeText").textContent =
+            "Study materials, short questions, notes and exam-oriented learning resources.";
+
+
+        document.getElementById("iepTitle").textContent =
+            "IEP & UDL";
+
+        document.getElementById("iepText").textContent =
+            "Resources related to inclusive education, IEP and Universal Design for Learning.";
+
+
+        document.getElementById("teachingTitle").textContent =
+            "Teaching Resources";
+
+        document.getElementById("teachingText").textContent =
+            "Useful teaching materials, classroom ideas and resources for teachers.";
+
+
+        document.getElementById("actionTitle").textContent =
+            "Action Research";
+
+        document.getElementById("actionText").textContent =
+            "शिक्षकका लागि कार्यमूलक अनुसन्धान";
+
+        document.getElementById("actionStart").textContent =
+            "Start →";
+
+
+        document.getElementById("noteTitle").textContent =
+            "📖 Learning Never Stops";
+
+        document.getElementById("noteText").textContent =
+            "This section will gradually grow with notes, programs, educational materials, PDFs and useful resources.";
+
+
+        document.getElementById("csExplore").textContent =
+            "Explore →";
+
+        document.getElementById("pythonExplore").textContent =
+            "Explore →";
+
+        document.getElementById("ictExplore").textContent =
+            "Explore →";
+
+        document.getElementById("seeExplore").textContent =
+            "Explore →";
+
+        document.getElementById("iepExplore").textContent =
+            "Explore →";
+
+        document.getElementById("teachingExplore").textContent =
+            "Explore →";
+
+    }
 
 }
 
