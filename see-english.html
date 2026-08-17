@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SEE English Notes | Gorakh Chand</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f9ff;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        90deg,
+        #6d28d9,
+        #2563eb,
+        #0891b2
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:17px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+}
+
+nav a:hover,
+nav a.active{
+    color:#6d28d9;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    padding:75px 20px;
+    text-align:center;
+    color:white;
+
+    background:
+
+    radial-gradient(
+        circle at 15% 20%,
+        #22d3ee55,
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 85% 80%,
+        #f472b655,
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #4338ca,
+        #7c3aed,
+        #0284c7
+    );
+}
+
+.hero h1{
+    font-size:46px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:850px;
+    margin:auto;
+}
+
+
+/* ================= LANGUAGE ================= */
+
+.language-switch{
+    margin:20px auto 0;
+
+    display:flex;
+    justify-content:center;
+    gap:5px;
+
+    width:max-content;
+
+    padding:5px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.35);
+}
+
+.language-switch button{
+    border:none;
+    background:transparent;
+
+    color:white;
+
+    padding:7px 14px;
+
+    border-radius:22px;
+
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.language-switch button.active{
+    background:white;
+    color:#4338ca;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+
+/* ================= INTRO ================= */
+
+.intro-box{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 8px 28px rgba(0,0,0,.07);
+
+    border-left:6px solid #6d28d9;
+
+    margin-bottom:40px;
+}
+
+.intro-box h2{
+    color:#5b21b6;
+    margin-bottom:10px;
+}
+
+.intro-box p{
+    color:#4b5563;
+}
+
+
+/* ================= NOTES CARD ================= */
+
+.main-card{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 9px 30px rgba(0,0,0,.08);
+
+    border-top:5px solid #0891b2;
+
+    text-align:center;
+}
+
+.main-icon{
+    font-size:65px;
+    margin-bottom:10px;
+}
+
+.main-card h2{
+    color:#4338ca;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.main-card p{
+    color:#6b7280;
+    max-width:750px;
+    margin:auto;
+}
+
+
+/* ================= BUTTON ================= */
+
+.notes-btn{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:13px 28px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #4338ca,
+        #7c3aed
+    );
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    box-shadow:
+    0 8px 20px rgba(67,56,202,.25);
+
+    transition:.3s;
+}
+
+.notes-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 13px 25px rgba(67,56,202,.35);
+}
+
+
+/* ================= UNIT INFORMATION ================= */
+
+.units-section{
+    margin-top:55px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    color:#5b21b6;
+    font-size:32px;
+}
+
+.section-title p{
+    color:#6b7280;
+}
+
+
+.unit-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+
+.unit-card{
+
+    background:white;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 7px 22px rgba(0,0,0,.06);
+
+    border-top:4px solid #0891b2;
+
+    transition:.3s;
+}
+
+.unit-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 14px 30px rgba(0,0,0,.10);
+}
+
+.unit-number{
+
+    display:inline-block;
+
+    background:#eef2ff;
+
+    color:#4338ca;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+}
+
+.unit-card h3{
+
+    color:#0e7490;
+
+    font-size:19px;
+
+    margin-bottom:5px;
+}
+
+.unit-card p{
+
+    color:#6b7280;
+
+    font-size:14px;
+}
+
+
+/* ================= GRAMMAR BOX ================= */
+
+.grammar-box{
+
+    margin-top:50px;
+
+    padding:30px;
+
+    border-radius:23px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef2ff,
+        #ecfeff
+    );
+
+    border:1px solid #ddd6fe;
+
+    text-align:center;
+}
+
+.grammar-box h2{
+
+    color:#5b21b6;
+
+    margin-bottom:8px;
+}
+
+.grammar-box p{
+
+    color:#6b7280;
+}
+
+.grammar-btn{
+
+    display:inline-block;
+
+    margin-top:18px;
+
+    padding:10px 22px;
+
+    border-radius:25px;
+
+    background:white;
+
+    color:#4338ca;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    border:1px solid #c4b5fd;
+
+    transition:.3s;
+}
+
+.grammar-btn:hover{
+
+    background:#4338ca;
+
+    color:white;
+}
+
+
+/* ================= SHARE BOX ================= */
+
+.share-box{
+
+    margin-top:55px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef2ff,
+        #ecfeff
+    );
+
+    border:1px solid #ddd6fe;
+}
+
+.share-box h2{
+
+    color:#5b21b6;
+
+    margin-bottom:10px;
+}
+
+.share-box p{
+
+    color:#6b7280;
+
+    margin-bottom:15px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    color:#9ca3af;
+
+    background:#111827;
+}
+
+footer p{
+    margin:4px 0;
+}
+
+footer a{
+    color:#a5b4fc;
+    text-decoration:none;
+}
+
+
+/* ================= TABLET ================= */
+
+@media(max-width:950px){
+
+    .menu{
+        display:block;
+    }
+
+    nav ul{
+
+        display:none;
+
+        position:absolute;
+
+        top:65px;
+        left:0;
+
+        width:100%;
+
+        padding:20px;
+
+        background:white;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+
+        box-shadow:
+        0 8px 20px rgba(0,0,0,.1);
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .unit-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .hero{
+        padding:55px 15px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .container{
+        padding:45px 15px;
+    }
+
+    .main-card{
+        padding:27px 20px;
+    }
+
+    .main-card h2{
+        font-size:25px;
+    }
+
+    .unit-grid{
+        grid-template-columns:1fr;
+    }
+
+    .intro-box{
+        padding:23px;
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .language-switch button{
+        padding:6px 11px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="navbar">
+
+<div class="logo">
+Gorakh Chand
+</div>
+
+
+<div
+class="menu"
+onclick="toggleMenu()">
+
+☰
+
+</div>
+
+
+<ul id="navMenu">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="education.html">
+Education
+</a>
+</li>
+
+<li>
+<a href="achievements.html">
+Achievements
+</a>
+</li>
+
+<li>
+<a
+href="educational-content.html"
+class="active">
+
+Educational Content
+
+</a>
+</li>
+
+<li>
+<a href="articles.html">
+Articles
+</a>
+</li>
+
+<li>
+<a href="gallery.html">
+Gallery
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<h1 id="heroTitle">
+📖 SEE English Notes
+</h1>
+
+<p id="heroSubtitle">
+Class 10 English • SEE Examination Preparation • Important Notes
+</p>
+
+
+<div class="language-switch">
+
+<button
+id="englishBtn"
+class="active"
+onclick="setLanguage('en')">
+
+English
+
+</button>
+
+<button
+id="nepaliBtn"
+onclick="setLanguage('ne')">
+
+नेपाली
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+
+<!-- ================= INTRO ================= -->
+
+<div class="intro-box">
+
+<h2 id="introTitle">
+📚 Class 10 English Notes
+</h2>
+
+<p id="introText">
+
+Complete Class 10 English study materials for SEE
+examination preparation. Find important notes,
+reading materials, grammar topics, exercises and
+lesson-wise resources in one place.
+
+</p>
+
+</div>
+
+
+<!-- ================= MAIN NOTES ================= -->
+
+<div class="main-card">
+
+<div class="main-icon">
+📖
+</div>
+
+<h2 id="mainTitle">
+English Notes for SEE
+</h2>
+
+<p id="mainText">
+
+Access the complete Class 10 English notes,
+including lesson-wise reading materials,
+grammar and examination-oriented resources.
+
+</p>
+
+<a
+href="https://importantedunotes.com/class-10-english-notes-see-nepal/"
+target="_blank"
+rel="noopener noreferrer"
+class="notes-btn"
+id="mainButton">
+
+📖 Read Complete English Notes →
+
+</a>
+
+</div>
+
+
+<!-- ================= UNITS ================= -->
+
+<div class="units-section">
+
+<div class="section-title">
+
+<h2 id="unitTitle">
+📚 Class 10 English Units
+</h2>
+
+<p id="unitSubtitle">
+Lesson-wise topics covered in the English course
+</p>
+
+</div>
+
+
+<div class="unit-grid">
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 1</span>
+<h3>Current Affairs and Issues</h3>
+<p>Reading, reported speech and communication skills.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 2</span>
+<h3>Festivals and Celebrations</h3>
+<p>Reading materials, reported questions and related activities.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 3</span>
+<h3>Health and Wellness</h3>
+<p>Health topics, reported imperatives and communication.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 4</span>
+<h3>Work and Leisure</h3>
+<p>Work, leisure, modal verbs and imperatives.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 5</span>
+<h3>Science and Experiment</h3>
+<p>Science-related reading and conditional sentences.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 6</span>
+<h3>Food and Cuisine</h3>
+<p>Food-related topics, connectives and present continuous.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 7</span>
+<h3>Cyber Security</h3>
+<p>Internet safety, modals and articles.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 8</span>
+<h3>Hobbies and Interests</h3>
+<p>Hobbies, preferences and active/passive voice.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 9</span>
+<h3>History and Culture</h3>
+<p>History, culture and past tense grammar.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 10</span>
+<h3>Games and Sports</h3>
+<p>Sports-related reading and perfect tenses.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 11</span>
+<h3>Ethics and Morality</h3>
+<p>Ethics, drama, negation and subject-verb agreement.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 12</span>
+<h3>Nature and Development</h3>
+<p>Nature, population trends and future tenses.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 13</span>
+<h3>Population and Migration</h3>
+<p>Migration, wildlife and connectives of contradiction.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 14</span>
+<h3>Travel and Adventure</h3>
+<p>Travel experiences, question tags and relative clauses.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 15</span>
+<h3>People and Places</h3>
+<p>People, places and prepositions.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 16</span>
+<h3>Success and Celebration</h3>
+<p>Success, celebration and prepositional phrases.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 17</span>
+<h3>Countries and Towns</h3>
+<p>Comparisons, adjectives, adverbs and connectives.</p>
+</div>
+
+
+<div class="unit-card">
+<span class="unit-number">UNIT 18</span>
+<h3>Media and Entertainment</h3>
+<p>Media, entertainment and causative verbs.</p>
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ================= GRAMMAR ================= -->
+
+<div class="grammar-box">
+
+<h2 id="grammarTitle">
+📝 English Grammar
+</h2>
+
+<p id="grammarText">
+
+Strengthen your English grammar for SEE examination
+with important grammar topics and practice materials.
+
+</p>
+
+<a
+href="https://importantedunotes.com/english-grammar/"
+target="_blank"
+rel="noopener noreferrer"
+class="grammar-btn"
+id="grammarButton">
+
+📘 Explore English Grammar →
+
+</a>
+
+</div>
+
+
+<!-- ================= SHARE ================= -->
+
+<div class="share-box">
+
+<h2 id="shareTitle">
+📢 Share & Help Others
+</h2>
+
+<p id="shareText">
+
+Share these English study materials with your friends
+and educational groups to help other SEE students.
+
+</p>
+
+<p>
+🖋 <strong>By: Gorakh Chand</strong>
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
+
+<p>
+Teaching Professional • Educator • Computer Science Teacher
+</p>
+
+<p>
+🌐
+<a
+href="https://importantedunotes.com"
+target="_blank"
+rel="noopener noreferrer">
+
+importantedunotes.com
+
+</a>
+</p>
+
+</footer>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+
+document
+.getElementById("navMenu")
+.classList
+.toggle("show");
+
+}
+
+
+/* ================= LANGUAGE ================= */
+
+function setLanguage(lang){
+
+const englishBtn =
+document.getElementById("englishBtn");
+
+const nepaliBtn =
+document.getElementById("nepaliBtn");
+
+
+if(lang === "ne"){
+
+document.getElementById("heroTitle").innerText =
+"📖 SEE अंग्रेजी नोट्स";
+
+document.getElementById("heroSubtitle").innerText =
+"कक्षा १० अंग्रेजी • SEE परीक्षा तयारी • महत्वपूर्ण नोटहरू";
+
+document.getElementById("introTitle").innerText =
+"📚 कक्षा १० अंग्रेजी नोट्स";
+
+document.getElementById("introText").innerText =
+"SEE परीक्षा तयारीका लागि कक्षा १० अंग्रेजीका सम्पूर्ण अध्ययन सामग्री यहाँ उपलब्ध छन्। महत्वपूर्ण नोट, पाठअनुसारका सामग्री, व्याकरण, अभ्यास तथा परीक्षा केन्द्रित सामग्रीहरू अध्ययन गर्नुहोस्।";
+
+document.getElementById("mainTitle").innerText =
+"SEE का लागि अंग्रेजी नोट्स";
+
+document.getElementById("mainText").innerText =
+"पाठअनुसारका Reading Materials, Grammar तथा परीक्षा तयारीका महत्वपूर्ण सामग्रीहरू एकै ठाउँमा हेर्नुहोस्।";
+
+document.getElementById("mainButton").innerText =
+"📖 सम्पूर्ण अंग्रेजी नोट्स हेर्नुहोस् →";
+
+document.getElementById("unitTitle").innerText =
+"📚 कक्षा १० अंग्रेजीका एकाइहरू";
+
+document.getElementById("unitSubtitle").innerText =
+"अंग्रेजी विषयका पाठअनुसारका मुख्य विषयवस्तुहरू";
+
+document.getElementById("grammarTitle").innerText =
+"📝 अंग्रेजी व्याकरण";
+
+document.getElementById("grammarText").innerText =
+"SEE परीक्षाका लागि महत्वपूर्ण अंग्रेजी व्याकरणका विषयहरू तथा अभ्यास सामग्री अध्ययन गर्नुहोस्।";
+
+document.getElementById("grammarButton").innerText =
+"📘 अंग्रेजी व्याकरण हेर्नुहोस् →";
+
+document.getElementById("shareTitle").innerText =
+"📢 सेयर गर्नुहोस् र सहयोग गर्नुहोस्";
+
+document.getElementById("shareText").innerText =
+"यी अंग्रेजी अध्ययन सामग्री आफ्ना साथीहरू तथा विभिन्न शैक्षिक समूहहरूमा सेयर गरेर अन्य SEE विद्यार्थीहरूलाई सहयोग गर्नुहोस्।";
+
+nepaliBtn.classList.add("active");
+englishBtn.classList.remove("active");
+
+}
+
+else{
+
+document.getElementById("heroTitle").innerText =
+"📖 SEE English Notes";
+
+document.getElementById("heroSubtitle").innerText =
+"Class 10 English • SEE Examination Preparation • Important Notes";
+
+document.getElementById("introTitle").innerText =
+"📚 Class 10 English Notes";
+
+document.getElementById("introText").innerText =
+"Complete Class 10 English study materials for SEE examination preparation. Find important notes, reading materials, grammar topics, exercises and lesson-wise resources in one place.";
+
+document.getElementById("mainTitle").innerText =
+"English Notes for SEE";
+
+document.getElementById("mainText").innerText =
+"Access the complete Class 10 English notes, including lesson-wise reading materials, grammar and examination-oriented resources.";
+
+document.getElementById("mainButton").innerText =
+"📖 Read Complete English Notes →";
+
+document.getElementById("unitTitle").innerText =
+"📚 Class 10 English Units";
+
+document.getElementById("unitSubtitle").innerText =
+"Lesson-wise topics covered in the English course";
+
+document.getElementById("grammarTitle").innerText =
+"📝 English Grammar";
+
+document.getElementById("grammarText").innerText =
+"Strengthen your English grammar for SEE examination with important grammar topics and practice materials.";
+
+document.getElementById("grammarButton").innerText =
+"📘 Explore English Grammar →";
+
+document.getElementById("shareTitle").innerText =
+"📢 Share & Help Others";
+
+document.getElementById("shareText").innerText =
+"Share these English study materials with your friends and educational groups to help other SEE students.";
+
+englishBtn.classList.add("active");
+nepaliBtn.classList.remove("active");
+
+}
+
+}
+
+</script>
+
+
+</body>
+  </html>
