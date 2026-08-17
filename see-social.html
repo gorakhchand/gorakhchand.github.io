@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SEE Social Studies Notes | Gorakh Chand</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f9ff;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        90deg,
+        #6d28d9,
+        #2563eb,
+        #0891b2
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:17px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+}
+
+nav a:hover,
+nav a.active{
+    color:#6d28d9;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    padding:75px 20px;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+
+    radial-gradient(
+        circle at 15% 20%,
+        #22d3ee55,
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 85% 80%,
+        #f472b655,
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #4338ca,
+        #7c3aed,
+        #0284c7
+    );
+}
+
+.hero h1{
+    font-size:46px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:19px;
+    max-width:850px;
+    margin:auto;
+}
+
+
+/* ================= LANGUAGE ================= */
+
+.language-switch{
+    margin:20px auto 0;
+
+    display:flex;
+    justify-content:center;
+    gap:5px;
+
+    width:max-content;
+
+    padding:5px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.35);
+}
+
+.language-switch button{
+    border:none;
+    background:transparent;
+
+    color:white;
+
+    padding:7px 14px;
+
+    border-radius:22px;
+
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.language-switch button.active{
+    background:white;
+    color:#4338ca;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.container{
+    max-width:1050px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+
+/* ================= INTRO ================= */
+
+.intro-box{
+
+    background:white;
+
+    padding:32px;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 8px 28px rgba(0,0,0,.07);
+
+    border-left:6px solid #6d28d9;
+
+    margin-bottom:45px;
+}
+
+.intro-box h2{
+    color:#5b21b6;
+    margin-bottom:10px;
+}
+
+.intro-box p{
+    color:#4b5563;
+    font-size:16px;
+}
+
+
+/* ================= NOTES CARD ================= */
+
+.notes-wrapper{
+    display:flex;
+    justify-content:center;
+}
+
+.note-card{
+
+    width:100%;
+    max-width:700px;
+
+    background:white;
+
+    padding:40px 35px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    border-top:6px solid #0891b2;
+
+    transition:.3s;
+}
+
+.note-card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 18px 38px rgba(0,0,0,.13);
+}
+
+.note-icon{
+    font-size:65px;
+    margin-bottom:10px;
+}
+
+.note-card h2{
+
+    color:#0e7490;
+
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.note-card p{
+
+    color:#6b7280;
+
+    font-size:16px;
+
+    margin-bottom:25px;
+}
+
+
+/* ================= BUTTON ================= */
+
+.note-btn{
+
+    display:inline-block;
+
+    padding:13px 28px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #4338ca,
+        #0891b2
+    );
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    box-shadow:
+    0 7px 18px rgba(67,56,202,.25);
+
+    transition:.3s;
+}
+
+.note-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 12px 25px rgba(67,56,202,.35);
+}
+
+
+/* ================= FEATURES ================= */
+
+.features{
+
+    margin-top:45px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.feature{
+
+    background:white;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:
+    0 7px 22px rgba(0,0,0,.06);
+}
+
+.feature-icon{
+    font-size:35px;
+    margin-bottom:7px;
+}
+
+.feature h3{
+    color:#4338ca;
+    margin-bottom:5px;
+}
+
+.feature p{
+    color:#6b7280;
+    font-size:14px;
+}
+
+
+/* ================= SHARE ================= */
+
+.share-box{
+
+    margin-top:55px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef2ff,
+        #ecfeff
+    );
+
+    border:1px solid #ddd6fe;
+}
+
+.share-box h2{
+
+    color:#5b21b6;
+
+    margin-bottom:10px;
+}
+
+.share-box p{
+    color:#6b7280;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    color:#9ca3af;
+
+    background:#111827;
+}
+
+footer p{
+    margin:4px 0;
+}
+
+footer a{
+    color:#a5b4fc;
+    text-decoration:none;
+}
+
+
+/* ================= TABLET ================= */
+
+@media(max-width:950px){
+
+    .menu{
+        display:block;
+    }
+
+    nav ul{
+
+        display:none;
+
+        position:absolute;
+
+        top:65px;
+        left:0;
+
+        width:100%;
+
+        padding:20px;
+
+        background:white;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+
+        box-shadow:
+        0 8px 20px rgba(0,0,0,.1);
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .features{
+        grid-template-columns:
+        1fr 1fr;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .hero{
+        padding:55px 15px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .container{
+        padding:45px 15px;
+    }
+
+    .intro-box{
+        padding:24px;
+    }
+
+    .note-card{
+        padding:30px 22px;
+    }
+
+    .note-card h2{
+        font-size:24px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .language-switch button{
+        padding:6px 11px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="navbar">
+
+<div class="logo">
+Gorakh Chand
+</div>
+
+<div
+class="menu"
+onclick="toggleMenu()">
+
+☰
+
+</div>
+
+<ul id="navMenu">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="education.html">
+Education
+</a>
+</li>
+
+<li>
+<a href="achievements.html">
+Achievements
+</a>
+</li>
+
+<li>
+<a
+href="educational-content.html"
+class="active">
+Educational Content
+</a>
+</li>
+
+<li>
+<a href="articles.html">
+Articles
+</a>
+</li>
+
+<li>
+<a href="gallery.html">
+Gallery
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<h1 id="heroTitle">
+🌍 Social Studies Notes
+</h1>
+
+<p id="heroSubtitle">
+SEE Class 10 • Social Studies • Important Notes • Exam Preparation
+</p>
+
+
+<div class="language-switch">
+
+<button
+id="englishBtn"
+onclick="setLanguage('en')">
+
+English
+
+</button>
+
+<button
+id="nepaliBtn"
+class="active"
+onclick="setLanguage('ne')">
+
+नेपाली
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+
+<!-- ================= INTRO ================= -->
+
+<div class="intro-box">
+
+<h2 id="introTitle">
+📚 कक्षा १० सामाजिक अध्ययन
+</h2>
+
+<p id="introText">
+
+SEE परीक्षा तयारीका लागि कक्षा १० सामाजिक अध्ययनका
+महत्वपूर्ण नोटहरू यहाँ उपलब्ध छन्।
+
+<br><br>
+
+यस सामग्रीमा सामाजिक अध्ययनका विभिन्न एकाइ तथा
+पाठहरूका महत्वपूर्ण अवधारणा, प्रश्न–उत्तर,
+अभ्यास तथा परीक्षा केन्द्रित सामग्रीहरू समावेश छन्।
+सामाजिक अध्ययनका एकाइहरूमा समाज, विकास, सामाजिक
+मूल्य–मान्यता, नागरिक चेतना, भूगोल, इतिहास,
+आर्थिक क्रियाकलाप, अन्तर्राष्ट्रिय सम्बन्ध तथा
+जनसङ्ख्या व्यवस्थापन लगायतका विषयहरू समेटिएका छन्।
+
+</p>
+
+</div>
+
+
+<!-- ================= NOTE CARD ================= -->
+
+<div class="notes-wrapper">
+
+<div class="note-card">
+
+<div class="note-icon">
+🌍
+</div>
+
+<h2 id="cardTitle">
+Social Studies Notes
+</h2>
+
+<p id="cardText">
+
+कक्षा १० सामाजिक अध्ययनका सम्पूर्ण महत्वपूर्ण
+नोटहरू, पाठगत सामग्री तथा SEE परीक्षा तयारीका
+लागि उपयोगी अध्ययन सामग्री हेर्नुहोस्।
+
+</p>
+
+<a
+href="https://importantedunotes.com/see-class-10-social-studies-notes-nepal/"
+target="_blank"
+rel="noopener noreferrer"
+class="note-btn"
+id="noteButton">
+
+📖 नोटहरू हेर्नुहोस् →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- ================= FEATURES ================= -->
+
+<div class="features">
+
+
+<div class="feature">
+
+<div class="feature-icon">
+📚
+</div>
+
+<h3 id="feature1Title">
+पाठगत नोट
+</h3>
+
+<p id="feature1Text">
+एकाइ तथा पाठअनुसारका अध्ययन सामग्री।
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+✍️
+</div>
+
+<h3 id="feature2Title">
+प्रश्न–उत्तर
+</h3>
+
+<p id="feature2Text">
+परीक्षा तयारीका लागि महत्वपूर्ण प्रश्न–उत्तर।
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🎯
+</div>
+
+<h3 id="feature3Title">
+SEE Preparation
+</h3>
+
+<p id="feature3Text">
+परीक्षा केन्द्रित महत्वपूर्ण अध्ययन सामग्री।
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= SHARE ================= -->
+
+<div class="share-box">
+
+<h2 id="shareTitle">
+📢 Share & Help Others
+</h2>
+
+<p id="shareText">
+
+यो जानकारी आफ्ना साथीहरू तथा विभिन्न शैक्षिक
+समूहहरूमा सेयर गरेर सबैलाई सहयोग गर्नुहोस्।
+
+</p>
+
+<br>
+
+<p>
+🖋 <strong>By: Important Notes</strong>
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
+
+<p>
+Teaching Professional • Educator • Computer Science Teacher
+</p>
+
+<p>
+🌐
+<a
+href="https://importantedunotes.com"
+target="_blank"
+rel="noopener noreferrer">
+
+importantedunotes.com
+
+</a>
+</p>
+
+</footer>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+
+document
+.getElementById("navMenu")
+.classList
+.toggle("show");
+
+}
+
+
+/* ================= LANGUAGE ================= */
+
+function setLanguage(lang){
+
+const englishBtn =
+document.getElementById("englishBtn");
+
+const nepaliBtn =
+document.getElementById("nepaliBtn");
+
+
+if(lang === "en"){
+
+document.getElementById("heroTitle").innerText =
+"🌍 Social Studies Notes";
+
+document.getElementById("heroSubtitle").innerText =
+"SEE Class 10 • Social Studies • Important Notes • Exam Preparation";
+
+document.getElementById("introTitle").innerText =
+"📚 Class 10 Social Studies";
+
+document.getElementById("introText").innerHTML =
+"Important Social Studies notes for Grade 10 SEE examination preparation are available here.<br><br>The materials include important concepts, questions and answers, exercises and examination-oriented resources covering different units and lessons of Social Studies.";
+
+document.getElementById("cardTitle").innerText =
+"Social Studies Notes";
+
+document.getElementById("cardText").innerText =
+"Explore important notes, lesson-wise materials and useful study resources for Class 10 Social Studies and SEE examination preparation.";
+
+document.getElementById("noteButton").innerText =
+"📖 Read Notes →";
+
+document.getElementById("feature1Title").innerText =
+"Lesson-wise Notes";
+
+document.getElementById("feature1Text").innerText =
+"Study materials organized according to units and lessons.";
+
+document.getElementById("feature2Title").innerText =
+"Questions & Answers";
+
+document.getElementById("feature2Text").innerText =
+"Important questions and answers for examination preparation.";
+
+document.getElementById("feature3Title").innerText =
+"SEE Preparation";
+
+document.getElementById("feature3Text").innerText =
+"Important examination-oriented study materials.";
+
+document.getElementById("shareTitle").innerText =
+"📢 Share & Help Others";
+
+document.getElementById("shareText").innerText =
+"Share this information with your friends and educational groups to help others.";
+
+englishBtn.classList.add("active");
+nepaliBtn.classList.remove("active");
+
+}
+
+else{
+
+document.getElementById("heroTitle").innerText =
+"🌍 सामाजिक अध्ययन नोट";
+
+document.getElementById("heroSubtitle").innerText =
+"SEE कक्षा १० • सामाजिक अध्ययन • महत्वपूर्ण नोट • परीक्षा तयारी";
+
+document.getElementById("introTitle").innerText =
+"📚 कक्षा १० सामाजिक अध्ययन";
+
+document.getElementById("introText").innerHTML =
+"SEE परीक्षा तयारीका लागि कक्षा १० सामाजिक अध्ययनका महत्वपूर्ण नोटहरू यहाँ उपलब्ध छन्।<br><br>यस सामग्रीमा सामाजिक अध्ययनका विभिन्न एकाइ तथा पाठहरूका महत्वपूर्ण अवधारणा, प्रश्न–उत्तर, अभ्यास तथा परीक्षा केन्द्रित सामग्रीहरू समावेश छन्। सामाजिक अध्ययनका एकाइहरूमा समाज, विकास, सामाजिक मूल्य–मान्यता, नागरिक चेतना, भूगोल, इतिहास, आर्थिक क्रियाकलाप, अन्तर्राष्ट्रिय सम्बन्ध तथा जनसङ्ख्या व्यवस्थापन लगायतका विषयहरू समेटिएका छन्।";
+
+document.getElementById("cardTitle").innerText =
+"सामाजिक अध्ययन नोट";
+
+document.getElementById("cardText").innerText =
+"कक्षा १० सामाजिक अध्ययनका सम्पूर्ण महत्वपूर्ण नोटहरू, पाठगत सामग्री तथा SEE परीक्षा तयारीका लागि उपयोगी अध्ययन सामग्री हेर्नुहोस्।";
+
+document.getElementById("noteButton").innerText =
+"📖 नोटहरू हेर्नुहोस् →";
+
+document.getElementById("feature1Title").innerText =
+"पाठगत नोट";
+
+document.getElementById("feature1Text").innerText =
+"एकाइ तथा पाठअनुसारका अध्ययन सामग्री।";
+
+document.getElementById("feature2Title").innerText =
+"प्रश्न–उत्तर";
+
+document.getElementById("feature2Text").innerText =
+"परीक्षा तयारीका लागि महत्वपूर्ण प्रश्न–उत्तर।";
+
+document.getElementById("feature3Title").innerText =
+"SEE तयारी";
+
+document.getElementById("feature3Text").innerText =
+"परीक्षा केन्द्रित महत्वपूर्ण अध्ययन सामग्री।";
+
+document.getElementById("shareTitle").innerText =
+"📢 सेयर गर्नुहोस् र सहयोग गर्नुहोस्";
+
+document.getElementById("shareText").innerText =
+"यो जानकारी आफ्ना साथीहरू तथा विभिन्न शैक्षिक समूहहरूमा सेयर गरेर सबैलाई सहयोग गर्नुहोस्।";
+
+nepaliBtn.classList.add("active");
+englishBtn.classList.remove("active");
+
+}
+
+}
+
+</script>
+
+
+</body>
+</html>
