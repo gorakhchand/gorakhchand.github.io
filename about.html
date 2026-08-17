@@ -63,6 +63,15 @@ nav a:hover{
     color:#2563eb;
 }
 
+/* MOBILE MENU BUTTON */
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:#374151;
+}
+
 /* ================= HERO ================= */
 
 .hero{
@@ -260,15 +269,41 @@ footer{
 
 @media(max-width:850px){
 
+    /* MOBILE NAVBAR */
+
     .navbar{
-        flex-direction:column;
-        gap:10px;
+        flex-direction:row;
+        gap:0;
+    }
+
+    .menu{
+        display:block;
     }
 
     nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:8px;
+        display:none;
+
+        position:absolute;
+        top:65px;
+        left:0;
+
+        width:100%;
+
+        padding:20px;
+
+        background:white;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+
+        box-shadow:0 8px 20px rgba(0,0,0,.1);
+    }
+
+    nav ul.show{
+        display:flex;
     }
 
     .profile-box{
@@ -329,7 +364,13 @@ footer{
 Gorakh Chand
 </div>
 
-<ul>
+<!-- MOBILE MENU BUTTON -->
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
+
+<ul id="navMenu">
+
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="education.html">Education</a></li>
@@ -338,6 +379,7 @@ Gorakh Chand
 <li><a href="articles.html">Articles</a></li>
 <li><a href="gallery.html">Gallery</a></li>
 <li><a href="contact.html">Contact</a></li>
+
 </ul>
 
 </div>
@@ -689,9 +731,23 @@ Teaching Professional • Educator • Computer Science Teacher
 </footer>
 
 
-<!-- ================= LANGUAGE SCRIPT ================= -->
+<!-- ================= SCRIPT ================= -->
 
 <script>
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navMenu")
+    .classList
+    .toggle("show");
+
+}
+
+
+/* LANGUAGE */
 
 function changeLanguage(language){
 
@@ -863,4 +919,4 @@ function changeLanguage(language){
 </script>
 
 </body>
-        </html>
+    </html>
