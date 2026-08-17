@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class 10 Computer Science | Gorakh Chand</title>
+
+<meta name="description"
+content="Class 10 Computer Science notes, exercise solutions and exam-oriented materials according to the new curriculum 2083.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f9ff;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        90deg,
+        #6d28d9,
+        #2563eb,
+        #0891b2
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:17px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#6d28d9;
+}
+
+
+/* ================= MOBILE MENU ================= */
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    padding:80px 20px;
+    text-align:center;
+    color:white;
+
+    background:
+    radial-gradient(
+        circle at 15% 20%,
+        #22d3ee55,
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 85% 80%,
+        #f472b655,
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #4338ca,
+        #7c3aed,
+        #0284c7
+    );
+}
+
+.hero h1{
+    font-size:45px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:850px;
+    margin:auto;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+
+/* ================= INTRO ================= */
+
+.intro{
+    background:white;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.07);
+
+    margin-bottom:40px;
+
+    text-align:center;
+}
+
+.intro h2{
+    color:#5b21b6;
+    margin-bottom:12px;
+}
+
+.intro p{
+    color:#4b5563;
+}
+
+
+/* ================= UNIT TITLE ================= */
+
+.unit-title{
+    margin:40px 0 22px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.unit-title h2{
+    color:#4338ca;
+    font-size:27px;
+}
+
+.unit-number{
+    background:#4338ca;
+    color:white;
+
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+}
+
+
+/* ================= LESSON GRID ================= */
+
+.lesson-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:20px;
+}
+
+
+/* ================= LESSON CARD ================= */
+
+.lesson{
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.07);
+
+    border-left:5px solid #6d28d9;
+
+    transition:.3s;
+
+    position:relative;
+}
+
+.lesson:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 14px 30px rgba(0,0,0,.12);
+}
+
+.lesson-number{
+    color:#7c3aed;
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.lesson h3{
+    color:#312e81;
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+.lesson p{
+    color:#6b7280;
+    font-size:14px;
+}
+
+
+/* ================= BUTTON ================= */
+
+.lesson-btn{
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:9px 19px;
+
+    border-radius:25px;
+
+    background:#eef2ff;
+
+    color:#4338ca;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.lesson-btn:hover{
+    background:#4338ca;
+    color:white;
+}
+
+
+/* ================= UNIT 4 SPECIAL ================= */
+
+.python-unit{
+    margin-top:25px;
+}
+
+
+/* ================= NOTE ================= */
+
+.note{
+    margin-top:50px;
+
+    padding:32px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef2ff,
+        #f5f3ff
+    );
+}
+
+.note h2{
+    color:#5b21b6;
+    margin-bottom:10px;
+}
+
+.note p{
+    color:#4b5563;
+}
+
+
+/* ================= BACK BUTTON ================= */
+
+.back{
+    text-align:center;
+    margin-top:40px;
+}
+
+.back a{
+    display:inline-block;
+
+    padding:11px 24px;
+
+    border-radius:25px;
+
+    background:#4338ca;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.back a:hover{
+    background:#312e81;
+
+    transform:translateY(-2px);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:28px 20px;
+
+    text-align:center;
+
+    color:#9ca3af;
+
+    background:#111827;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px){
+
+    .menu{
+        display:block;
+    }
+
+    .navbar{
+        position:relative;
+    }
+
+    nav ul{
+        display:none;
+
+        position:absolute;
+
+        top:65px;
+
+        left:0;
+
+        width:100%;
+
+        padding:20px;
+
+        background:white;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        box-shadow:
+        0 8px 20px rgba(0,0,0,.1);
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .lesson-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .hero{
+        padding:65px 15px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .container{
+        padding:45px 15px;
+    }
+
+    .intro{
+        padding:25px 20px;
+    }
+
+    .unit-title h2{
+        font-size:22px;
+    }
+
+    .lesson{
+        padding:22px;
+    }
+
+    nav a{
+        font-size:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+<div class="navbar">
+
+<div class="logo">
+Gorakh Chand
+</div>
+
+
+<div
+class="menu"
+onclick="toggleMenu()">
+
+☰
+
+</div>
+
+
+<ul id="navMenu">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="education.html">
+Education
+</a>
+</li>
+
+<li>
+<a href="achievements.html">
+Achievements
+</a>
+</li>
+
+<li>
+<a
+href="educational-content.html"
+class="active">
+
+Educational Content
+
+</a>
+</li>
+
+<li>
+<a href="articles.html">
+Articles
+</a>
+</li>
+
+<li>
+<a href="gallery.html">
+Gallery
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<h1>
+Class 10 Computer Science
+</h1>
+
+<p>
+कक्षा १० कम्प्युटर विज्ञान — नयाँ पाठ्यक्रम २०८३
+</p>
+
+</section>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+
+<!-- INTRO -->
+
+<div class="intro">
+
+<h2>
+📚 Computer Science – SEE 2083
+</h2>
+
+<p>
+कक्षा १० कम्प्युटर विज्ञानका सम्पूर्ण पाठका
+Important Notes, Exercise Solutions तथा
+Exam-Oriented सामग्री यहाँ उपलब्ध छन्।
+</p>
+
+</div>
+
+
+
+<!-- ================= UNIT 1 ================= -->
+
+<div class="unit-title">
+
+<div class="unit-number">
+1
+</div>
+
+<h2>
+Computer Network and Communication
+</h2>
+
+</div>
+
+
+<div class="lesson-grid">
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 01
+</div>
+
+<h3>
+Computer Network and Communication
+</h3>
+
+<p>
+Computer Network तथा Communication सम्बन्धी
+Important Notes र Exam-Oriented सामग्री।
+</p>
+
+<a
+href="https://importantedunotes.com/computer-network-and-communication/"
+target="_blank"
+rel="noopener noreferrer"
+class="lesson-btn">
+
+Open Lesson →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= UNIT 2 ================= -->
+
+<div class="unit-title">
+
+<div class="unit-number">
+2
+</div>
+
+<h2>
+Database Management System
+</h2>
+
+</div>
+
+
+<div class="lesson-grid">
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 02
+</div>
+
+<h3>
+Database Management System (DBMS)
+</h3>
+
+<p>
+DBMS, database concepts तथा exam-oriented
+learning materials।
+</p>
+
+<a
+href="https://importantedunotes.com/database-management-system/"
+target="_blank"
+rel="noopener noreferrer"
+class="lesson-btn">
+
+Open Lesson →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= UNIT 3 ================= -->
+
+<div class="unit-title">
+
+<div class="unit-number">
+3
+</div>
+
+<h2>
+Multimedia
+</h2>
+
+</div>
+
+
+<div class="lesson-grid">
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 03
+</div>
+
+<h3>
+Multimedia
+</h3>
+
+<p>
+Multimedia सम्बन्धी important notes,
+questions तथा learning materials।
+</p>
+
+<a
+href="https://importantedunotes.com/multimedia/"
+target="_blank"
+rel="noopener noreferrer"
+class="lesson-btn">
+
+Open Lesson →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= UNIT 4 ================= -->
+
+<div class="unit-title">
+
+<div class="unit-number">
+4
+</div>
+
+<h2>
+Programming Concepts and Python
+</h2>
+
+</div>
+
+
+<div class="lesson-grid">
+
+
+<!-- LESSON 4 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 04
+</div>
+
+<h3>
+Revision of the Basics of Python
+</h3>
+
+<p>
+Python programming का basic concepts,
+syntax तथा revision materials।
+</p>
+
+<a
+href="https://importantedunotes.com/revision-of-the-basics-of-python/"
+target="_blank"
+rel="noopener noreferrer"
+class="lesson-btn">
+
+Open Lesson →
+
+</a>
+
+</div>
+
+
+
+<!-- LESSON 5 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 05
+</div>
+
+<h3>
+User-defined Functions and Passing Parameters
+</h3>
+
+<p>
+Functions, parameters तथा Python programming
+का practical learning material।
+</p>
+
+<a
+href="https://importantedunotes.com/user-defined-functions/"
+target="_blank"
+rel="noopener noreferrer"
+class="lesson-btn">
+
+Open Lesson →
+
+</a>
+
+</div>
+
+
+
+<!-- LESSON 6 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 06
+</div>
+
+<h3>
+Concept of Library and Packages
+</h3>
+
+<p>
+Python libraries, packages तथा programming
+resources सम्बन्धी notes।
+</p>
+
+<a
+href="https://importantedunotes.com/concept-of-library/"
+target="_blank"
+rel="noopener noreferrer"
+class="lesson-btn">
+
+Open Lesson →
+
+</a>
+
+</div>
+
+
+
+<!-- LESSON 7 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 07
+</div>
+
+<h3>
+File Handling using Panda Library
+</h3>
+
+<p>
+File handling तथा Panda Library सम्बन्धी
+important learning materials।
+</p>
+
+<a
+href="https://importantedunotes.com/file-handling-using-panda/"
+target="_blank"
+rel="noopener noreferrer"
+class="lesson-btn">
+
+Open Lesson →
+
+</a>
+
+</div>
+
+
+
+<!-- LESSON 8 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 08
+</div>
+
+<h3>
+Introduction to Data Visualization
+</h3>
+
+<p>
+Data visualization तथा graphical representation
+सम्बन्धी learning materials।
+</p>
+
+<a
+href="https://importantedunotes.com/introduction-to-data-visualization/"
+target="_blank"
+rel="noopener noreferrer"
+class="lesson-btn">
+
+Open Lesson →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= UNIT 5 ================= -->
+
+<div class="unit-title">
+
+<div class="unit-number">
+5
+</div>
+
+<h2>
+AI and Contemporary Technologies
+</h2>
+
+</div>
+
+
+<div class="lesson-grid">
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 09
+</div>
+
+<h3>
+AI and Contemporary Technologies
+</h3>
+
+<p>
+Artificial Intelligence तथा Contemporary
+Technologies सम्बन्धी important notes।
+</p>
+
+<a
+href="https://importantedunotes.com/ai-and-contemporary-technologies/"
+target="_blank"
+rel="noopener noreferrer"
+class="lesson-btn">
+
+Open Lesson →
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= NOTE ================= -->
+
+<div class="note">
+
+<h2>
+📖 SEE २०८३ Preparation
+</h2>
+
+<p>
+SEE २०८३ को तयारी गरिरहेका विद्यार्थीहरूका लागि
+कक्षा १० कम्प्युटर विज्ञानका यी सामग्री उपयोगी
+हुनेछन्। Notes, exercises तथा exam-oriented
+materials क्रमशः थपिँदै जानेछन्।
+</p>
+
+</div>
+
+
+
+<!-- ================= BACK ================= -->
+
+<div class="back">
+
+<a href="educational-content.html">
+← Back to Educational Content
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
+
+<p>
+Teaching Professional • Educator • Computer Science Teacher
+</p>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function toggleMenu(){
+
+    document
+    .getElementById("navMenu")
+    .classList
+    .toggle("show");
+
+}
+
+</script>
+
+
+</body>
+</html>
