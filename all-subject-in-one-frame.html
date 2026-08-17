@@ -174,20 +174,6 @@ nav a.active{
     padding:55px 20px;
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.section-title h2{
-    color:#5b21b6;
-    font-size:32px;
-}
-
-.section-title p{
-    color:#6b7280;
-}
-
 
 /* ================= INTRO ================= */
 
@@ -213,114 +199,24 @@ nav a.active{
 }
 
 
-/* ================= BOOK GRID ================= */
-
-.book-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:22px;
-}
-
-
-/* ================= BOOK CARD ================= */
-
-.book-card{
-
-    background:white;
-
-    padding:25px 22px;
-
-    border-radius:20px;
-
-    box-shadow:
-    0 8px 25px rgba(0,0,0,.07);
-
-    border-top:4px solid #6d28d9;
-
-    transition:.3s;
-
-    display:flex;
-    flex-direction:column;
-}
-
-.book-card:hover{
-
-    transform:translateY(-6px);
-
-    box-shadow:
-    0 15px 32px rgba(0,0,0,.12);
-}
-
-.book-icon{
-
-    font-size:40px;
-
-    margin-bottom:8px;
-}
-
-.book-card h3{
-
-    color:#4338ca;
-
-    font-size:20px;
-
-    margin-bottom:8px;
-}
-
-.book-card p{
-
-    color:#6b7280;
-
-    font-size:14px;
-
-    flex:1;
-}
-
-
-/* ================= PDF BUTTON ================= */
-
-.pdf-btn{
-
-    display:inline-block;
-
-    margin-top:18px;
-
-    padding:10px 17px;
-
-    border-radius:25px;
-
-    background:#eef2ff;
-
-    color:#4338ca;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    text-align:center;
-
-    transition:.3s;
-}
-
-.pdf-btn:hover{
-
-    background:#4338ca;
-
-    color:white;
-
-    transform:translateX(4px);
-}
-
-
 /* ================= NOTES SECTION ================= */
 
 .notes-section{
+    margin-top:10px;
+}
 
-    margin-top:60px;
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    color:#5b21b6;
+    font-size:32px;
+}
+
+.section-title p{
+    color:#6b7280;
 }
 
 .notes-grid{
@@ -332,6 +228,9 @@ nav a.active{
 
     gap:22px;
 }
+
+
+/* ================= NOTE CARD ================= */
 
 .note-card{
 
@@ -347,6 +246,9 @@ nav a.active{
     border-top:4px solid #0891b2;
 
     transition:.3s;
+
+    display:flex;
+    flex-direction:column;
 }
 
 .note-card:hover{
@@ -378,7 +280,12 @@ nav a.active{
     font-size:14px;
 
     margin-top:5px;
+
+    flex:1;
 }
+
+
+/* ================= NOTE BUTTON ================= */
 
 .note-btn{
 
@@ -386,7 +293,7 @@ nav a.active{
 
     margin-top:15px;
 
-    padding:9px 17px;
+    padding:10px 18px;
 
     border-radius:25px;
 
@@ -398,6 +305,8 @@ nav a.active{
 
     font-weight:bold;
 
+    text-align:center;
+
     transition:.3s;
 }
 
@@ -406,6 +315,8 @@ nav a.active{
     background:#0e7490;
 
     color:white;
+
+    transform:translateX(4px);
 }
 
 
@@ -506,7 +417,6 @@ footer a{
         display:flex;
     }
 
-    .book-grid,
     .notes-grid{
 
         grid-template-columns:
@@ -540,9 +450,7 @@ footer a{
         font-size:28px;
     }
 
-    .book-grid,
     .notes-grid{
-
         grid-template-columns:1fr;
     }
 
@@ -550,9 +458,23 @@ footer a{
         padding:23px;
     }
 
-    .book-card,
     .note-card{
         padding:23px;
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .language-switch button{
+        padding:6px 11px;
     }
 
 }
@@ -575,6 +497,7 @@ footer a{
 Gorakh Chand
 </div>
 
+
 <div
 class="menu"
 onclick="toggleMenu()">
@@ -582,6 +505,7 @@ onclick="toggleMenu()">
 ☰
 
 </div>
+
 
 <ul id="navMenu">
 
@@ -610,9 +534,12 @@ Achievements
 </li>
 
 <li>
-<a href="educational-content.html"
+<a
+href="educational-content.html"
 class="active">
+
 Educational Content
+
 </a>
 </li>
 
@@ -650,7 +577,7 @@ Contact
 </h1>
 
 <p id="heroSubtitle">
-SEE Class 10 • CDC Curriculum 2083 • New Textbooks • Study Notes
+SEE Class 10 • Important Notes • Exam Preparation
 </p>
 
 
@@ -689,347 +616,17 @@ onclick="setLanguage('ne')">
 
 <p id="introText">
 
-पाठ्यक्रम विकास केन्द्र (CDC) ले शैक्षिक सत्र २०८३ का लागि
-कक्षा १० का नयाँ तथा परिमार्जित पाठ्यपुस्तकहरू सार्वजनिक गरेको छ।
-यस अन्तर्गत ऐच्छिक गणित, कम्प्युटर विज्ञान र अर्थशास्त्रका
-नयाँ पुस्तकहरू लागू भएका छन्।
+SEE परीक्षा तयारीका लागि कक्षा १० का विभिन्न विषयका
+महत्वपूर्ण अध्ययन नोटहरू यहाँ उपलब्ध छन्।
 
 <br><br>
 
-विद्यार्थी र शिक्षकहरूको सहजताका लागि सबै विषयका नयाँ
-PDF Links र परीक्षा तयारीका लागि विशेष Important Notes
-तल उपलब्ध छन्।
+उत्कृष्ट नतिजाको लागि यी नोटहरू अध्ययन गर्नुहोस्।
+पाठअनुसारका महत्वपूर्ण सामग्री, व्याकरण, अभ्यास,
+अवधारणा तथा परीक्षा तयारीका सामग्रीहरू सम्बन्धित
+पृष्ठमा उपलब्ध छन्।
 
 </p>
-
-</div>
-
-
-<!-- ================= PDF BOOKS ================= -->
-
-<div class="section-title">
-
-<h2 id="bookTitle">
-📚 CDC परिमार्जित पाठ्यपुस्तकहरू
-</h2>
-
-<p id="bookSubtitle">
-Class 10 New & Revised Textbooks • PDF Download
-</p>
-
-</div>
-
-
-<div class="book-grid">
-
-
-<!-- MATHEMATICS NEPALI -->
-
-<div class="book-card">
-
-<div class="book-icon">
-🔢
-</div>
-
-<h3>
-Compulsory Mathematics
-</h3>
-
-<p>
-अनिवार्य गणित — नेपाली माध्यम
-</p>
-
-<a
-href="https://drive.google.com/open?id=1J_QTWwuGCQJqSosav8SN76ez9MJ77TLS"
-target="_blank"
-class="pdf-btn">
-
-📥 Download PDF →
-
-</a>
-
-</div>
-
-
-<!-- MATHEMATICS ENGLISH -->
-
-<div class="book-card">
-
-<div class="book-icon">
-➗
-</div>
-
-<h3>
-Compulsory Mathematics
-</h3>
-
-<p>
-Compulsory Mathematics — English Medium
-</p>
-
-<a
-href="https://drive.google.com/open?id=1EsU3LrsJNAJJU_PcX8A_cAB5QeETS6FB"
-target="_blank"
-class="pdf-btn">
-
-📥 Download PDF →
-
-</a>
-
-</div>
-
-
-<!-- ENGLISH -->
-
-<div class="book-card">
-
-<div class="book-icon">
-📖
-</div>
-
-<h3>
-Compulsory English
-</h3>
-
-<p>
-कक्षा १० अनिवार्य अंग्रेजी
-</p>
-
-<a
-href="https://drive.google.com/open?id=1V3O7b2lFDA_pBAOs9n17s32BHRgpIf52"
-target="_blank"
-class="pdf-btn">
-
-📥 Download PDF →
-
-</a>
-
-</div>
-
-
-<!-- NEPALI -->
-
-<div class="book-card">
-
-<div class="book-icon">
-🇳🇵
-</div>
-
-<h3>
-Compulsory Nepali
-</h3>
-
-<p>
-कक्षा १० अनिवार्य नेपाली
-</p>
-
-<a
-href="https://drive.google.com/open?id=1uCn1v25PvWQmJgiWaGn8Bhi3PmjuTQDO"
-target="_blank"
-class="pdf-btn">
-
-📥 Download PDF →
-
-</a>
-
-</div>
-
-
-<!-- SCIENCE -->
-
-<div class="book-card">
-
-<div class="book-icon">
-🔬
-</div>
-
-<h3>
-Science
-</h3>
-
-<p>
-विज्ञान — कक्षा १०
-</p>
-
-<a
-href="https://drive.google.com/open?id=1xGvUfkTrxd7_Uot1ynGH6NDpwC_Ac3nc"
-target="_blank"
-class="pdf-btn">
-
-📥 Download PDF →
-
-</a>
-
-</div>
-
-
-<!-- SOCIAL -->
-
-<div class="book-card">
-
-<div class="book-icon">
-🌍
-</div>
-
-<h3>
-Social Studies
-</h3>
-
-<p>
-सामाजिक शिक्षा — कक्षा १०
-</p>
-
-<a
-href="https://drive.google.com/open?id=1IHENuw-RLzv2Yf7u55syL6NNIaeJ1a94"
-target="_blank"
-class="pdf-btn">
-
-📥 Download PDF →
-
-</a>
-
-</div>
-
-
-<!-- OPTIONAL MATH -->
-
-<div class="book-card">
-
-<div class="book-icon">
-📐
-</div>
-
-<h3>
-Optional Mathematics
-</h3>
-
-<p>
-ऐच्छिक गणित — नयाँ पाठ्यपुस्तक
-</p>
-
-<a
-href="https://drive.google.com/open?id=1RBtPdSyEggu-tHPrXp5H2TXDM9LIXFKh"
-target="_blank"
-class="pdf-btn">
-
-📥 Download PDF →
-
-</a>
-
-</div>
-
-
-<!-- COMPUTER -->
-
-<div class="book-card">
-
-<div class="book-icon">
-💻
-</div>
-
-<h3>
-Computer Science
-</h3>
-
-<p>
-कम्प्युटर विज्ञान — नयाँ पाठ्यपुस्तक
-</p>
-
-<a
-href="https://drive.google.com/open?id=1bydARd7M7zIS9rUdOXZtAiyFkDT3l_U6"
-target="_blank"
-class="pdf-btn">
-
-📥 Download PDF →
-
-</a>
-
-</div>
-
-
-<!-- ACCOUNTANCY -->
-
-<div class="book-card">
-
-<div class="book-icon">
-🧾
-</div>
-
-<h3>
-Accountancy
-</h3>
-
-<p>
-लेखा — कक्षा १०
-</p>
-
-<a
-href="https://drive.google.com/open?id=16wroPZdtIyilN_U190SF_Pm6tvkjDI9G"
-target="_blank"
-class="pdf-btn">
-
-📥 Download PDF →
-
-</a>
-
-</div>
-
-
-<!-- ECONOMICS -->
-
-<div class="book-card">
-
-<div class="book-icon">
-📊
-</div>
-
-<h3>
-Economics
-</h3>
-
-<p>
-अर्थशास्त्र — नयाँ पाठ्यपुस्तक
-</p>
-
-<a
-href="https://drive.google.com/open?id=1zPrRjQoWdFP9Ix6wtj_AwlqvYdS4ydAq"
-target="_blank"
-class="pdf-btn">
-
-📥 Download PDF →
-
-</a>
-
-</div>
-
-
-<!-- HISTORY -->
-
-<div class="book-card">
-
-<div class="book-icon">
-🏛️
-</div>
-
-<h3>
-History
-</h3>
-
-<p>
-इतिहास — कक्षा १०
-</p>
-
-<a
-href="https://drive.google.com/open?id=1drvwuMbik8i6C1_UrD2E2KgVpaePc9DE"
-target="_blank"
-class="pdf-btn">
-
-📥 Download PDF →
-
-</a>
-
-</div>
-
 
 </div>
 
@@ -1045,7 +642,7 @@ class="pdf-btn">
 </h2>
 
 <p id="notesSubtitle">
-Important Study Notes for SEE Examination Preparation
+उत्कृष्ट नतिजाको लागि यी नोटहरू पढ्न नछुटाउनुहोस्।
 </p>
 
 </div>
@@ -1073,6 +670,7 @@ Class 10 English Important Notes and SEE preparation materials.
 <a
 href="https://importantedunotes.com/class-10-english-notes-see-nepal/"
 target="_blank"
+rel="noopener noreferrer"
 class="note-btn">
 
 Read Notes →
@@ -1101,6 +699,7 @@ Nepali Notes
 <a
 href="https://importantedunotes.com/nepali-class-10-vayakaran-see-notes/"
 target="_blank"
+rel="noopener noreferrer"
 class="note-btn">
 
 नोट हेर्नुहोस् →
@@ -1129,6 +728,7 @@ Class 10 Science Important Notes and examination resources.
 <a
 href="https://importantedunotes.com/see-class-10-science-notes/"
 target="_blank"
+rel="noopener noreferrer"
 class="note-btn">
 
 Read Notes →
@@ -1138,7 +738,7 @@ Read Notes →
 </div>
 
 
-<!-- OPTIONAL MATH -->
+<!-- OPTIONAL MATHEMATICS -->
 
 <div class="note-card">
 
@@ -1157,6 +757,7 @@ Optional Mathematics
 <a
 href="https://importantedunotes.com/see-class-10-optional-mathematics-notes/"
 target="_blank"
+rel="noopener noreferrer"
 class="note-btn">
 
 नोट हेर्नुहोस् →
@@ -1166,7 +767,7 @@ class="note-btn">
 </div>
 
 
-<!-- SOCIAL NOTES -->
+<!-- SOCIAL STUDIES -->
 
 <div class="note-card">
 
@@ -1185,6 +786,7 @@ Social Studies
 <a
 href="https://importantedunotes.com/see-class-10-social-studies-notes-nepal/"
 target="_blank"
+rel="noopener noreferrer"
 class="note-btn">
 
 नोट हेर्नुहोस् →
@@ -1194,7 +796,7 @@ class="note-btn">
 </div>
 
 
-<!-- EDUCATION NOTES -->
+<!-- EDUCATION -->
 
 <div class="note-card">
 
@@ -1213,6 +815,7 @@ Education
 <a
 href="https://importantedunotes.com/class-10-education-notes/"
 target="_blank"
+rel="noopener noreferrer"
 class="note-btn">
 
 नोट हेर्नुहोस् →
@@ -1268,7 +871,8 @@ Teaching Professional • Educator • Computer Science Teacher
 🌐
 <a
 href="https://importantedunotes.com"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 
 importantedunotes.com
 
@@ -1312,22 +916,16 @@ document.getElementById("heroTitle").innerText =
 "📚 All Subjects in One Frame";
 
 document.getElementById("heroSubtitle").innerText =
-"SEE Class 10 • CDC Curriculum 2083 • New Textbooks • Study Notes";
+"SEE Class 10 • Important Notes • Exam Preparation";
 
 document.getElementById("introText").innerHTML =
-"CDC has published new and revised textbooks for Grade 10 for the academic session 2083. New textbooks have been introduced for Optional Mathematics, Computer Science and Economics.<br><br>For the convenience of students and teachers, PDF links of the textbooks and important SEE examination notes are provided below.";
-
-document.getElementById("bookTitle").innerText =
-"📚 CDC Revised Textbooks";
-
-document.getElementById("bookSubtitle").innerText =
-"Class 10 New & Revised Textbooks • PDF Download";
+"Important study notes for different Grade 10 subjects are available here for SEE examination preparation.<br><br>Study these notes for better examination preparation. Important concepts, grammar, exercises and other examination-oriented materials are available on the respective pages.";
 
 document.getElementById("notesTitle").innerText =
 "📝 Important Notes for SEE Examination";
 
 document.getElementById("notesSubtitle").innerText =
-"Important Study Notes for SEE Examination Preparation";
+"Do not miss these important study materials for better SEE results.";
 
 document.getElementById("shareTitle").innerText =
 "📢 Share & Help Others";
@@ -1347,28 +945,22 @@ document.getElementById("heroTitle").innerText =
 "📚 सबै विषय एउटै फ्रेममा";
 
 document.getElementById("heroSubtitle").innerText =
-"कक्षा १० • CDC पाठ्यक्रम २०८३ • नयाँ पाठ्यपुस्तक • अध्ययन नोट";
+"कक्षा १० • महत्वपूर्ण नोटहरू • परीक्षा तयारी";
 
 document.getElementById("introText").innerHTML =
-"पाठ्यक्रम विकास केन्द्र (CDC) ले शैक्षिक सत्र २०८३ का लागि कक्षा १० का नयाँ तथा परिमार्जित पाठ्यपुस्तकहरू सार्वजनिक गरेको छ। यस अन्तर्गत ऐच्छिक गणित, कम्प्युटर विज्ञान र अर्थशास्त्रका नयाँ पुस्तकहरू लागू भएका छन्।<br><br>विद्यार्थी र शिक्षकहरूको सहजताका लागि सबै विषयका नयाँ PDF Links र परीक्षा तयारीका लागि विशेष Important Notes तल उपलब्ध छन्।";
-
-document.getElementById("bookTitle").innerText =
-"📚 CDC परिमार्जित पाठ्यपुस्तकहरू";
-
-document.getElementById("bookSubtitle").innerText =
-"कक्षा १० का नयाँ तथा परिमार्जित पाठ्यपुस्तकहरू • PDF Download";
+"SEE परीक्षा तयारीका लागि कक्षा १० का विभिन्न विषयका महत्वपूर्ण अध्ययन नोटहरू यहाँ उपलब्ध छन्।<br><br>उत्कृष्ट नतिजाको लागि यी नोटहरू अध्ययन गर्नुहोस्। पाठअनुसारका महत्वपूर्ण सामग्री, व्याकरण, अभ्यास, अवधारणा तथा परीक्षा तयारीका सामग्रीहरू सम्बन्धित पृष्ठमा उपलब्ध छन्।";
 
 document.getElementById("notesTitle").innerText =
 "📝 SEE परीक्षा तयारीका लागि विशेष नोटहरू";
 
 document.getElementById("notesSubtitle").innerText =
-"उत्कृष्ट नतिजाका लागि महत्वपूर्ण अध्ययन सामग्री";
+"उत्कृष्ट नतिजाको लागि यी नोटहरू पढ्न नछुटाउनुहोस्।";
 
 document.getElementById("shareTitle").innerText =
 "📢 सेयर गर्नुहोस् र सहयोग गर्नुहोस्";
 
 document.getElementById("shareText").innerText =
-"यो जानकारी आफ्ना साथीहरू र विभिन्न शैक्षिक समूहहरूमा सेयर गरेर सबैलाई सहयोग गर्नुहोस्।";
+"यो जानकारी आफ्ना साथीहरू तथा विभिन्न शैक्षिक समूहहरूमा सेयर गरेर सबैलाई सहयोग गर्नुहोस्।";
 
 nepaliBtn.classList.add("active");
 
@@ -1382,4 +974,4 @@ englishBtn.classList.remove("active");
 
 
 </body>
-  </html>
+    </html>
