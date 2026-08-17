@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Optional Mathematics | Gorakh Chand</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f9ff;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+    background:linear-gradient(90deg,#6d28d9,#2563eb,#0891b2);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:17px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+}
+
+nav a:hover,
+nav a.active{
+    color:#6d28d9;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    padding:80px 20px;
+    text-align:center;
+    color:white;
+
+    background:
+    radial-gradient(circle at 15% 20%,#22d3ee55,transparent 30%),
+    radial-gradient(circle at 85% 80%,#f472b655,transparent 30%),
+    linear-gradient(135deg,#4338ca,#7c3aed,#0284c7);
+}
+
+.hero h1{
+    font-size:46px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:19px;
+}
+
+
+/* ================= LANGUAGE ================= */
+
+.language-switch{
+    margin:22px auto 0;
+
+    display:flex;
+    justify-content:center;
+    gap:5px;
+
+    width:max-content;
+
+    padding:5px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    border:1px solid rgba(255,255,255,.35);
+}
+
+.language-switch button{
+    border:none;
+    background:transparent;
+    color:white;
+
+    padding:7px 14px;
+
+    border-radius:22px;
+
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.language-switch button.active{
+    background:white;
+    color:#4338ca;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:36px;
+    color:#5b21b6;
+}
+
+.title p{
+    color:#6b7280;
+}
+
+
+/* ================= UNIT GRID ================= */
+
+.unit-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+
+/* ================= UNIT CARD ================= */
+
+.unit-card{
+    background:white;
+
+    padding:30px 25px;
+
+    border-radius:23px;
+
+    box-shadow:
+    0 9px 28px rgba(0,0,0,.07);
+
+    border-top:5px solid #6d28d9;
+
+    transition:.3s;
+}
+
+.unit-card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 16px 35px rgba(0,0,0,.12);
+}
+
+.unit-icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.unit-number{
+    font-size:14px;
+    font-weight:bold;
+    color:#7c3aed;
+    margin-bottom:5px;
+}
+
+.unit-card h3{
+    color:#4338ca;
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.unit-card p{
+    color:#6b7280;
+}
+
+
+/* ================= EXPLORE BUTTON ================= */
+
+.explore{
+    display:inline-block;
+
+    margin-top:18px;
+
+    padding:10px 20px;
+
+    border-radius:25px;
+
+    background:#eef2ff;
+
+    color:#4338ca;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.explore:hover{
+    background:#4338ca;
+    color:white;
+    transform:translateX(4px);
+}
+
+
+/* ================= INFO BOX ================= */
+
+.info-box{
+    margin-top:50px;
+
+    padding:32px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef2ff,
+        #f5f3ff
+    );
+}
+
+.info-box h2{
+    color:#5b21b6;
+    margin-bottom:10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:28px 20px;
+    text-align:center;
+    color:#9ca3af;
+    background:#111827;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px){
+
+    .menu{
+        display:block;
+    }
+
+    .navbar{
+        position:relative;
+    }
+
+    nav ul{
+        display:none;
+
+        position:absolute;
+
+        top:65px;
+        left:0;
+
+        width:100%;
+
+        padding:20px;
+
+        background:white;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+
+        box-shadow:
+        0 8px 20px rgba(0,0,0,.1);
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .unit-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .unit-grid{
+        grid-template-columns:1fr;
+    }
+
+    .unit-card{
+        padding:28px 22px;
+    }
+
+    nav a{
+        font-size:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="navbar">
+
+<div class="logo">
+Gorakh Chand
+</div>
+
+
+<div
+class="menu"
+onclick="toggleMenu()">
+
+☰
+
+</div>
+
+
+<ul id="navMenu">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="education.html">
+Education
+</a>
+</li>
+
+<li>
+<a href="achievements.html">
+Achievements
+</a>
+</li>
+
+<li>
+<a href="educational-content.html">
+Educational Content
+</a>
+</li>
+
+<li>
+<a href="articles.html">
+Articles
+</a>
+</li>
+
+<li>
+<a href="gallery.html">
+Gallery
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<h1 id="heroTitle">
+Class 10 Optional Mathematics
+</h1>
+
+<p id="heroSubtitle">
+SEE • Optional Mathematics • Notes • Learning Resources
+</p>
+
+
+<div class="language-switch">
+
+<button
+id="englishBtn"
+class="active"
+onclick="setLanguage('en')">
+
+English
+
+</button>
+
+<button
+id="nepaliBtn"
+onclick="setLanguage('ne')">
+
+नेपाली
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+
+<div class="title">
+
+<h2 id="pageTitle">
+Optional Mathematics Notes
+</h2>
+
+<p id="pageSubtitle">
+Class 10 Optional Mathematics — Unit-wise learning materials
+</p>
+
+</div>
+
+
+<!-- ================= UNIT GRID ================= -->
+
+<div class="unit-grid">
+
+
+<!-- UNIT 1 -->
+
+<div class="unit-card">
+
+<div class="unit-icon">
+🔢
+</div>
+
+<div class="unit-number">
+UNIT 1
+</div>
+
+<h3>
+<span class="en">Algebra</span>
+<span class="ne">बीजगणित</span>
+</h3>
+
+<p>
+<span class="en">
+Class 10 Optional Mathematics — Algebra notes and learning materials.
+</span>
+
+<span class="ne">
+कक्षा १० वैकल्पिक गणित — बीजगणितसम्बन्धी नोट तथा अध्ययन सामग्री।
+</span>
+</p>
+
+<a
+href="https://importantedunotes.com/unit-one-algebra-opt-math-see"
+target="_blank"
+rel="noopener noreferrer"
+class="explore">
+
+<span class="en">Explore →</span>
+<span class="ne">हेर्नुहोस् →</span>
+
+</a>
+
+</div>
+
+
+<!-- UNIT 2 -->
+
+<div class="unit-card">
+
+<div class="unit-icon">
+📈
+</div>
+
+<div class="unit-number">
+UNIT 2
+</div>
+
+<h3>
+<span class="en">Continuity</span>
+<span class="ne">निरन्तरता</span>
+</h3>
+
+<p>
+<span class="en">
+Notes and learning resources related to continuity.
+</span>
+
+<span class="ne">
+निरन्तरतासम्बन्धी नोट तथा अध्ययन सामग्री।
+</span>
+</p>
+
+<a
+href="https://importantedunotes.com/unit-2-continuity/"
+target="_blank"
+rel="noopener noreferrer"
+class="explore">
+
+<span class="en">Explore →</span>
+<span class="ne">हेर्नुहोस् →</span>
+
+</a>
+
+</div>
+
+
+<!-- UNIT 3 -->
+
+<div class="unit-card">
+
+<div class="unit-icon">
+🧮
+</div>
+
+<div class="unit-number">
+UNIT 3
+</div>
+
+<h3>
+<span class="en">Matrix</span>
+<span class="ne">मेट्रिक्स</span>
+</h3>
+
+<p>
+<span class="en">
+Class 10 Optional Mathematics Matrix notes and resources.
+</span>
+
+<span class="ne">
+कक्षा १० वैकल्पिक गणित मेट्रिक्सका नोट तथा अध्ययन सामग्री।
+</span>
+</p>
+
+<a
+href="https://importantedunotes.com/unit-3-matrix-class-10-opt-math/"
+target="_blank"
+rel="noopener noreferrer"
+class="explore">
+
+<span class="en">Explore →</span>
+<span class="ne">हेर्नुहोस् →</span>
+
+</a>
+
+</div>
+
+
+<!-- UNIT 4 -->
+
+<div class="unit-card">
+
+<div class="unit-icon">
+📍
+</div>
+
+<div class="unit-number">
+UNIT 4
+</div>
+
+<h3>
+<span class="en">Co-ordinate Geometry</span>
+<span class="ne">निर्देशक ज्यामिति</span>
+</h3>
+
+<p>
+<span class="en">
+Coordinate geometry notes, concepts and learning resources.
+</span>
+
+<span class="ne">
+निर्देशक ज्यामितिका नोट, अवधारणा तथा अध्ययन सामग्री।
+</span>
+</p>
+
+<a
+href="https://importantedunotes.com/unit-4-coordinate-geometry/"
+target="_blank"
+rel="noopener noreferrer"
+class="explore">
+
+<span class="en">Explore →</span>
+<span class="ne">हेर्नुहोस् →</span>
+
+</a>
+
+</div>
+
+
+<!-- UNIT 5 -->
+
+<div class="unit-card">
+
+<div class="unit-icon">
+📐
+</div>
+
+<div class="unit-number">
+UNIT 5
+</div>
+
+<h3>
+<span class="en">Trigonometry</span>
+<span class="ne">त्रिकोणमिति</span>
+</h3>
+
+<p>
+<span class="en">
+Trigonometry notes, formulas, examples and exercises.
+</span>
+
+<span class="ne">
+त्रिकोणमितिका नोट, सूत्र, उदाहरण तथा अभ्यासहरू।
+</span>
+</p>
+
+<a
+href="https://importantedunotes.com/unit-5-trigonometry-opt-math/"
+target="_blank"
+rel="noopener noreferrer"
+class="explore">
+
+<span class="en">Explore →</span>
+<span class="ne">हेर्नुहोस् →</span>
+
+</a>
+
+</div>
+
+
+<!-- UNIT 6 -->
+
+<div class="unit-card">
+
+<div class="unit-icon">
+➡️
+</div>
+
+<div class="unit-number">
+UNIT 6
+</div>
+
+<h3>
+<span class="en">Vector</span>
+<span class="ne">भेक्टर</span>
+</h3>
+
+<p>
+<span class="en">
+Vector concepts, formulas, examples and learning materials.
+</span>
+
+<span class="ne">
+भेक्टरका अवधारणा, सूत्र, उदाहरण तथा अध्ययन सामग्री।
+</span>
+</p>
+
+<a
+href="https://importantedunotes.com/unit-6-vector-class-10-opt-math/"
+target="_blank"
+rel="noopener noreferrer"
+class="explore">
+
+<span class="en">Explore →</span>
+<span class="ne">हेर्नुहोस् →</span>
+
+</a>
+
+</div>
+
+
+<!-- UNIT 7 -->
+
+<div class="unit-card">
+
+<div class="unit-icon">
+🔄
+</div>
+
+<div class="unit-number">
+UNIT 7
+</div>
+
+<h3>
+<span class="en">Transformation</span>
+<span class="ne">स्थानान्तरण</span>
+</h3>
+
+<p>
+<span class="en">
+Transformation concepts, examples and mathematical resources.
+</span>
+
+<span class="ne">
+स्थानान्तरणका अवधारणा, उदाहरण तथा गणितीय अध्ययन सामग्री।
+</span>
+</p>
+
+<a
+href="https://importantedunotes.com/unit-7-transformation-opt-math/"
+target="_blank"
+rel="noopener noreferrer"
+class="explore">
+
+<span class="en">Explore →</span>
+<span class="ne">हेर्नुहोस् →</span>
+
+</a>
+
+</div>
+
+
+<!-- UNIT 8 -->
+
+<div class="unit-card">
+
+<div class="unit-icon">
+📊
+</div>
+
+<div class="unit-number">
+UNIT 8
+</div>
+
+<h3>
+<span class="en">Statistics</span>
+<span class="ne">तथ्याङ्कशास्त्र</span>
+</h3>
+
+<p>
+<span class="en">
+Statistics notes, concepts, examples and exercises.
+</span>
+
+<span class="ne">
+तथ्याङ्कशास्त्रका नोट, अवधारणा, उदाहरण तथा अभ्यासहरू।
+</span>
+</p>
+
+<a
+href="https://importantedunotes.com/unit-8-statistics/"
+target="_blank"
+rel="noopener noreferrer"
+class="explore">
+
+<span class="en">Explore →</span>
+<span class="ne">हेर्नुहोस् →</span>
+
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- ================= INFO ================= -->
+
+<div class="info-box">
+
+<h2 id="infoTitle">
+📚 Learn Unit by Unit
+</h2>
+
+<p id="infoText">
+
+Explore Class 10 Optional Mathematics notes,
+concepts, formulas, examples and exercises
+unit by unit.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
+
+<p>
+Teaching Professional • Educator • Computer Science Teacher
+</p>
+
+</footer>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+document
+.getElementById("navMenu")
+.classList
+.toggle("show");
+
+}
+
+
+/* ================= LANGUAGE ================= */
+
+function setLanguage(lang){
+
+const englishBtn =
+document.getElementById("englishBtn");
+
+const nepaliBtn =
+document.getElementById("nepaliBtn");
+
+const enElements =
+document.querySelectorAll(".en");
+
+const neElements =
+document.querySelectorAll(".ne");
+
+
+if(lang === "ne"){
+
+document.getElementById("heroTitle").innerText =
+"कक्षा १० वैकल्पिक गणित";
+
+document.getElementById("heroSubtitle").innerText =
+"SEE • वैकल्पिक गणित • नोट • अध्ययन सामग्री";
+
+document.getElementById("pageTitle").innerText =
+"वैकल्पिक गणितका नोटहरू";
+
+document.getElementById("pageSubtitle").innerText =
+"कक्षा १० वैकल्पिक गणित — एकाइअनुसार अध्ययन सामग्री";
+
+document.getElementById("infoTitle").innerText =
+"📚 एकाइअनुसार सिकौँ";
+
+document.getElementById("infoText").innerText =
+"कक्षा १० वैकल्पिक गणितका नोट, अवधारणा, सूत्र, उदाहरण तथा अभ्यासहरू एकाइअनुसार अध्ययन गर्नुहोस्।";
+
+
+enElements.forEach(function(el){
+    el.style.display = "none";
+});
+
+neElements.forEach(function(el){
+    el.style.display = "inline";
+});
+
+
+englishBtn.classList.remove("active");
+nepaliBtn.classList.add("active");
+
+}
+
+else{
+
+document.getElementById("heroTitle").innerText =
+"Class 10 Optional Mathematics";
+
+document.getElementById("heroSubtitle").innerText =
+"SEE • Optional Mathematics • Notes • Learning Resources";
+
+document.getElementById("pageTitle").innerText =
+"Optional Mathematics Notes";
+
+document.getElementById("pageSubtitle").innerText =
+"Class 10 Optional Mathematics — Unit-wise learning materials";
+
+document.getElementById("infoTitle").innerText =
+"📚 Learn Unit by Unit";
+
+document.getElementById("infoText").innerText =
+"Explore Class 10 Optional Mathematics notes, concepts, formulas, examples and exercises unit by unit.";
+
+
+enElements.forEach(function(el){
+    el.style.display = "inline";
+});
+
+neElements.forEach(function(el){
+    el.style.display = "none";
+});
+
+
+nepaliBtn.classList.remove("active");
+englishBtn.classList.add("active");
+
+}
+
+}
+
+
+/* DEFAULT ENGLISH */
+
+document.querySelectorAll(".ne").forEach(function(el){
+    el.style.display = "none";
+});
+
+</script>
+
+
+</body>
+
+  </html>
