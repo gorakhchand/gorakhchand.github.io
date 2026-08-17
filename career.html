@@ -92,8 +92,6 @@ nav ul{
     display:flex;
     list-style:none;
     gap:17px;
-
-    align-items:center;
 }
 
 nav a{
@@ -137,50 +135,6 @@ nav a::after{
 nav a:hover::after{
     width:100%;
 }
-
-
-/* =========================
-   LANGUAGE BUTTON
-========================= */
-
-.language-btn{
-    border:none;
-    outline:none;
-
-    cursor:pointer;
-
-    padding:8px 14px;
-
-    border-radius:20px;
-
-    color:white;
-
-    font-family:'Poppins',Arial,sans-serif;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    background:
-    linear-gradient(
-        135deg,
-        #6d28d9,
-        #2563eb
-    );
-
-    box-shadow:
-    0 5px 15px rgba(79,70,229,.20);
-
-    transition:.3s;
-}
-
-.language-btn:hover{
-    transform:translateY(-2px);
-
-    box-shadow:
-    0 8px 20px rgba(79,70,229,.30);
-}
-
 
 .menu{
     display:none;
@@ -274,6 +228,82 @@ nav a:hover::after{
     0 0 0 35px rgba(255,255,255,.03),
     0 0 0 75px rgba(255,255,255,.02);
 }
+
+
+/* =========================
+   HERO LANGUAGE SWITCH
+========================= */
+
+.hero-language{
+    position:absolute;
+
+    top:25px;
+    right:25px;
+
+    z-index:10;
+
+    display:flex;
+    align-items:center;
+
+    gap:4px;
+
+    padding:5px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.16);
+
+    border:1px solid rgba(255,255,255,.30);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.15);
+}
+
+.lang-option{
+    border:none;
+
+    background:transparent;
+
+    color:white;
+
+    padding:8px 13px;
+
+    border-radius:22px;
+
+    font-family:'Poppins',Arial,sans-serif;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.lang-option.active{
+    background:white;
+
+    color:#4c1d95;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,.15);
+}
+
+.lang-option:hover{
+    background:rgba(255,255,255,.25);
+}
+
+.lang-option.active:hover{
+    background:white;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
 
 .hero-content{
     position:relative;
@@ -674,6 +704,19 @@ footer p{
         115px 15px 60px;
     }
 
+    .hero-language{
+        top:15px;
+        right:15px;
+
+        padding:4px;
+    }
+
+    .lang-option{
+        padding:7px 10px;
+
+        font-size:12px;
+    }
+
     .hero-icon{
         width:78px;
         height:78px;
@@ -764,64 +807,51 @@ onclick="toggleMenu()">
 <ul id="navMenu">
 
 <li>
-<a href="index.html" data-en="Home" data-ne="गृहपृष्ठ">
+<a href="index.html">
 Home
 </a>
 </li>
 
 <li>
-<a href="about.html" data-en="About Me" data-ne="मेरो बारेमा">
+<a href="about.html">
 About Me
 </a>
 </li>
 
 <li>
-<a href="education.html" data-en="Education" data-ne="शिक्षा">
+<a href="education.html">
 Education
 </a>
 </li>
 
 <li>
-<a href="achievements.html" data-en="Achievements" data-ne="उपलब्धिहरू">
+<a href="achievements.html">
 Achievements
 </a>
 </li>
 
 <li>
-<a href="educational-content.html" data-en="Educational Content" data-ne="शैक्षिक सामग्री">
+<a href="educational-content.html">
 Educational Content
 </a>
 </li>
 
 <li>
-<a href="career.html" data-en="Career" data-ne="करियर">
+<a href="career.html">
 Career
 </a>
 </li>
 
 <li>
-<a href="articles.html" data-en="Articles" data-ne="लेखहरू">
+<a href="articles.html">
 Articles
 </a>
 </li>
 
 <li>
-<a href="contact.html" data-en="Contact" data-ne="सम्पर्क">
+<a href="contact.html">
 Contact
 </a>
-</li>
-
-<li>
-
-<button
-class="language-btn"
-id="languageBtn"
-onclick="toggleLanguage()">
-
-नेपाली
-
-</button>
-
 </li>
 
 </ul>
@@ -837,21 +867,53 @@ onclick="toggleLanguage()">
 
 <section class="hero">
 
+
+<!-- =========================
+     LANGUAGE SWITCH
+========================= -->
+
+<div class="hero-language">
+
+<button
+class="lang-option active"
+id="englishBtn"
+onclick="setLanguage('en')">
+
+🇬🇧 English
+
+</button>
+
+<button
+class="lang-option"
+id="nepaliBtn"
+onclick="setLanguage('ne')">
+
+🇳🇵 नेपाली
+
+</button>
+
+</div>
+
+
 <div class="hero-content">
 
 <div class="hero-icon">
 🎯
 </div>
 
-<h1 data-en="Career" data-ne="करियर">
+<h1
+data-en="Career"
+data-ne="करियर">
+
 Career
+
 </h1>
 
 <p
-data-en="A well-organized collection of study resources for Public Service Commission, Teacher Service Commission, Banking, Competitive Examinations, Constitution, Laws, Nepal Introduction, Higher Education and more."
+data-en="Career preparation resources including Public Service Commission, Teacher Service Commission, Banking Exams, Organized Institutions, Human Rights Commission, Constitution, Laws, Nepal Introduction, Higher Education and Miscellaneous."
 data-ne="लोक सेवा, शिक्षक सेवा, बैंकिङ तथा विभिन्न प्रतिस्पर्धात्मक परीक्षाको तयारी, संविधान, ऐन–नियम, नेपाल परिचय तथा उच्च शिक्षासम्बन्धी अध्ययन सामग्रीको व्यवस्थित संग्रह।">
 
-A well-organized collection of study resources for Public Service Commission, Teacher Service Commission, Banking, Competitive Examinations, Constitution, Laws, Nepal Introduction, Higher Education and more.
+Career preparation resources including Public Service Commission, Teacher Service Commission, Banking Exams, Organized Institutions, Human Rights Commission, Constitution, Laws, Nepal Introduction, Higher Education and Miscellaneous.
 
 </p>
 
@@ -880,10 +942,10 @@ Career & Examination Preparation
 </h2>
 
 <p
-data-en="Choose a category according to your goal and explore the study materials."
+data-en="Choose a subject according to your goal and explore the study materials."
 data-ne="आफ्नो लक्ष्यअनुसार विषय छनोट गर्नुहोस् र Explore गरेर अध्ययन सामग्री हेर्नुहोस्।">
 
-Choose a category according to your goal and explore the study materials.
+Choose a subject according to your goal and explore the study materials.
 
 </p>
 
@@ -912,18 +974,16 @@ Public Service Commission
 </h3>
 
 <p
-data-en="Study resources for various levels and positions of the Public Service Commission, including general knowledge, current affairs, previous questions and exam-oriented materials."
+data-en="Study materials for various levels and positions of the Public Service Commission, including general knowledge, current affairs, previous questions and exam preparation resources."
 data-ne="लोक सेवा आयोगका विभिन्न तह तथा पदका लागि आवश्यक पाठ्यक्रम, सामान्य ज्ञान, समसामयिक विषय, पुराना प्रश्नपत्र तथा तयारी सामग्री।">
 
-Study resources for various levels and positions of the Public Service Commission, including general knowledge, current affairs, previous questions and exam-oriented materials.
+Study materials for various levels and positions of the Public Service Commission, including general knowledge, current affairs, previous questions and exam preparation resources.
 
 </p>
 
 <a
 href="public-service-commission.html"
-class="explore-btn"
-data-en="Explore"
-data-ne="हेर्नुहोस्">
+class="explore-btn">
 
 Explore
 <span>→</span>
@@ -961,9 +1021,7 @@ Subject knowledge, pedagogy, general knowledge, model questions and important st
 
 <a
 href="teacher-service-commission.html"
-class="explore-btn"
-data-en="Explore"
-data-ne="हेर्नुहोस्">
+class="explore-btn">
 
 Explore
 <span>→</span>
@@ -992,18 +1050,16 @@ Banking Exam
 </h3>
 
 <p
-data-en="Banking knowledge, economics, accounting, management, general knowledge and practice questions for banking examinations."
+data-en="Banking knowledge, economics, accounting, management, general knowledge and practice questions for banking examination preparation."
 data-ne="बैंकिङ परीक्षा तयारीका लागि बैंकिङ ज्ञान, अर्थशास्त्र, लेखा, व्यवस्थापन, सामान्य ज्ञान तथा अभ्यास प्रश्नहरू।">
 
-Banking knowledge, economics, accounting, management, general knowledge and practice questions for banking examinations.
+Banking knowledge, economics, accounting, management, general knowledge and practice questions for banking examination preparation.
 
 </p>
 
 <a
 href="banking-exam.html"
-class="explore-btn"
-data-en="Explore"
-data-ne="हेर्नुहोस्">
+class="explore-btn">
 
 Explore
 <span>→</span>
@@ -1041,9 +1097,7 @@ Syllabus, general knowledge, institutional knowledge and preparation resources f
 
 <a
 href="sangathit-sanstha.html"
-class="explore-btn"
-data-en="Explore"
-data-ne="हेर्नुहोस्">
+class="explore-btn">
 
 Explore
 <span>→</span>
@@ -1072,18 +1126,16 @@ Human Rights Commission
 </h3>
 
 <p
-data-en="Important concepts, laws, rights and examination preparation resources related to the National Human Rights Commission and human rights."
+data-en="Important concepts, laws, rights and examination preparation materials related to the National Human Rights Commission and human rights."
 data-ne="राष्ट्रिय मानव अधिकार आयोग तथा मानव अधिकारसम्बन्धी महत्वपूर्ण अवधारणा, कानुन, अधिकार र परीक्षा तयारी सामग्री।">
 
-Important concepts, laws, rights and examination preparation resources related to the National Human Rights Commission and human rights.
+Important concepts, laws, rights and examination preparation materials related to the National Human Rights Commission and human rights.
 
 </p>
 
 <a
 href="manav-adhikar-aayog.html"
-class="explore-btn"
-data-en="Explore"
-data-ne="हेर्नुहोस्">
+class="explore-btn">
 
 Explore
 <span>→</span>
@@ -1121,9 +1173,7 @@ The Constitution of Nepal, fundamental rights, directive principles, federal str
 
 <a
 href="sambidhan.html"
-class="explore-btn"
-data-en="Explore"
-data-ne="हेर्नुहोस्">
+class="explore-btn">
 
 Explore
 <span>→</span>
@@ -1152,18 +1202,16 @@ Acts, Rules & Regulations
 </h3>
 
 <p
-data-en="Study materials covering important Acts, Rules, Regulations and legal provisions useful for competitive examinations."
+data-en="Study materials covering various Acts, Rules and Regulations useful for competitive examinations."
 data-ne="परीक्षामा उपयोगी विभिन्न ऐन, नियम, नियमावली तथा कानुनी व्यवस्थाहरूको अध्ययन सामग्री।">
 
-Study materials covering important Acts, Rules, Regulations and legal provisions useful for competitive examinations.
+Study materials covering various Acts, Rules and Regulations useful for competitive examinations.
 
 </p>
 
 <a
 href="ain-niyam-niyamawali.html"
-class="explore-btn"
-data-en="Explore"
-data-ne="हेर्नुहोस्">
+class="explore-btn">
 
 Explore
 <span>→</span>
@@ -1192,18 +1240,16 @@ Introduction to Nepal
 </h3>
 
 <p
-data-en="Study resources on Nepal's geography, history, politics, administration, culture, economy and current affairs."
+data-en="Study materials related to Nepal's geography, history, politics, administration, culture, economy and current affairs."
 data-ne="नेपालको भूगोल, इतिहास, राजनीति, प्रशासन, संस्कृति, अर्थतन्त्र तथा समसामयिक विषयसम्बन्धी अध्ययन सामग्री।">
 
-Study resources on Nepal's geography, history, politics, administration, culture, economy and current affairs.
+Study materials related to Nepal's geography, history, politics, administration, culture, economy and current affairs.
 
 </p>
 
 <a
 href="nepal-introduction.html"
-class="explore-btn"
-data-en="Explore"
-data-ne="हेर्नुहोस्">
+class="explore-btn">
 
 Explore
 <span>→</span>
@@ -1232,18 +1278,16 @@ Higher Education
 </h3>
 
 <p
-data-en="Useful information about higher education, universities, academic programs, study opportunities and higher education systems."
+data-en="Information about higher education, universities, academic programs, study opportunities and useful higher education resources."
 data-ne="उच्च शिक्षा, विश्वविद्यालय, शैक्षिक कार्यक्रम, अध्ययनका अवसर तथा उच्च शिक्षासम्बन्धी उपयोगी जानकारी।">
 
-Useful information about higher education, universities, academic programs, study opportunities and higher education systems.
+Information about higher education, universities, academic programs, study opportunities and useful higher education resources.
 
 </p>
 
 <a
 href="higher-education.html"
-class="explore-btn"
-data-en="Explore"
-data-ne="हेर्नुहोस्">
+class="explore-btn">
 
 Explore
 <span>→</span>
@@ -1272,18 +1316,16 @@ Miscellaneous
 </h3>
 
 <p
-data-en="General knowledge, current affairs, information, notes and other useful study resources for examination preparation."
+data-en="General knowledge, current affairs, information, notes and other important study materials useful for examination preparation."
 data-ne="परीक्षा तयारीमा उपयोगी विविध सामान्य ज्ञान, समसामयिक घटना, सूचना, नोट्स तथा अन्य महत्वपूर्ण अध्ययन सामग्री।">
 
-General knowledge, current affairs, information, notes and other useful study resources for examination preparation.
+General knowledge, current affairs, information, notes and other important study materials useful for examination preparation.
 
 </p>
 
 <a
 href="bibidh.html"
-class="explore-btn"
-data-en="Explore"
-data-ne="हेर्नुहोस्">
+class="explore-btn">
 
 Explore
 <span>→</span>
@@ -1308,7 +1350,7 @@ Explore
 
 <p
 data-en="© 2026 Gorakh Chand. All Rights Reserved."
-data-ne="© २०२६ Gorakh Chand. सर्वाधिकार सुरक्षित।">
+data-ne="© 2026 Gorakh Chand. सर्वाधिकार सुरक्षित।">
 
 © 2026 Gorakh Chand. All Rights Reserved.
 
@@ -1342,59 +1384,6 @@ function toggleMenu(){
 
 
 /* =========================
-   LANGUAGE SWITCHER
-========================= */
-
-let currentLanguage = "en";
-
-
-function toggleLanguage(){
-
-    if(currentLanguage === "en"){
-
-        currentLanguage = "ne";
-
-    }else{
-
-        currentLanguage = "en";
-
-    }
-
-    document
-    .querySelectorAll("[data-en]")
-    .forEach(function(element){
-
-        element.textContent =
-        element.getAttribute(
-            "data-" + currentLanguage
-        );
-
-    });
-
-
-    /* Change language button */
-
-    const button =
-    document.getElementById("languageBtn");
-
-    if(currentLanguage === "en"){
-
-        button.textContent = "नेपाली";
-
-        document.documentElement.lang = "en";
-
-    }else{
-
-        button.textContent = "English";
-
-        document.documentElement.lang = "ne";
-
-    }
-
-}
-
-
-/* =========================
    CLOSE MENU AFTER CLICK
 ========================= */
 
@@ -1415,6 +1404,67 @@ document
     );
 
 });
+
+
+/* =========================
+   LANGUAGE SWITCHER
+========================= */
+
+function setLanguage(language){
+
+    document
+    .querySelectorAll("[data-en]")
+    .forEach(function(element){
+
+        element.textContent =
+        element.getAttribute(
+            "data-" + language
+        );
+
+    });
+
+
+    const englishBtn =
+    document.getElementById("englishBtn");
+
+    const nepaliBtn =
+    document.getElementById("nepaliBtn");
+
+
+    if(language === "en"){
+
+        englishBtn.classList.add("active");
+
+        nepaliBtn.classList.remove("active");
+
+        document.documentElement.lang = "en";
+
+        document.title =
+        "Career | Gorakh Chand";
+
+    }
+
+    else{
+
+        nepaliBtn.classList.add("active");
+
+        englishBtn.classList.remove("active");
+
+        document.documentElement.lang = "ne";
+
+        document.title =
+        "करियर | Gorakh Chand";
+
+    }
+
+}
+
+
+/* =========================
+   DEFAULT LANGUAGE
+========================= */
+
+setLanguage("en");
 
 </script>
 
