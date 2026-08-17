@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="en">
 
 <head>
 <meta charset="UTF-8">
@@ -92,6 +92,8 @@ nav ul{
     display:flex;
     list-style:none;
     gap:17px;
+
+    align-items:center;
 }
 
 nav a{
@@ -135,6 +137,50 @@ nav a::after{
 nav a:hover::after{
     width:100%;
 }
+
+
+/* =========================
+   LANGUAGE BUTTON
+========================= */
+
+.language-btn{
+    border:none;
+    outline:none;
+
+    cursor:pointer;
+
+    padding:8px 14px;
+
+    border-radius:20px;
+
+    color:white;
+
+    font-family:'Poppins',Arial,sans-serif;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+        135deg,
+        #6d28d9,
+        #2563eb
+    );
+
+    box-shadow:
+    0 5px 15px rgba(79,70,229,.20);
+
+    transition:.3s;
+}
+
+.language-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 8px 20px rgba(79,70,229,.30);
+}
+
 
 .menu{
     display:none;
@@ -718,51 +764,64 @@ onclick="toggleMenu()">
 <ul id="navMenu">
 
 <li>
-<a href="index.html">
-गृहपृष्ठ
+<a href="index.html" data-en="Home" data-ne="गृहपृष्ठ">
+Home
 </a>
 </li>
 
 <li>
-<a href="about.html">
-मेरो बारेमा
+<a href="about.html" data-en="About Me" data-ne="मेरो बारेमा">
+About Me
 </a>
 </li>
 
 <li>
-<a href="education.html">
-शिक्षा
+<a href="education.html" data-en="Education" data-ne="शिक्षा">
+Education
 </a>
 </li>
 
 <li>
-<a href="achievements.html">
-उपलब्धिहरू
+<a href="achievements.html" data-en="Achievements" data-ne="उपलब्धिहरू">
+Achievements
 </a>
 </li>
 
 <li>
-<a href="educational-content.html">
-शैक्षिक सामग्री
+<a href="educational-content.html" data-en="Educational Content" data-ne="शैक्षिक सामग्री">
+Educational Content
 </a>
 </li>
 
 <li>
-<a href="career.html">
+<a href="career.html" data-en="Career" data-ne="करियर">
 Career
 </a>
 </li>
 
 <li>
-<a href="articles.html">
-लेखहरू
+<a href="articles.html" data-en="Articles" data-ne="लेखहरू">
+Articles
 </a>
 </li>
 
 <li>
-<a href="contact.html">
-सम्पर्क
+<a href="contact.html" data-en="Contact" data-ne="सम्पर्क">
+Contact
 </a>
+</li>
+
+<li>
+
+<button
+class="language-btn"
+id="languageBtn"
+onclick="toggleLanguage()">
+
+नेपाली
+
+</button>
+
 </li>
 
 </ul>
@@ -784,14 +843,16 @@ Career
 🎯
 </div>
 
-<h1>
+<h1 data-en="Career" data-ne="करियर">
 Career
 </h1>
 
-<p>
-लोकसेवा, शिक्षक सेवा, बैंकिङ तथा विभिन्न प्रतिस्पर्धात्मक परीक्षाको तयारी,
-संविधान, ऐन–नियम, नेपाल परिचय तथा उच्च शिक्षासम्बन्धी अध्ययन सामग्रीको
-व्यवस्थित संग्रह।
+<p
+data-en="A well-organized collection of study resources for Public Service Commission, Teacher Service Commission, Banking, Competitive Examinations, Constitution, Laws, Nepal Introduction, Higher Education and more."
+data-ne="लोक सेवा, शिक्षक सेवा, बैंकिङ तथा विभिन्न प्रतिस्पर्धात्मक परीक्षाको तयारी, संविधान, ऐन–नियम, नेपाल परिचय तथा उच्च शिक्षासम्बन्धी अध्ययन सामग्रीको व्यवस्थित संग्रह।">
+
+A well-organized collection of study resources for Public Service Commission, Teacher Service Commission, Banking, Competitive Examinations, Constitution, Laws, Nepal Introduction, Higher Education and more.
+
 </p>
 
 </div>
@@ -810,12 +871,20 @@ Career
 
 <div class="section-title">
 
-<h2>
+<h2
+data-en="Career & Examination Preparation"
+data-ne="करियर तथा परीक्षा तयारी">
+
 Career & Examination Preparation
+
 </h2>
 
-<p>
-आफ्नो लक्ष्यअनुसार विषय छनोट गर्नुहोस् र Explore गरेर अध्ययन सामग्री हेर्नुहोस्।
+<p
+data-en="Choose a category according to your goal and explore the study materials."
+data-ne="आफ्नो लक्ष्यअनुसार विषय छनोट गर्नुहोस् र Explore गरेर अध्ययन सामग्री हेर्नुहोस्।">
+
+Choose a category according to your goal and explore the study materials.
+
 </p>
 
 </div>
@@ -834,18 +903,27 @@ Career & Examination Preparation
 🏛️
 </div>
 
-<h3>
+<h3
+data-en="Public Service Commission"
+data-ne="लोक सेवा आयोग">
+
 Public Service Commission
+
 </h3>
 
-<p>
-लोक सेवा आयोगका विभिन्न तह तथा पदका लागि आवश्यक पाठ्यक्रम,
-सामान्य ज्ञान, समसामयिक विषय, पुराना प्रश्नपत्र तथा तयारी सामग्री।
+<p
+data-en="Study resources for various levels and positions of the Public Service Commission, including general knowledge, current affairs, previous questions and exam-oriented materials."
+data-ne="लोक सेवा आयोगका विभिन्न तह तथा पदका लागि आवश्यक पाठ्यक्रम, सामान्य ज्ञान, समसामयिक विषय, पुराना प्रश्नपत्र तथा तयारी सामग्री।">
+
+Study resources for various levels and positions of the Public Service Commission, including general knowledge, current affairs, previous questions and exam-oriented materials.
+
 </p>
 
 <a
 href="public-service-commission.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -865,18 +943,27 @@ Explore
 👨‍🏫
 </div>
 
-<h3>
+<h3
+data-en="Teacher Service Commission"
+data-ne="शिक्षक सेवा आयोग">
+
 Teacher Service Commission
+
 </h3>
 
-<p>
-शिक्षक सेवा आयोगको परीक्षा तयारीका लागि विषयगत ज्ञान,
-शिक्षाशास्त्र, सामान्य ज्ञान, नमुना प्रश्न तथा महत्वपूर्ण सामग्री।
+<p
+data-en="Subject knowledge, pedagogy, general knowledge, model questions and important study materials for Teacher Service Commission examinations."
+data-ne="शिक्षक सेवा आयोगको परीक्षा तयारीका लागि विषयगत ज्ञान, शिक्षाशास्त्र, सामान्य ज्ञान, नमुना प्रश्न तथा महत्वपूर्ण सामग्री।">
+
+Subject knowledge, pedagogy, general knowledge, model questions and important study materials for Teacher Service Commission examinations.
+
 </p>
 
 <a
 href="teacher-service-commission.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -896,18 +983,27 @@ Explore
 🏦
 </div>
 
-<h3>
+<h3
+data-en="Banking Exam"
+data-ne="बैंकिङ परीक्षा">
+
 Banking Exam
+
 </h3>
 
-<p>
-बैंकिङ परीक्षा तयारीका लागि बैंकिङ ज्ञान, अर्थशास्त्र,
-लेखा, व्यवस्थापन, सामान्य ज्ञान तथा अभ्यास प्रश्नहरू।
+<p
+data-en="Banking knowledge, economics, accounting, management, general knowledge and practice questions for banking examinations."
+data-ne="बैंकिङ परीक्षा तयारीका लागि बैंकिङ ज्ञान, अर्थशास्त्र, लेखा, व्यवस्थापन, सामान्य ज्ञान तथा अभ्यास प्रश्नहरू।">
+
+Banking knowledge, economics, accounting, management, general knowledge and practice questions for banking examinations.
+
 </p>
 
 <a
 href="banking-exam.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -927,18 +1023,27 @@ Explore
 🏢
 </div>
 
-<h3>
-संगठित संस्था परीक्षा
+<h3
+data-en="Organized Institutions"
+data-ne="संगठित संस्था परीक्षा">
+
+Organized Institutions
+
 </h3>
 
-<p>
-विभिन्न संगठित संस्थाका प्रतिस्पर्धात्मक परीक्षा,
-पाठ्यक्रम, सामान्य ज्ञान, संस्थागत ज्ञान तथा तयारी सामग्री।
+<p
+data-en="Syllabus, general knowledge, institutional knowledge and preparation resources for competitive examinations of various organized institutions."
+data-ne="विभिन्न संगठित संस्थाका प्रतिस्पर्धात्मक परीक्षा, पाठ्यक्रम, सामान्य ज्ञान, संस्थागत ज्ञान तथा तयारी सामग्री।">
+
+Syllabus, general knowledge, institutional knowledge and preparation resources for competitive examinations of various organized institutions.
+
 </p>
 
 <a
 href="sangathit-sanstha.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -958,18 +1063,27 @@ Explore
 ⚖️
 </div>
 
-<h3>
-मानव अधिकार आयोग परीक्षा
+<h3
+data-en="Human Rights Commission"
+data-ne="मानव अधिकार आयोग परीक्षा">
+
+Human Rights Commission
+
 </h3>
 
-<p>
-राष्ट्रिय मानव अधिकार आयोग तथा मानव अधिकारसम्बन्धी
-महत्वपूर्ण अवधारणा, कानुन, अधिकार र परीक्षा तयारी सामग्री।
+<p
+data-en="Important concepts, laws, rights and examination preparation resources related to the National Human Rights Commission and human rights."
+data-ne="राष्ट्रिय मानव अधिकार आयोग तथा मानव अधिकारसम्बन्धी महत्वपूर्ण अवधारणा, कानुन, अधिकार र परीक्षा तयारी सामग्री।">
+
+Important concepts, laws, rights and examination preparation resources related to the National Human Rights Commission and human rights.
+
 </p>
 
 <a
 href="manav-adhikar-aayog.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -989,18 +1103,27 @@ Explore
 📜
 </div>
 
-<h3>
-संविधान
+<h3
+data-en="Constitution"
+data-ne="संविधान">
+
+Constitution
+
 </h3>
 
-<p>
-नेपालको संविधान, मौलिक हक, राज्यका निर्देशक सिद्धान्त,
-संघीय संरचना तथा परीक्षाका लागि महत्वपूर्ण संवैधानिक विषयहरू।
+<p
+data-en="The Constitution of Nepal, fundamental rights, directive principles, federal structure and important constitutional topics for examinations."
+data-ne="नेपालको संविधान, मौलिक हक, राज्यका निर्देशक सिद्धान्त, संघीय संरचना तथा परीक्षाका लागि महत्वपूर्ण संवैधानिक विषयहरू।">
+
+The Constitution of Nepal, fundamental rights, directive principles, federal structure and important constitutional topics for examinations.
+
 </p>
 
 <a
 href="sambidhan.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1020,18 +1143,27 @@ Explore
 ⚖️
 </div>
 
-<h3>
-ऐन, नियम तथा नियमावली
+<h3
+data-en="Acts, Rules & Regulations"
+data-ne="ऐन, नियम तथा नियमावली">
+
+Acts, Rules & Regulations
+
 </h3>
 
-<p>
-परीक्षामा उपयोगी विभिन्न ऐन, नियम, नियमावली तथा कानुनी
-व्यवस्थाहरूको अध्ययन सामग्री।
+<p
+data-en="Study materials covering important Acts, Rules, Regulations and legal provisions useful for competitive examinations."
+data-ne="परीक्षामा उपयोगी विभिन्न ऐन, नियम, नियमावली तथा कानुनी व्यवस्थाहरूको अध्ययन सामग्री।">
+
+Study materials covering important Acts, Rules, Regulations and legal provisions useful for competitive examinations.
+
 </p>
 
 <a
 href="ain-niyam-niyamawali.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1051,18 +1183,27 @@ Explore
 🇳🇵
 </div>
 
-<h3>
-नेपाल परिचय
+<h3
+data-en="Introduction to Nepal"
+data-ne="नेपाल परिचय">
+
+Introduction to Nepal
+
 </h3>
 
-<p>
-नेपालको भूगोल, इतिहास, राजनीति, प्रशासन, संस्कृति,
-अर्थतन्त्र तथा समसामयिक विषयसम्बन्धी अध्ययन सामग्री।
+<p
+data-en="Study resources on Nepal's geography, history, politics, administration, culture, economy and current affairs."
+data-ne="नेपालको भूगोल, इतिहास, राजनीति, प्रशासन, संस्कृति, अर्थतन्त्र तथा समसामयिक विषयसम्बन्धी अध्ययन सामग्री।">
+
+Study resources on Nepal's geography, history, politics, administration, culture, economy and current affairs.
+
 </p>
 
 <a
 href="nepal-introduction.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1082,18 +1223,27 @@ Explore
 🎓
 </div>
 
-<h3>
+<h3
+data-en="Higher Education"
+data-ne="उच्च शिक्षा">
+
 Higher Education
+
 </h3>
 
-<p>
-उच्च शिक्षा, विश्वविद्यालय, शैक्षिक कार्यक्रम, अध्ययनका अवसर
-तथा उच्च शिक्षासम्बन्धी उपयोगी जानकारी।
+<p
+data-en="Useful information about higher education, universities, academic programs, study opportunities and higher education systems."
+data-ne="उच्च शिक्षा, विश्वविद्यालय, शैक्षिक कार्यक्रम, अध्ययनका अवसर तथा उच्च शिक्षासम्बन्धी उपयोगी जानकारी।">
+
+Useful information about higher education, universities, academic programs, study opportunities and higher education systems.
+
 </p>
 
 <a
 href="higher-education.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1113,18 +1263,27 @@ Explore
 📚
 </div>
 
-<h3>
-विविध
+<h3
+data-en="Miscellaneous"
+data-ne="विविध">
+
+Miscellaneous
+
 </h3>
 
-<p>
-परीक्षा तयारीमा उपयोगी विविध सामान्य ज्ञान, समसामयिक घटना,
-सूचना, नोट्स तथा अन्य महत्वपूर्ण अध्ययन सामग्री।
+<p
+data-en="General knowledge, current affairs, information, notes and other useful study resources for examination preparation."
+data-ne="परीक्षा तयारीमा उपयोगी विविध सामान्य ज्ञान, समसामयिक घटना, सूचना, नोट्स तथा अन्य महत्वपूर्ण अध्ययन सामग्री।">
+
+General knowledge, current affairs, information, notes and other useful study resources for examination preparation.
+
 </p>
 
 <a
 href="bibidh.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1147,12 +1306,20 @@ Explore
 
 <footer>
 
-<p>
+<p
+data-en="© 2026 Gorakh Chand. All Rights Reserved."
+data-ne="© २०२६ Gorakh Chand. सर्वाधिकार सुरक्षित।">
+
 © 2026 Gorakh Chand. All Rights Reserved.
+
 </p>
 
-<p>
+<p
+data-en="Career • Examination Preparation • Education"
+data-ne="करियर • परीक्षा तयारी • शिक्षा">
+
 Career • Examination Preparation • Education
+
 </p>
 
 </footer>
@@ -1170,6 +1337,59 @@ function toggleMenu(){
     .getElementById("navMenu")
     .classList
     .toggle("show");
+
+}
+
+
+/* =========================
+   LANGUAGE SWITCHER
+========================= */
+
+let currentLanguage = "en";
+
+
+function toggleLanguage(){
+
+    if(currentLanguage === "en"){
+
+        currentLanguage = "ne";
+
+    }else{
+
+        currentLanguage = "en";
+
+    }
+
+    document
+    .querySelectorAll("[data-en]")
+    .forEach(function(element){
+
+        element.textContent =
+        element.getAttribute(
+            "data-" + currentLanguage
+        );
+
+    });
+
+
+    /* Change language button */
+
+    const button =
+    document.getElementById("languageBtn");
+
+    if(currentLanguage === "en"){
+
+        button.textContent = "नेपाली";
+
+        document.documentElement.lang = "en";
+
+    }else{
+
+        button.textContent = "English";
+
+        document.documentElement.lang = "ne";
+
+    }
 
 }
 
@@ -1201,4 +1421,4 @@ document
 
 </body>
 
-    </html>
+   </html>
