@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="ne">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Career | Gorakh Chand</title>
+
+<meta name="description"
+content="Career preparation resources including Public Service Commission, Teacher Service Commission, Banking Exams, Organized Institutions, Human Rights Commission, Constitution, Laws, Nepal Introduction, Higher Education and Miscellaneous.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',Arial,sans-serif;
+    background:#f4f7ff;
+    color:#172033;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(109,40,217,.12);
+
+    box-shadow:
+    0 8px 30px rgba(31,41,55,.10);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+
+    padding:15px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        90deg,
+        #6d28d9,
+        #2563eb,
+        #0891b2
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:17px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#293248;
+    font-weight:600;
+    font-size:14px;
+
+    padding:8px 2px;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#5b21b6;
+}
+
+nav a::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:0;
+    height:2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #6d28d9,
+        #2563eb
+    );
+
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:#4c1d95;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:52vh;
+
+    padding:135px 20px 75px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at 10% 20%,
+        rgba(34,211,238,.35),
+        transparent 28%
+    ),
+    radial-gradient(
+        circle at 90% 20%,
+        rgba(244,114,182,.30),
+        transparent 28%
+    ),
+    radial-gradient(
+        circle at 50% 100%,
+        rgba(59,130,246,.35),
+        transparent 35%
+    ),
+    linear-gradient(
+        135deg,
+        #312e81,
+        #6d28d9 45%,
+        #2563eb 75%,
+        #0891b2
+    );
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    top:-100px;
+    left:-90px;
+
+    box-shadow:
+    0 0 0 35px rgba(255,255,255,.03),
+    0 0 0 70px rgba(255,255,255,.02);
+}
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.14);
+
+    right:-130px;
+    bottom:-150px;
+
+    box-shadow:
+    0 0 0 35px rgba(255,255,255,.03),
+    0 0 0 75px rgba(255,255,255,.02);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:900px;
+}
+
+.hero-icon{
+    width:95px;
+    height:95px;
+
+    margin:0 auto 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:48px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.20);
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+
+    font-size:55px;
+
+    line-height:1.2;
+
+    margin-bottom:12px;
+
+    text-shadow:
+    0 5px 20px rgba(0,0,0,.22);
+}
+
+.hero p{
+    font-size:18px;
+
+    color:#eef2ff;
+
+    max-width:720px;
+
+    margin:auto;
+}
+
+
+/* =========================
+   CAREER SECTION
+========================= */
+
+.career-section{
+    padding:90px 20px 110px;
+
+    background:
+    radial-gradient(
+        circle at 10% 20%,
+        #ede9fe,
+        transparent 25%
+    ),
+    radial-gradient(
+        circle at 90% 80%,
+        #dbeafe,
+        transparent 25%
+    ),
+    #ffffff;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-family:'Playfair Display',serif;
+
+    font-size:40px;
+
+    color:#4c1d95;
+
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#6b7280;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   CAREER GRID
+========================= */
+
+.career-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:24px;
+}
+
+
+/* =========================
+   CAREER CARD
+========================= */
+
+.career-card{
+    position:relative;
+
+    padding:30px 24px;
+
+    min-height:330px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.98),
+        rgba(248,249,255,.98)
+    );
+
+    border:1px solid rgba(109,40,217,.10);
+
+    box-shadow:
+    0 12px 35px rgba(79,70,229,.10);
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    transition:
+    transform .35s,
+    box-shadow .35s;
+}
+
+.career-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:110px;
+    height:110px;
+
+    border-radius:50%;
+
+    background:#ede9fe;
+
+    right:-45px;
+    top:-45px;
+
+    transition:.35s;
+}
+
+.career-card::after{
+    content:"";
+
+    position:absolute;
+
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    background:#dbeafe;
+
+    left:-35px;
+    bottom:-35px;
+}
+
+.career-card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 22px 50px rgba(79,70,229,.18);
+}
+
+.career-card:hover::before{
+    transform:scale(1.35);
+}
+
+.card-icon{
+    width:70px;
+    height:70px;
+
+    border-radius:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:35px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ede9fe,
+        #dbeafe
+    );
+
+    margin-bottom:20px;
+
+    position:relative;
+    z-index:2;
+
+    box-shadow:
+    0 8px 20px rgba(79,70,229,.10);
+}
+
+.career-card h3{
+    color:#4338ca;
+
+    font-size:21px;
+
+    margin-bottom:8px;
+
+    position:relative;
+    z-index:2;
+}
+
+.career-card p{
+    color:#667085;
+
+    font-size:14px;
+
+    margin-bottom:22px;
+
+    position:relative;
+    z-index:2;
+}
+
+.explore-btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    margin-top:auto;
+
+    padding:11px 20px;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+        135deg,
+        #6d28d9,
+        #2563eb
+    );
+
+    box-shadow:
+    0 8px 20px rgba(79,70,229,.20);
+
+    position:relative;
+    z-index:3;
+
+    transition:.3s;
+}
+
+.explore-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 12px 28px rgba(79,70,229,.30);
+}
+
+
+/* =========================
+   SPECIAL CARD
+========================= */
+
+.career-card.featured{
+    background:
+    linear-gradient(
+        145deg,
+        #ffffff,
+        #f5f3ff
+    );
+
+    border:
+    2px solid rgba(109,40,217,.18);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:30px 20px;
+
+    text-align:center;
+
+    color:#9ca3af;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #111827
+    );
+}
+
+footer p{
+    margin:3px 0;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:950px){
+
+    .menu{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+
+        position:absolute;
+
+        top:65px;
+        left:0;
+
+        width:100%;
+
+        padding:20px;
+
+        background:white;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        box-shadow:
+        0 8px 20px rgba(0,0,0,.10);
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .career-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:12px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .hero{
+        min-height:48vh;
+
+        padding:
+        115px 15px 60px;
+    }
+
+    .hero-icon{
+        width:78px;
+        height:78px;
+
+        font-size:38px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .career-section{
+        padding:
+        65px 15px 80px;
+    }
+
+    .section-title{
+        margin-bottom:35px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .career-grid{
+        grid-template-columns:1fr;
+
+        gap:18px;
+    }
+
+    .career-card{
+        min-height:300px;
+
+        padding:25px 20px;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:33px;
+    }
+
+    .career-card h3{
+        font-size:19px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+<div class="navbar">
+
+<div class="logo">
+Gorakh Chand
+</div>
+
+
+<div
+class="menu"
+onclick="toggleMenu()">
+☰
+</div>
+
+
+<ul id="navMenu">
+
+<li>
+<a href="index.html">
+गृहपृष्ठ
+</a>
+</li>
+
+<li>
+<a href="about.html">
+मेरो बारेमा
+</a>
+</li>
+
+<li>
+<a href="education.html">
+शिक्षा
+</a>
+</li>
+
+<li>
+<a href="achievements.html">
+उपलब्धिहरू
+</a>
+</li>
+
+<li>
+<a href="educational-content.html">
+शैक्षिक सामग्री
+</a>
+</li>
+
+<li>
+<a href="career.html">
+Career
+</a>
+</li>
+
+<li>
+<a href="articles.html">
+लेखहरू
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+सम्पर्क
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-icon">
+🎯
+</div>
+
+<h1>
+Career
+</h1>
+
+<p>
+लोकसेवा, शिक्षक सेवा, बैंकिङ तथा विभिन्न प्रतिस्पर्धात्मक परीक्षाको तयारी,
+संविधान, ऐन–नियम, नेपाल परिचय तथा उच्च शिक्षासम्बन्धी अध्ययन सामग्रीको
+व्यवस्थित संग्रह।
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CAREER CONTENT
+========================= -->
+
+<section class="career-section">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+Career & Examination Preparation
+</h2>
+
+<p>
+आफ्नो लक्ष्यअनुसार विषय छनोट गर्नुहोस् र Explore गरेर अध्ययन सामग्री हेर्नुहोस्।
+</p>
+
+</div>
+
+
+<div class="career-grid">
+
+
+<!-- =========================
+     1 PSC
+========================= -->
+
+<div class="career-card featured">
+
+<div class="card-icon">
+🏛️
+</div>
+
+<h3>
+Public Service Commission
+</h3>
+
+<p>
+लोक सेवा आयोगका विभिन्न तह तथा पदका लागि आवश्यक पाठ्यक्रम,
+सामान्य ज्ञान, समसामयिक विषय, पुराना प्रश्नपत्र तथा तयारी सामग्री।
+</p>
+
+<a
+href="public-service-commission.html"
+class="explore-btn">
+
+Explore
+<span>→</span>
+
+</a>
+
+</div>
+
+
+<!-- =========================
+     2 TSC
+========================= -->
+
+<div class="career-card featured">
+
+<div class="card-icon">
+👨‍🏫
+</div>
+
+<h3>
+Teacher Service Commission
+</h3>
+
+<p>
+शिक्षक सेवा आयोगको परीक्षा तयारीका लागि विषयगत ज्ञान,
+शिक्षाशास्त्र, सामान्य ज्ञान, नमुना प्रश्न तथा महत्वपूर्ण सामग्री।
+</p>
+
+<a
+href="teacher-service-commission.html"
+class="explore-btn">
+
+Explore
+<span>→</span>
+
+</a>
+
+</div>
+
+
+<!-- =========================
+     3 BANKING
+========================= -->
+
+<div class="career-card">
+
+<div class="card-icon">
+🏦
+</div>
+
+<h3>
+Banking Exam
+</h3>
+
+<p>
+बैंकिङ परीक्षा तयारीका लागि बैंकिङ ज्ञान, अर्थशास्त्र,
+लेखा, व्यवस्थापन, सामान्य ज्ञान तथा अभ्यास प्रश्नहरू।
+</p>
+
+<a
+href="banking-exam.html"
+class="explore-btn">
+
+Explore
+<span>→</span>
+
+</a>
+
+</div>
+
+
+<!-- =========================
+     4 ORGANIZED INSTITUTIONS
+========================= -->
+
+<div class="career-card">
+
+<div class="card-icon">
+🏢
+</div>
+
+<h3>
+संगठित संस्था परीक्षा
+</h3>
+
+<p>
+विभिन्न संगठित संस्थाका प्रतिस्पर्धात्मक परीक्षा,
+पाठ्यक्रम, सामान्य ज्ञान, संस्थागत ज्ञान तथा तयारी सामग्री।
+</p>
+
+<a
+href="sangathit-sanstha.html"
+class="explore-btn">
+
+Explore
+<span>→</span>
+
+</a>
+
+</div>
+
+
+<!-- =========================
+     5 HUMAN RIGHTS
+========================= -->
+
+<div class="career-card">
+
+<div class="card-icon">
+⚖️
+</div>
+
+<h3>
+मानव अधिकार आयोग परीक्षा
+</h3>
+
+<p>
+राष्ट्रिय मानव अधिकार आयोग तथा मानव अधिकारसम्बन्धी
+महत्वपूर्ण अवधारणा, कानुन, अधिकार र परीक्षा तयारी सामग्री।
+</p>
+
+<a
+href="manav-adhikar-aayog.html"
+class="explore-btn">
+
+Explore
+<span>→</span>
+
+</a>
+
+</div>
+
+
+<!-- =========================
+     6 CONSTITUTION
+========================= -->
+
+<div class="career-card">
+
+<div class="card-icon">
+📜
+</div>
+
+<h3>
+संविधान
+</h3>
+
+<p>
+नेपालको संविधान, मौलिक हक, राज्यका निर्देशक सिद्धान्त,
+संघीय संरचना तथा परीक्षाका लागि महत्वपूर्ण संवैधानिक विषयहरू।
+</p>
+
+<a
+href="sambidhan.html"
+class="explore-btn">
+
+Explore
+<span>→</span>
+
+</a>
+
+</div>
+
+
+<!-- =========================
+     7 LAW
+========================= -->
+
+<div class="career-card">
+
+<div class="card-icon">
+⚖️
+</div>
+
+<h3>
+ऐन, नियम तथा नियमावली
+</h3>
+
+<p>
+परीक्षामा उपयोगी विभिन्न ऐन, नियम, नियमावली तथा कानुनी
+व्यवस्थाहरूको अध्ययन सामग्री।
+</p>
+
+<a
+href="ain-niyam-niyamawali.html"
+class="explore-btn">
+
+Explore
+<span>→</span>
+
+</a>
+
+</div>
+
+
+<!-- =========================
+     8 NEPAL INTRODUCTION
+========================= -->
+
+<div class="career-card">
+
+<div class="card-icon">
+🇳🇵
+</div>
+
+<h3>
+नेपाल परिचय
+</h3>
+
+<p>
+नेपालको भूगोल, इतिहास, राजनीति, प्रशासन, संस्कृति,
+अर्थतन्त्र तथा समसामयिक विषयसम्बन्धी अध्ययन सामग्री।
+</p>
+
+<a
+href="nepal-introduction.html"
+class="explore-btn">
+
+Explore
+<span>→</span>
+
+</a>
+
+</div>
+
+
+<!-- =========================
+     9 HIGHER EDUCATION
+========================= -->
+
+<div class="career-card">
+
+<div class="card-icon">
+🎓
+</div>
+
+<h3>
+Higher Education
+</h3>
+
+<p>
+उच्च शिक्षा, विश्वविद्यालय, शैक्षिक कार्यक्रम, अध्ययनका अवसर
+तथा उच्च शिक्षासम्बन्धी उपयोगी जानकारी।
+</p>
+
+<a
+href="higher-education.html"
+class="explore-btn">
+
+Explore
+<span>→</span>
+
+</a>
+
+</div>
+
+
+<!-- =========================
+     10 MISCELLANEOUS
+========================= -->
+
+<div class="career-card">
+
+<div class="card-icon">
+📚
+</div>
+
+<h3>
+विविध
+</h3>
+
+<p>
+परीक्षा तयारीमा उपयोगी विविध सामान्य ज्ञान, समसामयिक घटना,
+सूचना, नोट्स तथा अन्य महत्वपूर्ण अध्ययन सामग्री।
+</p>
+
+<a
+href="bibidh.html"
+class="explore-btn">
+
+Explore
+<span>→</span>
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+© 2026 Gorakh Chand. All Rights Reserved.
+</p>
+
+<p>
+Career • Examination Preparation • Education
+</p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navMenu")
+    .classList
+    .toggle("show");
+
+}
+
+
+/* =========================
+   CLOSE MENU AFTER CLICK
+========================= */
+
+document
+.querySelectorAll("#navMenu a")
+.forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            document
+            .getElementById("navMenu")
+            .classList
+            .remove("show");
+
+        }
+    );
+
+});
+
+</script>
+
+
+</body>
+
+    </html>
