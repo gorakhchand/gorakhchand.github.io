@@ -69,6 +69,7 @@ nav a.active{
 }
 
 .hero{
+    position:relative;
     padding:85px 20px;
     text-align:center;
     color:white;
@@ -85,6 +86,44 @@ nav a.active{
 
 .hero p{
     font-size:19px;
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch{
+    position:absolute;
+    top:18px;
+    right:22px;
+    display:flex;
+    align-items:center;
+    gap:0;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:25px;
+    padding:3px;
+    backdrop-filter:blur(8px);
+}
+
+.language-switch button{
+    border:none;
+    background:transparent;
+    color:white;
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.language-switch button.active{
+    background:white;
+    color:#4338ca;
+}
+
+.language-switch button:hover{
+    background:rgba(255,255,255,.9);
+    color:#4338ca;
 }
 
 .container{
@@ -220,6 +259,16 @@ footer{
     .grid{
         grid-template-columns:1fr;
     }
+
+    .language-switch{
+        top:12px;
+        right:12px;
+    }
+
+    .language-switch button{
+        padding:6px 10px;
+        font-size:12px;
+    }
 }
 </style>
 </head>
@@ -261,9 +310,26 @@ footer{
 
 <section class="hero">
 
-<h1>Articles & Thoughts</h1>
+<div class="language-switch">
 
-<p>Ideas • Reflections • Education • Experiences</p>
+<button id="enBtn"
+class="active"
+onclick="setLanguage('en')">
+English
+</button>
+
+<button id="neBtn"
+onclick="setLanguage('ne')">
+नेपाली
+</button>
+
+</div>
+
+<h1 id="heroTitle">Articles & Thoughts</h1>
+
+<p id="heroSubtitle">
+Ideas • Reflections • Education • Experiences
+</p>
 
 </section>
 
@@ -272,9 +338,9 @@ footer{
 
 <div class="title">
 
-<h2>My Articles & Thoughts</h2>
+<h2 id="mainTitle">My Articles & Thoughts</h2>
 
-<p>
+<p id="mainSubtitle">
 A space for ideas, reflections, educational perspectives and experiences
 </p>
 
@@ -288,15 +354,17 @@ A space for ideas, reflections, educational perspectives and experiences
 
 <div class="icon">📚</div>
 
-<h3>Education & Teaching</h3>
+<h3 id="cardTitle1">Education & Teaching</h3>
 
-<p>
+<p id="cardText1">
 Thoughts and reflections about teaching,
 learning, students, education and the changing
 role of teachers.
 </p>
 
-<a href="#" class="read">Read More →</a>
+<a href="#" class="read" id="read1">
+Read More →
+</a>
 
 </div>
 
@@ -305,15 +373,17 @@ role of teachers.
 
 <div class="icon">💻</div>
 
-<h3>Technology & ICT</h3>
+<h3 id="cardTitle2">Technology & ICT</h3>
 
-<p>
+<p id="cardText2">
 Ideas about Computer Science, ICT,
 digital education and the use of technology
 in teaching and learning.
 </p>
 
-<a href="#" class="read">Read More →</a>
+<a href="#" class="read" id="read2">
+Read More →
+</a>
 
 </div>
 
@@ -322,15 +392,17 @@ in teaching and learning.
 
 <div class="icon">🌱</div>
 
-<h3>Life & Inspiration</h3>
+<h3 id="cardTitle3">Life & Inspiration</h3>
 
-<p>
+<p id="cardText3">
 Personal reflections, lessons from life,
 motivation, growth and experiences that
 shape our journey.
 </p>
 
-<a href="#" class="read">Read More →</a>
+<a href="#" class="read" id="read3">
+Read More →
+</a>
 
 </div>
 
@@ -339,84 +411,7 @@ shape our journey.
 
 <div class="icon">🏫</div>
 
-<h3>Education & Society</h3>
+<h3 id="cardTitle4">Education & Society</h3>
 
-<p>
-Thoughts on schools, society, students,
-teachers and the wider purpose of education.
-</p>
-
-<a href="#" class="read">Read More →</a>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">✍️</div>
-
-<h3>Personal Reflections</h3>
-
-<p>
-A collection of personal thoughts,
-observations and reflections from everyday life.
-</p>
-
-<a href="#" class="read">Read More →</a>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🌍</div>
-
-<h3>Journey & Experiences</h3>
-
-<p>
-Memories, journeys, encounters and the
-lessons learned along the way.
-</p>
-
-<a href="#" class="read">Read More →</a>
-
-</div>
-
-</div>
-
-
-<div class="quote">
-
-<h2>💡 A Thought to Remember</h2>
-
-<p>
-“Education is not simply the preparation for life;
-education is a lifelong journey of learning and growth.”
-</p>
-
-</div>
-
-</div>
-
-
-<footer>
-
-<p>© 2026 Gorakh Chand. All Rights Reserved.</p>
-
-<p>Teaching Professional • Educator • Computer Science Teacher</p>
-
-</footer>
-
-
-<script>
-
-function toggleMenu(){
-
-document.getElementById("navMenu").classList.toggle("show");
-
-}
-
-</script>
-
-</body>
-  </html>
+<p id="cardText4">
+Thoughts on schools,
