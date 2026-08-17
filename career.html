@@ -189,6 +189,78 @@ nav a:hover::after{
     );
 }
 
+
+/* =========================
+   LANGUAGE SWITCH
+========================= */
+
+.language-switch{
+    position:absolute;
+
+    top:28px;
+    right:30px;
+
+    z-index:10;
+
+    display:flex;
+    align-items:center;
+
+    gap:4px;
+
+    padding:5px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.35);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.18);
+}
+
+.language-switch button{
+    border:none;
+
+    background:transparent;
+
+    color:white;
+
+    padding:8px 13px;
+
+    border-radius:22px;
+
+    cursor:pointer;
+
+    font-family:'Poppins',Arial,sans-serif;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+    white-space:nowrap;
+}
+
+.language-switch button:hover{
+    background:rgba(255,255,255,.18);
+}
+
+.language-switch button.active{
+    background:white;
+
+    color:#4c1d95;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,.15);
+}
+
+
+/* HERO DECORATION */
+
 .hero::before{
     content:"";
 
@@ -228,82 +300,6 @@ nav a:hover::after{
     0 0 0 35px rgba(255,255,255,.03),
     0 0 0 75px rgba(255,255,255,.02);
 }
-
-
-/* =========================
-   HERO LANGUAGE SWITCH
-========================= */
-
-.hero-language{
-    position:absolute;
-
-    top:25px;
-    right:25px;
-
-    z-index:10;
-
-    display:flex;
-    align-items:center;
-
-    gap:4px;
-
-    padding:5px;
-
-    border-radius:30px;
-
-    background:rgba(255,255,255,.16);
-
-    border:1px solid rgba(255,255,255,.30);
-
-    backdrop-filter:blur(10px);
-
-    box-shadow:
-    0 8px 25px rgba(0,0,0,.15);
-}
-
-.lang-option{
-    border:none;
-
-    background:transparent;
-
-    color:white;
-
-    padding:8px 13px;
-
-    border-radius:22px;
-
-    font-family:'Poppins',Arial,sans-serif;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.lang-option.active{
-    background:white;
-
-    color:#4c1d95;
-
-    box-shadow:
-    0 4px 12px rgba(0,0,0,.15);
-}
-
-.lang-option:hover{
-    background:rgba(255,255,255,.25);
-}
-
-.lang-option.active:hover{
-    background:white;
-}
-
-
-/* =========================
-   HERO CONTENT
-========================= */
 
 .hero-content{
     position:relative;
@@ -704,17 +700,19 @@ footer p{
         115px 15px 60px;
     }
 
-    .hero-language{
-        top:15px;
+    /* LANGUAGE SWITCH MOBILE */
+
+    .language-switch{
+        top:20px;
         right:15px;
 
         padding:4px;
     }
 
-    .lang-option{
+    .language-switch button{
         padding:7px 10px;
 
-        font-size:12px;
+        font-size:11px;
     }
 
     .hero-icon{
@@ -772,6 +770,15 @@ footer p{
 
     .career-card h3{
         font-size:19px;
+    }
+
+    .language-switch{
+        right:10px;
+    }
+
+    .language-switch button{
+        padding:6px 8px;
+        font-size:10px;
     }
 
 }
@@ -868,15 +875,13 @@ Contact
 <section class="hero">
 
 
-<!-- =========================
-     LANGUAGE SWITCH
-========================= -->
+<!-- LANGUAGE SWITCH -->
 
-<div class="hero-language">
+<div class="language-switch">
 
 <button
-class="lang-option active"
 id="englishBtn"
+class="active"
 onclick="setLanguage('en')">
 
 🇬🇧 English
@@ -884,7 +889,6 @@ onclick="setLanguage('en')">
 </button>
 
 <button
-class="lang-option"
 id="nepaliBtn"
 onclick="setLanguage('ne')">
 
@@ -901,20 +905,15 @@ onclick="setLanguage('ne')">
 🎯
 </div>
 
-<h1
-data-en="Career"
-data-ne="करियर">
-
+<h1 id="heroTitle">
 Career
-
 </h1>
 
-<p
-data-en="Career preparation resources including Public Service Commission, Teacher Service Commission, Banking Exams, Organized Institutions, Human Rights Commission, Constitution, Laws, Nepal Introduction, Higher Education and Miscellaneous."
-data-ne="लोक सेवा, शिक्षक सेवा, बैंकिङ तथा विभिन्न प्रतिस्पर्धात्मक परीक्षाको तयारी, संविधान, ऐन–नियम, नेपाल परिचय तथा उच्च शिक्षासम्बन्धी अध्ययन सामग्रीको व्यवस्थित संग्रह।">
-
-Career preparation resources including Public Service Commission, Teacher Service Commission, Banking Exams, Organized Institutions, Human Rights Commission, Constitution, Laws, Nepal Introduction, Higher Education and Miscellaneous.
-
+<p id="heroDescription">
+Career preparation resources for Public Service Commission,
+Teacher Service Commission, Banking Exams and various competitive
+examinations, including Constitution, Laws, Nepal Introduction,
+Higher Education and other useful study materials.
 </p>
 
 </div>
@@ -933,20 +932,12 @@ Career preparation resources including Public Service Commission, Teacher Servic
 
 <div class="section-title">
 
-<h2
-data-en="Career & Examination Preparation"
-data-ne="करियर तथा परीक्षा तयारी">
-
+<h2 id="sectionTitle">
 Career & Examination Preparation
-
 </h2>
 
-<p
-data-en="Choose a subject according to your goal and explore the study materials."
-data-ne="आफ्नो लक्ष्यअनुसार विषय छनोट गर्नुहोस् र Explore गरेर अध्ययन सामग्री हेर्नुहोस्।">
-
-Choose a subject according to your goal and explore the study materials.
-
+<p id="sectionDescription">
+Choose a category according to your goal and explore the study materials.
 </p>
 
 </div>
@@ -955,9 +946,7 @@ Choose a subject according to your goal and explore the study materials.
 <div class="career-grid">
 
 
-<!-- =========================
-     1 PSC
-========================= -->
+<!-- 1 -->
 
 <div class="career-card featured">
 
@@ -974,16 +963,18 @@ Public Service Commission
 </h3>
 
 <p
-data-en="Study materials for various levels and positions of the Public Service Commission, including general knowledge, current affairs, previous questions and exam preparation resources."
+data-en="Study materials for various levels and positions of the Public Service Commission, including General Knowledge, current affairs, previous questions and exam-oriented resources."
 data-ne="लोक सेवा आयोगका विभिन्न तह तथा पदका लागि आवश्यक पाठ्यक्रम, सामान्य ज्ञान, समसामयिक विषय, पुराना प्रश्नपत्र तथा तयारी सामग्री।">
 
-Study materials for various levels and positions of the Public Service Commission, including general knowledge, current affairs, previous questions and exam preparation resources.
+Study materials for various levels and positions of the Public Service Commission, including General Knowledge, current affairs, previous questions and exam-oriented resources.
 
 </p>
 
 <a
 href="public-service-commission.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -993,9 +984,7 @@ Explore
 </div>
 
 
-<!-- =========================
-     2 TSC
-========================= -->
+<!-- 2 -->
 
 <div class="career-card featured">
 
@@ -1012,16 +1001,18 @@ Teacher Service Commission
 </h3>
 
 <p
-data-en="Subject knowledge, pedagogy, general knowledge, model questions and important study materials for Teacher Service Commission examinations."
+data-en="Subject knowledge, pedagogy, General Knowledge, model questions and important resources for Teacher Service Commission examinations."
 data-ne="शिक्षक सेवा आयोगको परीक्षा तयारीका लागि विषयगत ज्ञान, शिक्षाशास्त्र, सामान्य ज्ञान, नमुना प्रश्न तथा महत्वपूर्ण सामग्री।">
 
-Subject knowledge, pedagogy, general knowledge, model questions and important study materials for Teacher Service Commission examinations.
+Subject knowledge, pedagogy, General Knowledge, model questions and important resources for Teacher Service Commission examinations.
 
 </p>
 
 <a
 href="teacher-service-commission.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1031,9 +1022,7 @@ Explore
 </div>
 
 
-<!-- =========================
-     3 BANKING
-========================= -->
+<!-- 3 -->
 
 <div class="career-card">
 
@@ -1050,16 +1039,18 @@ Banking Exam
 </h3>
 
 <p
-data-en="Banking knowledge, economics, accounting, management, general knowledge and practice questions for banking examination preparation."
+data-en="Banking knowledge, economics, accounting, management, General Knowledge and practice questions for banking examinations."
 data-ne="बैंकिङ परीक्षा तयारीका लागि बैंकिङ ज्ञान, अर्थशास्त्र, लेखा, व्यवस्थापन, सामान्य ज्ञान तथा अभ्यास प्रश्नहरू।">
 
-Banking knowledge, economics, accounting, management, general knowledge and practice questions for banking examination preparation.
+Banking knowledge, economics, accounting, management, General Knowledge and practice questions for banking examinations.
 
 </p>
 
 <a
 href="banking-exam.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1069,9 +1060,7 @@ Explore
 </div>
 
 
-<!-- =========================
-     4 ORGANIZED INSTITUTIONS
-========================= -->
+<!-- 4 -->
 
 <div class="career-card">
 
@@ -1088,16 +1077,18 @@ Organized Institutions
 </h3>
 
 <p
-data-en="Syllabus, general knowledge, institutional knowledge and preparation resources for competitive examinations of various organized institutions."
+data-en="Syllabus, General Knowledge, institutional knowledge and preparation resources for competitive examinations of various organized institutions."
 data-ne="विभिन्न संगठित संस्थाका प्रतिस्पर्धात्मक परीक्षा, पाठ्यक्रम, सामान्य ज्ञान, संस्थागत ज्ञान तथा तयारी सामग्री।">
 
-Syllabus, general knowledge, institutional knowledge and preparation resources for competitive examinations of various organized institutions.
+Syllabus, General Knowledge, institutional knowledge and preparation resources for competitive examinations of various organized institutions.
 
 </p>
 
 <a
 href="sangathit-sanstha.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1107,9 +1098,7 @@ Explore
 </div>
 
 
-<!-- =========================
-     5 HUMAN RIGHTS
-========================= -->
+<!-- 5 -->
 
 <div class="career-card">
 
@@ -1135,7 +1124,9 @@ Important concepts, laws, rights and examination preparation materials related t
 
 <a
 href="manav-adhikar-aayog.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1145,9 +1136,7 @@ Explore
 </div>
 
 
-<!-- =========================
-     6 CONSTITUTION
-========================= -->
+<!-- 6 -->
 
 <div class="career-card">
 
@@ -1173,7 +1162,9 @@ The Constitution of Nepal, fundamental rights, directive principles, federal str
 
 <a
 href="sambidhan.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1183,9 +1174,7 @@ Explore
 </div>
 
 
-<!-- =========================
-     7 LAW
-========================= -->
+<!-- 7 -->
 
 <div class="career-card">
 
@@ -1202,16 +1191,18 @@ Acts, Rules & Regulations
 </h3>
 
 <p
-data-en="Study materials covering various Acts, Rules and Regulations useful for competitive examinations."
+data-en="Important Acts, Rules, Regulations and legal provisions useful for competitive examinations."
 data-ne="परीक्षामा उपयोगी विभिन्न ऐन, नियम, नियमावली तथा कानुनी व्यवस्थाहरूको अध्ययन सामग्री।">
 
-Study materials covering various Acts, Rules and Regulations useful for competitive examinations.
+Important Acts, Rules, Regulations and legal provisions useful for competitive examinations.
 
 </p>
 
 <a
 href="ain-niyam-niyamawali.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1221,9 +1212,7 @@ Explore
 </div>
 
 
-<!-- =========================
-     8 NEPAL INTRODUCTION
-========================= -->
+<!-- 8 -->
 
 <div class="career-card">
 
@@ -1240,16 +1229,18 @@ Introduction to Nepal
 </h3>
 
 <p
-data-en="Study materials related to Nepal's geography, history, politics, administration, culture, economy and current affairs."
+data-en="Study materials on Nepal's geography, history, politics, administration, culture, economy and current affairs."
 data-ne="नेपालको भूगोल, इतिहास, राजनीति, प्रशासन, संस्कृति, अर्थतन्त्र तथा समसामयिक विषयसम्बन्धी अध्ययन सामग्री।">
 
-Study materials related to Nepal's geography, history, politics, administration, culture, economy and current affairs.
+Study materials on Nepal's geography, history, politics, administration, culture, economy and current affairs.
 
 </p>
 
 <a
 href="nepal-introduction.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1259,9 +1250,7 @@ Explore
 </div>
 
 
-<!-- =========================
-     9 HIGHER EDUCATION
-========================= -->
+<!-- 9 -->
 
 <div class="career-card">
 
@@ -1287,7 +1276,9 @@ Information about higher education, universities, academic programs, study oppor
 
 <a
 href="higher-education.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1297,9 +1288,7 @@ Explore
 </div>
 
 
-<!-- =========================
-     10 MISCELLANEOUS
-========================= -->
+<!-- 10 -->
 
 <div class="career-card">
 
@@ -1316,16 +1305,18 @@ Miscellaneous
 </h3>
 
 <p
-data-en="General knowledge, current affairs, information, notes and other important study materials useful for examination preparation."
+data-en="Various General Knowledge, current affairs, information, notes and other useful study resources for examination preparation."
 data-ne="परीक्षा तयारीमा उपयोगी विविध सामान्य ज्ञान, समसामयिक घटना, सूचना, नोट्स तथा अन्य महत्वपूर्ण अध्ययन सामग्री।">
 
-General knowledge, current affairs, information, notes and other important study materials useful for examination preparation.
+Various General Knowledge, current affairs, information, notes and other useful study resources for examination preparation.
 
 </p>
 
 <a
 href="bibidh.html"
-class="explore-btn">
+class="explore-btn"
+data-en="Explore"
+data-ne="हेर्नुहोस्">
 
 Explore
 <span>→</span>
@@ -1348,20 +1339,12 @@ Explore
 
 <footer>
 
-<p
-data-en="© 2026 Gorakh Chand. All Rights Reserved."
-data-ne="© 2026 Gorakh Chand. सर्वाधिकार सुरक्षित।">
-
+<p id="footerCopyright">
 © 2026 Gorakh Chand. All Rights Reserved.
-
 </p>
 
-<p
-data-en="Career • Examination Preparation • Education"
-data-ne="करियर • परीक्षा तयारी • शिक्षा">
-
+<p id="footerText">
 Career • Examination Preparation • Education
-
 </p>
 
 </footer>
@@ -1407,53 +1390,85 @@ document
 
 
 /* =========================
-   LANGUAGE SWITCHER
+   LANGUAGE SWITCH
+   DEFAULT = ENGLISH
 ========================= */
 
 function setLanguage(language){
 
-    document
-    .querySelectorAll("[data-en]")
-    .forEach(function(element){
+    const elements =
+    document.querySelectorAll(
+        "[data-en][data-ne]"
+    );
 
-        element.textContent =
-        element.getAttribute(
-            "data-" + language
-        );
+    elements.forEach(function(element){
+
+        if(language === "en"){
+
+            element.textContent =
+            element.getAttribute("data-en");
+
+        }else{
+
+            element.textContent =
+            element.getAttribute("data-ne");
+
+        }
 
     });
 
 
-    const englishBtn =
-    document.getElementById("englishBtn");
-
-    const nepaliBtn =
-    document.getElementById("nepaliBtn");
-
+    /* HERO */
 
     if(language === "en"){
 
-        englishBtn.classList.add("active");
+        document.getElementById("heroTitle").textContent =
+        "Career";
 
-        nepaliBtn.classList.remove("active");
+        document.getElementById("heroDescription").textContent =
+        "Career preparation resources for Public Service Commission, Teacher Service Commission, Banking Exams and various competitive examinations, including Constitution, Laws, Nepal Introduction, Higher Education and other useful study materials.";
+
+        document.getElementById("sectionTitle").textContent =
+        "Career & Examination Preparation";
+
+        document.getElementById("sectionDescription").textContent =
+        "Choose a category according to your goal and explore the study materials.";
+
+        document.getElementById("footerCopyright").textContent =
+        "© 2026 Gorakh Chand. All Rights Reserved.";
+
+        document.getElementById("footerText").textContent =
+        "Career • Examination Preparation • Education";
+
+        document.getElementById("englishBtn").classList.add("active");
+        document.getElementById("nepaliBtn").classList.remove("active");
 
         document.documentElement.lang = "en";
 
-        document.title =
-        "Career | Gorakh Chand";
+    }else{
 
-    }
+        document.getElementById("heroTitle").textContent =
+        "Career";
 
-    else{
+        document.getElementById("heroDescription").textContent =
+        "लोकसेवा, शिक्षक सेवा, बैंकिङ तथा विभिन्न प्रतिस्पर्धात्मक परीक्षाको तयारी, संविधान, ऐन–नियम, नेपाल परिचय तथा उच्च शिक्षासम्बन्धी अध्ययन सामग्रीको व्यवस्थित संग्रह।";
 
-        nepaliBtn.classList.add("active");
+        document.getElementById("sectionTitle").textContent =
+        "Career & Examination Preparation";
 
-        englishBtn.classList.remove("active");
+        document.getElementById("sectionDescription").textContent =
+        "आफ्नो लक्ष्यअनुसार विषय छनोट गर्नुहोस् र Explore गरेर अध्ययन सामग्री हेर्नुहोस्।";
+
+        document.getElementById("footerCopyright").textContent =
+        "© 2026 Gorakh Chand. All Rights Reserved.";
+
+        document.getElementById("footerText").textContent =
+        "Career • Examination Preparation • Education";
+
+        document.getElementById("englishBtn").classList.remove("active");
+        document.getElementById("nepaliBtn").classList.add("active");
 
         document.documentElement.lang = "ne";
-
-        document.title =
-        "करियर | Gorakh Chand";
 
     }
 
